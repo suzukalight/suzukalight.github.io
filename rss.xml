@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[suzukalight.com]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://suzukalight.com/</link><generator>RSS for Node</generator><lastBuildDate>Sat, 29 Jun 2019 14:36:21 GMT</lastBuildDate><item><title><![CDATA[Gatsby + Githib Pages でブログを構築]]></title><description><![CDATA[これは何？背景個人的な発信の場を設け、強化していきたい業務の関係で、月に1,2回ほど内容を更新するブログ的なサイトを作ることになったでもWordPressとかは（技術的興味的な意味で）使いたくないという理由から、WordPress…]]></description><link>https://suzukalight.com//hello-world/</link><guid isPermaLink="false">https://suzukalight.com//hello-world/</guid><pubDate>Sat, 29 Jun 2019 14:11:00 GMT</pubDate><content:encoded>&lt;h1&gt;これは何？&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[suzukalight.com]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://suzukalight.com/</link><generator>RSS for Node</generator><lastBuildDate>Sat, 29 Jun 2019 14:40:20 GMT</lastBuildDate><item><title><![CDATA[Gatsby + GitHub Pages でブログを構築]]></title><description><![CDATA[これは何？Gatsby + Githib Pages でブログを公開するまでの手順背景個人的な発信の場を設け、強化していきたい業務の関係で、月に1,2回ほど内容を更新するブログ的なサイトを作ることになったでもWordPress…]]></description><link>https://suzukalight.com//hello-world/</link><guid isPermaLink="false">https://suzukalight.com//hello-world/</guid><pubDate>Sat, 29 Jun 2019 14:11:00 GMT</pubDate><content:encoded>&lt;h1&gt;これは何？&lt;/h1&gt;
+&lt;p&gt;Gatsby + Githib Pages でブログを公開するまでの手順&lt;/p&gt;
 &lt;h1&gt;背景&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;個人的な発信の場を設け、強化していきたい&lt;/li&gt;
@@ -34,6 +35,7 @@ $ git push origin develop&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;li&gt;
 &lt;p&gt;独自ドメインの設定&lt;/p&gt;
 &lt;ul&gt;
+&lt;li&gt;suzukalight.com を割付&lt;/li&gt;
 &lt;li&gt;DNS側に、AレコードとALIASレコードを設定&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -45,4 +47,11 @@ $ git push origin develop&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;&lt;/h1&gt;</content:encoded></item></channel></rss>
+&lt;h1&gt;今後&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled&gt; テンプレート変更&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled&gt; タグ追加&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled&gt; PWA対応&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled&gt; SNSカード&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled&gt; Contentful 使ってみる&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item></channel></rss>
