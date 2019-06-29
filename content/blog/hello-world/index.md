@@ -1,12 +1,12 @@
 ---
 title: Gatsby + GitHub Pages でブログを構築
 date: "2019-06-29T23:11:00"
-description: 'Gatsby + Githib Pages でブログを公開するまでの手順'
+description: 'Gatsby + GitHub Pages でブログを公開するまでの手順'
 ---
 
 # これは何？
 
-Gatsby + Githib Pages でブログを公開するまでの手順
+Gatsby + GitHub Pages でブログを公開するまでの手順
 
 # 背景
 
