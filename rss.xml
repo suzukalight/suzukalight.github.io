@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[suzukalight.com]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://suzukalight.com/</link><generator>RSS for Node</generator><lastBuildDate>Sat, 29 Jun 2019 15:03:22 GMT</lastBuildDate><item><title><![CDATA[Gatsby + GitHub Pages でブログを構築]]></title><description><![CDATA[これは何？Gatsby + GitHub Pages でブログを公開するまでの手順背景個人的な発信の場を設け、強化していきたい業務の関係で、月に1,2回ほど内容を更新するブログ的なサイトを作ることになったでもWordPress…]]></description><link>https://suzukalight.com//hello-world/</link><guid isPermaLink="false">https://suzukalight.com//hello-world/</guid><pubDate>Sat, 29 Jun 2019 14:11:00 GMT</pubDate><content:encoded>&lt;h1&gt;これは何？&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[suzukalight.com]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://suzukalight.com/</link><generator>RSS for Node</generator><lastBuildDate>Sat, 29 Jun 2019 15:24:39 GMT</lastBuildDate><item><title><![CDATA[Gatsby での各種サイト設定]]></title><description><![CDATA[これは何？Gatsby + GitHub Pages でブログを公開するまでの手順PWA対応manifest.json を生成させる。  が利用可能。
+マニフェストの内容とアイコン類は、便利なサイトを使って自動生成する。gatsby-plugin-manifest…]]></description><link>https://suzukalight.com//2019-06-30-site-settings/</link><guid isPermaLink="false">https://suzukalight.com//2019-06-30-site-settings/</guid><pubDate>Sat, 29 Jun 2019 15:08:00 GMT</pubDate><content:encoded>&lt;h1&gt;これは何？&lt;/h1&gt;
+&lt;p&gt;Gatsby + GitHub Pages でブログを公開するまでの手順&lt;/p&gt;
+&lt;h1&gt;PWA対応&lt;/h1&gt;
+&lt;p&gt;manifest.json を生成させる。 &lt;code class=&quot;language-text&quot;&gt;gatsby-plugin-manifest&lt;/code&gt; が利用可能。
+マニフェストの内容とアイコン類は、便利なサイトを使って自動生成する。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;gatsby-plugin-manifest&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;手順: &lt;a href=&quot;https://takumon.com/2018/10/08/&quot;&gt;https://takumon.com/2018/10/08/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;生成: &lt;a href=&quot;https://app-manifest.firebaseapp.com/&quot;&gt;https://app-manifest.firebaseapp.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;SEO(OGP)対応&lt;/h1&gt;
+&lt;p&gt;すでに starter で &lt;SEO /&gt; が利用されており、自動設定されている。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Gatsby + GitHub Pages でブログを構築]]></title><description><![CDATA[これは何？Gatsby + GitHub Pages でブログを公開するまでの手順背景個人的な発信の場を設け、強化していきたい業務の関係で、月に1,2回ほど内容を更新するブログ的なサイトを作ることになったでもWordPress…]]></description><link>https://suzukalight.com//2019-06-29-hello-world/</link><guid isPermaLink="false">https://suzukalight.com//2019-06-29-hello-world/</guid><pubDate>Sat, 29 Jun 2019 14:11:00 GMT</pubDate><content:encoded>&lt;h1&gt;これは何？&lt;/h1&gt;
 &lt;p&gt;Gatsby + GitHub Pages でブログを公開するまでの手順&lt;/p&gt;
 &lt;h1&gt;背景&lt;/h1&gt;
 &lt;ul&gt;
@@ -51,7 +67,7 @@ $ git push origin develop&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
 &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled&gt; テンプレート変更&lt;/li&gt;
 &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled&gt; タグ追加&lt;/li&gt;
-&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled&gt; PWA対応&lt;/li&gt;
-&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled&gt; SNSカード&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; PWA対応&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; SNSカード&lt;/li&gt;
 &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled&gt; Contentful 使ってみる&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item></channel></rss>
