@@ -1,10 +1,12 @@
 ---
-title: Gatsby + Githib Pages でブログを構築
+title: Gatsby + GitHub Pages でブログを構築
 date: "2019-06-29T23:11:00"
 description: 'Gatsby + Githib Pages でブログを公開するまでの手順'
 ---
 
 # これは何？
+
+Gatsby + Githib Pages でブログを公開するまでの手順
 
 # 背景
 
@@ -65,9 +67,17 @@ $ yarn deploy
 ### 必要に応じて、GitHub Pages の設定を行う
 
 - 独自ドメインの設定
+    - suzukalight.com を割付
     - DNS側に、AレコードとALIASレコードを設定
 - HTTPSの強制
     - SSLじゃないとPWA対応ができなくなる
     - 証明書はGitHubが自動で用意してくれる（Let's Encrypt）
 
-# 
+# 今後
+
+- [ ] テンプレート変更
+- [ ] タグ追加
+- [ ] PWA対応
+- [ ] SNSカード
+- [ ] Contentful 使ってみる
+
