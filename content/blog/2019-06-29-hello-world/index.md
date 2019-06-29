@@ -77,7 +77,7 @@ $ yarn deploy
 
 - [ ] テンプレート変更
 - [ ] タグ追加
-- [ ] PWA対応
-- [ ] SNSカード
+- [x] PWA対応
+- [x] SNSカード
 - [ ] Contentful 使ってみる
 
