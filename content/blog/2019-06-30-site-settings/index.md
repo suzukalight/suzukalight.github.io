@@ -2,11 +2,12 @@
 title: Gatsby での各種サイト設定
 date: "2019-06-30T00:08:00"
 description: 'GatsbyでPWA設定とSNS設定をする手順'
+tags: ['gatsby', 'github pages', 'react']
 ---
 
 # これは何？
 
-Gatsby + GitHub Pages でブログを公開するまでの手順
+GatsbyでPWA設定とSNS設定をする手順
 
 # PWA対応
 
