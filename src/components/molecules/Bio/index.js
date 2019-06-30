@@ -44,8 +44,6 @@ const Bio = () => {
         imgStyle={{
           borderRadius: `50%`,
         }}
-        // style={styles.heroImageWrap}
-        // imgStyle={styles.heroImage}
       />
       <p>
         Written by <strong>{author}</strong>.<br />

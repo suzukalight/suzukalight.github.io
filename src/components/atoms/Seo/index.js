@@ -3,64 +3,39 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function Seo({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
+const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+        description
+        author
       }
-    `,
-  );
+    }
+  }
+`;
 
-  const metaDescription = description || site.siteMetadata.description;
+function Seo({ description, lang, meta, title }) {
+  const data = useStaticQuery(query);
+  const { siteMetadata } = data.site;
+  const metaDescription = description || siteMetadata.description;
+  const metaData = [
+    { name: `description`, content: metaDescription },
+    { property: `og:title`, content: title },
+    { property: `og:description`, content: metaDescription },
+    { property: `og:type`, content: `website` },
+    { name: `twitter:card`, content: `summary` },
+    { name: `twitter:creator`, content: siteMetadata.author },
+    { name: `twitter:title`, content: title },
+    { name: `twitter:description`, content: metaDescription },
+  ].concat(meta);
 
   return (
     <Helmet
-      htmlAttributes={{
-        lang,
-      }}
+      htmlAttributes={{ lang }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
+      titleTemplate={`%s | ${siteMetadata.title}`}
+      meta={metaData}
     />
   );
 }
