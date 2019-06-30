@@ -14,7 +14,7 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <Seo title="Index" />
+        <Seo title="Index" description="なければ作ればいいじゃない" />
         <Bio />
         <Posts posts={posts} />
       </Layout>
