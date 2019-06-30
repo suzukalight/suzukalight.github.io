@@ -30,20 +30,22 @@ const Pager = ({ previous, next }) => (
 const BlogPostTemplate = ({ location, data, pageContext }) => {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
+  const description = post.frontmatter.description || post.excerpt;
   const { previous, next } = pageContext;
 
   return (
     <Layout location={location} title={siteTitle}>
       <Seo
         title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        description={description}
       />
 
       <h1 className={styles.title}>{post.frontmatter.title}</h1>
+      <p className={styles.description}>{description}</p>
       <p className={styles.date}>{post.frontmatter.date}</p>
       <Tags tags={post.frontmatter.tags} />
 
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <div className={styles.article} dangerouslySetInnerHTML={{ __html: post.html }} />
 
       <hr className={styles.articleEnd} />
       <Bio />

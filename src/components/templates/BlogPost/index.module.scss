@@ -4,14 +4,26 @@
   border: none;
 }
 
+.description {
+  display: block;
+  margin: 0;
+  color: #999;
+  font-size: 0.875rem;
+  line-height: 1.625rem;
+}
+
 .date {
   display: block;
   font-size: 0.875rem;
   line-height: 1.625rem;
 }
 
+.article {
+  margin: 2rem 0;
+}
+
 .articleEnd {
-  margin: 1.625rem 0;
+  margin: 2rem 0;
 }
 
 .pager {
