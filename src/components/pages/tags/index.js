@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../../atoms/Seo';
+import Layout from '../../templates/Layout';
 
 const TagsPage = ({
   location,
@@ -16,7 +16,7 @@ const TagsPage = ({
   },
 }) => (
   <Layout location={location} title={title}>
-    <SEO title="Tags" />
+    <Seo title="Tags" />
     <h1>Tags</h1>
     <ul>
       {group.map(tag => (

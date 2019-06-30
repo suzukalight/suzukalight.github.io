@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Layout from '../Layout';
+import Seo from '../../atoms/Seo';
 
 const Tags = ({ location, pageContext, data }) => {
   const { tag } = pageContext;
@@ -13,7 +13,7 @@ const Tags = ({ location, pageContext, data }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title={tagHeader} />
+      <Seo title={tagHeader} />
       <h1>{tagHeader}</h1>
       <ul>
         {edges.map(({ node: { fields: { slug }, frontmatter: { title } } }) => (
