@@ -30,10 +30,10 @@ https://github.com/suzukalight/suzukalight.github.io
 
 gatsby CLI から、スターターキットをインストールすることができる。
 
-```
+```bash
 $ npm i -g gatsby
 $ gatsby new suzukalight-github https://github.com/gatsbyjs/gatsby-starter-blog
-$ cd suzukalight-guthub
+$ cd suzukalight-github
 ```
 
 ### デプロイコマンドの準備
@@ -42,7 +42,7 @@ gh-pagesコマンドをインストールし、GitHub Pagesとして自動公開
 
 masterブランチは公開ファイル用なので、gatsbyシステム全体は別のブランチにコミットしておく必要がある。私はとりあえず develop にコミットすることとした。
 
-```
+```bash
 $ yarn add -D gh-pages
 $ git init
 $ git checkout -b develop
@@ -50,17 +50,21 @@ $ git commit -am "gatsby new"
 $ git push origin develop
 ```
 
-### デプロイ
+### デプロイ実行
 
 以下のデプロイコマンドを package.json に追記する；
 
-```
-"deploy": "gatsby build && gh-pages -d public -b master"
+```json{3}
+{
+  "scripts": {
+    "deploy": "gatsby build && gh-pages -d public -b master"
+  }
+}
 ```
 
 これでgatsbyによってサイト生成したのち、gh-pagesによってpublicフォルダがmasterブランチに自動展開される。GitHub Pagesはmasterブランチをホスティングしてくれるので、Gatsbyサイトが `suzukalight.github.io` として公開される。
 
-```
+```bash
 $ yarn deploy
 ```
 
