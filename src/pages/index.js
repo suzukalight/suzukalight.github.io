@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 
-import Seo from '../../atoms/Seo';
-import Tags from '../../atoms/Tags';
-import Bio from '../../molecules/Bio';
-import Layout from '../../templates/Layout';
+import Seo from '../components/atoms/Seo';
+import Tags from '../components/atoms/Tags';
+import Bio from '../components/molecules/Bio';
+import Layout from '../components/templates/Layout';
 import { rhythm } from '../utils/typography';
 
 class BlogIndex extends React.Component {

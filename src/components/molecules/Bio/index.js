@@ -4,8 +4,8 @@ import Image from 'gatsby-image';
 
 import styles from './index.module.scss';
 
-const query = () =>
-  useStaticQuery(graphql`
+const Bio = () => {
+  const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/tarako.jpg/" }) {
         childImageSharp {
@@ -25,17 +25,17 @@ const query = () =>
     }
   `);
 
-const Bio = () => {
-  const data = query();
   const { author, social } = data.site.siteMetadata;
 
   return (
-    <div style={styles.root}>
+    <div className={styles.root}>
       <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author}
-        style={styles.heroImageWrap}
-        imgStyle={styles.heroImage}
+        style={{}}
+        imgStyle={{}}
+        // style={styles.heroImageWrap}
+        // imgStyle={styles.heroImage}
       />
       <p>
         Written by <strong>{author}</strong>.<br />

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 
-import Seo from '../../atoms/Seo';
-import Layout from '../../templates/Layout';
+import Seo from '../components/atoms/Seo';
+import Layout from '../components/templates/Layout';
 
 const TagsPage = ({
   location,
