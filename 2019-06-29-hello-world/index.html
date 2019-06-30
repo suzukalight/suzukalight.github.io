@@ -46,7 +46,7 @@
 <li>業務で、月に1,2回ほど内容を更新するブログ的なサイトを作ることになった</li>
 <li>でもWordPressとかは（技術的興味としては）使いたくない</li>
 </ul>
-<p>という理由から、WordPress以外の技術で、ブログシステムを構築することになった。</p>
+<p>などの理由から、WordPress以外の技術でブログシステムを構築することにした。</p>
 <p>私個人のスキルセットはフロントエンド（React）に寄っているので、マークアップやシステム構築はReact+Sass系で行いたい。そこでGatsbyを使ってブログシステムを構築することにしてみた。これはその最初のテスト投稿。</p>
 <h2 id="手順"><a href="#%E6%89%8B%E9%A0%86" aria-label="手順 permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>手順</h2>
 <h3 id="githubに-code-classlanguage-textusernamegithubiocode-の名称でリポジトリを作成"><a href="#github%E3%81%AB-code-classlanguage-textusernamegithubiocode-%E3%81%AE%E5%90%8D%E7%A7%B0%E3%81%A7%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E3%82%92%E4%BD%9C%E6%88%90" aria-label="githubに code classlanguage textusernamegithubiocode の名称でリポジトリを作成 permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GitHubに <code class="language-text">[username].github.io</code> の名称でリポジトリを作成</h3>
@@ -76,6 +76,7 @@ $ <span class="token function">git</span> push origin develop</code><span aria-h
 <span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
 <p>デプロイコマンドを実行すれば、スタティックサイト生成と、GitHub Pagesへの公開がシリアルに行われる。</p>
 <div class="gatsby-highlight" data-language="bash"><pre style="counter-reset: linenumber NaN" class="language-bash line-numbers"><code class="language-bash">$ <span class="token function">yarn</span> deploy</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span></span></pre></div>
+<p>ビルドから公開まで、約30秒で行われるので、速度としては十分速いと感じる。</p>
 <h3 id="必要に応じて、github-pages-の設定を行う"><a href="#%E5%BF%85%E8%A6%81%E3%81%AB%E5%BF%9C%E3%81%98%E3%81%A6%E3%80%81github-pages-%E3%81%AE%E8%A8%AD%E5%AE%9A%E3%82%92%E8%A1%8C%E3%81%86" aria-label="必要に応じて、github pages の設定を行う permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>必要に応じて、GitHub Pages の設定を行う</h3>
 <ul>
 <li>
