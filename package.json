@@ -59,11 +59,12 @@
   "scripts": {
     "format": "prettier --config .prettierrc -l --write \"./src/**/*.js*\"",
     "lint": "eslint --fix --ext .jsx,.js ./src",
-    "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "deploy": "gatsby build && gh-pages -d public -b master"
+    "build": "gatsby build",
+    "push": "gh-pages -d public -b master",
+    "deploy": "yarn build && yarn push"
   }
 }
