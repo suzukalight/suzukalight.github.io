@@ -54,7 +54,7 @@ $ git push origin develop
 
 以下のデプロイコマンドを package.json に追記する；
 
-```json{3}
+```json{3}:title=package.json
 {
   "scripts": {
     "deploy": "gatsby build && gh-pages -d public -b master"
