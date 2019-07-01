@@ -1,17 +1,17 @@
 .gatsby-highlight-code-line {
-  background-color: #feb;
+  background-color: #cfc;
   display: block;
   margin-right: -1em;
   margin-left: -1em;
   padding-right: 1em;
   padding-left: 0.75em;
-  border-left: 0.25em solid #f99;
+  border-left: 0.25em solid #9f9;
 }
 
 .gatsby-highlight {
-  background-color: #fdf6e3;
-  border-radius: 0.3em;
-  margin: 0.5em 0;
+  background-color: #f2f2f2;
+  border-radius: 0.25em;
+  margin: 1em 0;
   padding: 1em;
   overflow: auto;
 
@@ -24,18 +24,18 @@
     min-width: 100%; /* 2 */
 
     &.line-numbers {
-      padding-left: 2.8em; /* 3 */
+      padding-left: 2.75em; /* 3 */
     }
   }
 }
 
 .gatsby-code-title {
-  background: #f3e3b9;
-  color: #b38383;
-  margin-bottom: -0.65em;
-  padding: 0.7rem 1.05rem;
-  font-size: 0.8em;
-  line-height: 0.2;
+  background: #e2e2e2;
+  color: #999;
+  margin-bottom: -1.5em;
+  padding: 0.75rem 1rem;
+  font-size: 0.75em;
+  line-height: 0.25;
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
   font-weight: 600;
   border-radius: 8px 8px 0 0;
@@ -44,4 +44,6 @@
 
 .gatsby-autolink-headers {
   box-shadow: none;
+  padding: 0;
+  margin-left: -24px;
 }

@@ -9,6 +9,10 @@ GitHub.overrideThemeStyles = () => {
   };
 };
 
+GitHub.baseFontSize = '18px';
+GitHub.baseLineHeight = 1.66;
+GitHub.blockMarginBottom = 1;
+
 const typography = new Typography(GitHub);
 
 // Hot reload typography in development.
