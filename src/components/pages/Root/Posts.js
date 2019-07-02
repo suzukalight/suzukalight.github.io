@@ -29,7 +29,7 @@ const PostItem = ({ node, title }) => (
 
     <div className={styles.imageWrap}>
       {node.frontmatter.hero && (
-        <Image fixed={node.frontmatter.hero.childImageSharp.fixed} objectFit="cover" />
+        <Image fixed={node.frontmatter.hero.childImageSharp.fixed} />
       )}
     </div>
   </div>
