@@ -38,12 +38,18 @@ const BlogPostTemplate = ({ location, data, pageContext }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title={post.frontmatter.title} description={description} />
 
-      <h1 className={styles.title}>{post.frontmatter.title}</h1>
-      <p className={styles.description}>{description}</p>
-      <p className={styles.date}>{post.frontmatter.date}</p>
-      <Tags tags={post.frontmatter.tags} />
+      <section>
+        <h1 className={styles.title}>{post.frontmatter.title}</h1>
+        <p className={styles.description}>{description}</p>
+        <p className={styles.date}>{post.frontmatter.date}</p>
+        <div className={styles.tags}>
+          <Tags tags={post.frontmatter.tags} />
+        </div>
+      </section>
 
-      {post.frontmatter.hero && <Image fluid={post.frontmatter.hero.childImageSharp.fluid} />}
+      <section className={styles.hero}>
+        {post.frontmatter.hero && <Image fluid={post.frontmatter.hero.childImageSharp.fluid} />}
+      </section>
 
       <div className={styles.article} dangerouslySetInnerHTML={{ __html: post.html }} />
 

@@ -7,6 +7,8 @@ tags: ['gatsby', 'gatsby-image']
 
 多くのブログでは、記事の先頭にトップ画像を表示しています。ここではGatsbyでトップ画像を設定し、さらにその画像を記事一覧のサムネイルとしても表示する手法について紹介します。
 
+実装はこちら: https://github.com/suzukalight/suzukalight.github.io/pull/2
+
 # gatsby-image
 
 [gatsby-image](https://www.gatsbyjs.org/docs/gatsby-image/) は、Gatsbyにおける画像表示全般を担うコンポーネントで、単なる画像表示だけではなく、下記の特徴があります；

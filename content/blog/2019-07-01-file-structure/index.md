@@ -9,7 +9,7 @@ hero: ./title.png
 基本的な内容は、こちらで解説されていますので、あわせて参照ください。  
 https://www.gatsbyjs.org/docs/gatsby-project-structure/
 
-## ディレクトリ構成
+# ディレクトリ構成
 
 大まかなディレクトリ構成は以下のようになっています。
 （templatesを移動するなど、一部変更を加えています）
@@ -28,7 +28,7 @@ root
  ┗ package.json
 ```
 
-### content ディレクトリ ＝ 記事用
+# content ディレクトリ ＝ 記事用
 
 ```
 root
@@ -42,11 +42,11 @@ root
  ┃     ┗ index.md
 ```
 
-#### content/assets
+## content/assets
 
 記事で使用する共通のアセット類を格納するディレクトリです。個別の記事で使用する場合は、blogディレクトリに配備すれば大丈夫のはずです。
 
-#### content/blog
+## content/blog
 
 記事を格納するディレクトリです。
 
@@ -54,7 +54,7 @@ root
 
 > ディレクトリ名に日付を入れる必要はありません。記事のmarkdown側で投稿日時を記載可能です。
 
-### src ディレクトリ = 開発用
+# src ディレクトリ = 開発用
 
 ```
 root
@@ -85,7 +85,7 @@ root
  ┃   ┗ typography.js
 ```
 
-#### src/components
+## src/components
 
 ページで使用する、共通のコンポーネントを入れておくディレクトリです。内容については特に決まりはありません。
 
@@ -93,25 +93,25 @@ root
 
 独自の変更として、Gatsbyのtemplatesをこちらに移動させ、CSS Modulesでマークアップするようにしています。pagesも移動させたかったのですが、pagesはGatsbyの縛りで固定のようなので移動させず、pagesで使用しているサブコンポーネントだけをこちらに移動させる形としました。
 
-#### src/pages
+## src/pages
 
 Gatsby 固定のディレクトリで、この中にあるjsファイルが、自動的に固定ページとして扱われます。
 
 URLとファイル名が一致する形で生成されます。
 
-#### src/styles
+## src/styles
 
 共通のスタイルを入れています。独自に追加したものです。
 
-#### src/utils
+## src/utils
 
 共通のロジックを入れています。独自に追加したものです。
 
-#### src/templates
+## src/templates
 
 src/components/templates に移動させました。独自の改変です。
 
-### static ディレクトリ = 配信ファイル用
+# static ディレクトリ = 配信ファイル用
 
 ```
 root
@@ -127,7 +127,7 @@ root
 
 manifest.json で利用するアイコン類や、robots.txt, favicon などを入れています。
 
-### root ディレクトリ直下 = 各種設定
+# root ディレクトリ直下 = 各種設定
 
 ```
 root
@@ -137,21 +137,21 @@ root
  ┗ package.json
 ```
 
-#### gatsby-browser.js
+## gatsby-browser.js
 
 browserAPI（ブラウザで表示する側のファイル）に対して影響を与える設定類を記述します。私は共通CSS類の取り込み指示を書きました。
 
-#### gatsby-config.js
+## gatsby-config.js
 
 全体共通の設定類です。主にプラグインに関する設定を記述しました。
 
-#### gatsby-node.js
+## gatsby-node.js
 
 nodeAPI（記事を生成する側のファイル）に対して影響を与える設定類を記述します。タグページの追加や、関連記事情報の生成など。
 
-### その他
+# その他
 
-#### .cache, public ディレクトリ
+## .cache, public ディレクトリ
 
 ビルド時に生成されます。 `$ gatsby clean` で消去できます。
 

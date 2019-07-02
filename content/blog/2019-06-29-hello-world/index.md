@@ -6,7 +6,7 @@ tags: ['gatsby', 'github pages', 'react']
 ---
 
 
-## 背景
+# 背景
 
 - 個人的な発信の場を設け、強化していきたい
 - 業務で、月に1,2回ほど内容を更新するブログ的なサイトを作ることになった
@@ -16,15 +16,15 @@ tags: ['gatsby', 'github pages', 'react']
 
 私個人のスキルセットはフロントエンド（React）に寄っているので、マークアップやシステム構築はReact+Sass系で行いたい。そこでGatsbyを使ってブログシステムを構築することにしてみた。これはその最初のテスト投稿。
 
-## 手順
+# 手順
 
-### GitHubに `[username].github.io` の名称でリポジトリを作成
+## `[username].github.io` の名称でリポジトリを作成
 
-https://github.com/suzukalight/suzukalight.github.io
+- https://github.com/suzukalight/suzukalight.github.io
 
 このリポジトリ名にしておくと、masterブランチが自動的に公開される。
 
-### Gatsbyの準備
+## Gatsbyの準備
 
 gatsby CLI から、スターターキットをインストールすることができる。
 
@@ -40,7 +40,7 @@ $ cd suzukalight-github
 $ yarn develop
 ```
 
-### デプロイコマンドの準備
+## デプロイコマンドの準備
 
 gh-pagesコマンドをインストールし、GitHub Pagesとして公開できるようにする；
 
@@ -54,7 +54,7 @@ $ git push origin develop
 
 masterブランチは公開ファイル用なので、gatsbyシステム全体は別のブランチにコミットしておく必要がある。私はとりあえず develop にコミットすることとした。
 
-### デプロイ実行
+## デプロイ実行
 
 以下のデプロイコマンドを package.json に追記する；
 
@@ -75,7 +75,7 @@ $ yarn deploy
 
 ビルドから公開まで、約30秒で行われるので、速度としては十分速いと感じる。
 
-### 必要に応じて、GitHub Pages の設定を行う
+## 必要に応じて、GitHub Pages の設定を行う
 
 - 独自ドメインの設定
     - suzukalight.com を割付
@@ -84,7 +84,7 @@ $ yarn deploy
     - SSLじゃないとPWA対応ができなくなる
     - 証明書はGitHubが自動で用意してくれる（Let's Encrypt）
 
-## 今後
+# 今後
 
 - [x] テンプレート変更
 - [x] タグ追加
