@@ -43,6 +43,13 @@ export const pageQuery = graphql`
             title
             description
             tags
+            hero {
+              childImageSharp {
+                fixed(width: 128, height:128) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
         }
       }

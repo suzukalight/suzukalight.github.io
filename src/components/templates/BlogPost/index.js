@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import Image from 'gatsby-image';
 
 import Seo from '../../atoms/Seo';
 import Tags from '../../atoms/Tags';
@@ -35,15 +36,14 @@ const BlogPostTemplate = ({ location, data, pageContext }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo
-        title={post.frontmatter.title}
-        description={description}
-      />
+      <Seo title={post.frontmatter.title} description={description} />
 
       <h1 className={styles.title}>{post.frontmatter.title}</h1>
       <p className={styles.description}>{description}</p>
       <p className={styles.date}>{post.frontmatter.date}</p>
       <Tags tags={post.frontmatter.tags} />
+
+      {post.frontmatter.hero && <Image fluid={post.frontmatter.hero.childImageSharp.fluid} />}
 
       <div className={styles.article} dangerouslySetInnerHTML={{ __html: post.html }} />
 
@@ -74,6 +74,13 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         tags
+        hero {
+          childImageSharp {
+            fluid(maxWidth: 980) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

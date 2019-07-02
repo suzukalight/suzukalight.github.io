@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import Image from 'gatsby-image';
 
 import Tags from '../../atoms/Tags';
 
@@ -7,19 +8,30 @@ import styles from './Posts.module.scss';
 
 const PostItem = ({ node, title }) => (
   <div className={styles.item} key={node.fields.slug}>
-    <h3 className={styles.title}>
-      <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-        {title}
-      </Link>
-    </h3>
-    <small>{node.frontmatter.date}</small>
-    <p
-      style={{ marginBottom: '0.5em' }}
-      dangerouslySetInnerHTML={{
-        __html: node.frontmatter.description || node.excerpt,
-      }}
-    />
-    <Tags tags={node.frontmatter.tags} />
+    <div className={styles.description}>
+      <h3 className={styles.title}>
+        <Link className={styles.link} to={node.fields.slug}>
+          {title}
+        </Link>
+      </h3>
+
+      <p
+        className={styles.excerpt}
+        dangerouslySetInnerHTML={{
+          __html: node.frontmatter.description || node.excerpt,
+        }}
+      />
+
+      <small className={styles.date}>{node.frontmatter.date}</small>
+
+      <Tags className={styles.tags} tags={node.frontmatter.tags} />
+    </div>
+
+    <div className={styles.imageWrap}>
+      {node.frontmatter.hero && (
+        <Image fixed={node.frontmatter.hero.childImageSharp.fixed} />
+      )}
+    </div>
   </div>
 );
 
