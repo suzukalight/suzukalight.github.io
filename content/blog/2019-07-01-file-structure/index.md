@@ -3,6 +3,7 @@ title: Gatsby のファイル構成
 date: "2019-07-01T23:00:00"
 description: 'Gatsby 開発時に利用するファイル類の構成について'
 tags: ['gatsby']
+hero: ./title.png
 ---
 
 基本的な内容は、こちらで解説されていますので、あわせて参照ください。  
