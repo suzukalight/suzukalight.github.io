@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Image from 'gatsby-image';
 
-import Tags from '../../atoms/Tags';
+import DateAndTags from '../../molecules/DateAndTags';
 
 import styles from './Posts.module.scss';
 
@@ -11,7 +11,7 @@ const PostItem = ({ node, title }) => (
     <div className={styles.description}>
       <h3 className={styles.title}>
         <Link className={styles.link} to={node.fields.slug}>
-          {title}
+          <span className={styles.linkText}>{title}</span>
         </Link>
       </h3>
 
@@ -22,20 +22,16 @@ const PostItem = ({ node, title }) => (
         }}
       />
 
-      <small className={styles.date}>{node.frontmatter.date}</small>
-
-      <Tags className={styles.tags} tags={node.frontmatter.tags} />
+      <DateAndTags date={node.frontmatter.date} tags={node.frontmatter.tags} />
     </div>
 
     <div className={styles.imageWrap}>
-      {node.frontmatter.hero && (
-        <Image fixed={node.frontmatter.hero.childImageSharp.fixed} />
-      )}
+      {node.frontmatter.hero && <Image fixed={node.frontmatter.hero.childImageSharp.fixed} />}
     </div>
   </div>
 );
 
-const Posts = ({ posts, title }) =>
+const Posts = ({ posts }) =>
   posts.map(({ node }) => {
     const title = node.frontmatter.title || node.fields.slug;
     return <PostItem key={node.fields.slug} node={node} title={title} />;

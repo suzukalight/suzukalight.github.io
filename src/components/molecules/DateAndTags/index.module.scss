@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+}
+
+.date {
+  display: block;
+  flex-shrink: 0;
+  margin: 0 0 0.5rem;
+
+  &:after {
+    content: '・';
+    margin: 0 0.25rem;
+    color: #ccc;
+  }
+}
+
+.tags {
+  flex-grow: 1;
+  overflow: hidden;
+  font-size: 1.25rem;
+  line-height: 1.33;
+}

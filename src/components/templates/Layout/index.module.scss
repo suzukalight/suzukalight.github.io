@@ -1,15 +1,25 @@
+@import '../../../styles/media-queries.scss';
+
 .root {
   margin-left: auto;
   margin-right: auto;
   max-width: 40rem;
   padding: 2.5rem 1.25rem;
+
+  @include mq-sp() {
+    padding: 1rem 0.75rem;
+  }
 }
 
 .headerBig {
   font-size: 3rem;
   line-height: 3.25rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   margin-top: 0px;
+
+  @include mq-sp() {
+    font-size: 2rem;
+  }
 }
 
 .headerSmall {
@@ -20,4 +30,17 @@
   box-shadow: none;
   text-decoration: none;
   color: inherit;
+}
+
+.footer {
+  display: flex;
+}
+
+.footerCopyright {
+  flex-grow: 1;  
+}
+
+.footerToHome {
+  flex-grow: 1;
+  text-align: right;
 }

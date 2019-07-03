@@ -1,0 +1,15 @@
+$mq-lg: 1280px;
+$mq-md: 960px;
+$mq-sp: 768px;
+
+@mixin mq-md {
+  @media screen and (max-width: $mq-md) {
+    @content;
+  }
+}
+
+@mixin mq-sp {
+  @media screen and (max-width: $mq-sp) {
+    @content;
+  }
+}

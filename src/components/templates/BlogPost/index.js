@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import Image from 'gatsby-image';
 
 import Seo from '../../atoms/Seo';
-import Tags from '../../atoms/Tags';
+import DateAndTags from '../../molecules/DateAndTags';
 import Bio from '../../molecules/Bio';
 import Layout from '../Layout';
 
@@ -11,17 +11,17 @@ import styles from './index.module.scss';
 
 const Pager = ({ previous, next }) => (
   <ul className={styles.pager}>
-    <li>
+    <li className={styles.prev}>
       {previous && (
         <Link to={previous.fields.slug} rel="prev">
-          ← {previous.frontmatter.title}
+          {`← ${previous.frontmatter.title}`}
         </Link>
       )}
     </li>
-    <li>
+    <li className={styles.next}>
       {next && (
         <Link to={next.fields.slug} rel="next">
-          {next.frontmatter.title} →
+          {`${next.frontmatter.title} →`}
         </Link>
       )}
     </li>
@@ -38,22 +38,18 @@ const BlogPostTemplate = ({ location, data, pageContext }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title={post.frontmatter.title} description={description} />
 
-      <section>
+      <section className={styles.head}>
         <h1 className={styles.title}>{post.frontmatter.title}</h1>
         <p className={styles.description}>{description}</p>
-        <p className={styles.date}>{post.frontmatter.date}</p>
-        <div className={styles.tags}>
-          <Tags tags={post.frontmatter.tags} />
-        </div>
-      </section>
+        <DateAndTags date={post.frontmatter.date} tags={post.frontmatter.tags} />
 
-      <section className={styles.hero}>
-        {post.frontmatter.hero && <Image fluid={post.frontmatter.hero.childImageSharp.fluid} />}
+        <div className={styles.hero}>
+          {post.frontmatter.hero && <Image fluid={post.frontmatter.hero.childImageSharp.fluid} />}
+        </div>
       </section>
 
       <div className={styles.article} dangerouslySetInnerHTML={{ __html: post.html }} />
 
-      <hr className={styles.articleEnd} />
       <Bio />
 
       <Pager previous={previous} next={next} />
@@ -77,7 +73,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY/M/D")
         description
         tags
         hero {

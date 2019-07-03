@@ -1,27 +1,36 @@
+@import '../../../styles/media-queries.scss';
+
 .head {
+  position: relative;
+  margin-bottom: 4rem;
+
+  &:after {
+    content: '.　.　.　.　.　.　.';
+    position: absolute;
+    bottom: -2rem;
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+    color: #666;
+  }
 }
 
 .title {
   margin-top: 1.5rem;
   margin-bottom: 0;
   border: none;
+  line-height: 1.25;
+
+  @include mq-sp() {
+    font-size: 1.5rem;
+  }
 }
 
 .description {
-  margin: 0;
+  margin: 0 0 0.25rem;
   color: #999;
   font-size: 0.875rem;
   line-height: 1.625rem;
-}
-
-.date {
-  margin: 0;
-  font-size: 0.875rem;
-  line-height: 1.625rem;
-}
-
-.tags {
-  margin: 0.5rem 0;
 }
 
 .hero {
@@ -29,7 +38,18 @@
 }
 
 .article {
-  margin: 2rem 0;
+  position: relative;
+  margin: 2rem 0 6rem;
+
+  &:after {
+    content: '.　.　.　.　.　.　.';
+    position: absolute;
+    bottom: -3rem;
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+    color: #666;
+  }
 
   & h1,
   & h2,
@@ -40,6 +60,11 @@
   & h1 {
     position: relative;
     margin-top: 6rem;
+    font-size: 1.75rem;
+
+    @include mq-sp() {
+      font-size: 1.5rem;
+    }
 
     &:before {
       content: '.　.　.';
@@ -54,6 +79,23 @@
 
   & h2 {
     margin-top: 2.5rem;
+    font-size: 1.5rem;
+
+    @include mq-sp() {
+      font-size: 1.25rem;
+    }
+  }
+
+  & h3 {
+    font-size: 1.25rem;
+
+    @include mq-sp() {
+      font-size: 1rem;
+    }
+  }
+
+  & code {
+    font-size: 0.875rem;
   }
 }
 
@@ -68,4 +110,16 @@
   list-style: none;
   margin: 0;
   padding: 0 0 1rem;
+
+  & .prev {
+    display: block;
+    flex-grow: 1;
+    text-align: left;
+  }
+
+  & .next {
+    display: block;
+    flex-grow: 1;
+    text-align: right;
+  }
 }

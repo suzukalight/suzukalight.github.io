@@ -1,17 +1,34 @@
+@import '../../../styles/media-queries.scss';
+
 .item {
   display: flex;
   overflow: hidden;
-  margin: 2.5rem 0;
+  min-height: 128px;
+  margin: 1.5rem 0;
+
+  @include mq-sp() {
+    overflow: hidden;
+    min-height: auto;
+    max-height: 96px;
+    margin: 2rem 0;
+  }
 }
 
 .description {
   flex-grow: 1;
+  width: 100%;
 }
 
 .imageWrap {
   flex-shrink: 0;
   width: 128px;
-  height: 128px;
+  max-height: 128px;
+
+  @include mq-sp() {
+    overflow: hidden;
+    width: 80px;
+    max-height: 80px;
+  }
 }
 
 .title {
@@ -22,6 +39,20 @@
 
 .link {
   box-shadow: none;
+  color: black;
+}
+
+.linkText {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+
+  @include mq-sp() {
+    max-height: 1rem;
+    font-size: 1rem;
+  }
 }
 
 .excerpt {
@@ -29,15 +60,10 @@
   color: #999;
   font-size: 0.875rem;
   line-height: 1.33;
-}
 
-.date {
-  display: block;
-  margin: 0 0 0.5rem;
-}
-
-.tags {
-  font-size: 1.25rem;
-  line-height: 1.33;
-
+  @include mq-sp() {
+    overflow: hidden;
+    font-size: 0.75rem;
+    max-height: 2rem;
+  }
 }

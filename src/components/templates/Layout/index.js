@@ -27,11 +27,20 @@ const Header = ({ location, title }) => {
   );
 };
 
+const Footer = () => (
+  <footer className={styles.footer}>
+    <p className={styles.footerCopyright}>© 2019 by suzukalight</p>
+    <p className={styles.footerToHome}>
+      <Link to="/">suzukalight.com</Link>
+    </p>
+  </footer>
+);
+
 const Layout = ({ location, title, children }) => (
   <div className={styles.root}>
     <Header location={location} title={title} />
     <main>{children}</main>
-    <footer>© 2019 by suzukalight</footer>
+    <Footer />
   </div>
 );
 
