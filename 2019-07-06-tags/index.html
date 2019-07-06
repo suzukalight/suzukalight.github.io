@@ -1,0 +1,350 @@
+<!DOCTYPE html><html lang="ja"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:112.5%/1.66 -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:normal;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.66rem;}h1{margin-left:0;margin-right:0;margin-top:2.49rem;padding-bottom:calc(0.415rem - 1px);padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.245rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;border-bottom:1px solid hsla(0,0%,0%,0.07);}h2{margin-left:0;margin-right:0;margin-top:1.66rem;padding-bottom:calc(0.415rem - 1px);padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.415rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;border-bottom:1px solid hsla(0,0%,0%,0.07);}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.66rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.66rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.66rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.66rem;color:hsla(0,0%,0%,0.53);font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.66rem;}ul{margin-left:1.66rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.66rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.66rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.66rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.66rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.66rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.66rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.66rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.66rem;font-size:0.85rem;line-height:1.66rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.66rem;font-size:1rem;line-height:1.66rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.66rem;}blockquote{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:calc(0.83rem - 1px);padding-right:0;padding-top:0;margin-bottom:1.66rem;border-left:4px solid hsla(0,0%,0%,0.13);color:hsla(0,0%,0%,0.53);}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.66rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.66rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.66rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.66rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.66rem;}b{font-weight:600;}strong{font-weight:600;}dt{font-weight:600;}th{font-weight:600;}li{margin-bottom:calc(1.66rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.66rem;margin-bottom:calc(1.66rem / 2);margin-top:calc(1.66rem / 2);}li > ul{margin-left:1.66rem;margin-bottom:calc(1.66rem / 2);margin-top:calc(1.66rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.66rem / 2);}code{font-size:0.85rem;line-height:1.66rem;}kbd{font-size:0.85rem;line-height:1.66rem;}samp{font-size:0.85rem;line-height:1.66rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.10667rem;padding-right:1.10667rem;padding-top:0.83rem;padding-bottom:calc(0.83rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}h3,h4,h5,h6{margin-bottom:0.83rem;margin-top:1.66rem;}ol,ul{margin-left:2.075rem;}li>ol,li>ul{margin-left:2.075rem;}a{color:#4078c0;text-decoration:none;}a:hover,a:active{text-decoration:underline;}a.gatsby-resp-image-link{box-shadow:none;}</style><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png"/><style type="text/css">
+    .gatsby-autolink-headers {
+      float: left;
+      padding-right: 4px;
+      margin-left: -20px;
+    }
+    h1 .gatsby-autolink-headers svg,
+    h2 .gatsby-autolink-headers svg,
+    h3 .gatsby-autolink-headers svg,
+    h4 .gatsby-autolink-headers svg,
+    h5 .gatsby-autolink-headers svg,
+    h6 .gatsby-autolink-headers svg {
+      visibility: hidden;
+    }
+    h1:hover .gatsby-autolink-headers svg,
+    h2:hover .gatsby-autolink-headers svg,
+    h3:hover .gatsby-autolink-headers svg,
+    h4:hover .gatsby-autolink-headers svg,
+    h5:hover .gatsby-autolink-headers svg,
+    h6:hover .gatsby-autolink-headers svg,
+    h1 .gatsby-autolink-headers:focus svg,
+    h2 .gatsby-autolink-headers:focus svg,
+    h3 .gatsby-autolink-headers:focus svg,
+    h4 .gatsby-autolink-headers:focus svg,
+    h5 .gatsby-autolink-headers:focus svg,
+    h6 .gatsby-autolink-headers:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var offset = element.offsetTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 100)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="preconnect dns-prefetch" href="https://www.google-analytics.com"/><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#26a69a"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png"/><link rel="apple-touch-icon" sizes="128x128" href="/icons/icon-128x128.png"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152x152.png"/><meta name="generator" content="Gatsby 2.10.4"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png"/><title data-react-helmet="true">Gatsby にタグ機能を追加 | suzukalight.com</title><meta data-react-helmet="true" name="description" content="mdファイルの先頭にタグ情報を付与・そのタグを記事詳細に表示・タグ別の記事一覧ページを作成・タグ一覧ページを作成"/><meta data-react-helmet="true" property="og:title" content="Gatsby にタグ機能を追加"/><meta data-react-helmet="true" property="og:description" content="mdファイルの先頭にタグ情報を付与・そのタグを記事詳細に表示・タグ別の記事一覧ページを作成・タグ一覧ページを作成"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="suzukalight"/><meta data-react-helmet="true" name="twitter:title" content="Gatsby にタグ機能を追加"/><meta data-react-helmet="true" name="twitter:description" content="mdファイルの先頭にタグ情報を付与・そのタグを記事詳細に表示・タグ別の記事一覧ページを作成・タグ一覧ページを作成"/><style data-href="/styles.e1fd78780d8d7849bc5b.css">.gatsby-highlight-code-line{background-color:#cfc;display:block;margin-right:-1em;margin-left:-1em;padding-right:1em;padding-left:.75em;border-left:.25em solid #9f9}.gatsby-highlight{background-color:#f2f2f2;border-radius:.25em;margin:1em 0;padding:1em;overflow:auto}.gatsby-highlight pre[class*=language-]{background-color:transparent;margin:0;padding:0;overflow:initial;float:left;min-width:100%}.gatsby-highlight pre[class*=language-].line-numbers{padding-left:2.75em}.gatsby-code-title{background:#e2e2e2;color:#999;margin-bottom:-1.5em;padding:.75rem 1rem;font-size:.75em;line-height:.25;font-family:SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-weight:600;border-radius:8px 8px 0 0;display:table}.gatsby-autolink-headers{box-shadow:none;padding:0;margin-left:-24px}code[class*=language-],pre[class*=language-]{color:#657b83;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{background:#073642}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{background:#073642}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border-radius:.3em}:not(pre)>code[class*=language-],pre[class*=language-]{background-color:#fdf6e3}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#93a1a1}.token.punctuation{color:#586e75}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#268bd2}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string,.token.url{color:#2aa198}.token.entity{color:#657b83;background:#eee8d5}.token.atrule,.token.attr-value,.token.keyword{color:#859900}.token.class-name,.token.function{color:#b58900}.token.important,.token.regex,.token.variable{color:#cb4b16}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}pre[class*=language-].line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}pre[class*=language-].line-numbers>code{position:relative;white-space:inherit}.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:0;font-size:100%;left:-3.8em;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.index-module--tags--1lDan{display:flex;list-style-type:none;width:100%;height:24px;margin:0}.index-module--link--3e93o{box-shadow:none}.index-module--tag--1WmZV{height:24px;margin-right:8px;padding:6px 8px;font-size:12px;line-height:1;background:#f2f2f2;border-radius:3px}.index-module--root--4Yjlw{display:flex}.index-module--date--2vF2I{display:block;flex-shrink:0;margin:0 0 .5rem}.index-module--date--2vF2I:after{content:"\30FB";margin:0 .25rem;color:#ccc}.index-module--tags--2JwdJ{flex-grow:1;overflow:hidden;font-size:1.25rem;line-height:1.33}.index-module--root--33Xnz{display:flex;margin-bottom:3rem}.index-module--heroImageWrap--17JfS{margin-right:.75rem;margin-bottom:0;min-width:50px;border-radius:100%}.index-module--heroImage--2WglC{border-radius:50%}.Posts-module--item--19WCI{display:flex;overflow:hidden;min-height:128px;padding:1rem 0}@media screen and (max-width:768px){.Posts-module--item--19WCI{overflow:hidden;min-height:auto;max-height:96px;margin:2rem 0}}.Posts-module--description--2Vhkk{flex-grow:1;width:100%}.Posts-module--imageWrap--3cw8J{flex-shrink:0;width:128px;max-height:128px}@media screen and (max-width:768px){.Posts-module--imageWrap--3cw8J{overflow:hidden;width:80px;max-height:80px}}.Posts-module--title--2xMns{margin:0;font-size:1.25rem;line-height:1.2}.Posts-module--link--m7Ug5:hover .Posts-module--title--2xMns{text-decoration:underline}.Posts-module--link--m7Ug5{box-shadow:none;color:#000;cursor:pointer}.Posts-module--link--m7Ug5:hover{text-decoration:none}.Posts-module--linkText--1aGQb{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width:100%}@media screen and (max-width:768px){.Posts-module--linkText--1aGQb{max-height:1rem;font-size:1rem}}.Posts-module--excerpt--1uOSQ{margin:.5rem 0;color:#999;font-size:.875rem;line-height:1.33}@media screen and (max-width:768px){.Posts-module--excerpt--1uOSQ{overflow:hidden;font-size:.75rem;max-height:2rem}}.index-module--root--1LDKV{margin-left:auto;margin-right:auto;max-width:40rem;padding:2.5rem 1.25rem}@media screen and (max-width:768px){.index-module--root--1LDKV{padding:1rem .75rem}}.index-module--headerBig--32uls{font-size:3rem;line-height:3.25rem;margin-bottom:2rem;margin-top:0}@media screen and (max-width:768px){.index-module--headerBig--32uls{font-size:2rem}}.index-module--headerSmall--18fsu{margin-top:0}.index-module--siteName--kV5xG{box-shadow:none;text-decoration:none;color:inherit}.index-module--footer--J9MCU{display:flex;margin-top:2rem}.index-module--footerCopyright--euUek{flex-grow:1}.index-module--footerToHome--3vXc2{flex-grow:1;text-align:right}.index-module--head--3Xh4_{position:relative;margin-bottom:4rem}.index-module--head--3Xh4_:after{content:".\3000.\3000.\3000.\3000.\3000.\3000.";position:absolute;bottom:-2rem;width:100%;font-size:1rem;text-align:center;color:#666}.index-module--title--sgt-V{margin-top:1.5rem;margin-bottom:0;border:none;line-height:1.25}@media screen and (max-width:768px){.index-module--title--sgt-V{font-size:1.5rem}}.index-module--description--Ij7ws{margin:0 0 .25rem;color:#999;font-size:.875rem;line-height:1.625rem}.index-module--hero--3Tsgl{margin:2rem 0}.index-module--article--KEitM{position:relative;margin:2rem 0 6rem}.index-module--article--KEitM:after{content:".\3000.\3000.\3000.\3000.\3000.\3000.";position:absolute;bottom:-3rem;width:100%;font-size:1rem;text-align:center;color:#666}.index-module--article--KEitM h1,.index-module--article--KEitM h2,.index-module--article--KEitM h3{border:0}.index-module--article--KEitM h1{position:relative;margin-top:6rem;font-size:1.75rem}@media screen and (max-width:768px){.index-module--article--KEitM h1{font-size:1.5rem}}.index-module--article--KEitM h1:before{content:".\3000.\3000.";position:absolute;top:-4rem;width:100%;font-size:1rem;text-align:center;color:#666}.index-module--article--KEitM h2{margin-top:2.5rem;font-size:1.5rem}@media screen and (max-width:768px){.index-module--article--KEitM h2{font-size:1.25rem}}.index-module--article--KEitM h3{font-size:1.25rem}@media screen and (max-width:768px){.index-module--article--KEitM h3{font-size:1rem}}.index-module--article--KEitM code{font-size:.875rem}.index-module--articleEnd--3i-Le{margin:2rem 0}.index-module--pager--10Q-4{display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;margin:0;padding:0 0 1rem}.index-module--pager--10Q-4 .index-module--prev--1ZpbA{display:block;flex-grow:1;text-align:left}.index-module--pager--10Q-4 .index-module--next--kevA4{display:block;flex-grow:1;text-align:right}</style><link as="script" rel="preload" href="/styles-26cb2843a212da5a0f3d.js"/><link as="script" rel="preload" href="/component---src-components-templates-blog-post-index-js-7aa9284a1ca41fd68dc0.js"/><link as="script" rel="preload" href="/2-9ba47594486dd4c6e58e.js"/><link as="script" rel="preload" href="/1-580f72e603f6a062e8ff.js"/><link as="script" rel="preload" href="/app-bf8678231e8639352f4d.js"/><link as="script" rel="preload" href="/webpack-runtime-0baf9e476863cdff99a0.js"/><link as="fetch" rel="preload" href="/page-data/2019-07-06-tags/page-data.json" crossorigin="use-credentials"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><div class="index-module--root--1LDKV"><header><h3 class="index-module--headerSmall--18fsu"><a class="index-module--siteName--kV5xG" href="/">suzukalight.com</a></h3></header><main><section class="index-module--head--3Xh4_"><h1 class="index-module--title--sgt-V">Gatsby にタグ機能を追加</h1><p class="index-module--description--Ij7ws">mdファイルの先頭にタグ情報を付与・そのタグを記事詳細に表示・タグ別の記事一覧ページを作成・タグ一覧ページを作成</p><div class="index-module--root--4Yjlw"><small class="index-module--date--2vF2I">2019/7/6</small><ul class="index-module--tags--1lDan"><a class="index-module--link--3e93o" href="/tags/gatsby/"><li class="index-module--tag--1WmZV">gatsby</li></a><a class="index-module--link--3e93o" href="/tags/tag/"><li class="index-module--tag--1WmZV">tag</li></a></ul></div><div class="index-module--hero--3Tsgl"></div></section><div class="index-module--article--KEitM"><p>↑この記事のタイトル部分に表示されているような「タグ機能」を実装する方法について解説します。</p>
+<h1 id="記事にタグカラムを追加"><a href="#%E8%A8%98%E4%BA%8B%E3%81%AB%E3%82%BF%E3%82%B0%E3%82%AB%E3%83%A9%E3%83%A0%E3%82%92%E8%BF%BD%E5%8A%A0" aria-label="記事にタグカラムを追加 permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>記事にタグカラムを追加</h1>
+<p>タグを指定するカラムを、mdファイルの先頭に追加します。前回トップ画像情報を追加したときと同じ手法です。</p>
+<div class="gatsby-code-title">index.md</div>
+<div class="gatsby-highlight has-highlighted-lines" data-language="yaml"><pre class="language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token punctuation">...</span>
+<span class="gatsby-highlight-code-line"><span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'gatsby'</span><span class="token punctuation">,</span> <span class="token string">'tag'</span><span class="token punctuation">]</span></span><span class="token punctuation">---</span></code></pre></div>
+<p>タグは複数つけられるため、配列で指定できるようにしています。タグの名称は予め登録しておく必要はなく、そのときに自由に記述してOKです。</p>
+<h1 id="記事詳細にタグを表示"><a href="#%E8%A8%98%E4%BA%8B%E8%A9%B3%E7%B4%B0%E3%81%AB%E3%82%BF%E3%82%B0%E3%82%92%E8%A1%A8%E7%A4%BA" aria-label="記事詳細にタグを表示 permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>記事詳細にタグを表示</h1>
+<h3 id="queryの追加"><a href="#query%E3%81%AE%E8%BF%BD%E5%8A%A0" aria-label="queryの追加 permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>queryの追加</h3>
+<p>markdownからタグを抽出します；</p>
+<div class="gatsby-code-title">BlogPost/index.js</div>
+<div class="gatsby-highlight has-highlighted-lines" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">const</span> pageQuery <span class="token operator">=</span> graphql`
+  query <span class="token punctuation">{</span>
+    <span class="token operator">...</span>
+    frontmatter <span class="token punctuation">{</span>
+      <span class="token function">date</span><span class="token punctuation">(</span>formatString<span class="token punctuation">:</span> <span class="token string">"MMMM DD, YYYY"</span><span class="token punctuation">)</span>
+      <span class="token operator">...</span>
+<span class="gatsby-highlight-code-line">      tags</span></code></pre></div>
+<h3 id="component"><a href="#component" aria-label="component permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>component</h3>
+<p>このタグ情報を表示するコンポーネントを作成します；</p>
+<div class="gatsby-code-title">Tags/index.js</div>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Link <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'gatsby'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> kebabCase <span class="token keyword">from</span> <span class="token string">'lodash/kebabCase'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> styles <span class="token keyword">from</span> <span class="token string">'./index.module.scss'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">Tag</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> tag <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>Link className<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>link<span class="token punctuation">}</span> to<span class="token operator">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token string">`/tags/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">kebabCase</span><span class="token punctuation">(</span>tag<span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/`</span></span><span class="token punctuation">}</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>li className<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>tag<span class="token punctuation">}</span><span class="token operator">></span><span class="token punctuation">{</span>tag<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">></span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">Tags</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> tags <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>ul className<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>tags<span class="token punctuation">}</span><span class="token operator">></span>
+    <span class="token punctuation">{</span><span class="token punctuation">(</span>tags <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">tag</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>Tag key<span class="token operator">=</span><span class="token punctuation">{</span>tag<span class="token punctuation">}</span> tag<span class="token operator">=</span><span class="token punctuation">{</span>tag<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">></span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Tags<span class="token punctuation">;</span></code></pre></div>
+<p>記事詳細テンプレートで、このTagコンポーネントをimportし利用すると、下記のように表示されて、タグ表示は完了です。</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/static/1df2308f4c16037440ec4ef4368bc3dd/f4334/blogpost.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 461px;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 32.32104121475054%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA/ElEQVQY03VQu1LDMBDU/38DmB5QG+IqaRgnpkjMTKiAgiKNLfT0Q8j2olMRUuCb2dHtPffE3k4nbLcbPBc7bOK7Kwp8frzjcKxQ7vcoyxe8VhXy9RpZdoub7A5PqxXyPAd/5OCc4/6Bo+97kLFpHOG9xzRN8IOHtRaubdFGDEOfOPlUM89zagohoOu6BKUUtNZwzkFJCUbEGJOaCMTrur5w8S3QNE2qoQGUl1LFZQPayClu4lLKOWfBSEFSFTeMUS0VaK0uCkgZDfmJqmgI+YQlY0pJCCFikUmnfJ0FhHLQxqGWdrGRzv8PLDnTXyCEMSmlP6V3qfF66LX9AqoryB64b3fEAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="タグ表示"
+        title=""
+        src="/static/1df2308f4c16037440ec4ef4368bc3dd/f4334/blogpost.png"
+        srcset="/static/1df2308f4c16037440ec4ef4368bc3dd/cf440/blogpost.png 148w,
+/static/1df2308f4c16037440ec4ef4368bc3dd/d2d38/blogpost.png 295w,
+/static/1df2308f4c16037440ec4ef4368bc3dd/f4334/blogpost.png 461w"
+        sizes="(max-width: 461px) 100vw, 461px"
+      />
+  </span>
+  </a></p>
+<h1 id="タグ一覧ページを追加"><a href="#%E3%82%BF%E3%82%B0%E4%B8%80%E8%A6%A7%E3%83%9A%E3%83%BC%E3%82%B8%E3%82%92%E8%BF%BD%E5%8A%A0" aria-label="タグ一覧ページを追加 permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>タグ一覧ページを追加</h1>
+<p>タグをクリックすると、そのタグが紐付けられている記事一覧を表示するようなページを作成します。</p>
+<ol>
+<li><code class="language-text">gatsby-node.js</code>: 全mdファイルからタグを抽出して分類し、各タグごとの記事一覧ページであるHTMLを <code class="language-text">/tags/{tagName}</code> のURLで出力する処理を書く</li>
+<li><code class="language-text">templates/Tags/index.js</code>: <code class="language-text">/tags/{tagName}</code> ページのテンプレートを作成する</li>
+</ol>
+<h2 id="gatsby-nodejs"><a href="#gatsby-nodejs" aria-label="gatsby nodejs permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>gatsby-node.js</h2>
+<p>記事情報を取得するqueryのfrontmatterにtagsを追加し、mdファイルからタグ情報を取得しておきます；</p>
+<div class="gatsby-code-title">gatsby-node.js</div>
+<div class="gatsby-highlight has-highlighted-lines" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">graphql</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`
+{
+  allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
+    edges {
+      node {
+        frontmatter {
+          ...
+<span class="gatsby-highlight-code-line">          tags</span>        }
+`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>記事情報を取得できたら、そこからタグ情報を抽出し、重複を取り除きます。得られたタグ配列を使用して、createPageでタグ毎のページを出力させます；</p>
+<div class="gatsby-code-title">gatsby-node.js</div>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">  <span class="token keyword">const</span> posts <span class="token operator">=</span> result<span class="token punctuation">.</span>data<span class="token punctuation">.</span>allMarkdownRemark<span class="token punctuation">.</span>edges<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> tags <span class="token operator">=</span> posts<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">tags<span class="token punctuation">,</span> edge</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> edgeTags <span class="token operator">=</span> <span class="token keyword">get</span><span class="token punctuation">(</span>edge<span class="token punctuation">,</span> <span class="token string">'node.frontmatter.tags'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> edgeTags <span class="token operator">?</span> tags<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>edge<span class="token punctuation">.</span>node<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>tags<span class="token punctuation">)</span> <span class="token punctuation">:</span> tags<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> tagTemplate <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`./src/components/templates/Tags/index.js`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">[</span><span class="token operator">...</span>new <span class="token class-name">Set</span><span class="token punctuation">(</span>tags<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">tag</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token function">createPage</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      path<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`/tags/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">kebabCase</span><span class="token punctuation">(</span>tag<span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/`</span></span><span class="token punctuation">,</span>
+      component<span class="token punctuation">:</span> tagTemplate<span class="token punctuation">,</span>
+      context<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        tag<span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<h2 id="templatestagsindexjs"><a href="#templatestagsindexjs" aria-label="templatestagsindexjs permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>templates/Tags/index.js</h2>
+<p>createPageで生成するタグページのテンプレートです。</p>
+<h3 id="query"><a href="#query" aria-label="query permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>query</h3>
+<p><code class="language-text">gatsby-node.js</code>から受け取った<code class="language-text">context.tag</code>をqueryのfilter条件に利用することで、そのタグが紐ついているmdファイルのみを抽出することができるようになります；</p>
+<div class="gatsby-code-title">templates/Tags/index.js</div>
+<div class="gatsby-highlight has-highlighted-lines" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">const</span> pageQuery <span class="token operator">=</span> graphql<span class="token template-string"><span class="token string">`
+<span class="gatsby-highlight-code-line">  query($tag: String) {</span>    site {
+      ...
+    }
+    allMarkdownRemark(
+      limit: 2000
+      sort: { fields: [frontmatter___date], order: DESC }
+<span class="gatsby-highlight-code-line">      filter: { frontmatter: { tags: { in: [$tag] } } }</span>    ) {
+      ...
+    }
+  }
+`</span></span><span class="token punctuation">;</span></code></pre></div>
+<h3 id="component-1"><a href="#component-1" aria-label="component 1 permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>component</h3>
+<p>queryで取得した記事情報をもとに、記事一覧を表示します；</p>
+<div class="gatsby-code-title">templates/Tags/index.js</div>
+<div class="gatsby-highlight has-highlighted-lines" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">Tags</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> location<span class="token punctuation">,</span> pageContext<span class="token punctuation">,</span> data <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> tag <span class="token punctuation">}</span> <span class="token operator">=</span> pageContext<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> edges<span class="token punctuation">,</span> totalCount <span class="token punctuation">}</span> <span class="token operator">=</span> data<span class="token punctuation">.</span>allMarkdownRemark<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> tagHeader <span class="token operator">=</span> <span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>totalCount<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> post</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>totalCount <span class="token operator">===</span> <span class="token number">1</span> <span class="token operator">?</span> <span class="token string">''</span> <span class="token punctuation">:</span> <span class="token string">'s'</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> tagged with "</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>tag<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"`</span></span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> siteTitle <span class="token operator">=</span> data<span class="token punctuation">.</span>site<span class="token punctuation">.</span>siteMetadata<span class="token punctuation">.</span>title<span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>Layout location<span class="token operator">=</span><span class="token punctuation">{</span>location<span class="token punctuation">}</span> title<span class="token operator">=</span><span class="token punctuation">{</span>siteTitle<span class="token punctuation">}</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>Seo title<span class="token operator">=</span><span class="token punctuation">{</span>tagHeader<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>h1<span class="token operator">></span><span class="token punctuation">{</span>tagHeader<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
+      <span class="token operator">&lt;</span>ul<span class="token operator">></span>
+<span class="gatsby-highlight-code-line">        <span class="token punctuation">{</span>edges<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> node<span class="token punctuation">:</span> <span class="token punctuation">{</span> fields<span class="token punctuation">:</span> <span class="token punctuation">{</span> slug <span class="token punctuation">}</span><span class="token punctuation">,</span> frontmatter<span class="token punctuation">:</span> <span class="token punctuation">{</span> title <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span></span><span class="gatsby-highlight-code-line">          <span class="token operator">&lt;</span>li key<span class="token operator">=</span><span class="token punctuation">{</span>slug<span class="token punctuation">}</span><span class="token operator">></span></span><span class="gatsby-highlight-code-line">            <span class="token operator">&lt;</span>Link to<span class="token operator">=</span><span class="token punctuation">{</span>slug<span class="token punctuation">}</span><span class="token operator">></span><span class="token punctuation">{</span>title<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">></span></span><span class="gatsby-highlight-code-line">          <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span></span><span class="gatsby-highlight-code-line">        <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span>      <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">></span>
+      <span class="token operator">&lt;</span>p<span class="token operator">></span>
+        <span class="token operator">&lt;</span>Link to<span class="token operator">=</span><span class="token string">"/tags"</span><span class="token operator">></span>All tags<span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>Layout<span class="token operator">></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
+<p>このようなページが作成できました；</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/static/a9d5a16e8db5305de375ab45d7a4dbc8/4f3bc/tagged-articles.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 50.58139534883721%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABK0lEQVQoz42SiW6DQAxE+f//SwiNIC2gcpUrLOceU3tp1SLRgiWzp4fn0TpZmuLxeEXg+3gLQ/hBAM+7wXVdhLT2bi58P0CWZbR3xeVyRRRGUEqDwxizSUcIYS/neYayLJEkCe73F8RxjKqqaD9H07So6Ix/kLwn9t6emBWkL2Zp0I0Ki1rHspM25QqxG1y8F46SEl0/oX5OaMWMpOzx7Gc03YS4EMjrAcMsWQJa6x+avwiN0RgnacX6cSGxBYLGhte0z/NFbv36LxylFMQwoyJCJhtI5KMdkVbDpvh7fiTqaK1WQhJjGhYcF2XpmHb5ZeQR3SpIhOxh0Yy2ZfayJMKaPOwGar2bEeUCRTudJdT2TXFqbewov9Ku6ZwppTrno8O+MR0XH8WZlj8Bm/sNV80A6M8AAAAASUVORK5CYII='); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="タグ表示"
+        title=""
+        src="/static/a9d5a16e8db5305de375ab45d7a4dbc8/b9e4f/tagged-articles.png"
+        srcset="/static/a9d5a16e8db5305de375ab45d7a4dbc8/cf440/tagged-articles.png 148w,
+/static/a9d5a16e8db5305de375ab45d7a4dbc8/d2d38/tagged-articles.png 295w,
+/static/a9d5a16e8db5305de375ab45d7a4dbc8/b9e4f/tagged-articles.png 590w,
+/static/a9d5a16e8db5305de375ab45d7a4dbc8/4f3bc/tagged-articles.png 688w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+  </span>
+  </a></p>
+<h1 id="タグ一覧ページ"><a href="#%E3%82%BF%E3%82%B0%E4%B8%80%E8%A6%A7%E3%83%9A%E3%83%BC%E3%82%B8" aria-label="タグ一覧ページ permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>タグ一覧ページ</h1>
+<p>すべてのタグを表示できるページも用意しましょう。<code class="language-text">/tags</code>で表示できるようにします。</p>
+<h2 id="pagestagsjs"><a href="#pagestagsjs" aria-label="pagestagsjs permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pages/tags.js</h2>
+<h3 id="query-1"><a href="#query-1" aria-label="query 1 permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>query</h3>
+<p><code class="language-text">group</code>を利用することで、tagでgroupbyをかけた結果を得ることができます。totalCountを受け取って、記事の総数も表示できるようにしましょう；
+<a href="https://www.gatsbyjs.org/docs/graphql-reference/#group">https://www.gatsbyjs.org/docs/graphql-reference/#group</a></p>
+<div class="gatsby-code-title">pages/tags.js</div>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">const</span> pageQuery <span class="token operator">=</span> graphql<span class="token template-string"><span class="token string">`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(limit: 2000) {
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
+      }
+    }
+  }
+`</span></span><span class="token punctuation">;</span></code></pre></div>
+<h3 id="component-2"><a href="#component-2" aria-label="component 2 permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>component</h3>
+<p>groupbyした結果をもとに、タグ一覧を表示します；</p>
+<div class="gatsby-code-title">pages/tags.js</div>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">TagsPage</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>
+  location<span class="token punctuation">,</span>
+  data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    allMarkdownRemark<span class="token punctuation">:</span> <span class="token punctuation">{</span> group <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    site<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      siteMetadata<span class="token punctuation">:</span> <span class="token punctuation">{</span> title <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>Layout location<span class="token operator">=</span><span class="token punctuation">{</span>location<span class="token punctuation">}</span> title<span class="token operator">=</span><span class="token punctuation">{</span>title<span class="token punctuation">}</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>Seo title<span class="token operator">=</span><span class="token string">"Tags"</span> <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>h1<span class="token operator">></span>Tags<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
+    <span class="token operator">&lt;</span>ul<span class="token operator">></span>
+      <span class="token punctuation">{</span>group<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">tag</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>li key<span class="token operator">=</span><span class="token punctuation">{</span>tag<span class="token punctuation">.</span>fieldValue<span class="token punctuation">}</span><span class="token operator">></span>
+          <span class="token operator">&lt;</span>Link to<span class="token operator">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token string">`/tags/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">kebabCase</span><span class="token punctuation">(</span>tag<span class="token punctuation">.</span>fieldValue<span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/`</span></span><span class="token punctuation">}</span><span class="token operator">></span>
+            <span class="token punctuation">{</span>tag<span class="token punctuation">.</span>fieldValue<span class="token punctuation">}</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>tag<span class="token punctuation">.</span>totalCount<span class="token punctuation">}</span><span class="token punctuation">)</span>
+          <span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
+      <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>Layout<span class="token operator">></span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>このようなページが作成できました；</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/static/b2c18dfbc5a376959f1f31e37414a121/672f7/tags-page.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 43.67816091954023%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAiklEQVQoz6WQsQ7DIAxE/f8/l66NmrXZqjbBQDBwxWSIshqkw0JIT89H83PGe11RK1raNXjoMU1Ylld/KHA0pKAogAsJImUYTDsHfLaIrzsg+QKaV2YfO3Dj1KcmZ7spcTjtnE/48QFuq5dSzabdUIG7Atv0rdBhoJrFlG8f1h7Jh7M/DnLrwgr9AyRmyA3oRz0KAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="タグ表示"
+        title=""
+        src="/static/b2c18dfbc5a376959f1f31e37414a121/b9e4f/tags-page.png"
+        srcset="/static/b2c18dfbc5a376959f1f31e37414a121/cf440/tags-page.png 148w,
+/static/b2c18dfbc5a376959f1f31e37414a121/d2d38/tags-page.png 295w,
+/static/b2c18dfbc5a376959f1f31e37414a121/b9e4f/tags-page.png 590w,
+/static/b2c18dfbc5a376959f1f31e37414a121/672f7/tags-page.png 609w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+  </span>
+  </a></p>
+<h1 id="記事一覧に表示"><a href="#%E8%A8%98%E4%BA%8B%E4%B8%80%E8%A6%A7%E3%81%AB%E8%A1%A8%E7%A4%BA" aria-label="記事一覧に表示 permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>記事一覧に表示</h1>
+<p><code class="language-text">pages/index.js</code>のqueryにtagsを加えれば、記事一覧にもタグを表示できます。手法は同じのため、詳細は割愛します。</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/static/f3ad58d277458704d4b1f7ec4b445d25/0336a/index.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 42.368045649072755%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABKklEQVQoz41SXY+CMBDs//9DvqiJ93A+n5EXFcQzKohSoBVaPpzb7QXjabw4yWQ2YTvbnSKiwwGe5yEMQ0ynn/iYTKjewPd9DAYDjIZDjMZjJKcTGF3X4Xq9/iGjV6G1QpIkiOMYaZo6xnHkNM8LYkbMIaVEURRQSkFrjbIsUTfNzexmeLlcXJNSGmdJhwuFU/qr93i81SuKfgVGZVua2qEkJXma/g4ErxRFEY608mG/RyZThOs1ZrMv2Lp+ecs+T00bGmNgrUVN/eJMYS+XK6yIezJk0yBYYz73XG6clzEWDeXlfB4eYkv9O3pY7uX4RFVVruBDZ6luQTNqmlpVxpm1bfscAWkUH7EIAmx3O8q9gOBGZkcfjW3+ze3+Zn3Nf8PCDxBsviGzDD/tyGm5jxKp4AAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="タグ表示"
+        title=""
+        src="/static/f3ad58d277458704d4b1f7ec4b445d25/b9e4f/index.png"
+        srcset="/static/f3ad58d277458704d4b1f7ec4b445d25/cf440/index.png 148w,
+/static/f3ad58d277458704d4b1f7ec4b445d25/d2d38/index.png 295w,
+/static/f3ad58d277458704d4b1f7ec4b445d25/b9e4f/index.png 590w,
+/static/f3ad58d277458704d4b1f7ec4b445d25/0336a/index.png 701w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+  </span>
+  </a></p>
+<h1 id="references"><a href="#references" aria-label="references permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>references</h1>
+<ul>
+<li><a href="https://www.gatsbyjs.org/docs/adding-tags-and-categories-to-blog-posts/">Creating Tags Pages for Blog Posts | GatsbyJS</a></li>
+</ul></div><div class="index-module--root--33Xnz"><div class=" gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:50px;height:50px;margin-right:0.83rem;margin-bottom:0;min-width:50px;border-radius:100%"><img src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQADAAAAAAAAAAAAAAAAAAQBAwX/xAAYAQADAQEAAAAAAAAAAAAAAAABAgMABP/aAAwDAQACEAMQAAAB6mEaVsahEEwnSGp//8QAGhABAQADAQEAAAAAAAAAAAAAAQIAAxIRMv/aAAgBAQABBQJl2R8hHWd0Ze32os5LrGl2r4//xAAZEQEAAwEBAAAAAAAAAAAAAAABAAIRECL/2gAIAQMBAT8Br6ci2GZjz//EABgRAAIDAAAAAAAAAAAAAAAAAAABEBEh/9oACAECAQE/AXhSn//EABsQAAEFAQEAAAAAAAAAAAAAAAABESExMhBx/9oACAEBAAY/ApoYczCIJ4bYsnn/xAAbEAEAAwEBAQEAAAAAAAAAAAABABEhUTFBYf/aAAgBAQABPyHIB47DPZR5Kd0L/JqLUG+z6wdbFiwuQ1N88lxVqRqCf//aAAwDAQACAAMAAAAQ/wDffv/EABoRAAICAwAAAAAAAAAAAAAAAAABESFBsfD/2gAIAQMBAT8QxND4lohSugR//8QAGBEBAQEBAQAAAAAAAAAAAAAAAREAECH/2gAIAQIBAT8Q8LhC4aN5/8QAHBABAQACAwEBAAAAAAAAAAAAAREAITFBYXHw/9oACAEBAAE/EKhQKJ2Ma06MknOm/OsGjt+2VAc52acHpMc8QIEZ6ZKuUUe4ECItbky0oVXv9cTLDnZc/9k=" alt="suzukalight" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms;border-radius:50%"/><noscript><picture><source srcset="/static/e6b234d5abb5aa087bcf203d357ad7a3/9b664/tarako.jpg 1x,
+/static/e6b234d5abb5aa087bcf203d357ad7a3/06a10/tarako.jpg 1.5x,
+/static/e6b234d5abb5aa087bcf203d357ad7a3/f1b5a/tarako.jpg 2x" /><img loading="lazy" width="50" height="50" srcset="/static/e6b234d5abb5aa087bcf203d357ad7a3/9b664/tarako.jpg 1x,
+/static/e6b234d5abb5aa087bcf203d357ad7a3/06a10/tarako.jpg 1.5x,
+/static/e6b234d5abb5aa087bcf203d357ad7a3/f1b5a/tarako.jpg 2x" src="/static/e6b234d5abb5aa087bcf203d357ad7a3/9b664/tarako.jpg" alt="suzukalight" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><p>Written by <strong>suzukalight</strong>.<br/><a href="https://github.com/suzukalight">GitHub</a> <a href="https://twitter.com/suzukalight">Twitter</a></p></div><ul class="index-module--pager--10Q-4"><li class="index-module--prev--1ZpbA"><a rel="prev" href="/2019-07-02-hero-image/">← Gatsby で記事のトップ画像を設定</a></li><li class="index-module--next--kevA4"></li></ul></main><footer class="index-module--footer--J9MCU"><p class="index-module--footerCopyright--euUek">© 2019 by suzukalight</p><p class="index-module--footerToHome--3vXc2"><a href="/">suzukalight.com</a></p></footer></div></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'undefined', 'auto', {});
+      
+      
+      
+      }
+      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2019-07-06-tags/";window.webpackCompilationHash="d9aaaddf0b8eeddfe141";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-bf8678231e8639352f4d.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-357fc53cc6cf4a740e10.js"],"component---src-components-templates-blog-post-index-js":["/component---src-components-templates-blog-post-index-js-7aa9284a1ca41fd68dc0.js"],"component---src-components-templates-tags-index-js":["/component---src-components-templates-tags-index-js-2d6f4928fec87f8192ec.js"],"component---src-pages-404-js":["/component---src-pages-404-js-a6bad7bfd3d39a82c127.js"],"component---src-pages-index-js":["/component---src-pages-index-js-46471d69a3ec498c7893.js"],"component---src-pages-tags-js":["/component---src-pages-tags-js-39bea66f9a2fe89e9aeb.js"]};/*]]>*/</script><script src="/webpack-runtime-0baf9e476863cdff99a0.js" async=""></script><script src="/app-bf8678231e8639352f4d.js" async=""></script><script src="/1-580f72e603f6a062e8ff.js" async=""></script><script src="/2-9ba47594486dd4c6e58e.js" async=""></script><script src="/component---src-components-templates-blog-post-index-js-7aa9284a1ca41fd68dc0.js" async=""></script><script src="/styles-26cb2843a212da5a0f3d.js" async=""></script></body></html>
