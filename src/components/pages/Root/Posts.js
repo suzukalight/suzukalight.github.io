@@ -9,25 +9,25 @@ import styles from './Posts.module.scss';
 const PostItem = ({ node, title }) => (
   <div className={styles.item} key={node.fields.slug}>
     <div className={styles.description}>
-      <h3 className={styles.title}>
-        <Link className={styles.link} to={node.fields.slug}>
+      <Link className={styles.link} to={node.fields.slug}>
+        <h3 className={styles.title}>
           <span className={styles.linkText}>{title}</span>
-        </Link>
-      </h3>
+        </h3>
 
-      <p
-        className={styles.excerpt}
-        dangerouslySetInnerHTML={{
-          __html: node.frontmatter.description || node.excerpt,
-        }}
-      />
+        <p
+          className={styles.excerpt}
+          dangerouslySetInnerHTML={{
+            __html: node.frontmatter.description || node.excerpt,
+          }}
+        />
+      </Link>
 
       <DateAndTags date={node.frontmatter.date} tags={node.frontmatter.tags} />
     </div>
 
-    <div className={styles.imageWrap}>
+    <Link className={styles.imageWrap} to={node.fields.slug}>
       {node.frontmatter.hero && <Image fixed={node.frontmatter.hero.childImageSharp.fixed} />}
-    </div>
+    </Link>
   </div>
 );
 

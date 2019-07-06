@@ -4,7 +4,7 @@
   display: flex;
   overflow: hidden;
   min-height: 128px;
-  margin: 1.5rem 0;
+  padding: 1rem 0;
 
   @include mq-sp() {
     overflow: hidden;
@@ -12,6 +12,10 @@
     max-height: 96px;
     margin: 2rem 0;
   }
+
+  // &:not(:last-child) {
+  //   border-bottom: 1px dashed #ccc;
+  // }
 }
 
 .description {
@@ -32,14 +36,23 @@
 }
 
 .title {
-  margin: 0 0 0.25rem;
+  margin: 0;
   font-size: 1.25rem;
-  line-height: 1;
+  line-height: 1.2;
+
+  .link:hover & {
+    text-decoration: underline;
+  }
 }
 
 .link {
   box-shadow: none;
   color: black;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .linkText {
