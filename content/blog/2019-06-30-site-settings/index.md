@@ -1,7 +1,7 @@
 ---
 title: Gatsby のサイトカスタマイズ
 date: "2019-06-30T00:08:00"
-description: 'GatsbyでPWA対応・OGP対応・syntaxHighlight・テーマ変更などを行う手順'
+description: 'PWA対応・OGP対応・テーマ変更・目次表示・syntaxHighlightなど'
 tags: ['gatsby', 'pwa']
 ---
 
@@ -22,6 +22,39 @@ Gatsbyのプラグインを利用することで、ブログに必要な数々�
 
 starter に付属のコンポーネント `<SEO />` を利用すると、多くの項目について、自動でOGPを設定してくれるため、こちらから追加で何かをする必要はほとんどなかった。
 
+# テーマ変更
+
+- [Add typography theme of github](https://github.com/suzukalight/suzukalight.github.io/commit/976447b1a6b7cdeb3a6fd60b6ba8663f8174321b)
+
+starterは [typography.js](https://kyleamathews.github.io/typography.js/) で文字のスタイリングを行っている。typographyjsのテーマにGitHub版の `typography-theme-github` があったので、これを適用した。
+
+# 目次の追加
+
+- [getting-table-of-contents](https://www.gatsbyjs.org/packages/gatsby-transformer-remark/#getting-table-of-contents)
+
+queryに`tableOfContents`を追加すると、目次情報のHTMLを取得することができる；
+
+```javascript{5}:title=templates/BlogPost/index.js
+export const pageQuery = graphql`
+  query BlogPostBySlug($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      html
+      tableOfContents
+`;
+```
+
+あとはこれをマークアップしつつ表示すればOK；
+
+```javascript
+<section className={styles.toc}>
+  <h1 className={styles.tocHeader}>目次</h1>
+  <div
+    className={styles.tocBody}
+    dangerouslySetInnerHTML={{ __html: post.tableOfContents }}
+  />
+</section>
+```
+
 # syntax-highlighter
 
 - [Add syntax highligher](https://github.com/suzukalight/suzukalight.github.io/commit/ed08bb35190bbb2bea121af2a0cedfddff6388a8)
@@ -37,10 +70,3 @@ starter に付属のコンポーネント `<SEO />` を利用すると、多く�
 - [Add gatsby-remark-code-titles](https://github.com/suzukalight/suzukalight.github.io/commit/410289641fb4da6aa9f5e107f2b8b243a6154f16)
 
 `gatsby-remark-autolink-headers` を追加すると、Markdownのheading要素に対して、鎖マークを付与し、アンカーリンクを提供できるようになる。
-
-# テーマ変更
-
-- [Add typography theme of github](https://github.com/suzukalight/suzukalight.github.io/commit/976447b1a6b7cdeb3a6fd60b6ba8663f8174321b)
-
-starterは [typography.js](https://kyleamathews.github.io/typography.js/) で文字のスタイリングを行っている。typographyjsのテーマにGitHub版の `typography-theme-github` があったので、これを適用した。
-

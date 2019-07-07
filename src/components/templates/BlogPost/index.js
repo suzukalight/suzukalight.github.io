@@ -48,6 +48,14 @@ const BlogPostTemplate = ({ location, data, pageContext }) => {
         </div>
       </section>
 
+      <section className={styles.toc}>
+        <h1 className={styles.tocHeader}>目次</h1>
+        <div
+          className={styles.tocBody}
+          dangerouslySetInnerHTML={{ __html: post.tableOfContents }}
+        />
+      </section>
+
       <div className={styles.article} dangerouslySetInnerHTML={{ __html: post.html }} />
 
       <Bio />
@@ -71,6 +79,7 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      tableOfContents
       frontmatter {
         title
         date(formatString: "YYYY/M/D")

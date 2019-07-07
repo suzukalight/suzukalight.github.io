@@ -18,13 +18,13 @@ tags: ['gatsby', 'github pages', 'react']
 
 # 手順
 
-## `[username].github.io` の名称でリポジトリを作成
+## [username].github.io の名称でリポジトリを作成
 
 - https://github.com/suzukalight/suzukalight.github.io
 
 このリポジトリ名にしておくと、masterブランチが自動的に公開される。
 
-## Gatsbyの準備
+## スターターキットの準備
 
 gatsby CLI から、スターターキットをインストールすることができる。
 

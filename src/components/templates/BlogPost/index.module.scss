@@ -37,6 +37,28 @@
   margin: 2rem 0;
 }
 
+.toc {
+  background-color: #f2f2f2;
+  padding: 1rem;
+  font-size: 0.75rem;
+  line-height: 1;
+
+  & ul {
+    margin-bottom: 0;
+  }
+
+  & li:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.tocHeader {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 0.5rem;
+  border: none;
+}
+
 .article {
   position: relative;
   margin: 2rem 0 6rem;

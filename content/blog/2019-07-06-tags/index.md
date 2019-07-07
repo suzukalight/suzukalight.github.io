@@ -6,7 +6,7 @@ tags: ['gatsby', 'tag']
 hero: ./hero.png
 ---
 
-↑この記事のタイトル部分に表示されているような「タグ機能」を実装する方法について解説します。
+この記事のタイトル部分に表示されているような「タグ機能」を実装する方法について解説します。
 
 # 記事にタグカラムを追加
 
@@ -23,7 +23,7 @@ tags: ['gatsby', 'tag']
 
 # 記事詳細にタグを表示
 
-### queryの追加
+## query
 
 markdownからタグを抽出します；
 
@@ -37,7 +37,7 @@ export const pageQuery = graphql`
       tags
 ```
 
-### component
+## component
 
 このタグ情報を表示するコンポーネントを作成します；
 
@@ -177,9 +177,7 @@ const Tags = ({ location, pageContext, data }) => {
 
 すべてのタグを表示できるページも用意しましょう。`/tags`で表示できるようにします。
 
-## pages/tags.js
-
-### query
+## query
 
 `group`を利用することで、tagでgroupbyをかけた結果を得ることができます。totalCountを受け取って、記事の総数も表示できるようにしましょう；
 https://www.gatsbyjs.org/docs/graphql-reference/#group
@@ -202,7 +200,7 @@ export const pageQuery = graphql`
 `;
 ```
 
-### component
+## component
 
 groupbyした結果をもとに、タグ一覧を表示します；
 
