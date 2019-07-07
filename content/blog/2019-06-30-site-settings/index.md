@@ -75,7 +75,7 @@ export const pageQuery = graphql`
 
 - [gatsby-plugin-google-analytics](https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/)
 
-すでにstarterに入っているので、`gatsby-config.js`を書き換えるだけでOK；
+プラグイン自体は、すでにstarterに入っています。`gatsby-config.js`を書き換えるだけでOKです；
 
 ```javascript{4}:title=gatsby-config.js
 {
@@ -84,4 +84,28 @@ export const pageQuery = graphql`
     trackingId: 'YOUR TRACKING ID',
   },
 },
+```
+
+# RSS Feed
+
+starterでデフォルト有効です。`/rss.xml` で配信されます。
+
+# Sitemap
+
+- [gatsby-plugin-sitemap](https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap/)
+
+sitemapプラグインをインストールし、サイト情報とオプションを設定すればOKです；
+
+```javascript{2,6-9}:title=gatsby-config.js
+siteMetadata: {
+  siteUrl: `https://suzukalight.com`,
+},
+plugins: [
+  {
+    resolve: `gatsby-plugin-sitemap`,
+    options: {
+      sitemapSize: 5000,
+    },
+  },
+]
 ```
