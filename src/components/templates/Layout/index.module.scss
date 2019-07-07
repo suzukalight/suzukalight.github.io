@@ -37,6 +37,7 @@
   @include mq-sp() {
     height: auto;
     padding: 1rem 0;
+    font-size: 0.875rem;
   }
 }
 
@@ -64,6 +65,10 @@
   margin: 0px;
   font-size: 1rem;
   line-height: 1.25;
+
+  @include mq-sp() {
+    font-size: 0.875rem;
+  }
 }
 
 .siteName {
@@ -86,10 +91,18 @@
   font-size: 1rem;
   line-height: 1.5;
 
+  @include mq-sp() {
+    font-size: 0.875rem;
+  }
+
   &:not(:last-child):after {
     content: '/';
     padding: 0 0.5rem;
     font-size: 1rem;
+
+    @include mq-sp() {
+      font-size: 0.875rem;
+    }
   }
 }
 
