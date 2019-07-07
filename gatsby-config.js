@@ -3,7 +3,7 @@ module.exports = {
     title: `suzukalight.com`,
     author: `suzukalight`,
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://suzukalight.com/`,
+    siteUrl: `https://suzukalight.com`,
     social: {
       twitter: `suzukalight`,
       github: `suzukalight`,
