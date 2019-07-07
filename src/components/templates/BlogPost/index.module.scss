@@ -40,13 +40,14 @@
 .article {
   position: relative;
   margin: 2rem 0 6rem;
+  font-size: 0.875rem;
 
   &:after {
     content: '.　.　.　.　.　.　.';
     position: absolute;
     bottom: -3rem;
     width: 100%;
-    font-size: 1rem;
+    font-size: 0.75rem;
     text-align: center;
     color: #666;
   }
@@ -60,11 +61,7 @@
   & h1 {
     position: relative;
     margin-top: 6rem;
-    font-size: 1.75rem;
-
-    @include mq-sp() {
-      font-size: 1.5rem;
-    }
+    font-size: 1.5rem;
 
     &:before {
       content: '.　.　.';
@@ -79,23 +76,20 @@
 
   & h2 {
     margin-top: 2.5rem;
-    font-size: 1.5rem;
-
-    @include mq-sp() {
-      font-size: 1.25rem;
-    }
+    font-size: 1.25rem;
   }
 
   & h3 {
-    font-size: 1.25rem;
-
-    @include mq-sp() {
-      font-size: 1rem;
-    }
+    font-size: 1rem;
   }
 
-  & code {
-    font-size: 0.875rem;
+  & pre {
+    font-size: 0.75rem;
+    line-height: 1;
+  }
+
+  & :not(pre) > code[class*='language-'] {
+    background-color: #f2f2f2;
   }
 }
 
