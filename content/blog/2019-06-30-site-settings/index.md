@@ -1,7 +1,7 @@
 ---
 title: Gatsby のサイトカスタマイズ
 date: "2019-06-30T00:08:00"
-description: 'PWA対応・OGP対応・テーマ変更・目次表示・syntaxHighlightなど'
+description: 'PWA対応・OGP対応・テーマ変更・目次表示・syntaxHighlight・シェアボタン設置・GA設定など'
 tags: ['gatsby', 'pwa']
 ---
 
@@ -70,6 +70,15 @@ export const pageQuery = graphql`
 - [Add gatsby-remark-code-titles](https://github.com/suzukalight/suzukalight.github.io/commit/410289641fb4da6aa9f5e107f2b8b243a6154f16)
 
 `gatsby-remark-autolink-headers` を追加すると、Markdownのheading要素に対して、鎖マークを付与し、アンカーリンクを提供できるようになる。
+
+# シェアボタン設置
+
+- [Add social share buttons to use react-share](https://github.com/suzukalight/suzukalight.github.io/commit/abc303d0d7390174717d1ec86a2cbd47be5f9f26)
+- https://takumon.com/2018/09/16/
+
+`react-share`ライブラリを使用することで、Facebook, Twitter, Pocketなどへのシェアボタンを配置できる。
+
+はてブへのシェアボタンについては、[はてなブックマークボタン](https://b.hatena.ne.jp/guide/bbutton)サイトを通して、ボタンを生成する。横長ボタンを選択して、スタイルを調整する形が、react-shareと見た目を揃えやすかった。
 
 # Google Analytics
 
