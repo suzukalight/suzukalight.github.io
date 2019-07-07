@@ -1,47 +1,70 @@
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import { Link } from 'gatsby';
+
+import Avatar from '../../atoms/Avatar';
 
 import styles from './index.module.scss';
 
-const HeaderLink = ({ title }) => (
-  <Link className={styles.siteName} to={`/`}>
-    {title}
-  </Link>
+const query = graphql`
+  query LayoutQuery {
+    site {
+      siteMetadata {
+        author
+        social {
+          twitter
+          github
+        }
+      }
+    }
+  }
+`;
+
+const Header = ({ title, social }) => (
+  <header className={styles.header}>
+    <div className={styles.headerInner}>
+      <h3 className={styles.headerSiteTitle}>
+        <Link className={styles.siteName} to={`/`}>
+          {title}
+        </Link>
+      </h3>
+      <ul className={styles.headerSocials}>
+        <li className={styles.socialItem}>
+          <a href={`https://github.com/${social.twitter}`}>GitHub</a>
+        </li>
+        <li className={styles.socialItem}>
+          <a href={`https://twitter.com/${social.github}`}>Twitter</a>
+        </li>
+      </ul>
+    </div>
+  </header>
 );
 
-const Header = ({ location, title }) => {
-  const rootPath = `${__PATH_PREFIX__}/`;
-
-  return location.pathname === rootPath ? (
-    <header>
-      <h1 className={styles.headerBig}>
-        <HeaderLink title={title} />
-      </h1>
-    </header>
-  ) : (
-    <header>
-      <h3 className={styles.headerSmall}>
-        <HeaderLink title={title} />
-      </h3>
-    </header>
-  );
-};
-
-const Footer = () => (
+const Footer = ({ author }) => (
   <footer className={styles.footer}>
-    <p className={styles.footerCopyright}>© 2019 by suzukalight</p>
-    <p className={styles.footerToHome}>
-      <Link to="/">suzukalight.com</Link>
-    </p>
+    <div className={styles.footerInner}>
+      <div className={styles.footerAvatar}>
+        <Avatar />
+        <Link to="/" className={styles.footerLink}>
+          suzukalight.com
+        </Link>
+      </div>
+      <p className={styles.footerCopyright}>{`© 2019 by ${author}`}</p>
+    </div>
   </footer>
 );
 
-const Layout = ({ location, title, children }) => (
-  <div className={styles.root}>
-    <Header location={location} title={title} />
-    <main>{children}</main>
-    <Footer />
-  </div>
-);
+const Layout = ({ location, title, children }) => {
+  const data = useStaticQuery(query);
+  const { author, social } = data.site.siteMetadata;
+
+  return (
+    <div className={styles.root}>
+      <Header location={location} title={title} social={social} />
+      <main className={styles.main}>{children}</main>
+      <Footer author={author} />
+    </div>
+  );
+};
 
 export default Layout;

@@ -2,14 +2,14 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Seo from '../components/atoms/Seo';
-import Bio from '../components/molecules/Bio';
+import Hero from '../components/pages/Root/Hero';
 import Posts from '../components/pages/Root/Posts';
 import Layout from '../components/templates/Layout';
 
 const BlogIndex = ({ location, data }) => (
   <Layout location={location} title={data.site.siteMetadata.title}>
     <Seo title="Index" description="なければ作ればいいじゃない" />
-    <Bio />
+    <Hero />
     <Posts posts={data.allMarkdownRemark.edges} />
   </Layout>
 );
