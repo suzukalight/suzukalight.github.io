@@ -59,6 +59,8 @@ const SocialLinks = ({ url, title, via }) => {
           href="https://b.hatena.ne.jp/entry/"
           className="hatena-bookmark-button"
           data-hatena-bookmark-layout="basic"
+          data-hatena-bookmark-width="32"
+          data-hatena-bookmark-height="32"
           title="このエントリーをはてなブックマークに追加"
         >
           <img
@@ -72,7 +74,7 @@ const SocialLinks = ({ url, title, via }) => {
         <script
           type="text/javascript"
           src="https://b.st-hatena.com/js/bookmark_button.js"
-          charset="utf-8"
+          charSet="utf-8"
           async="async"
         ></script>
       </li>
