@@ -70,3 +70,18 @@ export const pageQuery = graphql`
 - [Add gatsby-remark-code-titles](https://github.com/suzukalight/suzukalight.github.io/commit/410289641fb4da6aa9f5e107f2b8b243a6154f16)
 
 `gatsby-remark-autolink-headers` を追加すると、Markdownのheading要素に対して、鎖マークを付与し、アンカーリンクを提供できるようになる。
+
+# Google Analytics
+
+- [](https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/)
+
+すでにstarterに入っているので、`gatsby-config.js`を書き換えるだけでOK；
+
+```javascript{4}:title=gatsby-config.js
+{
+  resolve: `gatsby-plugin-google-analytics`,
+  options: {
+    trackingId: 'YOUR TRACKING ID',
+  },
+},
+```
