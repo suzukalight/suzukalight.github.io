@@ -65,7 +65,7 @@ const BlogPostTemplate = ({ location, data, pageContext }) => {
         <div className={styles.bio}>
           <Bio />
         </div>
-        <div className={styles.pager}>
+        <div className={styles.footerPager}>
           <Pager previous={previous} next={next} />
         </div>
       </section>

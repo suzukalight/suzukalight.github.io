@@ -119,13 +119,20 @@
   margin: 2rem 0;
 }
 
+.footerPager {
+  width: 100%;
+  margin: 0;
+  padding: 0 0 1rem;
+}
+
 .pager {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   list-style: none;
+  width: 100%;
   margin: 0;
-  padding: 0 0 1rem;
+  padding: 0;
 
   & .prev {
     display: block;
