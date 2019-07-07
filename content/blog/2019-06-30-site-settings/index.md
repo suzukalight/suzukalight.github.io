@@ -73,7 +73,7 @@ export const pageQuery = graphql`
 
 # Google Analytics
 
-- [](https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/)
+- [gatsby-plugin-google-analytics](https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/)
 
 すでにstarterに入っているので、`gatsby-config.js`を書き換えるだけでOK；
 
