@@ -20,6 +20,7 @@ const query = graphql`
         author
         social {
           twitter
+          github
         }
       }
     }
@@ -48,7 +49,7 @@ const Bio = () => {
       <p>
         Written by <strong>{author}</strong>.<br />
         <a href={`https://github.com/${social.twitter}`}>GitHub</a>{' '}
-        <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>
+        <a href={`https://twitter.com/${social.github}`}>Twitter</a>
       </p>
     </div>
   );

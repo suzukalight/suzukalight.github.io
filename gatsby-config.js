@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: `https://suzukalight.com/`,
     social: {
       twitter: `suzukalight`,
+      github: `suzukalight`,
     },
   },
   plugins: [
