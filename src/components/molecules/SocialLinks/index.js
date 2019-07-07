@@ -55,28 +55,30 @@ const SocialLinks = ({ url, title, via }) => {
         </PocketShareButton>
       </li>
       <li className={styles.item}>
-        <a
-          href="https://b.hatena.ne.jp/entry/"
-          className="hatena-bookmark-button"
-          data-hatena-bookmark-layout="basic"
-          data-hatena-bookmark-width="32"
-          data-hatena-bookmark-height="32"
-          title="このエントリーをはてなブックマークに追加"
-        >
-          <img
-            src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png"
-            className={styles.hatebuImage}
-            alt="このエントリーをはてなブックマークに追加"
-            width="32"
-            height="32"
-          />
-        </a>
-        <script
-          type="text/javascript"
-          src="https://b.st-hatena.com/js/bookmark_button.js"
-          charSet="utf-8"
-          async="async"
-        ></script>
+        <div className={styles.hatebu}>
+          <a
+            href="https://b.hatena.ne.jp/entry/"
+            className="hatena-bookmark-button"
+            data-hatena-bookmark-layout="basic"
+            data-hatena-bookmark-width="32"
+            data-hatena-bookmark-height="32"
+            title="このエントリーをはてなブックマークに追加"
+          >
+            <img
+              src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png"
+              className={styles.hatebuImage}
+              alt="このエントリーをはてなブックマークに追加"
+              width="32"
+              height="32"
+            />
+          </a>
+          <script
+            type="text/javascript"
+            src="https://b.st-hatena.com/js/bookmark_button.js"
+            charSet="utf-8"
+            async="async"
+          ></script>
+        </div>
       </li>
     </ul>
   );
