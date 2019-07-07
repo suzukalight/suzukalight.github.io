@@ -46,11 +46,21 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p>
-        Written by <strong>{author}</strong>.<br />
-        <a href={`https://github.com/${social.twitter}`}>GitHub</a>{' '}
-        <a href={`https://twitter.com/${social.github}`}>Twitter</a>
-      </p>
+
+      <div className={styles.description}>
+        <p className={styles.username}>
+          Written by <strong>{author}</strong>.
+        </p>
+
+        <ul className={styles.social}>
+          <li className={styles.socialItem}>
+            <a href={`https://github.com/${social.twitter}`}>GitHub</a>
+          </li>
+          <li className={styles.socialItem}>
+            <a href={`https://twitter.com/${social.github}`}>Twitter</a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };

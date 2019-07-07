@@ -13,3 +13,35 @@
 .heroImage {
   border-radius: 50%;
 }
+
+.description {
+  margin: 0;
+  padding: 0;
+}
+
+.username {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.33;
+}
+
+.social {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.socialItem {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+
+  &:not(:last-child):after {
+    content: '/';
+    padding: 0 0.5rem;
+    font-size: 1rem;
+  }
+}
