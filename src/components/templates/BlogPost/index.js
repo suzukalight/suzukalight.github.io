@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby';
 import Image from 'gatsby-image';
 
 import Seo from '../../atoms/Seo';
+import Iframely from '../../atoms/Iframely';
 import DateAndTags from '../../molecules/DateAndTags';
 import Bio from '../../molecules/Bio';
 import SocialLinks from '../../molecules/SocialLinks';
@@ -39,6 +40,7 @@ const BlogPostTemplate = ({ location, data, pageContext }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title={title} description={description} />
+      <Iframely />
 
       <section className={styles.head}>
         <h1 className={styles.title}>{title}</h1>
