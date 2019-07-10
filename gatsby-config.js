@@ -61,6 +61,13 @@ module.exports = {
               className: `gatsby-autolink-headers`,
             },
           },
+          {
+            resolve: 'gatsby-remark-external-links',
+            options: {
+              target: '_blank',
+              rel: 'noopener',
+            },
+          },
         ],
       },
     },
