@@ -77,7 +77,7 @@
 <p><code class="language-text">react-share</code> ライブラリを使用することで、Facebook, Twitter, Pocketなどへのシェアボタンを配置できます。</p>
 <p>はてブへのシェアボタンについては、<a href="https://b.hatena.ne.jp/guide/bbutton" target="_blank" rel="noopener">はてなブックマークボタン</a>サイトを通して、ボタンを生成します。横長ボタンを選択して、スタイルを調整する形が、react-shareと見た目を揃えやすかったです。</p>
 <h1 id="外部リンクに-noopener-や-_blank-を付与する"><a href="#%E5%A4%96%E9%83%A8%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%AB-noopener-%E3%82%84-_blank-%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8B" aria-label="外部リンクに noopener や _blank を付与する permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>外部リンクに noopener や _blank を付与する</h1>
-<p><code class="language-text">gatsby-remark-external-links</code> を <code class="language-text">gatsby-transformer-remark</code> のプラグイン設定に追加します。これだけで、記事内の外部リンク表現が自動的に処理され、新タブで開いたり、noopener属性をつけたりすることができます；</p>
+<p><code class="language-text">gatsby-remark-external-links</code> を gatsby-transformer-remark のプラグイン設定に追加します。これだけで、記事内の外部リンク表現が自動的に処理され、新タブで開いたり、noopener属性をつけたりすることができます；</p>
 <div class="gatsby-code-title">gatsby-config.js</div>
 <div class="gatsby-highlight has-highlighted-lines" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">    <span class="token punctuation">{</span>
       resolve<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`gatsby-transformer-remark`</span></span><span class="token punctuation">,</span>
@@ -93,7 +93,8 @@
     <span class="token operator">...</span><span class="token punctuation">,</span>
 <span class="gatsby-highlight-code-line">    <span class="token template-string"><span class="token string">`gatsby-plugin-twitter`</span></span></span>  <span class="token punctuation">]</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
-<p>Twitter で対象の投稿を開き、右上のボタンをクリックして「」を選択すると、埋め込み用の HTML を得ることができます。このうち <code class="language-text">blockquote</code> のタグだけを markdown にコピペすれば、プラグインが自動的にツイートを展開してくれます；</p>
+<p>Twitter で対象の投稿を開き、右上のボタンをクリックして「ツイートをサイトに埋め込む」を選択すると、埋め込み用の HTML を得ることができます。このうち <code class="language-text">blockquote</code> のタグだけを markdown にコピペすれば、あとはプラグインが自動的にツイートを展開してくれます；</p>
+<div class="gatsby-code-title">「ツイートをサイトに埋め込む」で得られたHTML</div>
 <div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>blockquote</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>twitter-tweet<span class="token punctuation">"</span></span> <span class="token attr-name">data-dnt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name">align</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>center<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ja<span class="token punctuation">"</span></span> <span class="token attr-name">dir</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ltr<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     カオマンガイ美味しすぎる… <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://t.co/3Su9WXz678<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>pic.twitter.com/3Su9WXz678<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
@@ -104,7 +105,7 @@
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>blockquote</span><span class="token punctuation">></span></span></code></pre></div>
 <blockquote class="twitter-tweet" data-dnt="true" align="center"><p lang="ja" dir="ltr">カオマンガイ美味しすぎる… <a href="https://t.co/3Su9WXz678">pic.twitter.com/3Su9WXz678</a></p>&mdash; suzukalight (@suzukalight) <a href="https://twitter.com/suzukalight/status/1131785093582807040?ref_src=twsrc%5Etfw">May 24, 2019</a></blockquote>
-<p>注意点として、developモードだとツイートが展開されない場合があります。どうもこのツイート展開は「画面遷移」をトリガにして行っているようなので、いったん別の画面に遷移して、また当該記事に戻ってくれば、ちゃんと展開されていることが確認できます。</p>
+<p>注意点として、developモードだとツイートが展開されない場合があります。ServiceWorkerやLazyLoadingまわりの設定が、HotReloadingと噛み合わないのかもしれません。productionだと上手くいっていますので、気にせずペタペタして大丈夫だと思います。</p>
 <h1 id="iframely-で-oembed-対応リンクを展開する"><a href="#iframely-%E3%81%A7-oembed-%E5%AF%BE%E5%BF%9C%E3%83%AA%E3%83%B3%E3%82%AF%E3%82%92%E5%B1%95%E9%96%8B%E3%81%99%E3%82%8B" aria-label="iframely で oembed 対応リンクを展開する permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>iframely で oEmbed 対応リンクを展開する</h1>
 <ul>
 <li><a href="https://iframely.com/embed" target="_blank" rel="noopener">https://iframely.com/embed</a></li>
@@ -142,7 +143,7 @@
 <span class="gatsby-highlight-code-line">      <span class="token operator">&lt;</span>Iframely <span class="token operator">/</span><span class="token operator">></span></span></code></pre></div>
 <p>埋め込む用のリンクは、 <a href="https://iframely.com/embed" target="_blank" rel="noopener">https://iframely.com/embed</a> にて生成します。ここで生成したリンクはReact系には対応していないため、下記の2つの操作が必要になります；</p>
 <ol>
-<li>data-iframely-urlの末尾に <code class="language-text">&amp;omit_script=1</code> <code class="language-text">&amp;iframe=1</code> を追加</li>
+<li>data-iframely-urlの末尾に <code class="language-text">&amp;omit_script=1</code> と <code class="language-text">&amp;iframe=1</code> を追加</li>
 <li>embed.jsの読み込みを削除</li>
 </ol>
 <p>下記は一般的なWebサイトのURLから、（おそらく）OGPデータを取得した結果です；</p>
