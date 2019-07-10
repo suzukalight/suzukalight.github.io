@@ -19,7 +19,7 @@ hero: ./twitter.png
 
 # 外部リンクに noopener や _blank を付与する
 
-`gatsby-remark-external-links` を `gatsby-transformer-remark` のプラグイン設定に追加します。これだけで、記事内の外部リンク表現が自動的に処理され、新タブで開いたり、noopener属性をつけたりすることができます；
+`gatsby-remark-external-links` を gatsby-transformer-remark のプラグイン設定に追加します。これだけで、記事内の外部リンク表現が自動的に処理され、新タブで開いたり、noopener属性をつけたりすることができます；
 
 ```javascript{6-10}:title=gatsby-config.js
     {
@@ -48,9 +48,9 @@ module.exports = {
 };
 ```
 
-Twitter で対象の投稿を開き、右上のボタンをクリックして「」を選択すると、埋め込み用の HTML を得ることができます。このうち `blockquote` のタグだけを markdown にコピペすれば、プラグインが自動的にツイートを展開してくれます；
+Twitter で対象の投稿を開き、右上のボタンをクリックして「ツイートをサイトに埋め込む」を選択すると、埋め込み用の HTML を得ることができます。このうち `blockquote` のタグだけを markdown にコピペすれば、あとはプラグインが自動的にツイートを展開してくれます；
 
-```html
+```html:title=「ツイートをサイトに埋め込む」で得られたHTML
 <blockquote class="twitter-tweet" data-dnt="true" align="center">
   <p lang="ja" dir="ltr">
     カオマンガイ美味しすぎる… <a href="https://t.co/3Su9WXz678">pic.twitter.com/3Su9WXz678</a>
@@ -64,7 +64,7 @@ Twitter で対象の投稿を開き、右上のボタンをクリックして「
 
 <blockquote class="twitter-tweet" data-dnt="true" align="center"><p lang="ja" dir="ltr">カオマンガイ美味しすぎる… <a href="https://t.co/3Su9WXz678">pic.twitter.com/3Su9WXz678</a></p>&mdash; suzukalight (@suzukalight) <a href="https://twitter.com/suzukalight/status/1131785093582807040?ref_src=twsrc%5Etfw">May 24, 2019</a></blockquote>
 
-注意点として、developモードだとツイートが展開されない場合があります。どうもこのツイート展開は「画面遷移」をトリガにして行っているようなので、いったん別の画面に遷移して、また当該記事に戻ってくれば、ちゃんと展開されていることが確認できます。
+注意点として、developモードだとツイートが展開されない場合があります。ServiceWorkerやLazyLoadingまわりの設定が、HotReloadingと噛み合わないのかもしれません。productionだと上手くいっていますので、気にせずペタペタして大丈夫だと思います。
 
 # iframely で oEmbed 対応リンクを展開する
 
@@ -110,7 +110,7 @@ export default class Iframely extends React.Component {
 
 埋め込む用のリンクは、 https://iframely.com/embed にて生成します。ここで生成したリンクはReact系には対応していないため、下記の2つの操作が必要になります；
 
-1. data-iframely-urlの末尾に `&omit_script=1` `&iframe=1` を追加
+1. data-iframely-urlの末尾に `&omit_script=1` と `&iframe=1` を追加
 2. embed.jsの読み込みを削除
 
 下記は一般的なWebサイトのURLから、（おそらく）OGPデータを取得した結果です；
