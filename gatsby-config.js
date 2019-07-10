@@ -150,5 +150,6 @@ module.exports = {
         sitemapSize: 5000,
       },
     },
+    `gatsby-plugin-twitter`,
   ],
 };
