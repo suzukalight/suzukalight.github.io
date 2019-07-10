@@ -19,7 +19,7 @@
 
 .description {
   flex-grow: 1;
-  width: 100%;
+  width: calc(100% - 96px);
 }
 
 .imageWrap {
@@ -80,4 +80,9 @@
     line-height: 1.5;
     max-height: 2.25rem;
   }
+}
+
+.dateAndTags {
+  overflow: hidden;
+  height: 24px;
 }

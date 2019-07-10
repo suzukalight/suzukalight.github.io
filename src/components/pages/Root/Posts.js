@@ -22,7 +22,9 @@ const PostItem = ({ node, title }) => (
         />
       </Link>
 
-      <DateAndTags date={node.frontmatter.date} tags={node.frontmatter.tags} />
+      <div className={styles.dateAndTags}>
+        <DateAndTags date={node.frontmatter.date} tags={node.frontmatter.tags} />
+      </div>
     </div>
 
     <Link className={styles.imageWrap} to={node.fields.slug}>
