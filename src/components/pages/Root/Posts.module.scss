@@ -3,12 +3,12 @@
 .item {
   display: flex;
   overflow: hidden;
-  min-height: 128px;
+  height: 164px;
   padding: 1rem 0;
 
   @include mq-sp() {
     overflow: hidden;
-    min-height: 112px;
+    height: 144px;
     border-bottom: 1px dashed #ccc;
   }
 
@@ -19,7 +19,11 @@
 
 .description {
   flex-grow: 1;
-  width: calc(100% - 96px);
+  max-width: calc(100% - 144px);
+
+  @include mq-sp() {
+    max-width: calc(100% - 96px);
+  }
 }
 
 .imageWrap {
@@ -69,10 +73,12 @@
 }
 
 .excerpt {
+  overflow: hidden;
+  max-height: 3.25rem;
   margin: 0.5rem 0;
-  color: #999;
+  color: #aaa;
   font-size: 0.875rem;
-  line-height: 1.33;
+  line-height: 1.25;
 
   @include mq-sp() {
     overflow: hidden;
