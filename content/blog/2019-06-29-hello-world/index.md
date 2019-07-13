@@ -48,6 +48,7 @@ gh-pagesコマンドをインストールし、GitHub Pagesとして公開でき
 $ yarn add -D gh-pages
 $ git init
 $ git checkout -b develop
+$ git add .
 $ git commit -am "gatsby new"
 $ git push origin develop
 ```
