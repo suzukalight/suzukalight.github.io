@@ -163,3 +163,7 @@ Done in 27.92s.
 GitHub Pages でホスティングできました、これで完了です！
 
 ![](https.png)
+
+# 成果物
+
+<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://github.com/suzukalight/study-gatsby-contentful" data-iframely-url="//cdn.iframe.ly/BYGx2U1"></a></div></div>
