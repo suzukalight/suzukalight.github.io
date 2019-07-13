@@ -1,4 +1,246 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[suzukalight.com]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://suzukalight.com</link><generator>RSS for Node</generator><lastBuildDate>Wed, 10 Jul 2019 15:26:16 GMT</lastBuildDate><item><title><![CDATA[Gatsby でリンクを扱う／展開する]]></title><description><![CDATA[シェアボタン設置Add social share buttons to use react-sharehttps://takumon.com/2018/09/16/ ライブラリを使用することで、Facebook, Twitter, Pocket…]]></description><link>https://suzukalight.com/2019-07-10-links/</link><guid isPermaLink="false">https://suzukalight.com/2019-07-10-links/</guid><pubDate>Tue, 09 Jul 2019 15:08:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;シェアボタン設置&quot;&gt;&lt;a href=&quot;#%E3%82%B7%E3%82%A7%E3%82%A2%E3%83%9C%E3%82%BF%E3%83%B3%E8%A8%AD%E7%BD%AE&quot; aria-label=&quot;シェアボタン設置 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;シェアボタン設置&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[suzukalight.com]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://suzukalight.com</link><generator>RSS for Node</generator><lastBuildDate>Sat, 13 Jul 2019 05:33:34 GMT</lastBuildDate><item><title><![CDATA[Gatsby + Contentful + GitHub Pages ハンズオン]]></title><description><![CDATA[Contentful は Headless-CMS と呼ばれる仕組みを提供しており、コンテンツの設計と配信（API）のみを受け持つようなサービスになっています。WordPressとの違いは、コンテンツ表示までは担当していないところです。Gatsby…]]></description><link>https://suzukalight.com/2019-07-13-contentful-starter/</link><guid isPermaLink="false">https://suzukalight.com/2019-07-13-contentful-starter/</guid><pubDate>Fri, 12 Jul 2019 15:08:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;https://www.contentful.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Contentful&lt;/a&gt; は Headless-CMS と呼ばれる仕組みを提供しており、コンテンツの設計と配信（API）のみを受け持つようなサービスになっています。WordPressとの違いは、コンテンツ表示までは担当していないところです。&lt;/p&gt;
+&lt;p&gt;Gatsby でこれを利用することで、コンテンツはSaaS側に載せて管理しておき、WebシステムはReact系で作成する、ということができるようになります。&lt;/p&gt;
+&lt;p&gt;これにより、サイト管理はGitが使えない一般の人にもできて、開発はReact、配信はJAMstackでできるという、フロントエンドエンジニアにとって夢の環境が実現できます（単にWordPressを触りたくないだけとも言う）&lt;/p&gt;
+&lt;p&gt;早速、ContentfulでGatsbyを素振りしてみました。公式のこれにしたがって、Webサイトを1つ作ってみます；&lt;/p&gt;
+&lt;div class=&quot;iframely-embed&quot;&gt;&lt;div class=&quot;iframely-responsive&quot; style=&quot;height: 140px; padding-bottom: 0;&quot;&gt;&lt;a href=&quot;https://www.contentful.com/r/knowledgebase/gatsbyjs-and-contentful-in-five-minutes/&quot; data-iframely-url=&quot;//cdn.iframe.ly/RRJvt0D?omit_script=1&amp;iframe=card-small&quot;&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;gatsby-contentful-starter&quot;&gt;&lt;a href=&quot;#gatsby-contentful-starter&quot; aria-label=&quot;gatsby contentful starter permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;gatsby-contentful-starter&lt;/h1&gt;
+&lt;p&gt;公式のstarterをもとに、リポジトリをセットアップします；&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;gatsby new study-gatsby-contentful https://github.com/contentful-userland/gatsby-contentful-starter&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;contentful-のセットアップ&quot;&gt;&lt;a href=&quot;#contentful-%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97&quot; aria-label=&quot;contentful のセットアップ permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Contentful のセットアップ&lt;/h1&gt;
+&lt;h2 id=&quot;サインアップ&quot;&gt;&lt;a href=&quot;#%E3%82%B5%E3%82%A4%E3%83%B3%E3%82%A2%E3%83%83%E3%83%97&quot; aria-label=&quot;サインアップ permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;サインアップ&lt;/h2&gt;
+&lt;p&gt;まずサインアップ。GitHub Pagesにデプロイするので、そのアカウントで登録するほうが、後々楽になるかと；&lt;/p&gt;
+&lt;div class=&quot;iframely-embed&quot;&gt;&lt;div class=&quot;iframely-responsive&quot; style=&quot;height: 140px; padding-bottom: 0;&quot;&gt;&lt;a href=&quot;https://www.contentful.com/sign-up/&quot; data-iframely-url=&quot;//cdn.iframe.ly/0Tl8u8R?iframe=card-small&quot;&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;利用目的を聞かれる（サンプルのSpaceを1つ用意してくれる）ので、左側のWebAppを選択しました。このサンプルは使用しない予定ですが、Webサイトのコンテンツ例として非常に良くできているので、今後の参考になりました。&lt;/p&gt;
+&lt;h2 id=&quot;space-の作成&quot;&gt;&lt;a href=&quot;#space-%E3%81%AE%E4%BD%9C%E6%88%90&quot; aria-label=&quot;space の作成 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Space の作成&lt;/h2&gt;
+&lt;p&gt;無料枠では2つのSpaceを作成できるので、2つ目の枠でハンズオンしてみます。ドロワーから &lt;code class=&quot;language-text&quot;&gt;+ Create space&lt;/code&gt; を選択；&lt;/p&gt;
+&lt;p&gt;&lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 52.60504201680673%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACBUlEQVQoz22Sy1PTYBTF8y84+BrE5ygqOs64QGeY4kBfJCml0AK6cKULhRFU1MH/z406PoZSKG0VWvqCtmmSNmlaujh+301SsMPiN+fm8Z3ce26Er5tJpHaz+L2VxMb2DvaKZZRqdRQqNRSrCiknWzqAV47iwrURXLx+D4M37uPs5dsYuDSMgaFhnLtyhxC+/EogkysgvpNBIv0X+wcVMsg7RvlKtWc4KUUxdOsBzl+9S8ZnBm/24OYcQW0Y0JomGmaL0A2OSfD7dfZcZcrfe/5iCSMPx/D4SRCjHj9GxwN45EDXDCGXL9LhVucIptWG2e4QRquNstJEtqwhd6ijohpY/fAZXjGC0NwzSJHF/5AdhJ/baXyLJ4kfiRS+c91KYfNPFvHMHjZc0rt4ufwOE8EwxJkFBKdjpyIUWGb7pUMiX7brqqpD0RtETbO1qmp4tbIGj1dEIDQHvzwLnxSBGI6xDhfYR+YJgY/ZZLk1zWPaR120WQQcy9EWi+H1208Y84bgn56njXMCrCvJMSNDjS+FFmNAp/CbLD/LzpNhnNA379cxMRWGPLvYM+hHUDQdtboGhY1ZZ1QVlQwspzvemUUL62BlbR2T4gxbylMa8zQEGq/btcdkdFjtGrlYzh+wtPoRHp/Ewo9Sji5++ViFkwf7TfoNl1mG4z4ZU+EYmboEQja8/gehGn33IH4+RQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;create space&quot;
+        title=&quot;&quot;
+        src=&quot;/static/e4ef47f90d22fc2d39ed38e4e45a9ab4/b9e4f/create-space.png&quot;
+        srcset=&quot;/static/e4ef47f90d22fc2d39ed38e4e45a9ab4/cf440/create-space.png 148w,
+/static/e4ef47f90d22fc2d39ed38e4e45a9ab4/d2d38/create-space.png 295w,
+/static/e4ef47f90d22fc2d39ed38e4e45a9ab4/b9e4f/create-space.png 590w,
+/static/e4ef47f90d22fc2d39ed38e4e45a9ab4/acf33/create-space.png 595w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Free枠を選択し、適当なスペース名（ここでは study-gatsby-contentful とした）を入力して完了。&lt;/p&gt;
+&lt;h2 id=&quot;tokens-の作成&quot;&gt;&lt;a href=&quot;#tokens-%E3%81%AE%E4%BD%9C%E6%88%90&quot; aria-label=&quot;tokens の作成 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;tokens の作成&lt;/h2&gt;
+&lt;p&gt;Contentful でWebサイトを作成するには、下記3つのトークンが必要のようです。それぞれ作成していきます；&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Content Management Token&lt;/li&gt;
+&lt;li&gt;Content Delivery Token&lt;/li&gt;
+&lt;li&gt;Content Preview Token&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;content-management-tokens&quot;&gt;&lt;a href=&quot;#content-management-tokens&quot; aria-label=&quot;content management tokens permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Content management tokens&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Settings-&amp;gt;APIs&lt;/code&gt; から &lt;code class=&quot;language-text&quot;&gt;Content management tokens&lt;/code&gt; を選択して、 &lt;code class=&quot;language-text&quot;&gt;Generate personal token&lt;/code&gt; を作成；&lt;/p&gt;
+&lt;p&gt;&lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 55.199999999999996%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACAElEQVQoz6WRTWsUQRCG+0d4U9bIwoZAzLrGD1DXhEgugjcP/i7Bi4gnQdfNhzGJMQl6kpwEwXsIJvuRYbPbM9093T0zu/taNbOEeBAEGx6quru66q1qUarUUJq5S9zB5el5XJq6jmvVBczee4wrsw9QrT9B+eYSSnMPUbm9jPL8I5Rri5hZeIbp+lNUbi3hanURU3N13Kjdh3jVfI+Xbxt401hHY30L71Y30dzYwerWHpofP5PdJ7s78fewsrlbnG18ylnb3sdKfr+DtQ/bEEMANkuQZuz9/xLDNINzHtY6aGOgtYHzCbq9EO1ggBbBfkJxWZZR4QzKWAwiDak0dEzv7ITYQjjvIWVISd0flUZjYDyxuT8eF9CZocf9MEJfEqFCqAwkFYhJmLDW4jToodeXGFDAQKocGap8z9aQ6ojUMBmNRukYx60OTtpd/Drp5By3unkBMRyNYP0QMWEct5PkaJsgNJ6qphhRDMexZZXKxGifkogBCaCCbFkpKxee5hVF6px/Wdxa50wTBoGMcRZZRLGHS1KI1NMwZR+KMJGEVkWbnFxyy0RE81GqgAXww8g4SO0okYOnPZ9ZuhNBmOD7ocKPI0VW4ygwSH3x60xMP8dJuN3RsGjbTRJcTGQnhcTPlseLrxKvv4V4/kXi4LD47fFf2uUZuiQ5T3IxGdvfh2kVFj/WxP8AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;tokens&quot;
+        title=&quot;&quot;
+        src=&quot;/static/dd4bca545b5df33a5e21ce9f732d01b3/b9e4f/tokens.png&quot;
+        srcset=&quot;/static/dd4bca545b5df33a5e21ce9f732d01b3/cf440/tokens.png 148w,
+/static/dd4bca545b5df33a5e21ce9f732d01b3/d2d38/tokens.png 295w,
+/static/dd4bca545b5df33a5e21ce9f732d01b3/b9e4f/tokens.png 590w,
+/static/dd4bca545b5df33a5e21ce9f732d01b3/f9b6a/tokens.png 885w,
+/static/dd4bca545b5df33a5e21ce9f732d01b3/e11df/tokens.png 1000w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;どういう利用法のトークンなのかを訊かれるので、適当に説明；&lt;/p&gt;
+&lt;p&gt;&lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 579px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 61.13989637305699%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAB7klEQVQoz5WS627TQBCF/WwgKGka0kuapG1EoKVqUSmQlAfhL+JJeAokFCERQpvU8S1pLo69a3tt72G8qRGgEsFIn2fsnT07M2ttbWMHpZ09bO4eLKk2UCZfvo1zHlf2VV5GFud5xa06CuWq4t6jMrTtehO9qwF6l3187V2i+z3jCt+Ibm8ZZ98HQxO6aUE3LOWHpq24pnfLGePT5w4eFLehVRtHcD0G0x6pxTzZsB21eWg5SoyHAnEqIZL0N6I4QSyhcrNutb3mcyw8H5mlUhJAQo+cOE2VD4VAEAmEf8DDCLQFA93AWmkX2n7zGEEQgHMOxpiKRRxDkEBKYqBDpJT4m0mZKm9RR/fXswqfZC1z9K05+uYE+siFOfExcgNMfYGZH69k6gm4YdayjYelCrRa4xkmLocxCWDdeHBmDPbEAwtTeEHyD5AwB/q6hfXN6rJCxgP4LIC7YPB8jtmCxKlKm3CmVC0dkm28SzBbmzOhWi6UaYbF6iHNLUTXifHFjNAxIsx58uuUsNrkzxkqwY3aIcZzhvp7AwcfDBTeXeNjx1NJcbK8EKlu/26SJL8UeynYeHqMSMRwPInhLIFOhAn+28bjm9uWt2o4PW/hTfstcaH82esL+tbGi1W8auPkZQsnZy2Ve3R6Tv9hBT8AvuIvOKFovd0AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;token name&quot;
+        title=&quot;&quot;
+        src=&quot;/static/2bb99f36bdb2bb3d33b6b15c125d5d32/d973d/token-name.png&quot;
+        srcset=&quot;/static/2bb99f36bdb2bb3d33b6b15c125d5d32/cf440/token-name.png 148w,
+/static/2bb99f36bdb2bb3d33b6b15c125d5d32/d2d38/token-name.png 295w,
+/static/2bb99f36bdb2bb3d33b6b15c125d5d32/d973d/token-name.png 579w&quot;
+        sizes=&quot;(max-width: 579px) 100vw, 579px&quot;
+      /&gt;
+  &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;API Tokenは1回しか表示できないので、必ずコピーしておき、適切に保管しておきます。&lt;/p&gt;
+&lt;h3 id=&quot;content-delivery--preview-tokens&quot;&gt;&lt;a href=&quot;#content-delivery--preview-tokens&quot; aria-label=&quot;content delivery  preview tokens permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Content delivery / preview tokens&lt;/h3&gt;
+&lt;p&gt;つづけて &lt;code class=&quot;language-text&quot;&gt;Delivery token&lt;/code&gt; と &lt;code class=&quot;language-text&quot;&gt;Preview Token&lt;/code&gt; を作成。&lt;code class=&quot;language-text&quot;&gt;Settings-&amp;gt;APIs&lt;/code&gt; の &lt;code class=&quot;language-text&quot;&gt;Content delivery / preview tokens&lt;/code&gt; を選択し、 &lt;code class=&quot;language-text&quot;&gt;Add API key&lt;/code&gt; をクリックすれば作成完了。&lt;/p&gt;
+&lt;h1 id=&quot;gatsby-contentful-starter-の設定&quot;&gt;&lt;a href=&quot;#gatsby-contentful-starter-%E3%81%AE%E8%A8%AD%E5%AE%9A&quot; aria-label=&quot;gatsby contentful starter の設定 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;gatsby-contentful-starter の設定&lt;/h1&gt;
+&lt;p&gt;作成したトークンを starter に設定します。&lt;code class=&quot;language-text&quot;&gt;yarn setup&lt;/code&gt; コマンドがあり、自動設定してくれるようになっています；&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; setup
+
+$ Your Space ID
+$ Your Content Management API access token
+$ Your Content Delivery API access token
+
+&lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.
+
+The &lt;span class=&quot;token function&quot;&gt;import&lt;/span&gt; took a few seconds &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;27s&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+No errors or warnings occurred
+The &lt;span class=&quot;token function&quot;&gt;import&lt;/span&gt; was successful.
+All set&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt; You can now run &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; run dev to see it &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; action.
+
+Done &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; 109.99s.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;このとき、Contentful のコンテンツをもとに、Webサイトのビルドも合わせて行ってくれるため、この時点ですでに手元でSSGされている状態になります。&lt;/p&gt;
+&lt;p&gt;なお、設定したトークンの情報は、 &lt;code class=&quot;language-text&quot;&gt;.env.development&lt;/code&gt; などのファイルに書き出されます。このファイルは &lt;code class=&quot;language-text&quot;&gt;.gitignore&lt;/code&gt; されているため、リポジトリにプッシュしても漏洩の心配はなさそうです。&lt;/p&gt;
+&lt;h1 id=&quot;開発用ビルド&quot;&gt;&lt;a href=&quot;#%E9%96%8B%E7%99%BA%E7%94%A8%E3%83%93%E3%83%AB%E3%83%89&quot; aria-label=&quot;開発用ビルド permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;開発用ビルド&lt;/h1&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; dev
+
+&lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.
+
+DONE  Compiled successfully &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; 2670ms   
+You can now view gatsby-contentful-starter &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; the browser.⠀
+  http://localhost:8000/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;あっという間に完成です。&lt;/p&gt;
+&lt;p&gt;&lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 88.24130879345603%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAAA7DAAAOwwHHb6hkAAADbElEQVQ4y62T22scZRjGZ3f2kGST0oVANYWosafYaFuqUlv24KHWJNTGZjHW0qwVc6EFDwiKXmhvxCv1pvVGFP8AQSwoWIhoT0hBMC2J1O4mpjk03ZndZA/JHmZ3f77fbDakmoIXDvPwzsz7vs/7zPc9n6ZpGnU4NDduTxvNrY/ga92Fpvt5acs2PuiPENoapN2/k7bmDnx6E85Vff/AakIPusuP29eOZ919eHytdG5oJ7R9J3s6HsDfuJH1Hj8eh46uOf4LoVuiB83ZKNFF21130/XgDrZ0bqdz20M0uJQyh9Sp2jsQOp1O6tCdbrxeH41NotLbIoQb2Xz/Jrbe28GmezbT3LgeX0MTDV4vuq6zurcOba0pbrcodIhS+bUGj5d1vhZR5pYGDy7dhcNxx99FC4dChJahnoPBIMGAimECwRC93T30HewjHH7S/hYMBAkEArW6NaDxP1+amUyxsJAmncliJpNYVhmqVbmrazZUKhU7WlaJsjxXqxXKZUtQtqFl02lM0yCVMlnM5UgmDXKLORYyaabmZuQ9SUYGpuZT3JK6fKGAYSZt0lKxSDa7KMTVFRHaW9E+Xh0a4N133uC9t0/wbM8ezp87y6dfnmZXzz6GXnuFwcEhHg0fYH/kecYnrvPDma+l2eLy+YucPTfCxGzaHmATHjl8gMjhQ7x87DgDkV6e2b+Pn4aH+fjzz+gKP0zk6BECT3SjuVvo2hvEmIuT/e0kpekzXB7+loujC4yPfI81+0ttDZ/r7+Hp3m4Goy9yInqQk6+/yYWfL/DJqVPsePwxBo6/QH/kKBvkpOx9qpuZGzG++Wg3l74K8OMXg0Sjxzj9/m5+/e7DGuHYH1eJxWNMT01yc3KCxMwMJVmn6ZuzXBkbJR67zl+TN7gWG+fPeJxCIc9kfJRbU6NMjY9wbex3JmJXSSTmaoRqd7PZnGzEEmmJ1vIuLi0tkZFcLrf4r12enUvIQAMzlb4tZ69hXiYWS0WqUqiKy5ZlJyyJ+XzetoIltqjYFqnaMZvNkBHULVRZto+t0DBNEoZBMqX8uCBx3ibJiYUMwxQYK/lisWSTKvUFWRY1VKFOvKywYCsplUq3mVmpVt9VY1H8purqCtUBUP40k6Z42GRehNR7tfq0elwhLNYI1zopaTkMSrHKq7riKjF/A9xa59lVo5OqAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;site&quot;
+        title=&quot;&quot;
+        src=&quot;/static/42178ae9f3b06486557ef237657af816/b9e4f/site.png&quot;
+        srcset=&quot;/static/42178ae9f3b06486557ef237657af816/cf440/site.png 148w,
+/static/42178ae9f3b06486557ef237657af816/d2d38/site.png 295w,
+/static/42178ae9f3b06486557ef237657af816/b9e4f/site.png 590w,
+/static/42178ae9f3b06486557ef237657af816/f9b6a/site.png 885w,
+/static/42178ae9f3b06486557ef237657af816/f1cfd/site.png 978w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Static Sites are great!&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;おっしゃる通り。&lt;/p&gt;
+&lt;h1 id=&quot;コンテンツの書き換え&quot;&gt;&lt;a href=&quot;#%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84%E3%81%AE%E6%9B%B8%E3%81%8D%E6%8F%9B%E3%81%88&quot; aria-label=&quot;コンテンツの書き換え permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;コンテンツの書き換え&lt;/h1&gt;
+&lt;p&gt;試しにContentfulのContentsを書き換えてみましょう。&lt;code class=&quot;language-text&quot;&gt;Content&lt;/code&gt; から適当に1つ（たとえば一番上の記事）を選択して、Markdownを書き加えてみます；&lt;/p&gt;
+&lt;p&gt;&lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 42.87317620650954%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAB5UlEQVQoz3WRT29MURjG7zewm1ZDSCmtRqXtgiIaNkR8Ah+gS1YIKq3pTFU7jarS6M7SzkbCWixY2YoGrZiYO3X/nXP/35mf995GGNKTvHnfc857nvd5nmOUeofp6Ruh++Awpd4hdu0ZoKf/BEOnL1E6dJx9x8YZPHmxqLsOj9F1ZJzdA6c4MHKWvUfPMHh+gv2jF+gbPUd3/xjGrcoC18tz3Jye48bULNfuVLldWaS8sMLk7BIzi0+4t7TG3flHlGurVJafFXmm9ri4n6zWmLr/kOn5FcnLGC4pjVihPI3jKVyVZw/LdgiimJ1W0mrxU964QUSYZljKl7M2huVqtB+ggxBP+xK/6z9ndXOL740mG/UffP5WJwgjbFeGynBbb4cjfXkuAJVs8se2q7AcT1j6WFLnDJUMy8EaWxamZdO0HNIsww8CUj+BqC10hXIuRrJhC0Cz2SwkRlHUqavd/k+qUgotTOIw5vnmBx58ecvaxnueSqxuvsPQ4oEWhplMzbKWYLR3jHzZjoMnoEmUUP36hssfX3B1/TVX1l8x8eklRiAX4b/MOkh2AjqOW7DMfYx0RKpjEpGe+DFpkGEoP8Q0TRwxOQxDaRaTRb4r+0x+8m/QbUCnAMxJ2NLrise+eJ2HlrNfh3BrGeyd3hoAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;update content&quot;
+        title=&quot;&quot;
+        src=&quot;/static/8ed9c78fa6fbd5abbdc40f7169925059/b9e4f/update-content.png&quot;
+        srcset=&quot;/static/8ed9c78fa6fbd5abbdc40f7169925059/cf440/update-content.png 148w,
+/static/8ed9c78fa6fbd5abbdc40f7169925059/d2d38/update-content.png 295w,
+/static/8ed9c78fa6fbd5abbdc40f7169925059/b9e4f/update-content.png 590w,
+/static/8ed9c78fa6fbd5abbdc40f7169925059/f9b6a/update-content.png 885w,
+/static/8ed9c78fa6fbd5abbdc40f7169925059/6bcd1/update-content.png 891w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;そして &lt;code class=&quot;language-text&quot;&gt;Publish changes&lt;/code&gt; をして、 &lt;code class=&quot;language-text&quot;&gt;yarn develop&lt;/code&gt; をし直せば…書き換わっています！&lt;/p&gt;
+&lt;p&gt;&lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 50.83056478405316%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABlElEQVQoz6WQS0tbQQCF7x8ogosKFRddZOVCLMXStUgX1brsyqWbbqToTruroquCLipCH4pUdypEbWxuYlpijA8oVK1ClKiIKdGYOHN93Nfn3CtaShVCe+DMnDkzczgz2kRngFjfAxY/1JMLP0ckXyATL9mdaeZXsonvwS6CHfVkV96zsSXRE+u8G5lieCzK8GQSfTlNZrmfTPAJG6OP0AZaShhsK2f8dTULb++TGn/K0qc6YgOPiX+sItxby7e+Rn5+bqXnVTsNDc+oDNyjovwud0rL6G59yM5EDaE3AYY6StC2VyIcpKLsrc+STevkdxPsp2IcqjmbnmMvFaGQ+cFZdo2luM6X0DTz8QhRPcTUdIjNVZ2jnTD7m1/ZWtPRUBAnFsaZgzx1lLZ9LQyTY2liKM+leGiObSGlwJASw/hNz5NCIMQxlmXiOja2OmtZf9LzHEfRvtSa67rKcNTCxtO3wdsrhpoXJvx2J37obZeLf7IKPMrnyRcK1xeLbXNjQ284N82/wv4VfsPDXM7/x6vA/8EFcvPZnloZE8EAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;updated content&quot;
+        title=&quot;&quot;
+        src=&quot;/static/659756d75d8eb23a30dcac79435f1aec/b9e4f/updated-content.png&quot;
+        srcset=&quot;/static/659756d75d8eb23a30dcac79435f1aec/cf440/updated-content.png 148w,
+/static/659756d75d8eb23a30dcac79435f1aec/d2d38/updated-content.png 295w,
+/static/659756d75d8eb23a30dcac79435f1aec/b9e4f/updated-content.png 590w,
+/static/659756d75d8eb23a30dcac79435f1aec/f9b6a/updated-content.png 885w,
+/static/659756d75d8eb23a30dcac79435f1aec/2f110/updated-content.png 903w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;さすがにContentfulを書き換えたら、自動的にプレビュー側も更新されている…ということはありませんでしたが、あるいはwebhooksとかで設定できれば、できるかもしれない…？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ちなみに、developで取得したコンテンツは、Previewトークンを利用しているので、Unpublishedなコンテンツも引っ張れるようになっているようです。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;デプロイ&quot;&gt;&lt;a href=&quot;#%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4&quot; aria-label=&quot;デプロイ permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;デプロイ&lt;/h1&gt;
+&lt;h2 id=&quot;github-pages-向けの設定&quot;&gt;&lt;a href=&quot;#github-pages-%E5%90%91%E3%81%91%E3%81%AE%E8%A8%AD%E5%AE%9A&quot; aria-label=&quot;github pages 向けの設定 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;GitHub Pages 向けの設定&lt;/h2&gt;
+&lt;p&gt;デフォルトのURL設定から、GitHub Pages向けの設定に変更しておきます。具体的には &lt;code class=&quot;language-text&quot;&gt;pathPrefix&lt;/code&gt; を除去し、独自のサブドメインをセットしました；&lt;/p&gt;
+&lt;div class=&quot;gatsby-code-title&quot;&gt;gatsby-config.js&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight has-highlighted-lines&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  siteMetadata&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    title&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Gatsby Contentful starter&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;    siteUrl&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`https://study-gatsby-contentful.suzukalight.com`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/span&gt;  plugins&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;サブドメインを利用する場合は、DNS側でサブドメインを作成した後、CNAMEレコードを向けておきます。&lt;/p&gt;
+&lt;h2 id=&quot;github-pages-へのデプロイ&quot;&gt;&lt;a href=&quot;#github-pages-%E3%81%B8%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4&quot; aria-label=&quot;github pages へのデプロイ permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;GitHub Pages へのデプロイ&lt;/h2&gt;
+&lt;p&gt;ほかのstarterと同様、下記のコマンドが利用できました；&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;yarn build&lt;/code&gt; : 本番ビルド&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;yarn deploy&lt;/code&gt; : GitHub Pages への公開&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; deploy
+
+&lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.
+
+info Done building &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; 15.659 sec
+
+Published
+Done &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; 27.92s.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;GitHub Pages でホスティングできました、これで完了です！&lt;/p&gt;
+&lt;p&gt;&lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 60.898282694848085%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAA7DAAAOwwHHb6hkAAACHElEQVQoz62T30uTYRTHn+2dmLWrzO3d0sWbI1cIFUSE3eZF4ZVSIHQXyTY1+kO66a7+g4iSEKx04dbM9m5dJKaloSzs9SKw0m267d3mp+d9NX+E0I0HPpxznvM9h8PD84hS2SSXy7O+UWRN+sL6Brl8nlyhwKrMc/kCZqVKdXOTSq1mswn7sKwmg0q1hkjE4yTiCXRdJ5VKk9LTMs6gpyUpnZnZWRYXF20/92We+bl50rKekbq07NH/QUhjl7otnEdxuI6hOOvQTmmcbQvREtAItrahtQRxiXqJgmNf7w67icMe6JLUIxxH7DiotRI6E6LtdJCL587TdNwndS6cwnHQMISiKFi4XApOp0JjYxN+fwCPt1lyEk+Tiur14fN6Ccjc62lG9fglXlRVxe12yz4nf+cIcfDa+3A3NODzqPIK6v+rFdFolL1EIhHC4Yj0UZuwZCDaz/2Be/RHB+VZ/1YtbOnCtn5vv+CQTRjLyxjGMt+Wllj6blCQ7880TZtiqURpm3K5vBNbWHXrzPKVSmU7Nw9nw2q1urth7M0oE8kYmQ9pPk19ZGx0mJnP06zJ3/J05AVDY8Mkk2/JyEf/flJnJDbKq/FxNopFJibf8Xv1lz3oh2GwkDUQvT3X6LvbS7jvDrd7OrlySePxowd8zS6gXW2nvfMyXTe76O6+RehCBye0EB3Xb7Dyc4WhJw/JLkzJcSYvnz3ndWKaPw35eG682hDfAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;https&quot;
+        title=&quot;&quot;
+        src=&quot;/static/36c4a094ba1497d9dd032617cab5feb7/b9e4f/https.png&quot;
+        srcset=&quot;/static/36c4a094ba1497d9dd032617cab5feb7/cf440/https.png 148w,
+/static/36c4a094ba1497d9dd032617cab5feb7/d2d38/https.png 295w,
+/static/36c4a094ba1497d9dd032617cab5feb7/b9e4f/https.png 590w,
+/static/36c4a094ba1497d9dd032617cab5feb7/7a513/https.png 757w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Gatsby でリンクを扱う／展開する]]></title><description><![CDATA[シェアボタン設置Add social share buttons to use react-sharehttps://takumon.com/2018/09/16/ ライブラリを使用することで、Facebook, Twitter, Pocket…]]></description><link>https://suzukalight.com/2019-07-10-links/</link><guid isPermaLink="false">https://suzukalight.com/2019-07-10-links/</guid><pubDate>Tue, 09 Jul 2019 15:08:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;シェアボタン設置&quot;&gt;&lt;a href=&quot;#%E3%82%B7%E3%82%A7%E3%82%A2%E3%83%9C%E3%82%BF%E3%83%B3%E8%A8%AD%E7%BD%AE&quot; aria-label=&quot;シェアボタン設置 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;シェアボタン設置&lt;/h1&gt;
 &lt;p&gt;&lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 255px;&quot;
@@ -672,6 +914,7 @@ $ &lt;span class=&quot;token function&quot;&gt;cd&lt;/span&gt; suzukalight-githu
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; -D gh-pages
 $ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; init
 $ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout -b develop
+$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;.&lt;/span&gt;
 $ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit -am &lt;span class=&quot;token string&quot;&gt;&quot;gatsby new&quot;&lt;/span&gt;
 $ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; push origin develop&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;masterブランチは公開ファイル用なので、gatsbyシステム全体は別のブランチにコミットしておく必要がある。私はとりあえず develop にコミットすることとした。&lt;/p&gt;
