@@ -59,11 +59,10 @@ https://circleci.com/signup/
 ## Contentful に webhook を追加
 
 - `Settings -> Webhooks`
-- 右側の Webhook templates から `CircleCI` を `Add`
+    - 右側の Webhook templates から `CircleCI` を `Add`
+    - 必要な情報を入力して、 `Create webhook`
 
 ![](webhook-templates.png)
-
-- 必要な情報を入力して、 `Create webhook`
 
 ## コンテンツを変更し、CIが起動するかチェック
 
@@ -156,10 +155,6 @@ study-gatsby-contentful.suzukalight.com
 これでセットアップは完了です。では早速、Contentful で記事を更新してみます。
 
 ![](update-content.png)
-
-Publish changes をすると、下記のように webhook が起動したことが表示されます；
-
-![](trigger-webhook.png)
 
 CircleCI 側の job を見ると、即座に実行が開始されており、30秒ほどでデプロイ完了のSUCCESS表示に切り替わります。
 
