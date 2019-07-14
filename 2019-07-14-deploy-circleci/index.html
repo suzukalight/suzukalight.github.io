@@ -155,8 +155,13 @@
 <h1 id="contentful-の初期設定"><a href="#contentful-%E3%81%AE%E5%88%9D%E6%9C%9F%E8%A8%AD%E5%AE%9A" aria-label="contentful の初期設定 permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contentful の初期設定</h1>
 <h2 id="contentful-に-webhook-を追加"><a href="#contentful-%E3%81%AB-webhook-%E3%82%92%E8%BF%BD%E5%8A%A0" aria-label="contentful に webhook を追加 permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contentful に webhook を追加</h2>
 <ul>
-<li><code class="language-text">Settings -&gt; Webhooks</code></li>
+<li>
+<p><code class="language-text">Settings -&gt; Webhooks</code></p>
+<ul>
 <li>右側の Webhook templates から <code class="language-text">CircleCI</code> を <code class="language-text">Add</code></li>
+<li>必要な情報を入力して、 <code class="language-text">Create webhook</code></li>
+</ul>
+</li>
 </ul>
 <p><span
     class="gatsby-resp-image-wrapper"
@@ -179,9 +184,6 @@
         sizes="(max-width: 590px) 100vw, 590px"
       />
   </span></p>
-<ul>
-<li>必要な情報を入力して、 <code class="language-text">Create webhook</code></li>
-</ul>
 <h2 id="コンテンツを変更し、ciが起動するかチェック"><a href="#%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%97%E3%80%81ci%E3%81%8C%E8%B5%B7%E5%8B%95%E3%81%99%E3%82%8B%E3%81%8B%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF" aria-label="コンテンツを変更し、ciが起動するかチェック permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>コンテンツを変更し、CIが起動するかチェック</h2>
 <p>適当なコンテンツを変更してみて、Webhookが起動し、CircleCIのテストが走るかを確認；</p>
 <p><span
@@ -275,29 +277,6 @@ Key   : [Paste Clipboard]
 /static/e519b708d1f5f5ea80df435a8ab87157/b9e4f/update-content.png 590w,
 /static/e519b708d1f5f5ea80df435a8ab87157/f9b6a/update-content.png 885w,
 /static/e519b708d1f5f5ea80df435a8ab87157/f4992/update-content.png 1006w"
-        sizes="(max-width: 590px) 100vw, 590px"
-      />
-  </span></p>
-<p>Publish changes をすると、下記のように webhook が起動したことが表示されます；</p>
-<p><span
-    class="gatsby-resp-image-wrapper"
-    style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
-  >
-    <span
-      class="gatsby-resp-image-background-image"
-      style="padding-bottom: 16.455696202531648%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAv0lEQVQI12WMv2rCUBhH824dHApuBe2j+BwipYPoK1ScitbSxNFFF0FDHSTQxHgT0/sniTleI7j4fZzf2Y4TRgfCKCY6xBxFwtmUVDmUBih4vBKkOCFTicoKRKbRJkdqU+MUpQ1UFXa4/ioJ+Ak3zCOfeejj/vl4tbe41pNgzXi3ZPS7ZLpfk2l9jykbdv6lQirN2YZVbugsPmjO3nn1hrQtLW9wszuoef56ozHp8fTZ5eW7TyAExhQc0xNxknIBz//XP5Lgi/IAAAAASUVORK5CYII='); background-size: cover; display: block;"
-    ></span>
-    <img
-        class="gatsby-resp-image-image"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
-        alt="trigger webhook"
-        title=""
-        src="/static/6a5b284719766ff2f492a0109081a9d3/b9e4f/trigger-webhook.png"
-        srcset="/static/6a5b284719766ff2f492a0109081a9d3/cf440/trigger-webhook.png 148w,
-/static/6a5b284719766ff2f492a0109081a9d3/d2d38/trigger-webhook.png 295w,
-/static/6a5b284719766ff2f492a0109081a9d3/b9e4f/trigger-webhook.png 590w,
-/static/6a5b284719766ff2f492a0109081a9d3/f9b6a/trigger-webhook.png 885w,
-/static/6a5b284719766ff2f492a0109081a9d3/6bba7/trigger-webhook.png 948w"
         sizes="(max-width: 590px) 100vw, 590px"
       />
   </span></p>
