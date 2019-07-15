@@ -7,27 +7,29 @@ import Iframely from '../../atoms/Iframely';
 import DateAndTags from '../../molecules/DateAndTags';
 import Bio from '../../molecules/Bio';
 import SocialLinks from '../../molecules/SocialLinks';
-import Layout from '../Layout';
+import { Layout, Centered } from '../Layout';
 
 import styles from './index.module.scss';
 
 const Pager = ({ previous, next }) => (
-  <ul className={styles.pager}>
-    <li className={styles.prev}>
-      {previous && (
-        <Link to={previous.fields.slug} rel="prev">
-          {`← ${previous.frontmatter.title}`}
-        </Link>
-      )}
-    </li>
-    <li className={styles.next}>
-      {next && (
-        <Link to={next.fields.slug} rel="next">
-          {`${next.frontmatter.title} →`}
-        </Link>
-      )}
-    </li>
-  </ul>
+  <div className={styles.footerPager}>
+    <ul className={styles.pager}>
+      <li className={styles.prev}>
+        {previous && (
+          <Link to={previous.fields.slug} rel="prev">
+            {`← ${previous.frontmatter.title}`}
+          </Link>
+        )}
+      </li>
+      <li className={styles.next}>
+        {next && (
+          <Link to={next.fields.slug} rel="next">
+            {`${next.frontmatter.title} →`}
+          </Link>
+        )}
+      </li>
+    </ul>
+  </div>
 );
 
 const BlogPostTemplate = ({ location, data, pageContext }) => {
@@ -42,35 +44,31 @@ const BlogPostTemplate = ({ location, data, pageContext }) => {
       <Seo title={title} description={description} />
       <Iframely />
 
-      <section className={styles.head}>
-        <h1 className={styles.title}>{title}</h1>
-        <p className={styles.description}>{description}</p>
-        <DateAndTags date={date} tags={tags} />
+      <Centered>
+        <section className={styles.head}>
+          <h1 className={styles.title}>{title}</h1>
+          <p className={styles.description}>{description}</p>
+          <DateAndTags date={date} tags={tags} />
 
-        <div className={styles.hero}>{hero && <Image fluid={hero.childImageSharp.fluid} />}</div>
-      </section>
+          <div className={styles.hero}>{hero && <Image fluid={hero.childImageSharp.fluid} />}</div>
+        </section>
 
-      <section className={styles.toc}>
-        <h1 className={styles.tocHeader}>目次</h1>
-        <div
-          className={styles.tocBody}
-          dangerouslySetInnerHTML={{ __html: post.tableOfContents }}
-        />
-      </section>
+        <section className={styles.toc}>
+          <h1 className={styles.tocHeader}>目次</h1>
+          <div
+            className={styles.tocBody}
+            dangerouslySetInnerHTML={{ __html: post.tableOfContents }}
+          />
+        </section>
 
-      <div className={styles.article} dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div className={styles.article} dangerouslySetInnerHTML={{ __html: post.html }} />
 
-      <section className={styles.footer}>
-        <div className={styles.socialLinks}>
-          <SocialLinks url={slug} title={title} />
-        </div>
-        <div className={styles.bio}>
-          <Bio />
-        </div>
-        <div className={styles.footerPager}>
+        <section className={styles.footer}>
+          <SocialLinks className={styles.socialLinks} url={slug} title={title} />
+          <Bio className={styles.bio} />
           <Pager previous={previous} next={next} />
-        </div>
-      </section>
+        </section>
+      </Centered>
     </Layout>
   );
 };

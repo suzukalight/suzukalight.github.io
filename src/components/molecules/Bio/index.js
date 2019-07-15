@@ -19,12 +19,12 @@ const query = graphql`
   }
 `;
 
-const Bio = () => {
+const Bio = ({ className }) => {
   const data = useStaticQuery(query);
   const { author, social } = data.site.siteMetadata;
 
   return (
-    <div className={styles.root}>
+    <div className={`${styles.root} ${className}`}>
       <Avatar />
 
       <div className={styles.description}>

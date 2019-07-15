@@ -4,8 +4,8 @@ import Tags from '../../atoms/Tags';
 
 import styles from './index.module.scss';
 
-const DateAndTags = ({ date, tags }) => (
-  <div className={styles.root}>
+const DateAndTags = ({ className, date, tags }) => (
+  <div className={`${styles.root} ${className}`}>
     <small className={styles.date}>{date}</small>
     <Tags className={styles.tags} tags={tags} />
   </div>

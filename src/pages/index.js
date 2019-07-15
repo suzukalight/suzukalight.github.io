@@ -1,20 +1,8 @@
-import React from 'react';
 import { graphql } from 'gatsby';
 
-import Seo from '../components/atoms/Seo';
-import Hero from '../components/pages/Root/Hero';
-import Posts from '../components/pages/Root/Posts';
-import Layout from '../components/templates/Layout';
+import Root from '../components/pages/Root';
 
-const BlogIndex = ({ location, data }) => (
-  <Layout location={location} title={data.site.siteMetadata.title}>
-    <Seo title="Index" description="なければ作ればいいじゃない" />
-    <Hero />
-    <Posts posts={data.allMarkdownRemark.edges} />
-  </Layout>
-);
-
-export default BlogIndex;
+export default Root;
 
 export const pageQuery = graphql`
   query {
@@ -37,7 +25,7 @@ export const pageQuery = graphql`
             tags
             hero {
               childImageSharp {
-                fixed(width: 128, height: 128) {
+                fixed(width: 280, height: 140) {
                   ...GatsbyImageSharpFixed
                 }
               }

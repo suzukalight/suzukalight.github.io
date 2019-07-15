@@ -20,7 +20,7 @@ const query = graphql`
   }
 `;
 
-const Header = ({ title, social }) => (
+export const Header = ({ title, social }) => (
   <header className={styles.header}>
     <div className={styles.headerInner}>
       <h3 className={styles.headerSiteTitle}>
@@ -40,7 +40,7 @@ const Header = ({ title, social }) => (
   </header>
 );
 
-const Footer = ({ author }) => (
+export const Footer = ({ author }) => (
   <footer className={styles.footer}>
     <div className={styles.footerInner}>
       <div className={styles.footerAvatar}>
@@ -54,7 +54,9 @@ const Footer = ({ author }) => (
   </footer>
 );
 
-const Layout = ({ location, title, children }) => {
+export const Centered = ({ children }) => <div className={styles.centered}>{children}</div>;
+
+export const Layout = ({ location, title, children }) => {
   const data = useStaticQuery(query);
   const { author, social } = data.site.siteMetadata;
 

@@ -1,0 +1,27 @@
+@import '../../../styles/media-queries.scss';
+
+.root {
+  display: flex;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.texts {
+  max-height: 112px;
+  overflow: hidden;
+  
+  @include mq-sm() {
+    max-height: 72px;
+  }
+}
+
+.tags {
+  overflow: hidden;
+}

@@ -1,12 +1,16 @@
 import React from 'react';
 
-import Bio from '../../molecules/Bio';
+import Avatar from '../../atoms/Avatar';
 
 import styles from './Hero.module.scss';
 
 const Hero = ({ node, title }) => (
-  <div className={styles.bio}>
-    <Bio />
+  <div className={styles.root}>
+    <h1 className={styles.title}>
+      <Avatar />
+      <span>suzukalight.com</span>
+    </h1>
+    <small className={styles.caption}>まずは技術中心に</small>
   </div>
 );
 
