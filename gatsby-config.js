@@ -86,8 +86,8 @@ module.exports = {
       options: {
         name: 'suzukalight.com',
         short_name: 'suzukalight',
-        theme_color: '#26a69a',
-        background_color: '#2196f3',
+        theme_color: '#136d15',
+        background_color: '#f2f2f2',
         display: 'browser',
         Scope: '/',
         start_url: '/',
