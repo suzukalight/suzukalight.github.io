@@ -19,7 +19,7 @@ const query = graphql`
   }
 `;
 
-const Bio = ({ className }) => {
+const Bio = ({ className = '' }) => {
   const data = useStaticQuery(query);
   const { author, social } = data.site.siteMetadata;
 

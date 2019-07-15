@@ -24,4 +24,11 @@
 
 .tags {
   overflow: hidden;
+  
+  @include mq-sm() {
+    & li {
+      border: 0;
+      padding: 0;
+    }
+  }
 }

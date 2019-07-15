@@ -2,7 +2,7 @@ import React from 'react';
 
 import Avatar from '../../atoms/Avatar';
 
-import styles from './Hero.module.scss';
+import styles from './index.module.scss';
 
 const Hero = ({ node, title }) => (
   <div className={styles.root}>

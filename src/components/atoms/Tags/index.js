@@ -10,7 +10,7 @@ const Tag = ({ tag }) => (
   </Link>
 );
 
-const Tags = ({ className, tags }) => (
+const Tags = ({ className = '', tags }) => (
   <ul className={`${styles.tags} ${className}`}>
     {(tags || []).map(tag => (
       <Tag key={tag} tag={tag} />

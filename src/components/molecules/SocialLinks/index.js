@@ -26,7 +26,7 @@ const query = graphql`
   }
 `;
 
-const SocialLinks = ({ className, url, title, via }) => {
+const SocialLinks = ({ className = '', url, title, via }) => {
   const data = useStaticQuery(query);
   const { siteUrl, social } = data.site.siteMetadata;
   const twitterAccount = via || social.twitter;

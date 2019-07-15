@@ -2,7 +2,7 @@ import React from 'react';
 
 import Seo from '../../atoms/Seo';
 import PostCard from '../../molecules/PostCard';
-import Hero from './Hero';
+import Hero from '../../molecules/Hero';
 import Layout from '../../templates/Layout';
 
 import styles from './index.module.scss';

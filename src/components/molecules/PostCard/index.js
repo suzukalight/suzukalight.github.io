@@ -14,7 +14,7 @@ import DateAndTags from '../../molecules/DateAndTags';
 
 import styles from './index.module.scss';
 
-const PostCard = ({ className, node, title }) => (
+const PostCard = ({ className = '', node, title }) => (
   <Card className={className}>
     <CardImage>
       <Link className={styles.link} to={node.fields.slug}>
