@@ -1,12 +1,12 @@
 import React from 'react';
-import cx from 'classnames';
+import cn from 'classnames';
 
 import Tags from '../../atoms/Tags';
 
 import styles from './index.module.scss';
 
 const DateAndTags = ({ className, date, tags }) => (
-  <div className={cx(styles.root, className)}>
+  <div className={cn(styles.root, className)}>
     <small className={styles.date}>{date}</small>
     <Tags className={styles.tags} tags={tags} />
   </div>

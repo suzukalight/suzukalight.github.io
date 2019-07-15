@@ -1,5 +1,5 @@
 import React from 'react';
-import cx from 'classnames';
+import cn from 'classnames';
 import { useStaticQuery, graphql } from 'gatsby';
 import {
   FacebookShareButton,
@@ -34,7 +34,7 @@ const SocialLinks = ({ className, url, title, via }) => {
   const fullUrl = `${siteUrl}${url}`;
 
   return (
-    <ul className={cx(styles.root, className)}>
+    <ul className={cn(styles.root, className)}>
       <li className={styles.item}>
         <FacebookShareButton url={fullUrl}>
           <FacebookIcon size={32} round />

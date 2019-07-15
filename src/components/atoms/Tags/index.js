@@ -1,5 +1,5 @@
 import React from 'react';
-import cx from 'classnames';
+import cn from 'classnames';
 import { Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 
@@ -12,7 +12,7 @@ const Tag = ({ tag }) => (
 );
 
 const Tags = ({ className, tags }) => (
-  <ul className={cx(styles.tags, className)}>
+  <ul className={cn(styles.tags, className)}>
     {(tags || []).map(tag => (
       <Tag key={tag} tag={tag} />
     ))}

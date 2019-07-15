@@ -1,5 +1,5 @@
 import React from 'react';
-import cx from 'classnames';
+import cn from 'classnames';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Avatar from '../../atoms/Avatar';
@@ -25,7 +25,7 @@ const Bio = ({ className }) => {
   const { author, social } = data.site.siteMetadata;
 
   return (
-    <div className={cx(styles.root, className)}>
+    <div className={cn(styles.root, className)}>
       <Avatar />
 
       <div className={styles.description}>
