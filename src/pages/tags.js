@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 
 import Seo from '../components/atoms/Seo';
-import Layout from '../components/templates/Layout';
+import { Layout, Centered } from '../components/templates/Layout';
 
 const TagsPage = ({
   location,
@@ -16,17 +16,19 @@ const TagsPage = ({
   },
 }) => (
   <Layout location={location} title={title}>
-    <Seo title="Tags" />
-    <h1>Tags</h1>
-    <ul>
-      {group.map(tag => (
-        <li key={tag.fieldValue}>
-          <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-            {tag.fieldValue} ({tag.totalCount})
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <Seo title="すべてのタグ" />
+    <Centered>
+      <h1>すべてのタグ</h1>
+      <ul>
+        {group.map(tag => (
+          <li key={tag.fieldValue}>
+            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+              {tag.fieldValue} ({tag.totalCount})
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </Centered>
   </Layout>
 );
 

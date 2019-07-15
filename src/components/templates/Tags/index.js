@@ -4,27 +4,33 @@ import { Link, graphql } from 'gatsby';
 
 import Layout from '../Layout';
 import Seo from '../../atoms/Seo';
+import Posts from '../../molecules/Posts';
+import Hero from '../../molecules/Hero';
+
+import styles from './index.module.scss';
 
 const Tags = ({ location, pageContext, data }) => {
   const { tag } = pageContext;
   const { edges, totalCount } = data.allMarkdownRemark;
-  const tagHeader = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${tag}"`;
+  const tagHeader = `"${tag}" に関する記事 (${totalCount}件)`;
   const siteTitle = data.site.siteMetadata.title;
 
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title={tagHeader} />
-      <h1>{tagHeader}</h1>
-      <ul>
-        {edges.map(({ node: { fields: { slug }, frontmatter: { title } } }) => (
-          <li key={slug}>
-            <Link to={slug}>{title}</Link>
-          </li>
-        ))}
-      </ul>
-      <p>
-        <Link to="/tags">All tags</Link>
-      </p>
+
+      <div className={styles.root}>
+        <Hero />
+
+        <h1 className={styles.header}>
+          <span className={styles.heading}>{tagHeader}</span>
+          <span className={styles.allTags}>
+            <Link to="/tags">すべてのタグを表示</Link>
+          </span>
+        </h1>
+
+        <Posts className={styles.posts} posts={edges} />
+      </div>
     </Layout>
   );
 };
@@ -51,11 +57,22 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
+          excerpt
           fields {
             slug
           }
           frontmatter {
+            date(formatString: "YYYY/M/D")
             title
+            description
+            tags
+            hero {
+              childImageSharp {
+                fixed(width: 280, height: 140) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
         }
       }
