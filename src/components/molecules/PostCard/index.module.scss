@@ -27,8 +27,14 @@
   
   @include mq-sm() {
     & li {
+      margin: 0;
       border: 0;
       padding: 0;
+
+      &:after {
+        content: '/';
+        padding: 0 0.25rem;
+      }
     }
   }
 }
