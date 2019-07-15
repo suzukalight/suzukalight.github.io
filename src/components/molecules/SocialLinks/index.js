@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import { useStaticQuery, graphql } from 'gatsby';
 import {
   FacebookShareButton,
@@ -26,14 +27,14 @@ const query = graphql`
   }
 `;
 
-const SocialLinks = ({ className = '', url, title, via }) => {
+const SocialLinks = ({ className, url, title, via }) => {
   const data = useStaticQuery(query);
   const { siteUrl, social } = data.site.siteMetadata;
   const twitterAccount = via || social.twitter;
   const fullUrl = `${siteUrl}${url}`;
 
   return (
-    <ul className={`${styles.root} ${className}`}>
+    <ul className={cx(styles.root, className)}>
       <li className={styles.item}>
         <FacebookShareButton url={fullUrl}>
           <FacebookIcon size={32} round />

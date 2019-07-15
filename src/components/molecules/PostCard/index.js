@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import { Link } from 'gatsby';
 import Image from 'gatsby-image';
 
@@ -14,8 +15,8 @@ import DateAndTags from '../../molecules/DateAndTags';
 
 import styles from './index.module.scss';
 
-const PostCard = ({ className = '', node, title }) => (
-  <Card className={className}>
+const PostCard = ({ className, node, title }) => (
+  <Card className={cx(styles.root, className)}>
     <CardImage>
       <Link className={styles.link} to={node.fields.slug}>
         {node.frontmatter.hero && <Image fixed={node.frontmatter.hero.childImageSharp.fixed} />}

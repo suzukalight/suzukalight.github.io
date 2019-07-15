@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Avatar from '../../atoms/Avatar';
@@ -19,12 +20,12 @@ const query = graphql`
   }
 `;
 
-const Bio = ({ className = '' }) => {
+const Bio = ({ className }) => {
   const data = useStaticQuery(query);
   const { author, social } = data.site.siteMetadata;
 
   return (
-    <div className={`${styles.root} ${className}`}>
+    <div className={cx(styles.root, className)}>
       <Avatar />
 
       <div className={styles.description}>
