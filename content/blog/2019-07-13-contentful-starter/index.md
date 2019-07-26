@@ -2,6 +2,7 @@
 title: Gatsby + Contentful + GitHub Pages ハンズオン
 date: "2019-07-13T00:08:00"
 description: ''
+category: JavaScript
 tags: ['hands-on', 'gatsby', 'contentful', 'github pages']
 hero: ./update-content.png
 ---

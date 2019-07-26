@@ -22,6 +22,7 @@ export const pageQuery = graphql`
             date(formatString: "YYYY/M/D")
             title
             description
+            category
             tags
             hero {
               childImageSharp {

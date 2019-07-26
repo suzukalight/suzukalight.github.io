@@ -8,6 +8,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const blogPostTemplate = path.resolve(`./src/components/templates/BlogPost/index.js`);
   const tagTemplate = path.resolve(`./src/components/templates/Tags/index.js`);
+  const categoryTemplate = path.resolve(`./src/components/templates/Categories/index.js`);
 
   const result = await graphql(`
     {
@@ -19,6 +20,7 @@ exports.createPages = async ({ graphql, actions }) => {
             }
             frontmatter {
               title
+              category
               tags
             }
           }
@@ -60,6 +62,22 @@ exports.createPages = async ({ graphql, actions }) => {
       component: tagTemplate,
       context: {
         tag,
+      },
+    });
+  });
+
+  // Category pages
+  const categories = posts.reduce((categories, edge) => {
+    const edgeTags = get(edge, 'node.frontmatter.category');
+    return edgeTags ? categories.concat(edge.node.frontmatter.category) : categories;
+  }, []);
+
+  [...new Set(categories)].forEach(category => {
+    createPage({
+      path: `/categories/${kebabCase(category)}/`,
+      component: categoryTemplate,
+      context: {
+        category,
       },
     });
   });

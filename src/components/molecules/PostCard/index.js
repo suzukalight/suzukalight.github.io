@@ -2,6 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import { Link } from 'gatsby';
 import Image from 'gatsby-image';
+import kebabCase from 'lodash/kebabCase';
 
 import {
   Card,
@@ -18,8 +19,11 @@ import styles from './index.module.scss';
 const PostCard = ({ className, node, title }) => (
   <Card className={cn(styles.root, className)}>
     <CardImage>
-      <Link className={styles.link} to={node.fields.slug}>
+      <Link className={styles.image} to={node.fields.slug}>
         {node.frontmatter.hero && <Image fixed={node.frontmatter.hero.childImageSharp.fixed} />}
+      </Link>
+      <Link className={styles.category} to={`/categories/${kebabCase(node.frontmatter.category)}`}>
+        <span>{node.frontmatter.category}</span>
       </Link>
     </CardImage>
 

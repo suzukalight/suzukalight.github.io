@@ -1,18 +1,45 @@
 @import '../../../styles/media-queries.scss';
 
-.link {
-  color: inherit;
-  text-decoration: none;
+.image {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 
-  &:hover {
-    text-decoration: none;
+.category {
+  position: absolute;
+  display: block;
+  left: 0;
+  bottom: 0;
+  width: 96px;
+  height: 24px;
+  padding-left: 16px;
+  background-color: #268b07;
+  color: white;
+  font-size: 0.8rem;
+  line-height: 24px;
+
+  @include mq-sm() {
+    width: 80px;
+    height: 16px;
+    padding: 0;
+    font-size: 0.625rem;
+    line-height: 16px;
+    text-align: center;
   }
 }
 
 .texts {
-  max-height: 112px;
+  max-height: 152px;
   overflow: hidden;
-  
+  color: inherit;
+  text-decoration: none;
+
+  &:hover a {
+    text-decoration: none;
+  }
+
   @include mq-sm() {
     max-height: 72px;
   }

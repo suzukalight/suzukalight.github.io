@@ -2,6 +2,7 @@
 title: Gatsby のファイル構成
 date: "2019-07-01T23:00:00"
 description: 'Gatsby 開発時に利用するファイル類の構成について'
+category: JavaScript
 tags: ['gatsby']
 hero: ./title.png
 ---

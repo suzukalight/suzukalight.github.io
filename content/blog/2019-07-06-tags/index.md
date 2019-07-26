@@ -2,6 +2,7 @@
 title: Gatsby にタグ機能を追加
 date: "2019-07-06T20:00:00"
 description: 'mdファイルの先頭にタグ情報を付与・そのタグを記事詳細に表示・タグ別の記事一覧ページを作成・タグ一覧ページを作成'
+category: JavaScript
 tags: ['gatsby', 'tag']
 hero: ./hero.png
 ---

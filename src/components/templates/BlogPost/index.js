@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Image from 'gatsby-image';
+import kebabCase from 'lodash/kebabCase';
 
 import Seo from '../../atoms/Seo';
 import Iframely from '../../atoms/Iframely';
@@ -35,7 +36,7 @@ const Pager = ({ previous, next }) => (
 const BlogPostTemplate = ({ location, data, pageContext }) => {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
-  const { title, date, hero, tags } = post.frontmatter;
+  const { title, date, hero, category, tags } = post.frontmatter;
   const description = post.frontmatter.description || post.excerpt;
   const { previous, next, slug } = pageContext;
 
@@ -46,6 +47,9 @@ const BlogPostTemplate = ({ location, data, pageContext }) => {
 
       <Centered>
         <section className={styles.head}>
+          <Link className={styles.category} to={`/categories/${kebabCase(category)}`}>
+            <span>{category}</span>
+          </Link>
           <h1 className={styles.title}>{title}</h1>
           <p className={styles.description}>{description}</p>
           <DateAndTags date={date} tags={tags} />
@@ -92,6 +96,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "YYYY/M/D")
         description
+        category
         tags
         hero {
           childImageSharp {

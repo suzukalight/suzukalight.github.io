@@ -9,23 +9,23 @@ import Hero from '../../molecules/Hero';
 
 import styles from './index.module.scss';
 
-const Tags = ({ location, pageContext, data }) => {
-  const { tag } = pageContext;
+const Categories = ({ location, pageContext, data }) => {
+  const { category } = pageContext;
   const { edges, totalCount } = data.allMarkdownRemark;
-  const tagHeader = `"${tag}" に関する記事 (${totalCount}件)`;
+  const categoryHeader = `"${category}" に関する記事 (${totalCount}件)`;
   const siteTitle = data.site.siteMetadata.title;
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title={tagHeader} />
+      <Seo title={categoryHeader} />
 
       <div className={styles.root}>
         <Hero />
 
         <h1 className={styles.header}>
-          <span className={styles.heading}>{tagHeader}</span>
-          <span className={styles.allTags}>
-            <Link to="/tags">すべてのタグを表示</Link>
+          <span className={styles.heading}>{categoryHeader}</span>
+          <span className={styles.allCategories}>
+            <Link to="/categories">すべてのカテゴリを表示</Link>
           </span>
         </h1>
 
@@ -35,15 +35,15 @@ const Tags = ({ location, pageContext, data }) => {
   );
 };
 
-Tags.propTypes = {
+Categories.propTypes = {
   pageContext: PropTypes.object,
   data: PropTypes.object,
 };
 
-export default Tags;
+export default Categories;
 
 export const pageQuery = graphql`
-  query($tag: String) {
+  query($category: String) {
     site {
       siteMetadata {
         title
@@ -52,7 +52,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
+      filter: { frontmatter: { category: { in: [$category] } } }
     ) {
       totalCount
       edges {
