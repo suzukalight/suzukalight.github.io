@@ -1,5 +1,5 @@
 ---
-title: 函館旅行
+title: 函館旅行記（2019/7/17～4泊）
 date: '2019-07-21T00:08:00'
 category: Trip
 tags: ['函館', '競馬', 'twitter']
@@ -28,10 +28,11 @@ hero: ./hakodate-night.jpg
 - 景色を楽しむ
     - 函館山夜景
     - 城岱牧場展望台
+    - 五稜郭
     - 八幡坂・二十間坂
 ```
 
-# 1日目（2019/7/17)
+# 1日目（2019/7/17)：五稜郭
 
 - __行程：__ 自宅→羽田空港→函館空港→五稜郭→ラビスタ函館ベイ
 - __食事：__ 回転寿司（函太郎五稜郭公園店）
@@ -40,7 +41,7 @@ hero: ./hakodate-night.jpg
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">北海道の<br>寿司は<br>最高<br>だ <a href="https://t.co/bmuAueSGnC">pic.twitter.com/bmuAueSGnC</a></p>&mdash; suzukalight (@suzukalight) <a href="https://twitter.com/suzukalight/status/1151484420966121473?ref_src=twsrc%5Etfw">July 17, 2019</a></blockquote>
 
-# 2日目（2019/7/18)
+# 2日目（2019/7/18)：駅前・元町エリア
 
 - __行程：__ ホテル→金森赤レンガ倉庫→緑の島→函館市臨海研究所→箱館丸→函館市旧イギリス領事館→ハリストス正教会→カトリック元町教会→ハセガワストア→函館山ロープウェイ→函館山夜景→ホテル
 - __食事：__ 朝食バイキング（ラビスタ函館ベイ）、アフタヌーンティーセット（函館市旧イギリス領事館）、やきとり弁当（ハセガワストア）
@@ -53,7 +54,7 @@ hero: ./hakodate-night.jpg
 
 <blockquote class="twitter-tweet" data-conversation="none"><p lang="ja" dir="ltr">函館山ロープウェイで夜景を。綺麗でしたわ…。 <a href="https://t.co/urTf2bIsJd">pic.twitter.com/urTf2bIsJd</a></p>&mdash; suzukalight (@suzukalight) <a href="https://twitter.com/suzukalight/status/1151833696296550400?ref_src=twsrc%5Etfw">July 18, 2019</a></blockquote>
 
-# 3日目（2019/7/19)
+# 3日目（2019/7/19)：函館東部
 
 - __行程：__ ホテル→立待岬→コーヒールームきくち→トラピスチヌ修道院→湯の川温泉足湯→ラッキーピエロ→ホテル
 - __食事：__ 朝食バイキング（ラビスタ函館ベイ）、ナポリタン＋ケーキセット（コーヒールームきくち）、チャイニーズチキンバーガーセット（ラッキーピエロマリーナ末広店）
@@ -64,7 +65,7 @@ hero: ./hakodate-night.jpg
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ラッキーピエロさん行ってきたんさ、チャイニーズチキンまじで美味しすぎない？甘い油淋鶏みたいな。バンズ柔らかくて食べやすいし。函館ずるい <a href="https://t.co/dCS3olLuOw">pic.twitter.com/dCS3olLuOw</a></p>&mdash; suzukalight (@suzukalight) <a href="https://twitter.com/suzukalight/status/1152184217259761664?ref_src=twsrc%5Etfw">July 19, 2019</a></blockquote>
 
-# 4日目（2019/7/20)
+# 4日目（2019/7/20)：北斗市・大沼公園
 
 - __行程：__ ホテル→新函館北斗駅→沼の家→大沼公園→城岱牧場→まるかつ水産→ホテル
 - __食事：__ 朝食バイキング（ラビスタ函館ベイ）、大沼だんご（沼の家）、回転寿司（まるかつ水産）
@@ -73,7 +74,7 @@ hero: ./hakodate-night.jpg
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">城岱牧場展望台。函館が素晴らしい湾であることが良くわかる、オススメのポイント。あと、馬、いた！！ <a href="https://t.co/S1zA7nN00m">pic.twitter.com/S1zA7nN00m</a></p>&mdash; suzukalight (@suzukalight) <a href="https://twitter.com/suzukalight/status/1152514056168722432?ref_src=twsrc%5Etfw">July 20, 2019</a></blockquote>
 
-# 5日目（2019/7/21)
+# 5日目（2019/7/21)：函館競馬場
 
 - __行程：__ ホテル→函館競馬場→函館空港→羽田空港→自宅
 - __食事：__ 朝食バイキング（ラビスタ函館ベイ）、あじさい（塩ラーメン＋カレーチャーハン）、ホッケフライ定食＋ザンギ（函館空港）
