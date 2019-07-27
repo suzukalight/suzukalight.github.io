@@ -12,13 +12,14 @@
   display: block;
   left: 0;
   bottom: 0;
-  width: 96px;
   height: 24px;
-  padding-left: 16px;
+  padding: 0 16px;
   background-color: #268b07;
   color: white;
   font-size: 0.8rem;
   line-height: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
 
   @include mq-sm() {
     width: 80px;

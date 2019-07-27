@@ -2,7 +2,7 @@
 title: Gatsby で記事のトップ画像を設定
 date: "2019-07-02T20:00:00"
 description: 'Gatsbyで記事のトップ画像を設定し、さらにその画像を記事一覧のサムネイルとしても表示する手法について'
-category: JavaScript
+category: Technology
 tags: ['gatsby', 'gatsby-image']
 ---
 

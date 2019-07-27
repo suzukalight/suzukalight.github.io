@@ -1,7 +1,7 @@
 ---
 title: CircleCI で Contentful の更新をデプロイ
 date: "2019-07-14T00:08:00"
-category: JavaScript
+category: Technology
 tags: ['gatsby', 'circleci', 'contentful', 'github pages']
 hero: ./complete-ci.png
 ---
