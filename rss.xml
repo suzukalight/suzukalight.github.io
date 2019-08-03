@@ -1,4 +1,215 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[suzukalight.com]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://suzukalight.com</link><generator>RSS for Node</generator><lastBuildDate>Sat, 27 Jul 2019 10:09:25 GMT</lastBuildDate><item><title><![CDATA[函館旅行記（2019/7/17～4泊）]]></title><description><![CDATA[目的1日目（2019/7/17)：五稜郭行程： 自宅→羽田空港→函館空港→五稜郭→ラビスタ函館ベイ食事： 回転寿司（函太郎五稜郭公園店）2日目（2019/7/1…]]></description><link>https://suzukalight.com/2019-07-21-trip-hakodate/</link><guid isPermaLink="false">https://suzukalight.com/2019-07-21-trip-hakodate/</guid><pubDate>Sat, 20 Jul 2019 15:08:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#%E7%9B%AE%E7%9A%84&quot; aria-label=&quot;目的 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;目的&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[suzukalight.com]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://suzukalight.com</link><generator>RSS for Node</generator><lastBuildDate>Sat, 03 Aug 2019 06:11:45 GMT</lastBuildDate><item><title><![CDATA[Prisma2 Beta を触る]]></title><description><![CDATA[Prisma2Prisma2: https://github.com/prisma/prisma2
+（※上記リポジトリより引用）prisma2 ecosystem には、下記の3つが含まれています；PhotonJS: ORM。自作のサーバにimport…]]></description><link>https://suzukalight.com/2019-08-03-prisma2/</link><guid isPermaLink="false">https://suzukalight.com/2019-08-03-prisma2/</guid><pubDate>Fri, 02 Aug 2019 15:08:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;prisma2&quot;&gt;&lt;a href=&quot;#prisma2&quot; aria-label=&quot;prisma2 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Prisma2&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Prisma2: &lt;a href=&quot;https://github.com/prisma/prisma2&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/prisma/prisma2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1faea92c0e6c8c47f1412c793e0489f6/2f950/prisma2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 22.499999999999996%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsSAAALEgHS3X78AAAAyElEQVQY021QjcrCMAzc+7/hJyqIuk/ZdO3s+pM0PdOKorCDUNIkl7t0UJRSPpGlhiDnDNH3u7YGLhnE/Kl330XiDGMs7MPB+djySv7G4gMSkS4T+Bgh+l68we54RIzpRcg6NE4zQiKUzNjeE/5OAzbbPWYlrqRuCYha358uuI4Tgg5bt6iDqupXeScqtTZXJaI2bSAY5zHZGT7E9s/NfsGieVWYiDFrD0vGrSf0/yMO576d6Mfy6w7rt1qDFMH9ShgGo8pvbfkTWpyHs5naXGsAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;prisma2&quot;
+        title=&quot;&quot;
+        src=&quot;/static/1faea92c0e6c8c47f1412c793e0489f6/b9e4f/prisma2.png&quot;
+        srcset=&quot;/static/1faea92c0e6c8c47f1412c793e0489f6/cf440/prisma2.png 148w,
+/static/1faea92c0e6c8c47f1412c793e0489f6/d2d38/prisma2.png 295w,
+/static/1faea92c0e6c8c47f1412c793e0489f6/b9e4f/prisma2.png 590w,
+/static/1faea92c0e6c8c47f1412c793e0489f6/f9b6a/prisma2.png 885w,
+/static/1faea92c0e6c8c47f1412c793e0489f6/2d849/prisma2.png 1180w,
+/static/1faea92c0e6c8c47f1412c793e0489f6/2f950/prisma2.png 1600w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+（※上記リポジトリより引用）&lt;/p&gt;
+&lt;p&gt;prisma2 ecosystem には、下記の3つが含まれています；&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;PhotonJS&lt;/strong&gt;: ORM。自作のサーバにimportして利用するライブラリ&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lift&lt;/strong&gt;: データモデリングとマイグレーションを行う、CLIツール&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Studio&lt;/strong&gt;: データ管理画面を提供する、GUIツール&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;v1では専用サーバを立ち上げて、間接的にprismaを利用する形式でしたが、v2では自作サーバに Photon をimportすることで、直接データを触っていくスタイルに変更されました。&lt;/p&gt;
+&lt;p&gt;Lift や Studio は、prisma2 CLI をインストールすることで利用することができるようになります。&lt;/p&gt;
+&lt;h1 id=&quot;セットアップ&quot;&gt;&lt;a href=&quot;#%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97&quot; aria-label=&quot;セットアップ permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;セットアップ&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/prisma/prisma2/blob/master/docs/tutorial.md&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;prisma2/tutorial.md at master · prisma/prisma2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;上記ドキュメントの手順で進めていきます。ここではお手軽に SQLite を使ってハンズオンをしてみます。&lt;/p&gt;
+&lt;h2 id=&quot;インストール&quot;&gt;&lt;a href=&quot;#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&quot; aria-label=&quot;インストール permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;インストール&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;prisma2 CLI をインストール&lt;/li&gt;
+&lt;li&gt;prisma2 init でボイラープレートを作成&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; i -g prisma2
+$ prisma2 init study-prisma2
+
+&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; SQLite
+
+&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; Photon
+&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; Lift
+&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; Create
+
+&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; TypeScript
+
+&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; From Scratch
+
+&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; Your template has been successfully &lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt; up&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;vscodeにエクステンションを追加&quot;&gt;&lt;a href=&quot;#vscode%E3%81%AB%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%86%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%BF%BD%E5%8A%A0&quot; aria-label=&quot;vscodeにエクステンションを追加 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;VSCodeにエクステンションを追加&lt;/h2&gt;
+&lt;p&gt;あったほうが開発がはかどります；&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SQLite&lt;/a&gt;&lt;/strong&gt; : dev.db の中身を表示できる&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=Prisma.prisma&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Prisma&lt;/a&gt;&lt;/strong&gt;: .prisma などのシンタックスハイライトができる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;実行&quot;&gt;&lt;a href=&quot;#%E5%AE%9F%E8%A1%8C&quot; aria-label=&quot;実行 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;実行&lt;/h1&gt;
+&lt;h2 id=&quot;マイグレーション・シーダー&quot;&gt;&lt;a href=&quot;#%E3%83%9E%E3%82%A4%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%BB%E3%82%B7%E3%83%BC%E3%83%80%E3%83%BC&quot; aria-label=&quot;マイグレーション・シーダー permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;マイグレーション・シーダー&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Lift を使ってマイグレーション&lt;/li&gt;
+&lt;li&gt;ボイラープレート付属の seeder スクリプトを使って、UserとPostを作成&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;cd&lt;/span&gt; study-prisma2
+$ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt;
+
+$ prisma2 lift up
+
+&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; Done with 1 migration &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; 196ms.
+
+$ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; seed
+
+&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; Done &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; 1.52s.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;SQLiteエクステンションで開いてみると、seederによってPostが増えているのが確認できました；&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a39b89057f59a9caa287ea367197e406/dd96d/seeded.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 24.137931034482758%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsSAAALEgHS3X78AAAA4ElEQVQY00VRSY6DMBDkJwgEjMgMDDte2GLQ5MSB/z+m0uUomUOpqpdqu+3AGI2yLFAWBaqqQpIkSNMMWZZ5fiGVfCq5rw9ePf/69v2DX/EHRg+wAjX2aNsWXddBKeX1OI4YhsGzMQZN03jUdY2+7z9xJ1rbGdM8I5imCfu+Y9vuoD6OA9d1wTmH8zw91nXFLM3WWmitPT8ef+LZ/PBCttNa+XxAI8FBy7J4sJFFMmMa+BTUHMwDWOctCW7F2LldVpZViHfDez1qMm9EA4eyRvBJGIdhiDiOEUUR8jz3f/AEWFqiKNOCqdAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;seeded&quot;
+        title=&quot;&quot;
+        src=&quot;/static/a39b89057f59a9caa287ea367197e406/b9e4f/seeded.png&quot;
+        srcset=&quot;/static/a39b89057f59a9caa287ea367197e406/cf440/seeded.png 148w,
+/static/a39b89057f59a9caa287ea367197e406/d2d38/seeded.png 295w,
+/static/a39b89057f59a9caa287ea367197e406/b9e4f/seeded.png 590w,
+/static/a39b89057f59a9caa287ea367197e406/f9b6a/seeded.png 885w,
+/static/a39b89057f59a9caa287ea367197e406/dd96d/seeded.png 899w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;サンプルスクリプトの実行&quot;&gt;&lt;a href=&quot;#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%AE%E5%AE%9F%E8%A1%8C&quot; aria-label=&quot;サンプルスクリプトの実行 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;サンプルスクリプトの実行&lt;/h2&gt;
+&lt;p&gt;サンプルスクリプト &lt;code class=&quot;language-text&quot;&gt;src/script.ts&lt;/code&gt; は、PhotonJSを使って、下記の処理を実行するサンプルです；&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;すべての公開済みPostを取得&lt;/li&gt;
+&lt;li&gt;User:alice が新しいPostを作成＋公開&lt;/li&gt;
+&lt;li&gt;User:alice のPost一覧を取得&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;実行結果は console.log で出力されます（一部省略）；&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; start
+
+&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; $ ts-node src/script.ts
+&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; Retrieved all published posts: &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.
+&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; Created a new post: &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.
+&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; Published the newly created post: &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.
+&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; Retrieved all posts from a specific user: &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.
+
+&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; ✨  Done &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; 1.59s.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;SQLiteエクステンションで開いてみると、サンプルスクリプトによってPostが増えているのが確認できました；&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5370101394d661bcbc33127252244f30/2f110/started.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 27.02104097452935%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsSAAALEgHS3X78AAAA7ElEQVQY0zVQ13KEQAzjU5g5FpJAjg5L7wwt9/9/oyBf8qDRykW210hiH1VZ4vn8RuA/EYYhHg8LlqWglC38xjtm284fbMnzTf74/EIQhDB0nkLnCZpKg+8gCFDeA/q+R57n6LoOdV2LbtsWURQhjmNkWSZ11EmSoChr1E0LI01TdHfxMAwYxlGaxpu3bROzfd8xz7MYaK1RVZWAuWmaxNT3fTFtmoaGCc7zxHVdeL1+pJAGx3HIVsxRK6Xgui7WdRWjZVnkAl7keZ4YcrjBP+NJBCfwnKIoRP8zN2IjQRPGydyMg0zThOM40vsLVW2jwVAt8KQAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;started&quot;
+        title=&quot;&quot;
+        src=&quot;/static/5370101394d661bcbc33127252244f30/b9e4f/started.png&quot;
+        srcset=&quot;/static/5370101394d661bcbc33127252244f30/cf440/started.png 148w,
+/static/5370101394d661bcbc33127252244f30/d2d38/started.png 295w,
+/static/5370101394d661bcbc33127252244f30/b9e4f/started.png 590w,
+/static/5370101394d661bcbc33127252244f30/f9b6a/started.png 885w,
+/static/5370101394d661bcbc33127252244f30/2f110/started.png 903w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;studioの起動&quot;&gt;&lt;a href=&quot;#studio%E3%81%AE%E8%B5%B7%E5%8B%95&quot; aria-label=&quot;studioの起動 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Studioの起動&lt;/h1&gt;
+&lt;p&gt;DBの状態は、管理ツールであるStudioを起動することでも操作が可能です。prisma2 の Development mode を起動して、Studioを利用可能にしましょう；&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ prisma2 dev&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;管理ツールは &lt;a href=&quot;http://localhost:5555&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://localhost:5555&lt;/a&gt; で起動します。ここからデータの閲覧や、クエリの発行などが可能になります；&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ead260cdd45d0f9c9f44b207f3977b52/e4fa8/studio.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 29.97061704211557%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAABIElEQVQY042RzUvEMBDF+/8fvYqC3gTRg+BBvAiysAh6cHWpbD9g1e1uPzdNmmya9O2k1erBgyFD5hcyb14S7/TiGsfnVzg4OcPk8RnGGCitoVvzz2jRdR0ub+5wO3mAt0xSvK8zfGxy5BUDFwItiTphY21/2Bj7J9svdmtBta7eU7IBbAs3rDXY6SEfuANv5MhOkIsfbskhF00v2jM18e4DiaOpxOF0h6elBCszbNIUKYVoGqySNdIsQ1EUYHWNz1WC7JtZTXt8FGykglcwgXSrQBO11FgsFpjNXvA6n6OsKsRxDN/3EQQBsjxHFEXEbwjDsBfmnI+OBd3GQ2cpHTq4d9kyhoqEyrKEUgo1uWK05wods18siTV9oHPoQu009msjyj4bOMC4AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;studio&quot;
+        title=&quot;&quot;
+        src=&quot;/static/ead260cdd45d0f9c9f44b207f3977b52/b9e4f/studio.png&quot;
+        srcset=&quot;/static/ead260cdd45d0f9c9f44b207f3977b52/cf440/studio.png 148w,
+/static/ead260cdd45d0f9c9f44b207f3977b52/d2d38/studio.png 295w,
+/static/ead260cdd45d0f9c9f44b207f3977b52/b9e4f/studio.png 590w,
+/static/ead260cdd45d0f9c9f44b207f3977b52/f9b6a/studio.png 885w,
+/static/ead260cdd45d0f9c9f44b207f3977b52/e4fa8/studio.png 1021w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;あとがき&quot;&gt;&lt;a href=&quot;#%E3%81%82%E3%81%A8%E3%81%8C%E3%81%8D&quot; aria-label=&quot;あとがき permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;あとがき&lt;/h1&gt;
+&lt;p&gt;ハンズオンはあっという間に完了することができました。次は自前のGraphQLサーバを作成しつつ、適当なSPAクライアントを実装して見る予定です。&lt;/p&gt;
+&lt;h1 id=&quot;references&quot;&gt;&lt;a href=&quot;#references&quot; aria-label=&quot;references permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;References&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/prisma/prisma2&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Prisma2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/prisma/prisma2/blob/master/docs/tutorial.md&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;prisma2/tutorial.md at master · prisma/prisma2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.prisma.io/blog/announcing-prisma-2-zq1s745db8i5#getting-started-with-prisma-2&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Prisma 2 Preview: Type-safe Database Access &amp;#x26; Declarative Migrations&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[函館旅行記（2019/7/17～4泊）]]></title><description><![CDATA[目的1日目（2019/7/17)：五稜郭行程： 自宅→羽田空港→函館空港→五稜郭→ラビスタ函館ベイ食事： 回転寿司（函太郎五稜郭公園店）2日目（2019/7/1…]]></description><link>https://suzukalight.com/2019-07-21-trip-hakodate/</link><guid isPermaLink="false">https://suzukalight.com/2019-07-21-trip-hakodate/</guid><pubDate>Sat, 20 Jul 2019 15:08:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#%E7%9B%AE%E7%9A%84&quot; aria-label=&quot;目的 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;目的&lt;/h1&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 函館競馬場に行く
     - 中央10場全制覇の旅
     - よゐこステージ
@@ -62,7 +273,7 @@
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 19.426713236179694%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAECA//EABYBAQEBAAAAAAAAAAAAAAAAAAABAv/aAAwDAQACEAMQAAABwsZQK//EABoQAAICAwAAAAAAAAAAAAAAAAACAQMRFDL/2gAIAQEAAQUC2HIvfPZ//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGRAAAgMBAAAAAAAAAAAAAAAAAEEBEZGh/9oACAEBAAY/Algi54f/xAAZEAADAAMAAAAAAAAAAAAAAAAAASERceH/2gAIAQEAAT8huXGFqw3of//aAAwDAQACAAMAAAAQi9//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAgEBPxCn/8QAGhAAAgIDAAAAAAAAAAAAAAAAAREAITFRkf/aAAgBAQABPxAmWg0ISXFlcyBRwT//2Q==&apos;); background-size: cover; display: block;&quot;
+      style=&quot;padding-bottom: 19.426713236179694%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAECA//EABYBAQEBAAAAAAAAAAAAAAAAAAEAAv/aAAwDAQACEAMQAAABwsZoC//EABoQAAICAwAAAAAAAAAAAAAAAAACAQMRFDL/2gAIAQEAAQUC2HIvfPZ//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGRAAAgMBAAAAAAAAAAAAAAAAAEEBEZGh/9oACAEBAAY/Algi54f/xAAZEAADAAMAAAAAAAAAAAAAAAAAASERceH/2gAIAQEAAT8huXGFqw3of//aAAwDAQACAAMAAAAQj8//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAWEQEBAQAAAAAAAAAAAAAAAAABEBH/2gAIAQIBAT8QV2f/xAAaEAACAgMAAAAAAAAAAAAAAAABEQAhMVGR/9oACAEBAAE/ECdaDQhJcWVzIFHBP//Z&apos;); background-size: cover; display: block;&quot;
     &gt;&lt;/span&gt;
     &lt;img
         class=&quot;gatsby-resp-image-image&quot;
