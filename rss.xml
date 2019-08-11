@@ -1,4 +1,198 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[suzukalight.com]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://suzukalight.com</link><generator>RSS for Node</generator><lastBuildDate>Sat, 03 Aug 2019 07:08:48 GMT</lastBuildDate><item><title><![CDATA[Prisma2 Preview を触る]]></title><description><![CDATA[Prisma2Prisma2: https://github.com/prisma/prisma2
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[suzukalight.com]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://suzukalight.com</link><generator>RSS for Node</generator><lastBuildDate>Sun, 11 Aug 2019 23:51:41 GMT</lastBuildDate><item><title><![CDATA[WindowsでElectron開発環境を整える]]></title><description><![CDATA[WindowsでElectron開発環境を整えたいWindowsでNodeを試す場合は、最近だとWSLでの実行例も多い気がしますが、Windows向けのElectronバイナリを生成する場合は、WSLで実行してしまうと「Unix環境向けの開発になってしまう」ので、Windows…]]></description><link>https://suzukalight.com/2019-08-11-electron-windows/</link><guid isPermaLink="false">https://suzukalight.com/2019-08-11-electron-windows/</guid><pubDate>Sat, 10 Aug 2019 15:02:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;windowsでelectron開発環境を整えたい&quot;&gt;&lt;a href=&quot;#windows%E3%81%A7electron%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E3%82%92%E6%95%B4%E3%81%88%E3%81%9F%E3%81%84&quot; aria-label=&quot;windowsでelectron開発環境を整えたい permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;WindowsでElectron開発環境を整えたい&lt;/h1&gt;
+&lt;p&gt;WindowsでNodeを試す場合は、最近だとWSLでの実行例も多い気がしますが、Windows向けのElectronバイナリを生成する場合は、WSLで実行してしまうと「Unix環境向けの開発になってしまう」ので、Windowsバイナリ向けの開発環境としては適切ではないと感じました。&lt;/p&gt;
+&lt;p&gt;ここでは、Windows環境（PowerShell）において、NodeとElectron環境を構築する方法について紹介します。&lt;/p&gt;
+&lt;h1 id=&quot;手順&quot;&gt;&lt;a href=&quot;#%E6%89%8B%E9%A0%86&quot; aria-label=&quot;手順 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;手順&lt;/h1&gt;
+&lt;h2 id=&quot;os--vscode&quot;&gt;&lt;a href=&quot;#os--vscode&quot; aria-label=&quot;os  vscode permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;OS + VSCode&lt;/h2&gt;
+&lt;p&gt;私の環境は MacBook Pro + Parallels + Windows10 です。純Windows環境でも結果は同じになるかと思います。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Parallels&lt;/li&gt;
+&lt;li&gt;Windows10&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Visual Studio Code&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;「管理者として実行」してください&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;nvm-windows&quot;&gt;&lt;a href=&quot;#nvm-windows&quot; aria-label=&quot;nvm windows permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;nvm-windows&lt;/h2&gt;
+&lt;p&gt;Nodeバージョン管理ツールとして、&lt;a href=&quot;https://github.com/coreybutler/nvm-windows&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;nvm-windows&lt;/a&gt; を使用します。上記のURLから nvm-setup.zip をダウンロードし、そこからインストーラを取り出してインストールすればOKです。&lt;/p&gt;
+&lt;p&gt;続けて、nvm-windowsを使用して実際にNodeとYarnをインストールします；&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ nvm &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; 12.4.0
+$ nvm use 12.4.0
+$ node -v
+&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; v12.4.0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; i -g &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt;
+$ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; -v
+&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; 1.17.3&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;chocolatey&quot;&gt;&lt;a href=&quot;#chocolatey&quot; aria-label=&quot;chocolatey permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Chocolatey&lt;/h2&gt;
+&lt;p&gt;Windowsのパッケージ管理ツール、&lt;a href=&quot;https://chocolatey.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Chocolatey&lt;/a&gt; をインストールします。PowerShell経由でのインストールは、下記のURLを参考に行います；&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://chocolatey.org/install#install-with-powershellexe&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://chocolatey.org/install#install-with-powershellexe&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;powershell&quot;&gt;&lt;pre class=&quot;language-powershell&quot;&gt;&lt;code class=&quot;language-powershell&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;Set&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;ExecutionPolicy Bypass &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;Scope &lt;span class=&quot;token keyword&quot;&gt;Process&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;Force&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;iex&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;New-Object&lt;/span&gt; System&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Net&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;WebClient&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DownloadString&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;https://chocolatey.org/install.ps1&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+$ &lt;span class=&quot;token function&quot;&gt;Set&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;ExecutionPolicy &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;Scope CurrentUser RemoteSigned&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ここで vscode を再起動。&lt;/p&gt;
+&lt;h2 id=&quot;posh-git&quot;&gt;&lt;a href=&quot;#posh-git&quot; aria-label=&quot;posh git permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;posh-git&lt;/h2&gt;
+&lt;p&gt;Gitをインストールします。補完機能などがついている &lt;a href=&quot;https://github.com/dahlbyk/posh-git&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;posh-git&lt;/a&gt; を使用します。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;powershell&quot;&gt;&lt;pre class=&quot;language-powershell&quot;&gt;&lt;code class=&quot;language-powershell&quot;&gt;$ choco install poshgit
+&gt; $ y
+&gt; $ y&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ここで vscode を再起動。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; --version
+&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; version 2.20.0.windows.1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;electron-quick-start&quot;&gt;&lt;a href=&quot;#electron-quick-start&quot; aria-label=&quot;electron quick start permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;electron-quick-start&lt;/h2&gt;
+&lt;p&gt;以上で環境は整いました。いよいよ Electron の公式クイックスタートである、&lt;a href=&quot;https://github.com/electron/electron-quick-start&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/electron/electron-quick-start&lt;/a&gt; を試します。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone https://github.com/electron/electron-quick-start
+$ &lt;span class=&quot;token function&quot;&gt;cd&lt;/span&gt; electron-quick-start
+$ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt;
+$ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;下記のような画面が表示されれば、成功です！&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/46d8bf22ad11cc7c67f2e02c77bfcb7b/e60a7/electron-window.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 76.54171704957679%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsSAAALEgHS3X78AAABD0lEQVQ4y+VTu4qEQBCcX7u7H/BfjHQDBUU0EDRZ8JOMfISKoMFGG/lCXR919BwOy7F33MpmV1B021OU0zPT7O39A+rpBEVRYBiGoGmafyJpNU2DZVmQJAnMth28CkEQgNHOsixDkiSIoghhGCLPc2zbhmVZONd15dzzvT7PM+c4jtzQ8zwwXdfRNA2qqsLlckFZlrher7jdblw4TROPez4Mg8jppwQyJfi+D0a9E7quQ9/3Qkx527YiEklT17XQPjR0nK8zpBaOYD8aYWjbNv+gFmnxWf64Qyo+Et/H77UdvxoewX833G+Z3t79VDxDeiFiUlzXfdksn89nMFmW+bjRHKdpeohxHKMoCqiqik8oEVVl/y5k/AAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;electron window&quot;
+        title=&quot;&quot;
+        src=&quot;/static/46d8bf22ad11cc7c67f2e02c77bfcb7b/b9e4f/electron-window.png&quot;
+        srcset=&quot;/static/46d8bf22ad11cc7c67f2e02c77bfcb7b/cf440/electron-window.png 148w,
+/static/46d8bf22ad11cc7c67f2e02c77bfcb7b/d2d38/electron-window.png 295w,
+/static/46d8bf22ad11cc7c67f2e02c77bfcb7b/b9e4f/electron-window.png 590w,
+/static/46d8bf22ad11cc7c67f2e02c77bfcb7b/e60a7/electron-window.png 827w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Prisma2 + graphql-yoga でサーバを立てる]]></title><description><![CDATA[Prisma2graphql-yoga以前に触っていたものtypeDefsresolversPrisma2 のサンプルにあったものschemacontext違いスキーマ定義schema または typeDefs+resolvers のどちらかが必要セットアップphotonjs…]]></description><link>https://suzukalight.com/2019-08-03-prisma2-graphql-yoga/</link><guid isPermaLink="false">https://suzukalight.com/2019-08-03-prisma2-graphql-yoga/</guid><pubDate>Fri, 02 Aug 2019 15:02:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;prisma2&quot;&gt;&lt;a href=&quot;#prisma2&quot; aria-label=&quot;prisma2 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Prisma2&lt;/h1&gt;
+&lt;h1 id=&quot;graphql-yoga&quot;&gt;&lt;a href=&quot;#graphql-yoga&quot; aria-label=&quot;graphql yoga permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;graphql-yoga&lt;/h1&gt;
+&lt;h2 id=&quot;以前に触っていたもの&quot;&gt;&lt;a href=&quot;#%E4%BB%A5%E5%89%8D%E3%81%AB%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%84%E3%81%9F%E3%82%82%E3%81%AE&quot; aria-label=&quot;以前に触っていたもの permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;以前に触っていたもの&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; typeDefs &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`
+  type Query {
+    hello(name: String): String!
+  }
+`&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; resolvers &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  Query&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function-variable function&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;_&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; name &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`Hello &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;name &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;World&apos;&lt;/span&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; server &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;GraphQLServer&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; typeDefs&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; resolvers &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;typeDefs&lt;/li&gt;
+&lt;li&gt;resolvers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;prisma2-のサンプルにあったもの&quot;&gt;&lt;a href=&quot;#prisma2-%E3%81%AE%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AB%E3%81%82%E3%81%A3%E3%81%9F%E3%82%82%E3%81%AE&quot; aria-label=&quot;prisma2 のサンプルにあったもの permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Prisma2 のサンプルにあったもの&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; photon &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Photon&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; schema &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;makeSchema&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  types&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;Query&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Mutation&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Post&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; User&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; nexusPrisma&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  outputs&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    typegen&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;__dirname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;../generated/nexus-typegen.ts&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    schema&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;__dirname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;/schema.graphql&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  typegenAutoConfig&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    sources&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        source&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;@generated/photon&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        alias&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;photon&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        source&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;__dirname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;types.ts&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        alias&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;ctx&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    contextType&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;ctx.Context&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; server &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;GraphQLServer&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  schema&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  context&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; photon &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;schema&lt;/li&gt;
+&lt;li&gt;context&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;違い&quot;&gt;&lt;a href=&quot;#%E9%81%95%E3%81%84&quot; aria-label=&quot;違い permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;違い&lt;/h2&gt;
+&lt;h3 id=&quot;スキーマ定義&quot;&gt;&lt;a href=&quot;#%E3%82%B9%E3%82%AD%E3%83%BC%E3%83%9E%E5%AE%9A%E7%BE%A9&quot; aria-label=&quot;スキーマ定義 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;スキーマ定義&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;schema または typeDefs+resolvers のどちらかが必要&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;セットアップ&quot;&gt;&lt;a href=&quot;#%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97&quot; aria-label=&quot;セットアップ permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;セットアップ&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/prisma/photonjs/tree/master/examples/typescript/graphql&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;photonjs/examples/typescript/graphql at master · prisma/photonjs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;PhotonJSのサンプルを利用します。リポジトリをクローンします；&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone git@github.com:prisma/photonjs.git
+$ &lt;span class=&quot;token function&quot;&gt;cd&lt;/span&gt; photonjs/examples/typescript/graphql
+$ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;nexus&quot;&gt;&lt;a href=&quot;#nexus&quot; aria-label=&quot;nexus permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Nexus&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://nexus.js.org/docs/database-access-with-prisma-v2&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Database Access with Prisma 2 (Preview) · GraphQL Nexus&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Prisma2 Preview では、ORMとして &lt;strong&gt;nexus&lt;/strong&gt; を使用しています。PhotonJSのサンプルでは、それをプラグインとして利用する &lt;strong&gt;@prisma/nexus&lt;/strong&gt; がインストールされています；&lt;/p&gt;
+&lt;div class=&quot;gatsby-code-title&quot;&gt;package.json&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight has-highlighted-lines&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token string&quot;&gt;&quot;dependencies&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;    &lt;span class=&quot;token string&quot;&gt;&quot;@prisma/nexus&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;^0.0.1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/span&gt;    &lt;span class=&quot;token string&quot;&gt;&quot;graphql-yoga&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;1.17.4&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;    &lt;span class=&quot;token string&quot;&gt;&quot;nexus&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;0.11.7&quot;&lt;/span&gt;&lt;/span&gt;  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;モデル定義&quot;&gt;&lt;a href=&quot;#%E3%83%A2%E3%83%87%E3%83%AB%E5%AE%9A%E7%BE%A9&quot; aria-label=&quot;モデル定義 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;モデル定義&lt;/h2&gt;
+&lt;p&gt;マッピングするモデルを、Nexusの指定する形式で記述します； &lt;/p&gt;
+&lt;div class=&quot;gatsby-code-title&quot;&gt;prisma/schema.prisma&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;prisma&quot;&gt;&lt;pre class=&quot;language-prisma&quot;&gt;&lt;code class=&quot;language-prisma&quot;&gt;model Race {
+  id            Int @id
+  raceId        String @unique
+  createdAt     DateTime
+  raceDate      DateTime
+  courseCode    String
+  kai           Int
+  nichi         Int
+  number        Int
+  hondai        String
+  gradeCode     String
+  joukenCodeJy  String
+  distance      Int
+  trackCode     String
+  hassouTime    DateTime
+  tourokuTousuu Int
+  shussouTousuu Int
+
+  umaRaces      UmaRace[]
+}
+
+model UmaRace {
+  id            Int @id
+  umaRaceId     String @unique
+  race          Race
+  createdAt     DateTime
+  raceDate      DateTime
+  wakuban       Int
+  umaban        Int
+  name          String
+  sexCode       String
+  keiroCode     String
+  age           Int
+  tozaiCode     String
+  choukyoushiRyakushou  String
+  futanJuuryou  Int
+  kishuRyakushou  String
+  odds          Int
+  ninki         Int
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; aria-label=&quot; permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[Prisma2 Preview を触る]]></title><description><![CDATA[Prisma2Prisma2: https://github.com/prisma/prisma2
 （※上記リポジトリより引用）prisma2 ecosystem には、下記の3つが含まれています；PhotonJS: ORM。自作のサーバにimport…]]></description><link>https://suzukalight.com/2019-08-03-prisma2/</link><guid isPermaLink="false">https://suzukalight.com/2019-08-03-prisma2/</guid><pubDate>Fri, 02 Aug 2019 15:01:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;prisma2&quot;&gt;&lt;a href=&quot;#prisma2&quot; aria-label=&quot;prisma2 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Prisma2&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Prisma2: &lt;a href=&quot;https://github.com/prisma/prisma2&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/prisma/prisma2&lt;/a&gt;&lt;/li&gt;
