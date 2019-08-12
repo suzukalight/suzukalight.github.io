@@ -46,7 +46,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(limit: 2000) {
+    allMarkdownRemark(filter: { frontmatter: { status: { eq: "published" } } }, limit: 2000) {
       group(field: frontmatter___category) {
         fieldValue
         totalCount

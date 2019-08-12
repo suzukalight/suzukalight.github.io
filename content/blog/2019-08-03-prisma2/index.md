@@ -4,6 +4,7 @@ date: "2019-08-03T00:01:00"
 category: Technology
 tags: ['prisma2', 'hands-on', 'prisma', 'SQLite']
 hero: ./title.png
+status: 'published'
 ---
 
 # Prisma2

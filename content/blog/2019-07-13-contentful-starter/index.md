@@ -5,6 +5,7 @@ description: ''
 category: Technology
 tags: ['hands-on', 'gatsby', 'contentful', 'github pages']
 hero: ./update-content.png
+status: 'published'
 ---
 
 [Contentful](https://www.contentful.com/) は Headless-CMS と呼ばれる仕組みを提供しており、コンテンツの設計と配信（API）のみを受け持つようなサービスになっています。WordPressとの違いは、コンテンツ表示までは担当していないところです。

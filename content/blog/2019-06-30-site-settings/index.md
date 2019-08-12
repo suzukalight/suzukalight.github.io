@@ -5,6 +5,7 @@ description: 'PWA対応・OGP対応・テーマ変更・目次表示・syntaxHig
 category: Technology
 tags: ['gatsby', 'pwa']
 hero: ./gatsbyjs.jpg
+status: 'published'
 ---
 
 Gatsbyのプラグインを利用することで、ブログに必要な数々の設定を簡単におこなうことができた。

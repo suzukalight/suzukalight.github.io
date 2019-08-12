@@ -4,6 +4,7 @@ date: '2019-07-21T00:08:00'
 category: Trip
 tags: ['函館', '競馬', 'twitter']
 hero: ./hakodate-night.jpg
+status: 'published'
 ---
 
 # 目的

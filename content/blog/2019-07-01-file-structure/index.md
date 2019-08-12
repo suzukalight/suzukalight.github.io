@@ -5,6 +5,7 @@ description: 'Gatsby 開発時に利用するファイル類の構成につい�
 category: Technology
 tags: ['gatsby']
 hero: ./title.png
+status: 'published'
 ---
 
 基本的な内容は、こちらで解説されていますので、あわせて参照ください。  

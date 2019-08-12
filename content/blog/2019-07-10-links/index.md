@@ -5,6 +5,7 @@ description: 'シェアボタン設置・外部リンクに noopener や _blank 
 category: Technology
 tags: ['gatsby', 'social', 'twitter', 'iframely', 'anchor']
 hero: ./twitter.png
+status: 'published'
 ---
 
 # シェアボタン設置

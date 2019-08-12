@@ -5,6 +5,7 @@ description: 'mdファイルの先頭にタグ情報を付与・そのタグを�
 category: Technology
 tags: ['gatsby', 'tag']
 hero: ./hero.png
+status: 'published'
 ---
 
 この記事のタイトル部分に表示されているような「タグ機能」を実装する方法について解説します。

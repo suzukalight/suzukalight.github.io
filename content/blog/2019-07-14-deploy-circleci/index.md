@@ -4,6 +4,7 @@ date: "2019-07-14T00:08:00"
 category: Technology
 tags: ['gatsby', 'circleci', 'contentful', 'github pages']
 hero: ./complete-ci.png
+status: 'published'
 ---
 
 GitHub に CircleCI を設置しておき、Contentful の webhook 機能から記事の更新をトリガして、CI による GitHub Pages への自動デプロイができるようにする方法を紹介します。

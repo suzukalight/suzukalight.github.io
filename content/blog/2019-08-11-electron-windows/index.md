@@ -2,8 +2,9 @@
 title: WindowsでElectron開発環境を整える
 date: "2019-08-11T00:02:00"
 category: Technology
-tags: ['electron', 'nvm-windows', 'windows', '']
+tags: ['electron', 'nvm-windows', 'windows', 'chocolatey', 'posh-git']
 hero: ./title_electron.png
+status: 'published'
 ---
 
 # WindowsでElectron開発環境を整えたい

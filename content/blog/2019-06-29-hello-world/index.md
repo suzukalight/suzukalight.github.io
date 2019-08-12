@@ -5,6 +5,7 @@ description: 'Gatsby + GitHub Pages でブログを公開するまでの手順'
 category: Technology
 tags: ['gatsby', 'github pages', 'react']
 hero: ./gatsbyjs.jpg
+status: 'published'
 ---
 
 

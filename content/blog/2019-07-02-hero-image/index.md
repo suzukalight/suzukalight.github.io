@@ -5,6 +5,7 @@ description: 'Gatsbyで記事のトップ画像を設定し、さらにその画
 category: Technology
 tags: ['gatsby', 'gatsby-image']
 hero: ./gatsbyjs.jpg
+status: 'published'
 ---
 
 多くのブログでは、記事の先頭にトップ画像を表示しています。ここではGatsbyでトップ画像を設定し、さらにその画像を記事一覧のサムネイルとしても表示する手法について紹介します。
