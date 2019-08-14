@@ -7,12 +7,8 @@ import styles from './index.module.scss';
 
 const Posts = ({ className, posts }) => (
   <section className={cn(styles.root, className)}>
-    {posts.map(({ node }) => (
-      <PostCard
-        key={node.fields.slug}
-        node={node}
-        title={node.frontmatter.title || node.fields.slug}
-      />
+    {posts.map(post => (
+      <PostCard key={post.head.slug} post={post} />
     ))}
   </section>
 );
