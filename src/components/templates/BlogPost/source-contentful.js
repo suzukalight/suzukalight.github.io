@@ -13,7 +13,6 @@ export const pageQuery = graphql`
       }
     }
     contentfulArticle(id: { eq: $id }) {
-      __typename
       id
       slug
       title
@@ -24,16 +23,13 @@ export const pageQuery = graphql`
       date
       category
       tags
-      # description
-      # tableOfContents
-      # hero {
-      #   fixed(width: 1440) {
-      #     width
-      #     height
-      #     src
-      #     srcSet
-      #   }
-      # }
+      hero {
+        title
+        description
+        sizes(maxWidth: 1440) {
+          ...GatsbyContentfulSizes
+        }
+      }
     }
   }
 `;

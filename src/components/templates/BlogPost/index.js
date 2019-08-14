@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Image from 'gatsby-image';
 import kebabCase from 'lodash/kebabCase';
 
 import Seo from '../../atoms/Seo';
@@ -11,6 +10,8 @@ import SocialLinks from '../../molecules/SocialLinks';
 import { Layout, Centered } from '../Layout';
 
 import { convertToArticle } from '../../../utils/article';
+import { contentfulArticleToReactComponents } from '../../../utils/contentful';
+import { getFluidImage } from '../../../utils/dom';
 
 import styles from './index.module.scss';
 
@@ -35,7 +36,7 @@ const Pager = ({ previous, next }) => (
   </div>
 );
 
-const BlogPostTemplate = ({ location, siteMetadata, head, body, node, pageContext }) => (
+const BlogPostTemplate = ({ location, siteMetadata, head, body, richTextJson, pageContext }) => (
   <Layout location={location} title={siteMetadata.title}>
     <Seo title={head.title} description={head.description} />
     <Iframely />
@@ -49,11 +50,7 @@ const BlogPostTemplate = ({ location, siteMetadata, head, body, node, pageContex
         <p className={styles.description}>{head.description}</p>
         <DateAndTags date={head.date} tags={head.tags} />
 
-        {head.hero && (
-          <div className={styles.hero}>
-            <Image fluid={head.hero.childImageSharp.fluid} />
-          </div>
-        )}
+        {head.hero && <div className={styles.hero}>{getFluidImage(head.hero)}</div>}
       </section>
 
       {head && head.tableOfContents && (
@@ -67,7 +64,9 @@ const BlogPostTemplate = ({ location, siteMetadata, head, body, node, pageContex
       )}
 
       {body && <div className={styles.article} dangerouslySetInnerHTML={{ __html: body }} />}
-      {node && <div className={styles.article}>{node}</div>}
+      {richTextJson && (
+        <div className={styles.article}>{contentfulArticleToReactComponents(richTextJson)}</div>
+      )}
 
       <section className={styles.footer}>
         <SocialLinks className={styles.socialLinks} url={head.slug} title={head.title} />

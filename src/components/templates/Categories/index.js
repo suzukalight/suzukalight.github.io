@@ -93,6 +93,13 @@ export const pageQuery = graphql`
           category
           tags
           date
+          hero {
+            title
+            description
+            sizes(maxWidth: 1440) {
+              ...GatsbyContentfulSizes
+            }
+          }
         }
       }
     }

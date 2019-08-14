@@ -1,7 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
 import { Link } from 'gatsby';
-import Image from 'gatsby-image';
 import kebabCase from 'lodash/kebabCase';
 
 import {
@@ -14,13 +13,15 @@ import {
 } from '../../atoms/Card';
 import DateAndTags from '../../molecules/DateAndTags';
 
+import { getFixedImage } from '../../../utils/dom';
+
 import styles from './index.module.scss';
 
 const PostCard = ({ className, post }) => (
   <Card className={cn(styles.root, className)}>
     <CardImage>
       <Link className={styles.image} to={post.head.slug}>
-        {post.head.hero && <Image fixed={post.head.hero.childImageSharp.fixed} />}
+        {getFixedImage(post.head.hero)}
       </Link>
       <Link className={styles.category} to={`/categories/${kebabCase(post.head.category)}`}>
         <span>{post.head.category}</span>
