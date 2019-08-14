@@ -38,7 +38,7 @@ const Categories = ({ location, data, pageContext }) => {
     return cat;
   }, {});
   const categories = Object.keys(categoriesMap)
-    .sort((a, b) => b - a)
+    .sort((a, b) => a.localeCompare(b))
     .map(key => ({
       fieldValue: key,
       totalCount: categoriesMap[key],

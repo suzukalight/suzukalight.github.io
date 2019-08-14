@@ -6,21 +6,13 @@ import kebabCase from 'lodash/kebabCase';
 import Seo from '../components/atoms/Seo';
 import { Layout, Centered } from '../components/templates/Layout';
 
-const TagsPage = ({
-  location,
-  data: {
-    allMarkdownRemark: { group },
-    site: {
-      siteMetadata: { title },
-    },
-  },
-}) => (
+const TagsPage = ({ location, siteMetadata: { title }, tags }) => (
   <Layout location={location} title={title}>
     <Seo title="すべてのタグ" />
     <Centered>
       <h1>すべてのタグ</h1>
       <ul>
-        {group.map(tag => (
+        {tags.map(tag => (
           <li key={tag.fieldValue}>
             <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
               {tag.fieldValue} ({tag.totalCount})
@@ -37,7 +29,25 @@ TagsPage.propTypes = {
   data: PropTypes.object,
 };
 
-export default TagsPage;
+const Tags = ({ location, data, pageContext }) => {
+  const { site, allMarkdownRemark, allContentfulArticle } = data || {};
+  const groups = [...allMarkdownRemark.group, ...allContentfulArticle.group];
+  const tagsMap = groups.reduce((cat, group) => {
+    if (!cat[group.fieldValue]) cat[group.fieldValue] = 0;
+    cat[group.fieldValue] += group.totalCount;
+    return cat;
+  }, {});
+  const tags = Object.keys(tagsMap)
+    .sort((a, b) => a.localeCompare(b))
+    .map(key => ({
+      fieldValue: key,
+      totalCount: tagsMap[key],
+    }));
+
+  return <TagsPage location={location} siteMetadata={site.siteMetadata} tags={tags} />;
+};
+
+export default Tags;
 
 export const pageQuery = graphql`
   query {
@@ -48,6 +58,12 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(filter: { frontmatter: { status: { eq: "published" } } }, limit: 2000) {
       group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
+      }
+    }
+    allContentfulArticle(limit: 2000) {
+      group(field: tags) {
         fieldValue
         totalCount
       }
