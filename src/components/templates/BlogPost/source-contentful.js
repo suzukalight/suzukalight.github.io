@@ -17,6 +17,7 @@ export const pageQuery = graphql`
       id
       slug
       title
+      description
       body {
         json
       }

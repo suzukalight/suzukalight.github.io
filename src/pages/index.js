@@ -52,6 +52,7 @@ export const pageQuery = graphql`
         node {
           id
           title
+          description
           slug
           category
           tags

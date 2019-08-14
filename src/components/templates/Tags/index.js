@@ -7,13 +7,18 @@ import Seo from '../../atoms/Seo';
 import Posts from '../../molecules/Posts';
 import Hero from '../../molecules/Hero';
 
+import { convertToArticles, sortByDate } from '../../../utils/article';
+
 import styles from './index.module.scss';
 
 const Tags = ({ location, pageContext, data }) => {
   const { tag } = pageContext;
-  const { edges, totalCount } = data.allMarkdownRemark;
+  const { site, allMarkdownRemark, allContentfulArticle } = data || {};
+  const totalCount = allMarkdownRemark.totalCount + allContentfulArticle.totalCount;
+
   const tagHeader = `"${tag}" に関する記事 (${totalCount}件)`;
-  const siteTitle = data.site.siteMetadata.title;
+  const siteTitle = site.siteMetadata.title;
+  const posts = sortByDate(convertToArticles(data));
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -29,7 +34,7 @@ const Tags = ({ location, pageContext, data }) => {
           </span>
         </h1>
 
-        <Posts className={styles.posts} posts={edges} />
+        <Posts className={styles.posts} posts={posts} />
       </div>
     </Layout>
   );
@@ -75,6 +80,20 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+      }
+    }
+    allContentfulArticle(limit: 2000, filter: { tags: { in: [$tag] } }) {
+      totalCount
+      edges {
+        node {
+          id
+          title
+          description
+          slug
+          category
+          tags
+          date
         }
       }
     }

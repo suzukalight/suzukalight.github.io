@@ -47,6 +47,7 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             id
             title
+            description
             slug
             category
             tags
