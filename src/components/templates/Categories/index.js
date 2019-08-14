@@ -7,13 +7,18 @@ import Seo from '../../atoms/Seo';
 import Posts from '../../molecules/Posts';
 import Hero from '../../molecules/Hero';
 
+import { convertToArticles, sortByDate } from '../../../utils/article';
+
 import styles from './index.module.scss';
 
 const Categories = ({ location, pageContext, data }) => {
   const { category } = pageContext;
-  const { edges, totalCount } = data.allMarkdownRemark;
+  const { site, allMarkdownRemark, allContentfulArticle } = data || {};
+  const totalCount = allMarkdownRemark.totalCount + allContentfulArticle.totalCount;
+
   const categoryHeader = `"${category}" に関する記事 (${totalCount}件)`;
-  const siteTitle = data.site.siteMetadata.title;
+  const siteTitle = site.siteMetadata.title;
+  const posts = sortByDate(convertToArticles(data));
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -29,7 +34,7 @@ const Categories = ({ location, pageContext, data }) => {
           </span>
         </h1>
 
-        <Posts className={styles.posts} posts={edges} />
+        <Posts className={styles.posts} posts={posts} />
       </div>
     </Layout>
   );
@@ -51,7 +56,6 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       limit: 2000
-      sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { category: { in: [$category] }, status: { eq: "published" } } }
     ) {
       totalCount
@@ -75,6 +79,19 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+      }
+    }
+    allContentfulArticle(limit: 2000, filter: { category: { in: [$category] } }) {
+      totalCount
+      edges {
+        node {
+          id
+          title
+          slug
+          category
+          tags
+          date
         }
       }
     }
