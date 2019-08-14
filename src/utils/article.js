@@ -1,4 +1,3 @@
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import differenceInMilliseconds from 'date-fns/difference_in_milliseconds';
 
 export const convertFromMarkdownToArticle = data => {
@@ -32,8 +31,7 @@ export const convertFromContentfulToArticle = data => {
       source: 'contentful',
       slug: `/${head.slug}/`,
     },
-    // body: documentToReactComponents((body || {}).json),
-    node: documentToReactComponents((body || {}).json),
+    richTextJson: (body || {}).json,
     siteMetadata: site.siteMetadata,
   };
 };

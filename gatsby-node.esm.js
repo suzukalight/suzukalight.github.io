@@ -1,6 +1,6 @@
-const path = require(`path`);
+const path = require('path');
 const kebabCase = require('lodash/kebabCase');
-const { createFilePath } = require(`gatsby-source-filesystem`);
+const { createFilePath } = require('gatsby-source-filesystem');
 
 const { convertToArticles, sortByDate } = require('./src/utils/article');
 
@@ -23,11 +23,7 @@ exports.createPages = async ({ graphql, actions }) => {
           title
         }
       }
-      allMarkdownRemark(
-        filter: { frontmatter: { status: { eq: "published" } } }
-        sort: { fields: [frontmatter___date], order: DESC }
-        limit: 1000
-      ) {
+      allMarkdownRemark(filter: { frontmatter: { status: { eq: "published" } } }, limit: 1000) {
         edges {
           node {
             fields {
@@ -42,7 +38,7 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      allContentfulArticle {
+      allContentfulArticle(limit: 1000) {
         edges {
           node {
             id
