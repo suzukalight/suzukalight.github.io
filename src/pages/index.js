@@ -1,8 +1,17 @@
+import React from 'react';
 import { graphql } from 'gatsby';
 
 import Root from '../components/pages/Root';
 
-export default Root;
+import { convertToArticles, sortByDate } from '../utils/article';
+
+const IndexPage = ({ data, pageContext }) => {
+  const posts = sortByDate(convertToArticles(data));
+
+  return <Root siteMetadata={data.site.siteMetadata} posts={posts} pageContext={pageContext} />;
+};
+
+export default IndexPage;
 
 export const pageQuery = graphql`
   query {
@@ -22,7 +31,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "YYYY/M/D")
+            date
             title
             description
             category
@@ -35,6 +44,18 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+      }
+    }
+    allContentfulArticle {
+      edges {
+        node {
+          id
+          title
+          slug
+          category
+          tags
+          date
         }
       }
     }
