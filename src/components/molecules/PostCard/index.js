@@ -1,7 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
 import { Link } from 'gatsby';
-import Image from 'gatsby-image';
 import kebabCase from 'lodash/kebabCase';
 
 import {
@@ -14,28 +13,30 @@ import {
 } from '../../atoms/Card';
 import DateAndTags from '../../molecules/DateAndTags';
 
+import { getFixedImage } from '../../../utils/dom';
+
 import styles from './index.module.scss';
 
-const PostCard = ({ className, node, title }) => (
+const PostCard = ({ className, post }) => (
   <Card className={cn(styles.root, className)}>
     <CardImage>
-      <Link className={styles.image} to={node.fields.slug}>
-        {node.frontmatter.hero && <Image fixed={node.frontmatter.hero.childImageSharp.fixed} />}
+      <Link className={styles.image} to={post.head.slug}>
+        {getFixedImage(post.head.hero)}
       </Link>
-      <Link className={styles.category} to={`/categories/${kebabCase(node.frontmatter.category)}`}>
-        <span>{node.frontmatter.category}</span>
+      <Link className={styles.category} to={`/categories/${kebabCase(post.head.category)}`}>
+        <span>{post.head.category}</span>
       </Link>
     </CardImage>
 
     <CardBody>
       <div className={styles.texts}>
-        <Link className={styles.link} to={node.fields.slug}>
-          <CardTitle>{title}</CardTitle>
+        <Link className={styles.link} to={post.head.slug}>
+          <CardTitle>{post.head.title}</CardTitle>
           <CardDescription>
             <p
               className={styles.excerpt}
               dangerouslySetInnerHTML={{
-                __html: node.frontmatter.description || node.excerpt,
+                __html: post.head.description || post.head.excerpt,
               }}
             />
           </CardDescription>
@@ -43,11 +44,7 @@ const PostCard = ({ className, node, title }) => (
       </div>
 
       <CardFooter>
-        <DateAndTags
-          className={styles.tags}
-          date={node.frontmatter.date}
-          tags={node.frontmatter.tags}
-        />
+        <DateAndTags className={styles.tags} date={post.head.date} tags={post.head.tags} />
       </CardFooter>
     </CardBody>
   </Card>

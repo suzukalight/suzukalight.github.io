@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
-import Image from 'gatsby-image';
+import { Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 
 import Seo from '../../atoms/Seo';
@@ -10,6 +9,10 @@ import Bio from '../../molecules/Bio';
 import SocialLinks from '../../molecules/SocialLinks';
 import { Layout, Centered } from '../Layout';
 
+import { convertToArticle } from '../../../utils/article';
+import { contentfulArticleToReactComponents } from '../../../utils/contentful';
+import { getFluidImage } from '../../../utils/dom';
+
 import styles from './index.module.scss';
 
 const Pager = ({ previous, next }) => (
@@ -17,15 +20,15 @@ const Pager = ({ previous, next }) => (
     <ul className={styles.pager}>
       <li className={styles.prev}>
         {previous && (
-          <Link to={previous.fields.slug} rel="prev">
-            {`← ${previous.frontmatter.title}`}
+          <Link to={previous.head.slug} rel="prev">
+            {`← ${previous.head.title}`}
           </Link>
         )}
       </li>
       <li className={styles.next}>
         {next && (
-          <Link to={next.fields.slug} rel="next">
-            {`${next.frontmatter.title} →`}
+          <Link to={next.head.slug} rel="next">
+            {`${next.head.title} →`}
           </Link>
         )}
       </li>
@@ -33,79 +36,49 @@ const Pager = ({ previous, next }) => (
   </div>
 );
 
-const BlogPostTemplate = ({ location, data, pageContext }) => {
-  const post = data.markdownRemark;
-  const siteTitle = data.site.siteMetadata.title;
-  const { title, date, hero, category, tags } = post.frontmatter;
-  const description = post.frontmatter.description || post.excerpt;
-  const { previous, next, slug } = pageContext;
+const BlogPostTemplate = ({ location, siteMetadata, head, body, richTextJson, pageContext }) => (
+  <Layout location={location} title={siteMetadata.title}>
+    <Seo title={head.title} description={head.description} />
+    <Iframely />
 
-  return (
-    <Layout location={location} title={siteTitle}>
-      <Seo title={title} description={description} />
-      <Iframely />
+    <Centered>
+      <section className={styles.head}>
+        <Link className={styles.category} to={`/categories/${kebabCase(head.category)}`}>
+          <span>{head.category}</span>
+        </Link>
+        <h1 className={styles.title}>{head.title}</h1>
+        <p className={styles.description}>{head.description}</p>
+        <DateAndTags date={head.date} tags={head.tags} />
 
-      <Centered>
-        <section className={styles.head}>
-          <Link className={styles.category} to={`/categories/${kebabCase(category)}`}>
-            <span>{category}</span>
-          </Link>
-          <h1 className={styles.title}>{title}</h1>
-          <p className={styles.description}>{description}</p>
-          <DateAndTags date={date} tags={tags} />
+        {head.hero && <div className={styles.hero}>{getFluidImage(head.hero)}</div>}
+      </section>
 
-          <div className={styles.hero}>{hero && <Image fluid={hero.childImageSharp.fluid} />}</div>
-        </section>
-
+      {head && head.tableOfContents && (
         <section className={styles.toc}>
           <h1 className={styles.tocHeader}>目次</h1>
           <div
             className={styles.tocBody}
-            dangerouslySetInnerHTML={{ __html: post.tableOfContents }}
+            dangerouslySetInnerHTML={{ __html: head.tableOfContents }}
           />
         </section>
+      )}
 
-        <div className={styles.article} dangerouslySetInnerHTML={{ __html: post.html }} />
+      {body && <div className={styles.article} dangerouslySetInnerHTML={{ __html: body }} />}
+      {richTextJson && (
+        <div className={styles.article}>{contentfulArticleToReactComponents(richTextJson)}</div>
+      )}
 
-        <section className={styles.footer}>
-          <SocialLinks className={styles.socialLinks} url={slug} title={title} />
-          <Bio className={styles.bio} />
-          <Pager previous={previous} next={next} />
-        </section>
-      </Centered>
-    </Layout>
-  );
+      <section className={styles.footer}>
+        <SocialLinks className={styles.socialLinks} url={head.slug} title={head.title} />
+        <Bio className={styles.bio} />
+        <Pager previous={pageContext.previous} next={pageContext.next} />
+      </section>
+    </Centered>
+  </Layout>
+);
+
+const BlogPost = ({ data, pageContext }) => {
+  return <BlogPostTemplate {...convertToArticle(data)} pageContext={pageContext} />;
 };
 
-export default BlogPostTemplate;
-
-export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        author
-      }
-    }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      excerpt(pruneLength: 160)
-      html
-      tableOfContents
-      frontmatter {
-        title
-        date(formatString: "YYYY/M/D")
-        description
-        category
-        tags
-        hero {
-          childImageSharp {
-            fluid(maxWidth: 980, maxHeight: 480) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+export default BlogPost;

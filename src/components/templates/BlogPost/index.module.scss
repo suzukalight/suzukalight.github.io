@@ -124,6 +124,16 @@
     line-height: 1;
   }
 
+  & p[class='contentful-paragraph'] {
+    white-space: pre-wrap;
+  }
+
+  & p[class='contentful-paragraph'] > code {
+    display: block;
+    background-color: #f2f2f2;
+    white-space: pre-wrap;
+  }
+
   & :not(pre) > code[class*='language-'] {
     background-color: #f2f2f2;
   }

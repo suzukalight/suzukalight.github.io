@@ -7,13 +7,13 @@ import Layout from '../../templates/Layout';
 
 import styles from './index.module.scss';
 
-const IndexPage = ({ location, data }) => (
-  <Layout location={location} title={data.site.siteMetadata.title}>
+const IndexPage = ({ location, siteMetadata, posts }) => (
+  <Layout location={location} title={siteMetadata.title}>
     <Seo title="Index" description="なければ作ればいいじゃない" />
 
     <div className={styles.root}>
       <Hero />
-      <Posts posts={data.allMarkdownRemark.edges} />
+      <Posts posts={posts} />
     </div>
   </Layout>
 );
