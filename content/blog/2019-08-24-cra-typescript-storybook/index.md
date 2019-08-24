@@ -11,8 +11,12 @@ Monorepo環境で、create-react-app w/ TypeScript したパッケージに対�
 
 # セットアップ
 
+- Storybook w/React, Addons(viewport, actions, storyshots) をインストール
+- 型情報もインストール
+
 ```bash
 $ yarn workspace client add -D @storybook/addon-actions @storybook/addon-storyshots @storybook/addon-viewport @storybook/addons @storybook/react @storybook/theming
+$ yarn workspace client add -D @types/storybook__react @types/storybook__addon-actions
 ```
 
 # config
@@ -145,13 +149,15 @@ storiesOf('organisms/RaceListSmall', module).add('correct', () => (
 - これで `yarn storybook` と単純な記述で起動できる
 
 ```json:title=package.json
+{
   "scripts": {
     "storybook": "yarn workspace client start-storybook"
   },
+}
 ```
 
 ```bash
-yarn storybook
+$ yarn storybook
 ```
 
 ## 表示結果
