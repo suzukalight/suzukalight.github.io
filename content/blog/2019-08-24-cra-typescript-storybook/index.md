@@ -1,5 +1,5 @@
 ---
-title: Monorepo+React+TypeScript+Storybook環境をつくる
+title: Monorepo+TypeScript+React+Storybook環境をつくる
 date: "2019-08-24T00:02:00"
 category: Technology
 tags: ['monorepo', 'storybook', 'create-react-app', 'typescript']
