@@ -154,16 +154,17 @@ $ prisma2 generate</code></pre></div>
 <p>これでサーバの開発環境が起動できるようになりました；</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">yarn</span> sr:start</code></pre></div>
 <h1 id="lint--prettier"><a href="#lint--prettier" aria-label="lint  prettier permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lint + Prettier</h1>
+<p>クライアントもサーバも、LintやPrettierは必ず行いますので、これらは共用モジュールとしてインストールします。そのうえで、各プロジェクトごとに個別の設定ができるよう、設定ファイルは各プロジェクトのディレクトリ配下に設置することとします。</p>
+<h2 id="yarn-install"><a href="#yarn-install" aria-label="yarn install permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>yarn install</h2>
 <ul>
 <li>eslint, prettier, plugin のインストール（React向け）</li>
-<li>TypeScript の Linting に <code class="language-text">@typescript-eslint/eslint-plugin @typescript-eslint/parser</code> を追加</li>
-<li>各プロジェクトごとに、 <code class="language-text">.prettierrc</code>, <code class="language-text">.eslintrc.json</code>, <code class="language-text">tsconfig.json</code> を追加</li>
+<li>TypeScript の Linting を行うために、<code class="language-text">@typescript-eslint/eslint-plugin @typescript-eslint/parser</code> を追加</li>
 </ul>
-<h2 id="yarn-install"><a href="#yarn-install" aria-label="yarn install permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>yarn install</h2>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">yarn</span> <span class="token function">add</span> -D -W prettier eslint eslint-config-prettier eslint-plugin-prettier
 $ <span class="token function">yarn</span> <span class="token function">add</span> -D -W eslint-plugin-import eslint-plugin-flowtype eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks
 $ <span class="token function">yarn</span> <span class="token function">add</span> -D -W @typescript-eslint/eslint-plugin @typescript-eslint/parser</code></pre></div>
 <h2 id="packagejson"><a href="#packagejson" aria-label="packagejson permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>package.json</h2>
+<p>Lint+Prettierを行うスクリプトを、ルートのpackage.jsonに記述しておきます；</p>
 <div class="gatsby-code-title">package.json</div>
 <div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -173,6 +174,7 @@ $ <span class="token function">yarn</span> <span class="token function">add</spa
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span></code></pre></div>
 <h2 id="prettierrc"><a href="#prettierrc" aria-label="prettierrc permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.prettierrc</h2>
+<p>各プロジェクトごとに、 <code class="language-text">.prettierrc</code>, <code class="language-text">.eslintrc.json</code>, <code class="language-text">tsconfig.json</code> を追加していきます。prettiercは同じ内容を配置しました；</p>
 <div class="gatsby-code-title">src/client/.prettierrc, src/server/.prettierrc</div>
 <div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"printWidth"</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
@@ -182,7 +184,36 @@ $ <span class="token function">yarn</span> <span class="token function">add</spa
   <span class="token property">"semi"</span><span class="token operator">:</span> <span class="token boolean">true</span>
 <span class="token punctuation">}</span></code></pre></div>
 <h2 id="eslintrcjson"><a href="#eslintrcjson" aria-label="eslintrcjson permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.eslintrc.json</h2>
-<div class="gatsby-code-title">src/client/.eslintrc.json, src/server/.eslintrc.json</div>
+<p>クライアント側のlint設定に、React関係のプラグイン設定を追加し、配置しました；</p>
+<div class="gatsby-code-title">src/client/.eslintrc.json</div>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"extends"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"eslint:recommended"</span><span class="token punctuation">,</span>
+    <span class="token string">"plugin:@typescript-eslint/eslint-recommended"</span><span class="token punctuation">,</span>
+    <span class="token string">"plugin:@typescript-eslint/recommended"</span><span class="token punctuation">,</span>
+    <span class="token string">"plugin:prettier/recommended"</span><span class="token punctuation">,</span>
+    <span class="token string">"prettier/@typescript-eslint"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"plugins"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"@typescript-eslint"</span><span class="token punctuation">,</span> <span class="token string">"prettier"</span><span class="token punctuation">,</span> <span class="token string">"react"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"env"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"node"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token property">"es6"</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"parser"</span><span class="token operator">:</span> <span class="token string">"@typescript-eslint/parser"</span><span class="token punctuation">,</span>
+  <span class="token property">"parserOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"sourceType"</span><span class="token operator">:</span> <span class="token string">"module"</span><span class="token punctuation">,</span>
+    <span class="token property">"project"</span><span class="token operator">:</span> <span class="token string">"./tsconfig.json"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"rules"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"prettier/prettier"</span><span class="token operator">:</span> <span class="token string">"error"</span><span class="token punctuation">,</span>
+    <span class="token property">"@typescript-eslint/no-var-requires"</span><span class="token operator">:</span> <span class="token string">"off"</span><span class="token punctuation">,</span>
+    <span class="token property">"@typescript-eslint/explicit-function-return-type"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"warn"</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> <span class="token property">"allowExpressions"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token property">"allowTypedFunctionExpressions"</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"react/jsx-uses-vars"</span><span class="token operator">:</span> <span class="token string">"warn"</span><span class="token punctuation">,</span>
+    <span class="token property">"react/jsx-uses-react"</span><span class="token operator">:</span> <span class="token string">"warn"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>サーバ側はReactのプラグインは不要でしたので、それを省いて設置しました；</p>
+<div class="gatsby-code-title">src/server/.eslintrc.json</div>
 <div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"extends"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
     <span class="token string">"eslint:recommended"</span><span class="token punctuation">,</span>
