@@ -137,11 +137,12 @@ $ yarn sr:start
 
 # Lint + Prettier
 
-- eslint, prettier, plugin のインストール（React向け）
-- TypeScript の Linting に `@typescript-eslint/eslint-plugin @typescript-eslint/parser` を追加
-- 各プロジェクトごとに、 `.prettierrc`, `.eslintrc.json`, `tsconfig.json` を追加
+クライアントもサーバも、LintやPrettierは必ず行いますので、これらは共用モジュールとしてインストールします。そのうえで、各プロジェクトごとに個別の設定ができるよう、設定ファイルは各プロジェクトのディレクトリ配下に設置することとします。
 
 ## yarn install
+
+- eslint, prettier, plugin のインストール（React向け）
+- TypeScript の Linting を行うために、`@typescript-eslint/eslint-plugin @typescript-eslint/parser` を追加
 
 ```bash
 $ yarn add -D -W prettier eslint eslint-config-prettier eslint-plugin-prettier
@@ -150,6 +151,8 @@ $ yarn add -D -W @typescript-eslint/eslint-plugin @typescript-eslint/parser
 ```
 
 ## package.json
+
+Lint+Prettierを行うスクリプトを、ルートのpackage.jsonに記述しておきます；
 
 ```json:title=package.json
 {
@@ -163,6 +166,8 @@ $ yarn add -D -W @typescript-eslint/eslint-plugin @typescript-eslint/parser
 
 ## .prettierrc
 
+各プロジェクトごとに、 `.prettierrc`, `.eslintrc.json`, `tsconfig.json` を追加していきます。prettiercは同じ内容を配置しました；
+
 ```json:title=src/client/.prettierrc, src/server/.prettierrc
 {
   "printWidth": 100,
@@ -175,7 +180,40 @@ $ yarn add -D -W @typescript-eslint/eslint-plugin @typescript-eslint/parser
 
 ## .eslintrc.json
 
-```json:title=src/client/.eslintrc.json, src/server/.eslintrc.json
+クライアント側のlint設定に、React関係のプラグイン設定を追加し、配置しました；
+
+```json:title=src/client/.eslintrc.json
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier/@typescript-eslint"
+  ],
+  "plugins": ["@typescript-eslint", "prettier", "react"],
+  "env": { "node": true, "es6": true },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/explicit-function-return-type": [
+      "warn",
+      { "allowExpressions": true, "allowTypedFunctionExpressions": true }
+    ],
+    "react/jsx-uses-vars": "warn",
+    "react/jsx-uses-react": "warn"
+  }
+}
+```
+
+サーバ側はReactのプラグインは不要でしたので、それを省いて設置しました；
+
+```json:title=src/server/.eslintrc.json
 {
   "extends": [
     "eslint:recommended",
