@@ -11,6 +11,12 @@ Monorepo環境で、__yarn workspace__ を使って、__create-react-app --types
 
 # 前提条件
 
+## 完成品
+
+手元で同様の手順を踏んだリポジトリを、GitHub上に公開していますので、併せてご参照ください。
+
+https://github.com/suzukalight/monorepo-react-prisma2
+
 ## 動作環境
 
 - Mac
@@ -234,6 +240,7 @@ $ yarn seed
 これでサーバの開発環境が起動できるようになりました；
 
 ```bash
+$ cd ../../
 $ yarn sr:start
 ```
 
@@ -554,3 +561,9 @@ husky > pre-commit (node v10.16.0)
   ✔ Running tasks...
 [master 6df70da] auto format
 ```
+
+# 完成品
+
+手元で同様の手順を踏んだリポジトリを、GitHub上に公開していますので、併せてご参照ください。
+
+https://github.com/suzukalight/monorepo-react-prisma2

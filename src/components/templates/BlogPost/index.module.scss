@@ -137,6 +137,10 @@
   & :not(pre) > code[class*='language-'] {
     background-color: #f2f2f2;
   }
+
+  & li {
+    margin-bottom: 0.25rem;
+  }
 }
 
 .socialLinks {
