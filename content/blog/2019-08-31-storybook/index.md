@@ -1,5 +1,5 @@
 ---
-title: StorybookでTypeScriptの型情報を表示する
+title: Storybookでコンポーネントの型情報を表示する
 date: '2019-08-31T00:02:00'
 category: Technology
 tags: ['monorepo', 'storybook', 'create-react-app', 'typescript']
@@ -10,6 +10,12 @@ status: 'published'
 monorepo 環境で、create-react-app w/ TypeScript したパッケージのコンポーネントカタログを Storybook で表示し、さらにその型情報も表示させる設定例です。
 
 # 前提条件
+
+## 完成品
+
+実装内容をプルリクエストにしたものを、GitHub 上に公開していますので、併せてご参照ください。
+
+https://github.com/suzukalight/monorepo-react-prisma2/pull/1
 
 ## 動作環境
 
@@ -83,9 +89,33 @@ import '@storybook/addon-viewport/register';
 $ yarn workspace client add node-sass semantic-ui-react semantic-ui-css date-fns
 ```
 
+### 型情報
+
+Prisma2 が自動生成した **src/server/generated/nexus-typegen.ts から抜き出した**ものです。便利ですね！
+
+```javascript:title=src/client/src/types/data.d.ts
+export interface User {
+  email: string; // String!
+  id: string; // ID!
+  name: string | null; // String
+}
+
+export interface Post {
+  author: User | null; // User
+  content: string | null; // String
+  createdAt: any; // DateTime!
+  id: string; // ID!
+  published: boolean; // Boolean!
+  title: string; // String!
+  updatedAt: any; // DateTime!
+}
+```
+
 ### コンポーネント
 
-```javascript:title=src/client/src/components/organisms/RaceListSmall/index.tsx
+semantic-ui-react と date-fns を利用してマークアップしていきます；
+
+```javascript:title=src/client/src/components/organisms/BlogPost/index.tsx
 import React from 'react';
 import format from 'date-fns/format';
 import { Container, Header, Message, Icon } from 'semantic-ui-react';
@@ -127,6 +157,8 @@ export default BlogPost;
 
 ### スタイル
 
+本文欄の改行を有効にするスタイルを追加するものです。CSS Modules の仕組みを利用しています。create-react-app がデフォルトで対応しているので、webpack の面倒を自分で見る必要がなく、とても楽です。
+
 ```scss:title=src/client/src/components/organisms/BlogPost/index.module.scss
 .content {
   margin: 32px 0;
@@ -134,7 +166,25 @@ export default BlogPost;
 }
 ```
 
+```javascript{3}:title=src/client/.storybook/config.js
+import { create } from '@storybook/theming';
+
+import 'semantic-ui-css/semantic.min.css';
+
+addParameters({
+```
+
+```javascript{3}:title=src/client/src/App.tsx
+import logo from './logo.svg';
+
+import 'semantic-ui-css/semantic.min.css';
+
+import './App.css';
+```
+
 ### Storybook
+
+ダミーデータを用意して、Story で表示させています；
 
 ```javascript:title=src/client/src/components/organisms/RaceListSmall/storybook/index.stories.tsx
 import React from 'react';
@@ -165,9 +215,11 @@ const post: Post = {
 storiesOf('organisms/BlogPost', module).add('BlogPost', () => <BlogPost post={post} />);
 ```
 
-## yarn storybook で起動
+## yarn storybook で起動させる
 
-`yarn workspace [ws-name] [command]` 構文を使って package.json に Storybook の起動コマンドを書いておきます。これで `yarn storybook` というシンプルなコマンドで、Storybook を実行可能になります；
+### 設定
+
+package.json に Storybook の起動コマンドを書いておきます。`yarn workspace [ws-name] [command]` 構文が利用できます。これで `yarn storybook` というシンプルなコマンドで、Storybook を実行可能になります；
 
 ```json:title=package.json
 {
@@ -177,6 +229,8 @@ storiesOf('organisms/BlogPost', module).add('BlogPost', () => <BlogPost post={po
 }
 ```
 
+### 起動
+
 ```bash
 $ yarn storybook
 ```
@@ -185,16 +239,24 @@ Storybook が起動し、以下のようなコンポーネントのカタログ�
 
 ![](storybook.png)
 
+### Viewport アドオンのチェック
+
 Viewport アドオンを有効化しましたので、下記のように iPhone 表示なども試すことができます；
 
 ![](storybook-viewport.png)
 
 # TypeScript DocGen アドオン
 
+**[@storybook/addon-info](https://github.com/storybookjs/storybook/tree/release/3.4/addons/info)** アドオンは、Story 表示に「タイトル」「ソース」「PropTypes」を追加表示してくれる、便利な情報表示アドオンです。
+
+**[react-docgen-typescript-loader](https://github.com/strothj/react-docgen-typescript-loader)** を使うと、この PropTyoes 部分に TypeScript の型情報を表示させることができるようになります。
+
 ## yarn install
 
+上記 2 点と、addon-info の types をインストールします；
+
 ```bash
-$ yarn workspace client add -D @storybook/addon-info react-docgen-typescript-loader
+$ yarn workspace client add -D @storybook/addon-info react-docgen-typescript-loader @types/storybook__addon-info
 ```
 
 ## webpack.config.js
@@ -218,7 +280,7 @@ module.exports = ({ config }) => {
 
 ## index.stories.jsx
 
-Story で withInfo をすることで、コンポーネントに関する情報を表示させることができるようになります。このなかに「Prop Types」ブロックがあるのですが、ここが react-docgen-typescript-loader によって拡張され、TypeScript で指定した型情報が表示されるようになります；
+**withInfo** をすることで、Story にコンポーネントに関する情報を表示させることができるようになります。このなかに「Prop Types」ブロックがあるのですが、ここが react-docgen-typescript-loader によって拡張され、TypeScript で指定した型情報が表示されるようになります；
 
 ```javascript{3,28-29}:title=src/client/src/components/organisms/BlogPost/__stories__/index.stories.tsx
 import React from 'react';
@@ -257,3 +319,9 @@ storiesOf('organisms/BlogPost', module)
 上記のように Storybook を更新すると、以下のようなコンポーネント情報が表示され、PropTypes 部分に TypeScript で記述した型情報が表示されていれば、今回の目標は達成です！
 
 ![](storybook-typescript-docgen.png)
+
+# 完成品
+
+実装内容をプルリクエストにしたものを、GitHub 上に公開していますので、併せてご参照ください。
+
+https://github.com/suzukalight/monorepo-react-prisma2/pull/1
