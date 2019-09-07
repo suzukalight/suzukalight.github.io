@@ -1,4 +1,320 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[suzukalight.com]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://suzukalight.com</link><generator>RSS for Node</generator><lastBuildDate>Wed, 04 Sep 2019 10:42:17 GMT</lastBuildDate><item><title><![CDATA[monorepo環境にJestとStoryshotsのレグレッションテスト環境を構築]]></title><description><![CDATA[monorepo 環境で、create-react-app w/ TypeScript したパッケージに対して、Jest のテストと、Storyshots による Storybook…]]></description><link>https://suzukalight.com/2019-09-03-monorepo-jest-storyshots/</link><guid isPermaLink="false">https://suzukalight.com/2019-09-03-monorepo-jest-storyshots/</guid><pubDate>Mon, 02 Sep 2019 15:02:00 GMT</pubDate><content:encoded>&lt;p&gt;monorepo 環境で、create-react-app w/ TypeScript したパッケージに対して、Jest のテストと、Storyshots による Storybook ベースのスナップショットテスティングを導入する例です。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[suzukalight.com]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://suzukalight.com</link><generator>RSS for Node</generator><lastBuildDate>Sat, 07 Sep 2019 02:21:39 GMT</lastBuildDate><item><title><![CDATA[【一口馬主】キャロットクラブ新規入会・攻略の顛末（随時更新）]]></title><description><![CDATA[ねんがんのサラブレッドをてにいれたぞ競馬ファンなら一度は憧れる夢・馬主になる。今年はこれを達成するために、キャロットクラブで一口馬主に入会してみます。新規入会者の壁が非常に高いと評判ではありますが、果たして結果はいかに？はじめにキャロットクラブとはhttps…]]></description><link>https://suzukalight.com/2019-09-06-join-carrot-club/</link><guid isPermaLink="false">https://suzukalight.com/2019-09-06-join-carrot-club/</guid><pubDate>Thu, 05 Sep 2019 15:02:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;del&gt;ねんがんのサラブレッドをてにいれたぞ&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;競馬ファンなら一度は憧れる夢・馬主になる&lt;/strong&gt;。今年はこれを達成するために、キャロットクラブで一口馬主に入会してみます。新規入会者の壁が非常に高いと評判ではありますが、果たして結果はいかに？&lt;/p&gt;
+&lt;h1 id=&quot;はじめに&quot;&gt;&lt;a href=&quot;#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB&quot; aria-label=&quot;はじめに permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;はじめに&lt;/h1&gt;
+&lt;h2 id=&quot;キャロットクラブとは&quot;&gt;&lt;a href=&quot;#%E3%82%AD%E3%83%A3%E3%83%AD%E3%83%83%E3%83%88%E3%82%AF%E3%83%A9%E3%83%96%E3%81%A8%E3%81%AF&quot; aria-label=&quot;キャロットクラブとは permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;キャロットクラブとは&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://carrotclub.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://carrotclub.net/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;サートゥルナーリア、リスグラシュー、レイデオロなど、有名馬が多数在籍する、言わずとしれた一口馬主クラブ&lt;/strong&gt;。私もいつかは馬主になりたいという夢を持っていましたが、今年ついに申し込むことにしました！&lt;/p&gt;
+&lt;h1 id=&quot;出資のシステム&quot;&gt;&lt;a href=&quot;#%E5%87%BA%E8%B3%87%E3%81%AE%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0&quot; aria-label=&quot;出資のシステム permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;出資のシステム&lt;/h1&gt;
+&lt;h2 id=&quot;最優先枠&quot;&gt;&lt;a href=&quot;#%E6%9C%80%E5%84%AA%E5%85%88%E6%9E%A0&quot; aria-label=&quot;最優先枠 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;最優先枠&lt;/h2&gt;
+&lt;p&gt;キャロットクラブはすでに多数の一口馬主会員が存在し、会員内で馬の取り合い、つまり抽選が起きているような状態です。&lt;/p&gt;
+&lt;p&gt;そういった状態ですから、キャロットクラブでは「&lt;strong&gt;最優先枠&lt;/strong&gt;」を 1 つ行使できるシステムがあり、その枠で申し込んだ馬については、&lt;strong&gt;他の会員より優先して抽選される&lt;/strong&gt;ようになっています。&lt;/p&gt;
+&lt;p&gt;しかし、この最優先枠ですら申し込み叶わず、×1、×2 という救済制度まで出てきている状態だそうで…。&lt;/p&gt;
+&lt;p&gt;結果として優先度序列が細分化していき、&lt;strong&gt;現在の序列としては「×2」「×1」「最優先」「一般」の 4 順位が存在する&lt;/strong&gt;、なんてことになっているそうです。&lt;/p&gt;
+&lt;h2 id=&quot;母馬優先枠&quot;&gt;&lt;a href=&quot;#%E6%AF%8D%E9%A6%AC%E5%84%AA%E5%85%88%E6%9E%A0&quot; aria-label=&quot;母馬優先枠 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;母馬優先枠&lt;/h2&gt;
+&lt;p&gt;もうひとつ、キャロットクラブの特徴的な抽選システムとして「&lt;strong&gt;母馬優先&lt;/strong&gt;」という制度があります。これは当該馬の母馬に投資していた人に、400 口のうちの半分、&lt;strong&gt;200 口が優先抽選枠として確保される&lt;/strong&gt;というシステムです。&lt;/p&gt;
+&lt;p&gt;OurBlood というスローガンに基づき、親子末代まで馬主として応援していくことをサポートする、面白いシステムですね。個人的に好きなシステムです。はやく会員になりたい。&lt;/p&gt;
+&lt;p&gt;ちなみにここにも「×2」「×1」「最優先」があります。つまりすでに優先順位が 8 つも存在することに。&lt;/p&gt;
+&lt;h2 id=&quot;新規入会者枠&quot;&gt;&lt;a href=&quot;#%E6%96%B0%E8%A6%8F%E5%85%A5%E4%BC%9A%E8%80%85%E6%9E%A0&quot; aria-label=&quot;新規入会者枠 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;新規入会者枠&lt;/h2&gt;
+&lt;p&gt;さて、では我々新規入会者の枠はどうなっているかというと、&lt;strong&gt;この 8 つのさらに下、9 番目になります。非常に厳しい。。。&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;攻略の糸口&quot;&gt;&lt;a href=&quot;#%E6%94%BB%E7%95%A5%E3%81%AE%E7%B3%B8%E5%8F%A3&quot; aria-label=&quot;攻略の糸口 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;攻略の糸口&lt;/h1&gt;
+&lt;h2 id=&quot;どういう馬に応募する？&quot;&gt;&lt;a href=&quot;#%E3%81%A9%E3%81%86%E3%81%84%E3%81%86%E9%A6%AC%E3%81%AB%E5%BF%9C%E5%8B%9F%E3%81%99%E3%82%8B%EF%BC%9F&quot; aria-label=&quot;どういう馬に応募する？ permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;どういう馬に応募する？&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;新規入会者としては、既存会員で満口にならなかった馬を狙って応募する必要があります。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://ameblo.jp/gurigurikun1/entry-12404709115.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;こちらのサイト&lt;/a&gt;によると、2018 年度の満口率は 77.1%だそうです（83 頭中 64 頭が満口）。その前の 2017 年が約 70%。新規会員の抽選権は、既存会員をすべて抽選しつくしたあとからですから、&lt;strong&gt;新規入会者はまず、残りの 23%ないし 30%程度を探さなければ、入会すらできません。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;残る馬の傾向としては「ディープインパクト産駒のような、15 万円を超える高額馬」あるいは「過去実績の薄い、5 万円以下の馬」になるようです。&lt;/p&gt;
+&lt;p&gt;さすがに 15 万円以上の馬で、23%の壁を超えるために、5 頭も申し込むようなギャンブルは打ちづらいですね。&lt;strong&gt;100 万円くださいとか言われても困る。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;なので、「&lt;strong&gt;過去実績の薄い、5 万円以下の馬&lt;/strong&gt;」から 23%側の馬を探しておく必要があります。人気の多寡については、今回は &lt;a href=&quot;https://owner.netkeiba.com/?rf=navi&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;netkeiba さんの一口馬主サイト&lt;/a&gt;から&lt;a href=&quot;https://owner.netkeiba.com/?rf=navi&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;募集馬の検討リストに入っている数&lt;/a&gt;を参考にすることとしました。&lt;/p&gt;
+&lt;p&gt;ほかに良好なファクターとしては、下記があるかと思います。私が既存会員だったとして、これらの馬は避ける傾向を示すと思うので、その逆張りはチャンスが生まれると思います；&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;厩舎の実績が乏しい、または新規開業&lt;/li&gt;
+&lt;li&gt;母馬が高齢、または初仔&lt;/li&gt;
+&lt;li&gt;種牡馬に実績がない、または新種牡馬&lt;/li&gt;
+&lt;li&gt;管囲が細い、繋ぎの角度が急、歩様が明らかにおかしい&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;どれくらい応募する？&quot;&gt;&lt;a href=&quot;#%E3%81%A9%E3%82%8C%E3%81%8F%E3%82%89%E3%81%84%E5%BF%9C%E5%8B%9F%E3%81%99%E3%82%8B%EF%BC%9F&quot; aria-label=&quot;どれくらい応募する？ permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;どれくらい応募する？&lt;/h2&gt;
+&lt;p&gt;もともと人気のない馬を中心に選んでいますから、おそらく 50%くらいは満口にならないのではと想定しました。そうすると、&lt;strong&gt;この枠で 5,6 頭とっておけば、最低でも 1 頭、平均して 3 頭ほどは取れる計算です&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;本当はギリギリまで粘れば、この 50%もより精度が上げられるのでしょうが、新規入会者はそれもかないません（既存会員より期日が 1 日早く、さらに郵送必着のため）。リスク管理のために、やや多めに取っていきます。&lt;strong&gt;たくさん取れたら取れたぶん楽しみが増えるだけ！（なお出費もたくさん）&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;申込みまで&quot;&gt;&lt;a href=&quot;#%E7%94%B3%E8%BE%BC%E3%81%BF%E3%81%BE%E3%81%A7&quot; aria-label=&quot;申込みまで permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;申込みまで&lt;/h1&gt;
+&lt;h2 id=&quot;2019-8-18-申込書取り寄せ&quot;&gt;&lt;a href=&quot;#2019-8-18-%E7%94%B3%E8%BE%BC%E6%9B%B8%E5%8F%96%E3%82%8A%E5%AF%84%E3%81%9B&quot; aria-label=&quot;2019 8 18 申込書取り寄せ permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2019-8-18: 申込書取り寄せ&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://carrotclub.net/club/lfx-doc-key-bosyu.htm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://carrotclub.net/club/lfx-doc-key-bosyu.htm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;キャロットクラブの新規会員募集ページから、フォームに必要事項を記入して申し込みます。1 週間かからずに、申込書とカタログが届きました。オラワクワクすっぞ！&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/3695116b0b21d112fa4afffcd0028b8a/f6974/touchaku.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 54.39074200136147%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIDBQb/xAAVAQEBAAAAAAAAAAAAAAAAAAABAP/aAAwDAQACEAMQAAAB2EaUUOZB/8QAGhAAAgIDAAAAAAAAAAAAAAAAAAMBEBETMf/aAAgBAQABBQIzUk8c9uz/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAXEAEAAwAAAAAAAAAAAAAAAAABACAi/9oACAEBAAY/Aqu2f//EABkQAQACAwAAAAAAAAAAAAAAAAEAERBRcf/aAAgBAQABPyHkL3kkVQRhBqf/2gAMAwEAAgADAAAAEBA//8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oACAEDAQE/EK2v/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAHBABAAICAwEAAAAAAAAAAAAAAQARITFBUWGR/9oACAEBAAE/EG6cL9hULka1iILxNCKqpDqLmygVB8n/2Q==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;touchaku&quot;
+        title=&quot;&quot;
+        src=&quot;/static/3695116b0b21d112fa4afffcd0028b8a/c739e/touchaku.jpg&quot;
+        srcset=&quot;/static/3695116b0b21d112fa4afffcd0028b8a/8ee9c/touchaku.jpg 148w,
+/static/3695116b0b21d112fa4afffcd0028b8a/ebbe7/touchaku.jpg 295w,
+/static/3695116b0b21d112fa4afffcd0028b8a/c739e/touchaku.jpg 590w,
+/static/3695116b0b21d112fa4afffcd0028b8a/5413e/touchaku.jpg 885w,
+/static/3695116b0b21d112fa4afffcd0028b8a/4efde/touchaku.jpg 1180w,
+/static/3695116b0b21d112fa4afffcd0028b8a/f6974/touchaku.jpg 1469w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2019-8-26-pdf-と動画公開&quot;&gt;&lt;a href=&quot;#2019-8-26-pdf-%E3%81%A8%E5%8B%95%E7%94%BB%E5%85%AC%E9%96%8B&quot; aria-label=&quot;2019 8 26 pdf と動画公開 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2019-8-26: PDF と動画公開&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://carrotclub.net/topics/news_dis_text.asp?No=2263&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://carrotclub.net/topics/news&lt;em&gt;dis&lt;/em&gt;text.asp?No=2263&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;新規会員には DVD が届きませんので、募集馬の動きを確認するには、オフィシャルサイトへの動画掲載を待つ必要があります。キャロットクラブでは募集開始の少し後に、全馬掲載と相成りました。穴が開くまで観ましょう。&lt;/p&gt;
+&lt;h2 id=&quot;2019-9-3-申し込み馬絞り込み&quot;&gt;&lt;a href=&quot;#2019-9-3-%E7%94%B3%E3%81%97%E8%BE%BC%E3%81%BF%E9%A6%AC%E7%B5%9E%E3%82%8A%E8%BE%BC%E3%81%BF&quot; aria-label=&quot;2019 9 3 申し込み馬絞り込み permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2019-9-3: 申し込み馬絞り込み&lt;/h2&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/f4a2d920a53444a521ff892d76d02c90/d932e/catalog.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIDBP/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAEbZSSA4v8A/8QAGxAAAgEFAAAAAAAAAAAAAAAAAQIDABAREzL/2gAIAQEAAQUC0FQYpKQYV+Db/8QAFREBAQAAAAAAAAAAAAAAAAAAEBH/2gAIAQMBAT8Bh//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAECAQE/AYf/xAAaEAACAgMAAAAAAAAAAAAAAAABEQAhIDJx/9oACAEBAAY/AgXYmxXZaeH/xAAcEAEAAgIDAQAAAAAAAAAAAAABABExQSFRgbH/2gAIAQEAAT8hSEWXGu1kYpA9lbnynA8jmf/aAAwDAQACAAMAAAAQ1y//xAAWEQADAAAAAAAAAAAAAAAAAAABEBH/2gAIAQMBAT8QNL//xAAWEQADAAAAAAAAAAAAAAAAAAAQEUH/2gAIAQIBAT8QSD//xAAdEAEAAgICAwAAAAAAAAAAAAABABExQSFRcaHh/9oACAEBAAE/EKiANLtqOgG9BedPyMZ9mK78zC7WsFFdH0Ro5//Z&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;（※申し込みたくても申し込めないヒルダズパッションの 18）&quot;
+        title=&quot;&quot;
+        src=&quot;/static/f4a2d920a53444a521ff892d76d02c90/c739e/catalog.jpg&quot;
+        srcset=&quot;/static/f4a2d920a53444a521ff892d76d02c90/8ee9c/catalog.jpg 148w,
+/static/f4a2d920a53444a521ff892d76d02c90/ebbe7/catalog.jpg 295w,
+/static/f4a2d920a53444a521ff892d76d02c90/c739e/catalog.jpg 590w,
+/static/f4a2d920a53444a521ff892d76d02c90/5413e/catalog.jpg 885w,
+/static/f4a2d920a53444a521ff892d76d02c90/4efde/catalog.jpg 1180w,
+/static/f4a2d920a53444a521ff892d76d02c90/d932e/catalog.jpg 4608w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+（※申し込みたくても申し込めないヒルダズパッションの 18）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;今回の大前提は「とにかく入会する」です&lt;/strong&gt;。そのうえでリスク管理のために「高い馬一頭ではなく安めの馬を数頭を持つ」こと、「母馬優先のために牝馬を多めに取る」ことを、サブの目標としました。&lt;/p&gt;
+&lt;p&gt;「比較的人気のない、5 万円以下の馬」をリストアップしていきます。今回はその基準として、&lt;strong&gt;募集開始前の時点で、検討リスト数が 200 未満の馬を対象としました&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;たとえば私が芦毛枠で申し込んだ &lt;a href=&quot;https://owner.netkeiba.com/?pid=horse_profile&amp;#x26;id=2018105544&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ピエリーナの 18&lt;/a&gt; の検討リスト数は 126 件（9/4 時点）ですから、これは対象になる、という感じです。&lt;/p&gt;
+&lt;p&gt;この作業を繰り返して、スプレッドシートに転記し、その中から自分の気に入った馬を選定していく、という感じです。いろんな仔馬を見てると、どれも目移りするから不思議！&lt;/p&gt;
+&lt;h2 id=&quot;2019-9-4-申込用紙記入&quot;&gt;&lt;a href=&quot;#2019-9-4-%E7%94%B3%E8%BE%BC%E7%94%A8%E7%B4%99%E8%A8%98%E5%85%A5&quot; aria-label=&quot;2019 9 4 申込用紙記入 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2019-9-4: 申込用紙記入&lt;/h2&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/fd929ddb854200867ffd1cabeef37205/d932e/kinyuu.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAgAF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB2iiGo//EABYQAAMAAAAAAAAAAAAAAAAAABARIP/aAAgBAQABBQIOP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEABj8CX//EABoQAAICAwAAAAAAAAAAAAAAAAABESExUdH/2gAIAQEAAT8hZFIUDZ0eT//aAAwDAQACAAMAAAAQ48//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAcEAACAgIDAAAAAAAAAAAAAAAAAREhMXFhgZH/2gAIAQEAAT8QvPCHCx+jEiZ2K+zG3Whk2f/Z&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;kinyuu&quot;
+        title=&quot;&quot;
+        src=&quot;/static/fd929ddb854200867ffd1cabeef37205/c739e/kinyuu.jpg&quot;
+        srcset=&quot;/static/fd929ddb854200867ffd1cabeef37205/8ee9c/kinyuu.jpg 148w,
+/static/fd929ddb854200867ffd1cabeef37205/ebbe7/kinyuu.jpg 295w,
+/static/fd929ddb854200867ffd1cabeef37205/c739e/kinyuu.jpg 590w,
+/static/fd929ddb854200867ffd1cabeef37205/5413e/kinyuu.jpg 885w,
+/static/fd929ddb854200867ffd1cabeef37205/4efde/kinyuu.jpg 1180w,
+/static/fd929ddb854200867ffd1cabeef37205/d932e/kinyuu.jpg 4608w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最終的に、申込み用紙に記入したのは、下記の 10 頭でした；&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;属#&lt;/th&gt;
+&lt;th&gt;馬名&lt;/th&gt;
+&lt;th&gt;性&lt;/th&gt;
+&lt;th&gt;出資&lt;/th&gt;
+&lt;th&gt;検討&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;東 7&lt;/td&gt;
+&lt;td&gt;アゼリの 18&lt;/td&gt;
+&lt;td&gt;メス&lt;/td&gt;
+&lt;td&gt;90k&lt;/td&gt;
+&lt;td&gt;258&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;東 13&lt;/td&gt;
+&lt;td&gt;(優)ジュエルトウショウの 18&lt;/td&gt;
+&lt;td&gt;メス&lt;/td&gt;
+&lt;td&gt;35k&lt;/td&gt;
+&lt;td&gt;192&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;東 17&lt;/td&gt;
+&lt;td&gt;ヴァイスゴルトの 18&lt;/td&gt;
+&lt;td&gt;牡&lt;/td&gt;
+&lt;td&gt;60k&lt;/td&gt;
+&lt;td&gt;158&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;東 19&lt;/td&gt;
+&lt;td&gt;アートプリンセスの 18&lt;/td&gt;
+&lt;td&gt;牡&lt;/td&gt;
+&lt;td&gt;90k&lt;/td&gt;
+&lt;td&gt;303&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;東 20&lt;/td&gt;
+&lt;td&gt;ヒルダズパッションの 18&lt;/td&gt;
+&lt;td&gt;メス&lt;/td&gt;
+&lt;td&gt;125k&lt;/td&gt;
+&lt;td&gt;444&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;東 32&lt;/td&gt;
+&lt;td&gt;ピエリーナの 18&lt;/td&gt;
+&lt;td&gt;牡&lt;/td&gt;
+&lt;td&gt;45k&lt;/td&gt;
+&lt;td&gt;126&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;東 36&lt;/td&gt;
+&lt;td&gt;ヒカルアモーレの 18&lt;/td&gt;
+&lt;td&gt;牡&lt;/td&gt;
+&lt;td&gt;90k&lt;/td&gt;
+&lt;td&gt;293&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;東 38&lt;/td&gt;
+&lt;td&gt;ピースエンブレムの 18&lt;/td&gt;
+&lt;td&gt;メス&lt;/td&gt;
+&lt;td&gt;45k&lt;/td&gt;
+&lt;td&gt;181&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;西 73&lt;/td&gt;
+&lt;td&gt;ユールフェストの 18&lt;/td&gt;
+&lt;td&gt;メス&lt;/td&gt;
+&lt;td&gt;45k&lt;/td&gt;
+&lt;td&gt;163&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;西 78&lt;/td&gt;
+&lt;td&gt;スペクトロライトの 18&lt;/td&gt;
+&lt;td&gt;メス&lt;/td&gt;
+&lt;td&gt;30k&lt;/td&gt;
+&lt;td&gt;200&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;キャロットクラブの特徴である、母馬優先制度を将来に見越して、牝馬へ多めに応募しています。あとは個人的な趣味（関東在住、栗毛や芦毛が好き、ドゥラメンテ産駒が好き）で入れている感じですね。&lt;strong&gt;一口馬主ですから好きと思った馬に応募したい。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;netkeiba の検討リストで、一時募集開始前の時点で 200pts. 以上の馬については、もうすでに厳しいでしょうから、これらは記念応募みたいな感じです。現実としては下記の 5 頭が中心となり、そのうち 23%の壁を突破できるのが 3 頭ほどと読んでいます；&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;属#&lt;/th&gt;
+&lt;th&gt;馬名&lt;/th&gt;
+&lt;th&gt;性&lt;/th&gt;
+&lt;th&gt;出資&lt;/th&gt;
+&lt;th&gt;検討&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;東 13&lt;/td&gt;
+&lt;td&gt;(優)ジュエルトウショウの 18&lt;/td&gt;
+&lt;td&gt;メス&lt;/td&gt;
+&lt;td&gt;35k&lt;/td&gt;
+&lt;td&gt;192&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;東 17&lt;/td&gt;
+&lt;td&gt;ヴァイスゴルトの 18&lt;/td&gt;
+&lt;td&gt;牡&lt;/td&gt;
+&lt;td&gt;60k&lt;/td&gt;
+&lt;td&gt;158&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;東 32&lt;/td&gt;
+&lt;td&gt;ピエリーナの 18&lt;/td&gt;
+&lt;td&gt;牡&lt;/td&gt;
+&lt;td&gt;45k&lt;/td&gt;
+&lt;td&gt;126&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;東 38&lt;/td&gt;
+&lt;td&gt;ピースエンブレムの 18&lt;/td&gt;
+&lt;td&gt;メス&lt;/td&gt;
+&lt;td&gt;45k&lt;/td&gt;
+&lt;td&gt;181&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;西 73&lt;/td&gt;
+&lt;td&gt;ユールフェストの 18&lt;/td&gt;
+&lt;td&gt;メス&lt;/td&gt;
+&lt;td&gt;45k&lt;/td&gt;
+&lt;td&gt;163&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&quot;2019-9-5-投函&quot;&gt;&lt;a href=&quot;#2019-9-5-%E6%8A%95%E5%87%BD&quot; aria-label=&quot;2019 9 5 投函 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2019-9-5: 投函&lt;/h2&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/f572b61a788d73f886d42d51db00a7c2/d932e/fuusho.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAgAF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgP/2gAMAwEAAhADEAAAAdAMyYlVH//EABkQAAIDAQAAAAAAAAAAAAAAAAABAhARMf/aAAgBAQABBQKQ+aO//8QAFREBAQAAAAAAAAAAAAAAAAAAEEH/2gAIAQMBAT8Bh//EABURAQEAAAAAAAAAAAAAAAAAABBC/9oACAECAQE/AaP/xAAWEAADAAAAAAAAAAAAAAAAAAAQIDH/2gAIAQEABj8CET//xAAaEAACAwEBAAAAAAAAAAAAAAAAARExYSFR/9oACAEBAAE/IU7OGCFgXLZC8P/aAAwDAQACAAMAAAAQo/8A/8QAFREBAQAAAAAAAAAAAAAAAAAAEQD/2gAIAQMBAT8QGl//xAAWEQEBAQAAAAAAAAAAAAAAAAABEBH/2gAIAQIBAT8QHJ//xAAbEAEBAAIDAQAAAAAAAAAAAAABEQAxIUFxsf/aAAgBAQABPxAA1rTrNhyXazjBD6Jio8yCUsKYMCi+Z//Z&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;fuusho&quot;
+        title=&quot;&quot;
+        src=&quot;/static/f572b61a788d73f886d42d51db00a7c2/c739e/fuusho.jpg&quot;
+        srcset=&quot;/static/f572b61a788d73f886d42d51db00a7c2/8ee9c/fuusho.jpg 148w,
+/static/f572b61a788d73f886d42d51db00a7c2/ebbe7/fuusho.jpg 295w,
+/static/f572b61a788d73f886d42d51db00a7c2/c739e/fuusho.jpg 590w,
+/static/f572b61a788d73f886d42d51db00a7c2/5413e/fuusho.jpg 885w,
+/static/f572b61a788d73f886d42d51db00a7c2/4efde/fuusho.jpg 1180w,
+/static/f572b61a788d73f886d42d51db00a7c2/d932e/fuusho.jpg 4608w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;一時募集開始が 9/6 なので、早ければその日に、遅くても末日までには届くよう、9/5 に投函しました。&lt;strong&gt;私は返信用封筒が翌日配送にならないとは知らず、シルクホースクラブ宛へ前日に投函して見事に失敗した経歴を持っていますので、同じ轍を踏まない（ツラい）&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;もし締め切りギリギリに応募することになる場合は、必ず自費で切手を買い、&lt;strong&gt;できれば大きな郵便局の窓口で、必着日までに届くのを確認されることをオススメします！！！&lt;/strong&gt;（まさか同じ赤坂局内で翌日に届かないとは思ってなかった…）&lt;/p&gt;
+&lt;h1 id=&quot;結果発表&quot;&gt;&lt;a href=&quot;#%E7%B5%90%E6%9E%9C%E7%99%BA%E8%A1%A8&quot; aria-label=&quot;結果発表 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;結果発表&lt;/h1&gt;
+&lt;h2 id=&quot;応募状況&quot;&gt;&lt;a href=&quot;#%E5%BF%9C%E5%8B%9F%E7%8A%B6%E6%B3%81&quot; aria-label=&quot;応募状況 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;応募状況&lt;/h2&gt;
+&lt;p&gt;（発表があれば、更新していきます）&lt;/p&gt;
+&lt;h2 id=&quot;結果発表-1&quot;&gt;&lt;a href=&quot;#%E7%B5%90%E6%9E%9C%E7%99%BA%E8%A1%A8-1&quot; aria-label=&quot;結果発表 1 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;結果発表&lt;/h2&gt;
+&lt;p&gt;（受かっていますように！）&lt;/p&gt;
+&lt;h2 id=&quot;入会手続き&quot;&gt;&lt;a href=&quot;#%E5%85%A5%E4%BC%9A%E6%89%8B%E7%B6%9A%E3%81%8D&quot; aria-label=&quot;入会手続き permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;入会手続き&lt;/h2&gt;
+&lt;p&gt;（できたらいいな！）&lt;/p&gt;</content:encoded></item><item><title><![CDATA[monorepo環境にJestとStoryshotsのレグレッションテスト環境を構築]]></title><description><![CDATA[monorepo 環境で、create-react-app w/ TypeScript したパッケージに対して、Jest のテストと、Storyshots による Storybook…]]></description><link>https://suzukalight.com/2019-09-03-monorepo-jest-storyshots/</link><guid isPermaLink="false">https://suzukalight.com/2019-09-03-monorepo-jest-storyshots/</guid><pubDate>Mon, 02 Sep 2019 15:02:00 GMT</pubDate><content:encoded>&lt;p&gt;monorepo 環境で、create-react-app w/ TypeScript したパッケージに対して、Jest のテストと、Storyshots による Storybook ベースのスナップショットテスティングを導入する例です。&lt;/p&gt;
 &lt;h1 id=&quot;まえがき&quot;&gt;&lt;a href=&quot;#%E3%81%BE%E3%81%88%E3%81%8C%E3%81%8D&quot; aria-label=&quot;まえがき permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;まえがき&lt;/h1&gt;
 &lt;h2 id=&quot;完成品&quot;&gt;&lt;a href=&quot;#%E5%AE%8C%E6%88%90%E5%93%81&quot; aria-label=&quot;完成品 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;完成品&lt;/h2&gt;
 &lt;p&gt;実装内容をプルリクエストにしたものを、GitHub 上に公開していますので、併せてご参照ください。&lt;/p&gt;
@@ -1296,115 +1612,7 @@ husky &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; pre-commit 
 &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;master 6df70da&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; auto &lt;span class=&quot;token function&quot;&gt;format&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h1 id=&quot;完成品-1&quot;&gt;&lt;a href=&quot;#%E5%AE%8C%E6%88%90%E5%93%81-1&quot; aria-label=&quot;完成品 1 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;完成品&lt;/h1&gt;
 &lt;p&gt;手元で同様の手順を踏んだリポジトリを、GitHub上に公開していますので、併せてご参照ください。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/suzukalight/monorepo-react-prisma2&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/suzukalight/monorepo-react-prisma2&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Prisma2 + graphql-yoga + Nexus でサーバを立てる]]></title><description><![CDATA[Prisma2 + graphql-yoga + Nexus でサーバを立てるPhotonJSセットアップphotonjs/examples/typescript/graphql at master · prisma/photonjsPhotonJS…]]></description><link>https://suzukalight.com/2019-08-03-prisma2-graphql-yoga/</link><guid isPermaLink="false">https://suzukalight.com/2019-08-03-prisma2-graphql-yoga/</guid><pubDate>Wed, 14 Aug 2019 15:02:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;prisma2--graphql-yoga--nexus-でサーバを立てる&quot;&gt;&lt;a href=&quot;#prisma2--graphql-yoga--nexus-%E3%81%A7%E3%82%B5%E3%83%BC%E3%83%90%E3%82%92%E7%AB%8B%E3%81%A6%E3%82%8B&quot; aria-label=&quot;prisma2  graphql yoga  nexus でサーバを立てる permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Prisma2 + graphql-yoga + Nexus でサーバを立てる&lt;/h1&gt;
-&lt;p&gt;PhotonJS&lt;/p&gt;
-&lt;h1 id=&quot;セットアップ&quot;&gt;&lt;a href=&quot;#%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97&quot; aria-label=&quot;セットアップ permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;セットアップ&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/prisma/photonjs/tree/master/examples/typescript/graphql&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;photonjs/examples/typescript/graphql at master · prisma/photonjs&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;PhotonJSのサンプルを利用します。リポジトリをクローンします；&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone git@github.com:prisma/photonjs.git
-$ &lt;span class=&quot;token function&quot;&gt;cd&lt;/span&gt; photonjs/examples/typescript/graphql
-$ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1 id=&quot;nexus&quot;&gt;&lt;a href=&quot;#nexus&quot; aria-label=&quot;nexus permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Nexus&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nexus.js.org/docs/database-access-with-prisma-v2&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Database Access with Prisma 2 (Preview) · GraphQL Nexus&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;このサンプルでは、ORMとして &lt;strong&gt;nexus&lt;/strong&gt; を使用しています。package.jsonそれをプラグインとして利用する &lt;strong&gt;@prisma/nexus&lt;/strong&gt; がインストールされています；&lt;/p&gt;
-&lt;div class=&quot;gatsby-code-title&quot;&gt;package.json&lt;/div&gt;
-&lt;div class=&quot;gatsby-highlight has-highlighted-lines&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token string&quot;&gt;&quot;dependencies&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;    &lt;span class=&quot;token string&quot;&gt;&quot;@prisma/nexus&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;^0.0.1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/span&gt;    &lt;span class=&quot;token string&quot;&gt;&quot;graphql-yoga&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;1.17.4&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;    &lt;span class=&quot;token string&quot;&gt;&quot;nexus&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;0.11.7&quot;&lt;/span&gt;&lt;/span&gt;  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&quot;モデル定義&quot;&gt;&lt;a href=&quot;#%E3%83%A2%E3%83%87%E3%83%AB%E5%AE%9A%E7%BE%A9&quot; aria-label=&quot;モデル定義 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;モデル定義&lt;/h2&gt;
-&lt;p&gt;マッピングするモデルを、Nexusの指定する形式で記述します； &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;title=prisma/schema.prisma&quot;&gt;&lt;pre class=&quot;language-title=prisma/schema.prisma&quot;&gt;&lt;code class=&quot;language-title=prisma/schema.prisma&quot;&gt;model Race {
-  id            Int @id
-  raceId        String @unique
-  createdAt     DateTime
-  raceDate      DateTime
-  courseCode    String
-  kai           Int
-  nichi         Int
-  number        Int
-  hondai        String
-  gradeCode     String
-  joukenCodeJy  String
-  distance      Int
-  trackCode     String
-  hassouTime    DateTime
-  tourokuTousuu Int
-  shussouTousuu Int
-
-  umaRaces      UmaRace[]
-}
-
-model UmaRace {
-  id            Int @id
-  umaRaceId     String @unique
-  race          Race
-  createdAt     DateTime
-  raceDate      DateTime
-  wakuban       Int
-  umaban        Int
-  name          String
-  sexCode       String
-  keiroCode     String
-  age           Int
-  tozaiCode     String
-  choukyoushiRyakushou  String
-  futanJuuryou  Int
-  kishuRyakushou  String
-  odds          Int
-  ninki         Int
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&quot;マイグレーション・シーダー&quot;&gt;&lt;a href=&quot;#%E3%83%9E%E3%82%A4%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%BB%E3%82%B7%E3%83%BC%E3%83%80%E3%83%BC&quot; aria-label=&quot;マイグレーション・シーダー permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;マイグレーション・シーダー&lt;/h2&gt;
-&lt;h3 id=&quot;マイグレーションファイル生成&quot;&gt;&lt;a href=&quot;#%E3%83%9E%E3%82%A4%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E7%94%9F%E6%88%90&quot; aria-label=&quot;マイグレーションファイル生成 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;マイグレーションファイル生成&lt;/h3&gt;
-&lt;p&gt;Liftを使ってマイグレーションファイルを作成します。&lt;code class=&quot;language-text&quot;&gt;prisma/migrations/&lt;/code&gt; に &lt;code class=&quot;language-text&quot;&gt;20190815203757-init&lt;/code&gt; と &lt;code class=&quot;language-text&quot;&gt;lift.lock&lt;/code&gt; の2つが自動生成されます；&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ prisma2 lift save --name &lt;span class=&quot;token string&quot;&gt;&apos;init&apos;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&quot;マイグレーション実行&quot;&gt;&lt;a href=&quot;#%E3%83%9E%E3%82%A4%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%AE%9F%E8%A1%8C&quot; aria-label=&quot;マイグレーション実行 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;マイグレーション実行&lt;/h3&gt;
-&lt;p&gt;生成したマイグレーションを実行します。&lt;code class=&quot;language-text&quot;&gt;prisma/dev.db&lt;/code&gt; が自動生成されます；&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ prisma2 lift up&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&quot;シーダー実行&quot;&gt;&lt;a href=&quot;#%E3%82%B7%E3%83%BC%E3%83%80%E3%83%BC%E5%AE%9F%E8%A1%8C&quot; aria-label=&quot;シーダー実行 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;シーダー実行&lt;/h3&gt;
-&lt;p&gt;シーダーによって初期データを流し込みます。&lt;code class=&quot;language-text&quot;&gt;prisma/dev.db&lt;/code&gt; が更新されます；&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; seed&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1 id=&quot;実行&quot;&gt;&lt;a href=&quot;#%E5%AE%9F%E8%A1%8C&quot; aria-label=&quot;実行 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;実行&lt;/h1&gt;
-&lt;h2 id=&quot;サーバ実行&quot;&gt;&lt;a href=&quot;#%E3%82%B5%E3%83%BC%E3%83%90%E5%AE%9F%E8%A1%8C&quot; aria-label=&quot;サーバ実行 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;サーバ実行&lt;/h2&gt;
-&lt;p&gt;サーバを実行します。&lt;/p&gt;
-&lt;p&gt;Nexusによって &lt;code class=&quot;language-text&quot;&gt;generated/nexus-typegen.ts&lt;/code&gt; と &lt;code class=&quot;language-text&quot;&gt;src/schema.graphql&lt;/code&gt; が自動生成されます。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&quot;playgroundからgraphqlクエリを実行&quot;&gt;&lt;a href=&quot;#playground%E3%81%8B%E3%82%89graphql%E3%82%AF%E3%82%A8%E3%83%AA%E3%82%92%E5%AE%9F%E8%A1%8C&quot; aria-label=&quot;playgroundからgraphqlクエリを実行 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;PlaygroundからGraphQLクエリを実行&lt;/h2&gt;
-&lt;p&gt;&lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/9a48fdad7522fc5f95707f76431efe64/e11df/server.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
-  &gt;
-    &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAABaUlEQVQoz32SS0/CUBSEuzQqtAXbXjGxD0yAlrZQQOQNCzUxxrg0unPrzv+fjHP7ohpkMZne05wvM7dV2tt3iO4YDS/CufBwZrl0in5q2rmcXHw2jksRwR3M3i0sfwqzO4HRGcOim3TNG0CnNC9GzQ6hujG09jCV/o8U1Y3SJd2RHqfLmlzkXHXCVDW7j8+vb2xfP2CwTStawPBnMHqzzCtSGjdDNP0JRC9BkzAJLUAqQarTR+06wO7lDdHmGReEtEb3sKI1rGQJc0DFi9IVjYtalwmDhIAQdUKqkmDpJ1c9NDq8lv4CYvQIMdxBTNcwQ8KCOeeZCGS1Nuv2k3K5TJhLzmQTizCTtaxoA5E88LzKQASWlXU3BzJhFVa3fwP19iBf5Eck8HLyBDHewBqtspSEyfeKzt9FzaGH0v0FpgnDZZrS9PfJipSK/AjV+zpUW561AhjM90mDWeWcJ6wCjiWsAovlUv5+/gPX+BrnaEocxwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-    &gt;&lt;/span&gt;
-    &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
-        alt=&quot;server&quot;
-        title=&quot;&quot;
-        src=&quot;/static/9a48fdad7522fc5f95707f76431efe64/b9e4f/server.png&quot;
-        srcset=&quot;/static/9a48fdad7522fc5f95707f76431efe64/cf440/server.png 148w,
-/static/9a48fdad7522fc5f95707f76431efe64/d2d38/server.png 295w,
-/static/9a48fdad7522fc5f95707f76431efe64/b9e4f/server.png 590w,
-/static/9a48fdad7522fc5f95707f76431efe64/f9b6a/server.png 885w,
-/static/9a48fdad7522fc5f95707f76431efe64/e11df/server.png 1000w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
-      /&gt;
-  &lt;/span&gt;
-  &lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[GatsbyでGitHubとContentfulの複数ソースを実現する]]></title><description><![CDATA[使用するパッケージContentful API との通信: Contentful のデータをソースにできるプラグイン: とを env ファイルとして保管することで、GitHub に露出させないコンテンツの変換, : Contentful の RichText…]]></description><link>https://suzukalight.com/2019-08-14-gatsby-source-multiple/</link><guid isPermaLink="false">https://suzukalight.com/2019-08-14-gatsby-source-multiple/</guid><pubDate>Wed, 14 Aug 2019 11:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;使用するパッケージ&quot;&gt;&lt;a href=&quot;#%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8&quot; aria-label=&quot;使用するパッケージ permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;使用するパッケージ&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/suzukalight/monorepo-react-prisma2&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/suzukalight/monorepo-react-prisma2&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[GatsbyでGitHubとContentfulの複数ソースを実現する]]></title><description><![CDATA[使用するパッケージContentful API との通信: Contentful のデータをソースにできるプラグイン: とを env ファイルとして保管することで、GitHub に露出させないコンテンツの変換, : Contentful の RichText…]]></description><link>https://suzukalight.com/2019-08-14-gatsby-source-multiple/</link><guid isPermaLink="false">https://suzukalight.com/2019-08-14-gatsby-source-multiple/</guid><pubDate>Wed, 14 Aug 2019 11:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;使用するパッケージ&quot;&gt;&lt;a href=&quot;#%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8&quot; aria-label=&quot;使用するパッケージ permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;使用するパッケージ&lt;/h1&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; gatsby-source-contentful @contentful/rich-text-react-renderer @contentful/rich-text-types esm date-fns
 &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; -D dotenv&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&quot;contentful-api-との通信&quot;&gt;&lt;a href=&quot;#contentful-api-%E3%81%A8%E3%81%AE%E9%80%9A%E4%BF%A1&quot; aria-label=&quot;contentful api との通信 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Contentful API との通信&lt;/h2&gt;
@@ -1842,7 +2050,126 @@ $ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; start&lt;/code&
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
   &lt;/span&gt;
-  &lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Prisma2 Preview を触る]]></title><description><![CDATA[Prisma2Prisma2: https://github.com/prisma/prisma2
+  &lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Prisma2 + graphql-yoga でサーバを立てる]]></title><description><![CDATA[Prisma2graphql-yoga以前に触っていたものtypeDefsresolversPrisma2 のサンプルにあったものschemacontext違いスキーマ定義schema または typeDefs+resolvers のどちらかが必要セットアップphotonjs…]]></description><link>https://suzukalight.com/2019-08-03-prisma2-graphql-yoga/</link><guid isPermaLink="false">https://suzukalight.com/2019-08-03-prisma2-graphql-yoga/</guid><pubDate>Fri, 02 Aug 2019 15:02:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;prisma2&quot;&gt;&lt;a href=&quot;#prisma2&quot; aria-label=&quot;prisma2 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Prisma2&lt;/h1&gt;
+&lt;h1 id=&quot;graphql-yoga&quot;&gt;&lt;a href=&quot;#graphql-yoga&quot; aria-label=&quot;graphql yoga permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;graphql-yoga&lt;/h1&gt;
+&lt;h2 id=&quot;以前に触っていたもの&quot;&gt;&lt;a href=&quot;#%E4%BB%A5%E5%89%8D%E3%81%AB%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%84%E3%81%9F%E3%82%82%E3%81%AE&quot; aria-label=&quot;以前に触っていたもの permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;以前に触っていたもの&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; typeDefs &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`
+  type Query {
+    hello(name: String): String!
+  }
+`&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; resolvers &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  Query&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function-variable function&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;_&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; name &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`Hello &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;name &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;World&apos;&lt;/span&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; server &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;GraphQLServer&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; typeDefs&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; resolvers &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;typeDefs&lt;/li&gt;
+&lt;li&gt;resolvers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;prisma2-のサンプルにあったもの&quot;&gt;&lt;a href=&quot;#prisma2-%E3%81%AE%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AB%E3%81%82%E3%81%A3%E3%81%9F%E3%82%82%E3%81%AE&quot; aria-label=&quot;prisma2 のサンプルにあったもの permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Prisma2 のサンプルにあったもの&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; photon &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Photon&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; schema &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;makeSchema&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  types&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;Query&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Mutation&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Post&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; User&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; nexusPrisma&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  outputs&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    typegen&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;__dirname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;../generated/nexus-typegen.ts&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    schema&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;__dirname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;/schema.graphql&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  typegenAutoConfig&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    sources&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        source&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;@generated/photon&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        alias&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;photon&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        source&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;__dirname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;types.ts&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        alias&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;ctx&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    contextType&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;ctx.Context&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; server &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;GraphQLServer&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  schema&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  context&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; photon &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;schema&lt;/li&gt;
+&lt;li&gt;context&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;違い&quot;&gt;&lt;a href=&quot;#%E9%81%95%E3%81%84&quot; aria-label=&quot;違い permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;違い&lt;/h2&gt;
+&lt;h3 id=&quot;スキーマ定義&quot;&gt;&lt;a href=&quot;#%E3%82%B9%E3%82%AD%E3%83%BC%E3%83%9E%E5%AE%9A%E7%BE%A9&quot; aria-label=&quot;スキーマ定義 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;スキーマ定義&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;schema または typeDefs+resolvers のどちらかが必要&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;セットアップ&quot;&gt;&lt;a href=&quot;#%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97&quot; aria-label=&quot;セットアップ permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;セットアップ&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/prisma/photonjs/tree/master/examples/typescript/graphql&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;photonjs/examples/typescript/graphql at master · prisma/photonjs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;PhotonJSのサンプルを利用します。リポジトリをクローンします；&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone git@github.com:prisma/photonjs.git
+$ &lt;span class=&quot;token function&quot;&gt;cd&lt;/span&gt; photonjs/examples/typescript/graphql
+$ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;nexus&quot;&gt;&lt;a href=&quot;#nexus&quot; aria-label=&quot;nexus permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Nexus&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://nexus.js.org/docs/database-access-with-prisma-v2&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Database Access with Prisma 2 (Preview) · GraphQL Nexus&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Prisma2 Preview では、ORMとして &lt;strong&gt;nexus&lt;/strong&gt; を使用しています。PhotonJSのサンプルでは、それをプラグインとして利用する &lt;strong&gt;@prisma/nexus&lt;/strong&gt; がインストールされています；&lt;/p&gt;
+&lt;div class=&quot;gatsby-code-title&quot;&gt;package.json&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight has-highlighted-lines&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token string&quot;&gt;&quot;dependencies&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;    &lt;span class=&quot;token string&quot;&gt;&quot;@prisma/nexus&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;^0.0.1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/span&gt;    &lt;span class=&quot;token string&quot;&gt;&quot;graphql-yoga&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;1.17.4&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;    &lt;span class=&quot;token string&quot;&gt;&quot;nexus&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;0.11.7&quot;&lt;/span&gt;&lt;/span&gt;  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;モデル定義&quot;&gt;&lt;a href=&quot;#%E3%83%A2%E3%83%87%E3%83%AB%E5%AE%9A%E7%BE%A9&quot; aria-label=&quot;モデル定義 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;モデル定義&lt;/h2&gt;
+&lt;p&gt;マッピングするモデルを、Nexusの指定する形式で記述します； &lt;/p&gt;
+&lt;div class=&quot;gatsby-code-title&quot;&gt;prisma/schema.prisma&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;prisma&quot;&gt;&lt;pre class=&quot;language-prisma&quot;&gt;&lt;code class=&quot;language-prisma&quot;&gt;model Race {
+  id            Int @id
+  raceId        String @unique
+  createdAt     DateTime
+  raceDate      DateTime
+  courseCode    String
+  kai           Int
+  nichi         Int
+  number        Int
+  hondai        String
+  gradeCode     String
+  joukenCodeJy  String
+  distance      Int
+  trackCode     String
+  hassouTime    DateTime
+  tourokuTousuu Int
+  shussouTousuu Int
+
+  umaRaces      UmaRace[]
+}
+
+model UmaRace {
+  id            Int @id
+  umaRaceId     String @unique
+  race          Race
+  createdAt     DateTime
+  raceDate      DateTime
+  wakuban       Int
+  umaban        Int
+  name          String
+  sexCode       String
+  keiroCode     String
+  age           Int
+  tozaiCode     String
+  choukyoushiRyakushou  String
+  futanJuuryou  Int
+  kishuRyakushou  String
+  odds          Int
+  ninki         Int
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; aria-label=&quot; permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[Prisma2 Preview を触る]]></title><description><![CDATA[Prisma2Prisma2: https://github.com/prisma/prisma2
 （※上記リポジトリより引用）prisma2 ecosystem には、下記の3つが含まれています；PhotonJS: ORM。自作のサーバにimport…]]></description><link>https://suzukalight.com/2019-08-03-prisma2/</link><guid isPermaLink="false">https://suzukalight.com/2019-08-03-prisma2/</guid><pubDate>Fri, 02 Aug 2019 15:01:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;prisma2&quot;&gt;&lt;a href=&quot;#prisma2&quot; aria-label=&quot;prisma2 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Prisma2&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Prisma2: &lt;a href=&quot;https://github.com/prisma/prisma2&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/prisma/prisma2&lt;/a&gt;&lt;/li&gt;
@@ -2053,6 +2380,44 @@ $ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; seed
 &lt;li&gt;&lt;a href=&quot;https://github.com/prisma/prisma2&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Prisma2&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/prisma/prisma2/blob/master/docs/tutorial.md&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;prisma2/tutorial.md at master · prisma/prisma2&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.prisma.io/blog/announcing-prisma-2-zq1s745db8i5#getting-started-with-prisma-2&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Prisma 2 Preview: Type-safe Database Access &amp;#x26; Declarative Migrations&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Gatsby サイトにページネーションを追加]]></title><description><![CDATA[方針どのページにどうページネーションを施すかを決定(1)のオーダー通りの limit/skip 数で、コンテンツをFetchして表示するという役割分担でページネーションを作成します。(1)が 、(2)が各テンプレート（Tags/Categories/Posts…]]></description><link>https://suzukalight.com/2019-07-28-pagination/</link><guid isPermaLink="false">https://suzukalight.com/2019-07-28-pagination/</guid><pubDate>Sat, 27 Jul 2019 15:08:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;方針&quot;&gt;&lt;a href=&quot;#%E6%96%B9%E9%87%9D&quot; aria-label=&quot;方針 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;方針&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;どのページにどうページネーションを施すかを決定&lt;/li&gt;
+&lt;li&gt;(1)のオーダー通りの limit/skip 数で、コンテンツをFetchして表示する&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;という役割分担でページネーションを作成します。(1)が &lt;code class=&quot;language-text&quot;&gt;gatsby-node.js&lt;/code&gt;、(2)が各テンプレート（Tags/Categories/Posts）になります。&lt;/p&gt;
+&lt;h1 id=&quot;実装&quot;&gt;&lt;a href=&quot;#%E5%AE%9F%E8%A3%85&quot; aria-label=&quot;実装 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;実装&lt;/h1&gt;
+&lt;h2 id=&quot;gatsby-nodejs&quot;&gt;&lt;a href=&quot;#gatsby-nodejs&quot; aria-label=&quot;gatsby nodejs permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;gatsby-node.js&lt;/h2&gt;
+&lt;p&gt;どのページにどうページネーションを施すかを決定します。&lt;/p&gt;
+&lt;h3 id=&quot;前提条件&quot;&gt;&lt;a href=&quot;#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6&quot; aria-label=&quot;前提条件 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;前提条件&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;一度に表示するコンテンツ数は、12とする&lt;/li&gt;
+&lt;li&gt;ページネーションするURLは、&lt;code class=&quot;language-text&quot;&gt;/baseUrl/N&lt;/code&gt; とする&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;コード&quot;&gt;&lt;a href=&quot;#%E3%82%B3%E3%83%BC%E3%83%89&quot; aria-label=&quot;コード permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;コード&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;1ページで表示するコンテンツ数を決定&lt;/li&gt;
+&lt;li&gt;当該タグを含むページ数を算出&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ページ数ぶんだけループを回す&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ページごとの limit/skip を指定&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;/tags/gatsby/2&lt;/code&gt; などのページネーションURLを指定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-code-title&quot;&gt;gatsby-node.js&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight has-highlighted-lines&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;  &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;new &lt;span class=&quot;token class-name&quot;&gt;Set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;tags&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;tag&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; count &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; posts&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;p&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;node.frontmatter.tags&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; t &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; tag&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; postsPerPage &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; numPages &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Math&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;ceil&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;count &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; postsPerPage&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;    Array&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; length&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; numPages &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;_&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; i&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;      &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; path &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`/tags/&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;kebabCase&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;tag&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;i &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;      &lt;span class=&quot;token function&quot;&gt;createPage&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;        path&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/span&gt;        component&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; tagTemplate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        context&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+          tag&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;          limit&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; postsPerPage&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;          skip&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; postsPerPage&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;          numPages&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;          currentPage&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/span&gt;        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;references&quot;&gt;&lt;a href=&quot;#references&quot; aria-label=&quot;references permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;References&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/docs/adding-pagination/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Adding pagination | GatsbyJS&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[函館旅行記（2019/7/17～4泊）]]></title><description><![CDATA[目的1日目（2019/7/17)：五稜郭行程： 自宅→羽田空港→函館空港→五稜郭→ラビスタ函館ベイ食事： 回転寿司（函太郎五稜郭公園店）2日目（2019/7/1…]]></description><link>https://suzukalight.com/2019-07-21-trip-hakodate/</link><guid isPermaLink="false">https://suzukalight.com/2019-07-21-trip-hakodate/</guid><pubDate>Sat, 20 Jul 2019 15:08:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#%E7%9B%AE%E7%9A%84&quot; aria-label=&quot;目的 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;目的&lt;/h1&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 函館競馬場に行く
     - 中央10場全制覇の旅
@@ -2117,7 +2482,7 @@ $ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; seed
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 19.426713236179694%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAECA//EABYBAQEBAAAAAAAAAAAAAAAAAAEAAv/aAAwDAQACEAMQAAABwsZoC//EABoQAAICAwAAAAAAAAAAAAAAAAACAQMRFDL/2gAIAQEAAQUC2HIvfPZ//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGRAAAgMBAAAAAAAAAAAAAAAAAEEBEZGh/9oACAEBAAY/Algi54f/xAAZEAADAAMAAAAAAAAAAAAAAAAAASERceH/2gAIAQEAAT8huXGFqw3of//aAAwDAQACAAMAAAAQj8//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAWEQEBAQAAAAAAAAAAAAAAAAABEBH/2gAIAQIBAT8QV2f/xAAaEAACAgMAAAAAAAAAAAAAAAABEQAhMVGR/9oACAEBAAE/ECdaDQhJcWVzIFHBP//Z&apos;); background-size: cover; display: block;&quot;
+      style=&quot;padding-bottom: 19.426713236179694%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAECA//EABYBAQEBAAAAAAAAAAAAAAAAAAABAv/aAAwDAQACEAMQAAABwsZQK//EABoQAAICAwAAAAAAAAAAAAAAAAACAQMRFDL/2gAIAQEAAQUC2HIvfPZ//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGRAAAgMBAAAAAAAAAAAAAAAAAEEBEZGh/9oACAEBAAY/Algi54f/xAAZEAADAAMAAAAAAAAAAAAAAAAAASERceH/2gAIAQEAAT8huXGFqw3of//aAAwDAQACAAMAAAAQi9//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAgEBPxCn/8QAGhAAAgIDAAAAAAAAAAAAAAAAAREAITFRkf/aAAgBAQABPxAmWg0ISXFlcyBRwT//2Q==&apos;); background-size: cover; display: block;&quot;
     &gt;&lt;/span&gt;
     &lt;img
         class=&quot;gatsby-resp-image-image&quot;
