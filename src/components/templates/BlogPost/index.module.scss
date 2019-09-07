@@ -88,6 +88,11 @@
     color: #666;
   }
 
+  & p {
+    margin: 0 0 1.75rem;
+    padding: 0;
+  }
+
   & h1,
   & h2,
   & h3 {
@@ -96,8 +101,10 @@
 
   & h1 {
     position: relative;
-    margin-top: 6rem;
+    margin: 6rem 0 1.25rem;
+    padding: 0;
     font-size: 1.5rem;
+    line-height: 1;
 
     &:before {
       content: '.　.　.';
@@ -111,8 +118,10 @@
   }
 
   & h2 {
-    margin-top: 2.5rem;
+    margin: 2.5rem 0 0.5rem;
+    padding: 0;
     font-size: 1.25rem;
+    line-height: 1;
   }
 
   & h3 {
@@ -140,6 +149,27 @@
 
   & li {
     margin-bottom: 0.25rem;
+  }
+
+  & strong {
+    font-weight: bold;
+  }
+
+  & a {
+    text-decoration: underline;
+  }
+
+  & table {
+    margin: 0 0 2rem;
+    border: 0;
+    padding: 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  & th,
+  & td {
+    padding: 8px 0;
   }
 }
 
