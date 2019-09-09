@@ -6,6 +6,7 @@
 <url> <loc>https://suzukalight.com/2019-08-24-cra-typescript-storybook/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://suzukalight.com/2019-08-18-monorepo-prisma2-cra-typescript/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://suzukalight.com/2019-08-14-gatsby-source-multiple/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://suzukalight.com/2019-09-09-react-i18next/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://suzukalight.com/2019-08-12-gatsby-source-contentful-document-sample/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://suzukalight.com/2019-08-11-electron-windows/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://suzukalight.com/2019-08-03-prisma2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -32,6 +33,8 @@
 <url> <loc>https://suzukalight.com/tags/gatsby/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://suzukalight.com/tags/contentful/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://suzukalight.com/tags/github-pages/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://suzukalight.com/tags/i-18-n/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://suzukalight.com/tags/react-i-18-next/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://suzukalight.com/tags/rich-text/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://suzukalight.com/tags/electron/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://suzukalight.com/tags/nvm-windows/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
