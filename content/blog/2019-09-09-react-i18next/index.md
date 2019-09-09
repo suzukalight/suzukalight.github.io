@@ -109,7 +109,7 @@ i18n.use(initReactI18next).init({
 });
 ```
 
-### 言語切り替え
+## 言語切り替え
 
 **i18n.changeLanguage(lang)** を行うと、指定した言語に切り替えることができます。React なので State と Hooks によって切り替え操作を実現してみます；
 
