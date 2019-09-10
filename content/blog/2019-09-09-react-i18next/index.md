@@ -92,14 +92,14 @@ i18n.use(initReactI18next).init({
   resources: {
     en: {
       translation: {
-        'Welcome to React': 'Welcome to React and react-i18next.',
-        'change language': 'change language',
+        'ようこそ React と react-i18next へ。': 'Welcome to React and react-i18next.',
+        言語を切り替え: 'change language',
       },
     },
     ja: {
       translation: {
-        'Welcome to React': 'ようこそ React と react-i18next へ。',
-        'change language': '言語を切り替え',
+        'ようこそ React と react-i18next へ。': 'ようこそ React と react-i18next へ。',
+        言語を切り替え: '言語を切り替え',
       },
     },
   },
@@ -127,7 +127,7 @@ const App: React.FC = () => {
 
   return (
     ...
-          <button onClick={() => setLang(lang === 'en' ? 'ja' : 'en')}>
+    <button onClick={() => setLang(lang === 'en' ? 'ja' : 'en')}>
     ...
   );
 };
@@ -171,7 +171,7 @@ $ yarn start
 
 webpack に頼って、JSON ファイルをインポートしてみます；
 
-```javascript:title=/src/App.tsx
+```javascript{6-7}:title=/src/App.tsx
 import enJson from './locales/en.json';
 import jaJson from './locales/ja.json';
 
@@ -208,7 +208,7 @@ babel プラグインとしての設定を記述します。設定した項目�
 - **locales**: 書き出しを行う言語セットです。
 - **outputPath**: 書き出すファイル名のパターンです。さきほどの手動辞書と同じ規則にしています。
 
-```json:title=package.json
+```json{8-9}:title=/package.json
 {
   "babel": {
     "presets": ["react-app"],
@@ -227,7 +227,7 @@ babel プラグインとしての設定を記述します。設定した項目�
 
 書き出しを行うスクリプトを package.json へ追加します。引数に key を検索する対象ファイルのパターンを指定します；
 
-```
+```json{3}:title=/package.json
 {
   "scripts": {
     "i18next-extract": "NODE_ENV=development babel './src/**/*.{js,jsx,ts,tsx}'"
@@ -274,7 +274,7 @@ i18n.use(initReactI18next).init({
 $ yarn i18next-extract
 ```
 
-```json:title=/src/locales/ja.json
+```json{3}:title=/src/locales/ja.json
 {
   "ようこそ React と react-i18next へ。": "ようこそ React と react-i18next へ。",
   "定義していない文字列": "",
@@ -282,7 +282,7 @@ $ yarn i18next-extract
 }
 ```
 
-```json:title=/src/locales/en.json
+```json{3}:title=/src/locales/en.json
 {
   "ようこそ React と react-i18next へ。": "Welcome to React and react-i18next.",
   "定義していない文字列": "",
@@ -290,7 +290,7 @@ $ yarn i18next-extract
 }
 ```
 
-「定義していない文字列」が、空文字列の定義として出力されました。i18next は空文字の定義であれば、key をフォールバックして表示してくれるので、結果として「日本語」での表示に代替されます；
+「定義していない文字列」が、空文字列の定義として出力されました。現状の設定(fallbackLng: false)であれば、i18next は空文字の定義を key 文字列にフォールバックして表示してくれるので、結果としては日本語の表示に代替されることになります。
 
 ## 表示テスト
 
