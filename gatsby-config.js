@@ -166,5 +166,6 @@ module.exports = {
     },
     `gatsby-plugin-twitter`,
     `gatsby-plugin-typescript`,
+    `gatsby-plugin-typescript-css-modules`,
   ],
 };
