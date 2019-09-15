@@ -1,17 +1,26 @@
-import React from 'react';
+import * as React from 'react';
 import cn from 'classnames';
 import { Link } from 'gatsby';
-import kebabCase from 'lodash/kebabCase';
+import { kebabCase } from 'lodash';
 
-import styles from './index.module.scss';
+import * as styles from './index.module.scss';
 
-const Tag = ({ tag }) => (
+interface TagProps {
+  tag: string;
+}
+
+const Tag = ({ tag }: TagProps) => (
   <Link className={styles.link} to={`/tags/${kebabCase(tag)}/`}>
     <li className={styles.tag}>{tag}</li>
   </Link>
 );
 
-const Tags = ({ className, tags }) => (
+interface TagsProps {
+  className: string;
+  tags: string[];
+}
+
+const Tags = ({ className, tags }: TagsProps) => (
   <ul className={cn(styles.tags, className)}>
     {(tags || []).map(tag => (
       <Tag key={tag} tag={tag} />
