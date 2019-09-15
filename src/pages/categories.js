@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
-import kebabCase from 'lodash/kebabCase';
+import { kebabCase } from 'lodash';
 
 import Seo from '../components/atoms/Seo';
 import { Layout, Centered } from '../components/templates/Layout';

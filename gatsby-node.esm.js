@@ -1,5 +1,5 @@
 const path = require('path');
-const kebabCase = require('lodash/kebabCase');
+const { kebabCase } = require('lodash');
 const { createFilePath } = require('gatsby-source-filesystem');
 
 const { convertToArticles, sortByDate } = require('./src/utils/article');

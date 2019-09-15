@@ -1,4 +1,4 @@
-import differenceInMilliseconds from 'date-fns/difference_in_milliseconds';
+import { differenceInMilliseconds } from 'date-fns';
 
 export const convertFromMarkdownToArticle = data => {
   const { site, markdownRemark } = data || {};

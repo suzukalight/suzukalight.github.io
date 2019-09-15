@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import { Link } from 'gatsby';
-import kebabCase from 'lodash/kebabCase';
+import { kebabCase } from 'lodash';
 
 import {
   Card,
