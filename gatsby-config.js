@@ -17,9 +17,11 @@ if (!spaceId || !accessToken) {
 module.exports = {
   siteMetadata: {
     title: `suzukalight.com`,
+    titleTemplate: '%s | suzukalight.com',
     author: `suzukalight`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `JavaScript / React / 一口馬主 / ゲーム / 旅行`,
     siteUrl: `https://suzukalight.com`,
+    image: '/icons/icon-512x512.png',
     social: {
       twitter: `suzukalight`,
       github: `suzukalight`,
