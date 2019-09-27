@@ -21,7 +21,7 @@ module.exports = {
     author: `suzukalight`,
     description: `JavaScript / React / 一口馬主 / ゲーム / 旅行`,
     siteUrl: `https://suzukalight.com`,
-    image: '/icons/icon-512x512.png',
+    defaultImage: '/icons/icon-512x512.png',
     social: {
       twitter: `suzukalight`,
       github: `suzukalight`,

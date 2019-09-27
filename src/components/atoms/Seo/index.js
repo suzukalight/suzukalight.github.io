@@ -7,31 +7,43 @@ const query = graphql`
   query {
     site {
       siteMetadata {
+        siteUrl
         title
         description
-        author
-        image
+        defaultImage
+        social {
+          twitter
+        }
       }
     }
   }
 `;
 
-function Seo({ description, lang, meta, title }) {
+function Seo({ description, lang, meta, title, image }) {
   const data = useStaticQuery(query);
-  const { siteMetadata } = data.site;
+  const { siteMetadata } = data.site || {};
+  const {
+    siteUrl,
+    title: siteTitle,
+    defaultImage,
+    social: { twitter },
+  } = siteMetadata;
+  const metaTitle = `${title}${title && ' | '}${siteTitle}`;
   const metaDescription = description || siteMetadata.description;
+  const siteImage = `${siteUrl}${image || defaultImage}`;
   const metaData = [
-    { name: `image`, content: siteMetadata.image },
+    { name: `image`, content: siteImage },
     { name: `description`, content: metaDescription },
-    { property: `og:title`, content: title },
-    { property: `og:description`, content: metaDescription },
+    { property: `og:title`, content: metaTitle },
     { property: `og:type`, content: `website` },
-    { property: `og:image`, content: siteMetadata.image },
+    { property: `og:image`, content: siteImage },
+    // { property: `og:url`, content: siteImage },
+    { property: `og:description`, content: metaDescription },
     { name: `twitter:card`, content: `summary` },
-    { name: `twitter:creator`, content: siteMetadata.author },
-    { name: `twitter:title`, content: title },
+    { name: `twitter:creator`, content: twitter },
+    { name: `twitter:title`, content: metaTitle },
     { name: `twitter:description`, content: metaDescription },
-    { name: `twitter:image`, content: siteMetadata.image },
+    { name: `twitter:image`, content: siteImage },
   ].concat(meta);
 
   return (
@@ -55,6 +67,7 @@ Seo.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  image: PropTypes.string,
 };
 
 export default Seo;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
+import get from 'lodash/get';
 
 import Seo from '../../atoms/Seo';
 import Iframely from '../../atoms/Iframely';
@@ -38,7 +39,11 @@ const Pager = ({ previous, next }) => (
 
 const BlogPostTemplate = ({ location, siteMetadata, head, body, richTextJson, pageContext }) => (
   <Layout location={location} title={siteMetadata.title}>
-    <Seo title={head.title} description={head.description} />
+    <Seo
+      title={head.title}
+      description={head.description || head.excerpt}
+      image={get(head, 'hero.childImageSharp.fluid.src')}
+    />
     <Iframely />
 
     <Centered>
