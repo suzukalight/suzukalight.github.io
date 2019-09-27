@@ -48,14 +48,14 @@ const BlogPostTemplate = ({ location, siteMetadata, head, body, richTextJson, pa
 
     <Centered>
       <section className={styles.head}>
+        {head.hero && <div className={styles.hero}>{getFluidImage(head.hero)}</div>}
+
         <Link className={styles.category} to={`/categories/${kebabCase(head.category)}`}>
           <span>{head.category}</span>
         </Link>
         <h1 className={styles.title}>{head.title}</h1>
         <p className={styles.description}>{head.description}</p>
         <DateAndTags date={head.date} tags={head.tags} />
-
-        {head.hero && <div className={styles.hero}>{getFluidImage(head.hero)}</div>}
       </section>
 
       {head && head.tableOfContents && (
