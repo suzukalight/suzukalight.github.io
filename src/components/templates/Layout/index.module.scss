@@ -22,7 +22,7 @@
 .centered {
   margin-left: auto;
   margin-right: auto;
-  max-width: 36rem;
+  max-width: 38rem;
   padding: 0 1.25rem 2.5rem;
 
   @include mq-sp() {
@@ -81,7 +81,7 @@
   display: flex;
   box-shadow: none;
   text-decoration: none;
-  color: inherit;
+  color: white;
 }
 
 .headerSocials {
