@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[suzukalight.com]]></title><description><![CDATA[JavaScript / React / 一口馬主 / ゲーム / 旅行]]></description><link>https://suzukalight.com</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 28 Sep 2019 06:43:00 GMT</lastBuildDate><item><title><![CDATA[react-i18nextで多言語対応（国際化・i18n）を素振り]]></title><description><![CDATA[最近ははじめから世界で勝負しようと頑張っているアプリも増えてきています。その場合に、障壁のひとつとなるが多言語対応（国際化・i18n）の方法だと思います。今回はこの i18n について素振りしてみました。 まえがき 完成品 実装したリポジトリはこちらです； https…]]></description><link>https://suzukalight.com/2019-09-09-react-i18next/</link><guid isPermaLink="false">https://suzukalight.com/2019-09-09-react-i18next/</guid><pubDate>Sun, 08 Sep 2019 15:02:00 GMT</pubDate><content:encoded>&lt;p&gt;最近ははじめから世界で勝負しようと頑張っているアプリも増えてきています。その場合に、障壁のひとつとなるが多言語対応（国際化・i18n）の方法だと思います。今回はこの i18n について素振りしてみました。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[suzukalight.com]]></title><description><![CDATA[JavaScript / React / 一口馬主 / ゲーム / 旅行]]></description><link>https://suzukalight.com</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 28 Sep 2019 07:04:53 GMT</lastBuildDate><item><title><![CDATA[react-i18nextで多言語対応（国際化・i18n）を素振り]]></title><description><![CDATA[最近ははじめから世界で勝負しようと頑張っているアプリも増えてきています。その場合に、障壁のひとつとなるが多言語対応（国際化・i18n）の方法だと思います。今回はこの i18n について素振りしてみました。 まえがき 完成品 実装したリポジトリはこちらです； https…]]></description><link>https://suzukalight.com/2019-09-09-react-i18next/</link><guid isPermaLink="false">https://suzukalight.com/2019-09-09-react-i18next/</guid><pubDate>Sun, 08 Sep 2019 15:02:00 GMT</pubDate><content:encoded>&lt;p&gt;最近ははじめから世界で勝負しようと頑張っているアプリも増えてきています。その場合に、障壁のひとつとなるが多言語対応（国際化・i18n）の方法だと思います。今回はこの i18n について素振りしてみました。&lt;/p&gt;
 &lt;h1 id=&quot;まえがき&quot;&gt;&lt;a href=&quot;#%E3%81%BE%E3%81%88%E3%81%8C%E3%81%8D&quot; aria-label=&quot;まえがき permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;まえがき&lt;/h1&gt;
 &lt;h2 id=&quot;完成品&quot;&gt;&lt;a href=&quot;#%E5%AE%8C%E6%88%90%E5%93%81&quot; aria-label=&quot;完成品 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;完成品&lt;/h2&gt;
 &lt;p&gt;実装したリポジトリはこちらです；&lt;/p&gt;
@@ -99,7 +99,7 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 640px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -116,19 +116,17 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;ja&quot;
         title=&quot;ja&quot;
-        src=&quot;/static/290c84ffb1cb5e8f753bce5c7368043c/b9e4f/ja.png&quot;
-        srcset=&quot;/static/290c84ffb1cb5e8f753bce5c7368043c/cf440/ja.png 148w,
-/static/290c84ffb1cb5e8f753bce5c7368043c/d2d38/ja.png 295w,
-/static/290c84ffb1cb5e8f753bce5c7368043c/b9e4f/ja.png 590w,
+        src=&quot;/static/290c84ffb1cb5e8f753bce5c7368043c/e49a9/ja.png&quot;
+        srcset=&quot;/static/290c84ffb1cb5e8f753bce5c7368043c/01387/ja.png 320w,
 /static/290c84ffb1cb5e8f753bce5c7368043c/e49a9/ja.png 640w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 640px) 100vw, 640px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 640px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -145,12 +143,10 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;en&quot;
         title=&quot;en&quot;
-        src=&quot;/static/1b703cd5a5dbe5d8ff867346521cf23f/b9e4f/en.png&quot;
-        srcset=&quot;/static/1b703cd5a5dbe5d8ff867346521cf23f/cf440/en.png 148w,
-/static/1b703cd5a5dbe5d8ff867346521cf23f/d2d38/en.png 295w,
-/static/1b703cd5a5dbe5d8ff867346521cf23f/b9e4f/en.png 590w,
+        src=&quot;/static/1b703cd5a5dbe5d8ff867346521cf23f/e49a9/en.png&quot;
+        srcset=&quot;/static/1b703cd5a5dbe5d8ff867346521cf23f/01387/en.png 320w,
 /static/1b703cd5a5dbe5d8ff867346521cf23f/e49a9/en.png 640w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 640px) 100vw, 640px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -251,7 +247,7 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 600px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -268,19 +264,17 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;ja2&quot;
         title=&quot;ja2&quot;
-        src=&quot;/static/c64665b90e70c9f2d0a3a61e4db9bb06/b9e4f/ja2.png&quot;
-        srcset=&quot;/static/c64665b90e70c9f2d0a3a61e4db9bb06/cf440/ja2.png 148w,
-/static/c64665b90e70c9f2d0a3a61e4db9bb06/d2d38/ja2.png 295w,
-/static/c64665b90e70c9f2d0a3a61e4db9bb06/b9e4f/ja2.png 590w,
+        src=&quot;/static/c64665b90e70c9f2d0a3a61e4db9bb06/34e8a/ja2.png&quot;
+        srcset=&quot;/static/c64665b90e70c9f2d0a3a61e4db9bb06/01387/ja2.png 320w,
 /static/c64665b90e70c9f2d0a3a61e4db9bb06/34e8a/ja2.png 600w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 600px) 100vw, 600px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 600px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -297,12 +291,10 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;en2&quot;
         title=&quot;en2&quot;
-        src=&quot;/static/6b48e3fc2120e1a5b75c1d0614c9bbae/b9e4f/en2.png&quot;
-        srcset=&quot;/static/6b48e3fc2120e1a5b75c1d0614c9bbae/cf440/en2.png 148w,
-/static/6b48e3fc2120e1a5b75c1d0614c9bbae/d2d38/en2.png 295w,
-/static/6b48e3fc2120e1a5b75c1d0614c9bbae/b9e4f/en2.png 590w,
+        src=&quot;/static/6b48e3fc2120e1a5b75c1d0614c9bbae/34e8a/en2.png&quot;
+        srcset=&quot;/static/6b48e3fc2120e1a5b75c1d0614c9bbae/01387/en2.png 320w,
 /static/6b48e3fc2120e1a5b75c1d0614c9bbae/34e8a/en2.png 600w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 600px) 100vw, 600px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -350,7 +342,7 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
 &lt;p&gt;キャロットクラブの新規会員募集ページから、フォームに必要事項を記入して申し込みます。1 週間かからずに、申込書とカタログが届きました。オラワクワクすっぞ！&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1280px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -367,14 +359,12 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;touchaku&quot;
         title=&quot;touchaku&quot;
-        src=&quot;/static/3695116b0b21d112fa4afffcd0028b8a/c739e/touchaku.jpg&quot;
-        srcset=&quot;/static/3695116b0b21d112fa4afffcd0028b8a/8ee9c/touchaku.jpg 148w,
-/static/3695116b0b21d112fa4afffcd0028b8a/ebbe7/touchaku.jpg 295w,
-/static/3695116b0b21d112fa4afffcd0028b8a/c739e/touchaku.jpg 590w,
-/static/3695116b0b21d112fa4afffcd0028b8a/5413e/touchaku.jpg 885w,
-/static/3695116b0b21d112fa4afffcd0028b8a/4efde/touchaku.jpg 1180w,
+        src=&quot;/static/3695116b0b21d112fa4afffcd0028b8a/6c315/touchaku.jpg&quot;
+        srcset=&quot;/static/3695116b0b21d112fa4afffcd0028b8a/f562b/touchaku.jpg 320w,
+/static/3695116b0b21d112fa4afffcd0028b8a/e2288/touchaku.jpg 640w,
+/static/3695116b0b21d112fa4afffcd0028b8a/6c315/touchaku.jpg 1280w,
 /static/3695116b0b21d112fa4afffcd0028b8a/f6974/touchaku.jpg 1469w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -385,7 +375,7 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
 &lt;h2 id=&quot;201993-申し込み馬絞り込み&quot;&gt;&lt;a href=&quot;#201993-%E7%94%B3%E3%81%97%E8%BE%BC%E3%81%BF%E9%A6%AC%E7%B5%9E%E3%82%8A%E8%BE%BC%E3%81%BF&quot; aria-label=&quot;201993 申し込み馬絞り込み permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2019/9/3: 申し込み馬絞り込み&lt;/h2&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1280px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -402,14 +392,14 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;（※申し込みたくても申し込めないヒルダズパッションの 18）&quot;
         title=&quot;（※申し込みたくても申し込めないヒルダズパッションの 18）&quot;
-        src=&quot;/static/f4a2d920a53444a521ff892d76d02c90/c739e/catalog.jpg&quot;
-        srcset=&quot;/static/f4a2d920a53444a521ff892d76d02c90/8ee9c/catalog.jpg 148w,
-/static/f4a2d920a53444a521ff892d76d02c90/ebbe7/catalog.jpg 295w,
-/static/f4a2d920a53444a521ff892d76d02c90/c739e/catalog.jpg 590w,
-/static/f4a2d920a53444a521ff892d76d02c90/5413e/catalog.jpg 885w,
-/static/f4a2d920a53444a521ff892d76d02c90/4efde/catalog.jpg 1180w,
+        src=&quot;/static/f4a2d920a53444a521ff892d76d02c90/6c315/catalog.jpg&quot;
+        srcset=&quot;/static/f4a2d920a53444a521ff892d76d02c90/f562b/catalog.jpg 320w,
+/static/f4a2d920a53444a521ff892d76d02c90/e2288/catalog.jpg 640w,
+/static/f4a2d920a53444a521ff892d76d02c90/6c315/catalog.jpg 1280w,
+/static/f4a2d920a53444a521ff892d76d02c90/fb329/catalog.jpg 1920w,
+/static/f4a2d920a53444a521ff892d76d02c90/2b872/catalog.jpg 2560w,
 /static/f4a2d920a53444a521ff892d76d02c90/d932e/catalog.jpg 4608w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -421,7 +411,7 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
 &lt;h2 id=&quot;201994-申込用紙記入&quot;&gt;&lt;a href=&quot;#201994-%E7%94%B3%E8%BE%BC%E7%94%A8%E7%B4%99%E8%A8%98%E5%85%A5&quot; aria-label=&quot;201994 申込用紙記入 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2019/9/4: 申込用紙記入&lt;/h2&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1280px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -438,14 +428,14 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;kinyuu&quot;
         title=&quot;kinyuu&quot;
-        src=&quot;/static/fd929ddb854200867ffd1cabeef37205/c739e/kinyuu.jpg&quot;
-        srcset=&quot;/static/fd929ddb854200867ffd1cabeef37205/8ee9c/kinyuu.jpg 148w,
-/static/fd929ddb854200867ffd1cabeef37205/ebbe7/kinyuu.jpg 295w,
-/static/fd929ddb854200867ffd1cabeef37205/c739e/kinyuu.jpg 590w,
-/static/fd929ddb854200867ffd1cabeef37205/5413e/kinyuu.jpg 885w,
-/static/fd929ddb854200867ffd1cabeef37205/4efde/kinyuu.jpg 1180w,
+        src=&quot;/static/fd929ddb854200867ffd1cabeef37205/6c315/kinyuu.jpg&quot;
+        srcset=&quot;/static/fd929ddb854200867ffd1cabeef37205/f562b/kinyuu.jpg 320w,
+/static/fd929ddb854200867ffd1cabeef37205/e2288/kinyuu.jpg 640w,
+/static/fd929ddb854200867ffd1cabeef37205/6c315/kinyuu.jpg 1280w,
+/static/fd929ddb854200867ffd1cabeef37205/fb329/kinyuu.jpg 1920w,
+/static/fd929ddb854200867ffd1cabeef37205/2b872/kinyuu.jpg 2560w,
 /static/fd929ddb854200867ffd1cabeef37205/d932e/kinyuu.jpg 4608w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -587,7 +577,7 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
 &lt;h2 id=&quot;201995-投函&quot;&gt;&lt;a href=&quot;#201995-%E6%8A%95%E5%87%BD&quot; aria-label=&quot;201995 投函 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2019/9/5: 投函&lt;/h2&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1280px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -604,14 +594,14 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;fuusho&quot;
         title=&quot;fuusho&quot;
-        src=&quot;/static/f572b61a788d73f886d42d51db00a7c2/c739e/fuusho.jpg&quot;
-        srcset=&quot;/static/f572b61a788d73f886d42d51db00a7c2/8ee9c/fuusho.jpg 148w,
-/static/f572b61a788d73f886d42d51db00a7c2/ebbe7/fuusho.jpg 295w,
-/static/f572b61a788d73f886d42d51db00a7c2/c739e/fuusho.jpg 590w,
-/static/f572b61a788d73f886d42d51db00a7c2/5413e/fuusho.jpg 885w,
-/static/f572b61a788d73f886d42d51db00a7c2/4efde/fuusho.jpg 1180w,
+        src=&quot;/static/f572b61a788d73f886d42d51db00a7c2/6c315/fuusho.jpg&quot;
+        srcset=&quot;/static/f572b61a788d73f886d42d51db00a7c2/f562b/fuusho.jpg 320w,
+/static/f572b61a788d73f886d42d51db00a7c2/e2288/fuusho.jpg 640w,
+/static/f572b61a788d73f886d42d51db00a7c2/6c315/fuusho.jpg 1280w,
+/static/f572b61a788d73f886d42d51db00a7c2/fb329/fuusho.jpg 1920w,
+/static/f572b61a788d73f886d42d51db00a7c2/2b872/fuusho.jpg 2560w,
 /static/f572b61a788d73f886d42d51db00a7c2/d932e/fuusho.jpg 4608w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -777,7 +767,7 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
 &lt;h2 id=&quot;2019921-出資申込結果通知書&quot;&gt;&lt;a href=&quot;#2019921-%E5%87%BA%E8%B3%87%E7%94%B3%E8%BE%BC%E7%B5%90%E6%9E%9C%E9%80%9A%E7%9F%A5%E6%9B%B8&quot; aria-label=&quot;2019921 出資申込結果通知書 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2019/9/21: 出資申込結果通知書&lt;/h2&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1280px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -794,14 +784,14 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;tsuuchi fuusho&quot;
         title=&quot;tsuuchi fuusho&quot;
-        src=&quot;/static/320caf44795b0d839228b0319bb24cc9/c739e/tsuuchi-fuusho.jpg&quot;
-        srcset=&quot;/static/320caf44795b0d839228b0319bb24cc9/8ee9c/tsuuchi-fuusho.jpg 148w,
-/static/320caf44795b0d839228b0319bb24cc9/ebbe7/tsuuchi-fuusho.jpg 295w,
-/static/320caf44795b0d839228b0319bb24cc9/c739e/tsuuchi-fuusho.jpg 590w,
-/static/320caf44795b0d839228b0319bb24cc9/5413e/tsuuchi-fuusho.jpg 885w,
-/static/320caf44795b0d839228b0319bb24cc9/4efde/tsuuchi-fuusho.jpg 1180w,
+        src=&quot;/static/320caf44795b0d839228b0319bb24cc9/6c315/tsuuchi-fuusho.jpg&quot;
+        srcset=&quot;/static/320caf44795b0d839228b0319bb24cc9/f562b/tsuuchi-fuusho.jpg 320w,
+/static/320caf44795b0d839228b0319bb24cc9/e2288/tsuuchi-fuusho.jpg 640w,
+/static/320caf44795b0d839228b0319bb24cc9/6c315/tsuuchi-fuusho.jpg 1280w,
+/static/320caf44795b0d839228b0319bb24cc9/fb329/tsuuchi-fuusho.jpg 1920w,
+/static/320caf44795b0d839228b0319bb24cc9/2b872/tsuuchi-fuusho.jpg 2560w,
 /static/320caf44795b0d839228b0319bb24cc9/d932e/tsuuchi-fuusho.jpg 4608w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -809,7 +799,7 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
 &lt;p&gt;9/21(土)、キャロットクラブから簡易書留にて、出資申込結果通知書を受け取りました。発送日の翌日昼の到着（首都圏）でした。&lt;strong&gt;ポスト投函かと思っていましたが、ちゃんと書留なんですね&lt;/strong&gt;。ユーザ体験が良いです。&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1280px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -826,14 +816,13 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;kekka&quot;
         title=&quot;kekka&quot;
-        src=&quot;/static/9bf52aa51c5b066346a8215ce3a721f6/c739e/kekka.jpg&quot;
-        srcset=&quot;/static/9bf52aa51c5b066346a8215ce3a721f6/8ee9c/kekka.jpg 148w,
-/static/9bf52aa51c5b066346a8215ce3a721f6/ebbe7/kekka.jpg 295w,
-/static/9bf52aa51c5b066346a8215ce3a721f6/c739e/kekka.jpg 590w,
-/static/9bf52aa51c5b066346a8215ce3a721f6/5413e/kekka.jpg 885w,
-/static/9bf52aa51c5b066346a8215ce3a721f6/4efde/kekka.jpg 1180w,
+        src=&quot;/static/9bf52aa51c5b066346a8215ce3a721f6/6c315/kekka.jpg&quot;
+        srcset=&quot;/static/9bf52aa51c5b066346a8215ce3a721f6/f562b/kekka.jpg 320w,
+/static/9bf52aa51c5b066346a8215ce3a721f6/e2288/kekka.jpg 640w,
+/static/9bf52aa51c5b066346a8215ce3a721f6/6c315/kekka.jpg 1280w,
+/static/9bf52aa51c5b066346a8215ce3a721f6/fb329/kekka.jpg 1920w,
 /static/9bf52aa51c5b066346a8215ce3a721f6/8cd90/kekka.jpg 2256w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -841,7 +830,7 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
 &lt;p&gt;いただいた出資申込結果通知書です。まず、&lt;strong&gt;ヴァイスゴルトの 18 ですが、残念ながら落選していました&lt;/strong&gt;。新規入会者内の抽選でしたが無念です…。一次募集での最終結果は、10 頭中 1 頭の当選となりました。&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1280px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -858,14 +847,14 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;member&quot;
         title=&quot;member&quot;
-        src=&quot;/static/fa4c7db1cca2c24da4eaf752901dd449/c739e/member.jpg&quot;
-        srcset=&quot;/static/fa4c7db1cca2c24da4eaf752901dd449/8ee9c/member.jpg 148w,
-/static/fa4c7db1cca2c24da4eaf752901dd449/ebbe7/member.jpg 295w,
-/static/fa4c7db1cca2c24da4eaf752901dd449/c739e/member.jpg 590w,
-/static/fa4c7db1cca2c24da4eaf752901dd449/5413e/member.jpg 885w,
-/static/fa4c7db1cca2c24da4eaf752901dd449/4efde/member.jpg 1180w,
+        src=&quot;/static/fa4c7db1cca2c24da4eaf752901dd449/6c315/member.jpg&quot;
+        srcset=&quot;/static/fa4c7db1cca2c24da4eaf752901dd449/f562b/member.jpg 320w,
+/static/fa4c7db1cca2c24da4eaf752901dd449/e2288/member.jpg 640w,
+/static/fa4c7db1cca2c24da4eaf752901dd449/6c315/member.jpg 1280w,
+/static/fa4c7db1cca2c24da4eaf752901dd449/fb329/member.jpg 1920w,
+/static/fa4c7db1cca2c24da4eaf752901dd449/2b872/member.jpg 2560w,
 /static/fa4c7db1cca2c24da4eaf752901dd449/590ba/member.jpg 2592w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -896,8 +885,7 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
         alt=&quot;1 5ji&quot;
         title=&quot;1 5ji&quot;
         src=&quot;/static/1ccd320ac0c22ea7db70cf5ce27a0098/04655/1_5ji.png&quot;
-        srcset=&quot;/static/1ccd320ac0c22ea7db70cf5ce27a0098/cf440/1_5ji.png 148w,
-/static/1ccd320ac0c22ea7db70cf5ce27a0098/d2d38/1_5ji.png 295w,
+        srcset=&quot;/static/1ccd320ac0c22ea7db70cf5ce27a0098/01387/1_5ji.png 320w,
 /static/1ccd320ac0c22ea7db70cf5ce27a0098/04655/1_5ji.png 431w&quot;
         sizes=&quot;(max-width: 431px) 100vw, 431px&quot;
         loading=&quot;lazy&quot;
@@ -917,7 +905,7 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
 &lt;p&gt;私の申込結果は以下となりました；&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 656px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -934,12 +922,11 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;1 5ji kekka&quot;
         title=&quot;1 5ji kekka&quot;
-        src=&quot;/static/9a2bd3c37ba2ecd14810ca132dcde741/b9e4f/1_5ji-kekka.png&quot;
-        srcset=&quot;/static/9a2bd3c37ba2ecd14810ca132dcde741/cf440/1_5ji-kekka.png 148w,
-/static/9a2bd3c37ba2ecd14810ca132dcde741/d2d38/1_5ji-kekka.png 295w,
-/static/9a2bd3c37ba2ecd14810ca132dcde741/b9e4f/1_5ji-kekka.png 590w,
+        src=&quot;/static/9a2bd3c37ba2ecd14810ca132dcde741/82704/1_5ji-kekka.png&quot;
+        srcset=&quot;/static/9a2bd3c37ba2ecd14810ca132dcde741/01387/1_5ji-kekka.png 320w,
+/static/9a2bd3c37ba2ecd14810ca132dcde741/e49a9/1_5ji-kekka.png 640w,
 /static/9a2bd3c37ba2ecd14810ca132dcde741/82704/1_5ji-kekka.png 656w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 656px) 100vw, 656px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -956,7 +943,7 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
 &lt;h1 id=&quot;おわりに&quot;&gt;&lt;a href=&quot;#%E3%81%8A%E3%82%8F%E3%82%8A%E3%81%AB&quot; aria-label=&quot;おわりに permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;おわりに&lt;/h1&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1280px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -973,21 +960,21 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;kakunin&quot;
         title=&quot;kakunin&quot;
-        src=&quot;/static/37b5c812cc27874f74f601109c9c1144/c739e/kakunin.jpg&quot;
-        srcset=&quot;/static/37b5c812cc27874f74f601109c9c1144/8ee9c/kakunin.jpg 148w,
-/static/37b5c812cc27874f74f601109c9c1144/ebbe7/kakunin.jpg 295w,
-/static/37b5c812cc27874f74f601109c9c1144/c739e/kakunin.jpg 590w,
-/static/37b5c812cc27874f74f601109c9c1144/5413e/kakunin.jpg 885w,
-/static/37b5c812cc27874f74f601109c9c1144/4efde/kakunin.jpg 1180w,
+        src=&quot;/static/37b5c812cc27874f74f601109c9c1144/6c315/kakunin.jpg&quot;
+        srcset=&quot;/static/37b5c812cc27874f74f601109c9c1144/f562b/kakunin.jpg 320w,
+/static/37b5c812cc27874f74f601109c9c1144/e2288/kakunin.jpg 640w,
+/static/37b5c812cc27874f74f601109c9c1144/6c315/kakunin.jpg 1280w,
+/static/37b5c812cc27874f74f601109c9c1144/fb329/kakunin.jpg 1920w,
+/static/37b5c812cc27874f74f601109c9c1144/2b872/kakunin.jpg 2560w,
 /static/37b5c812cc27874f74f601109c9c1144/e068f/kakunin.jpg 3564w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 656px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1004,12 +991,11 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;1 5ji kekka&quot;
         title=&quot;1 5ji kekka&quot;
-        src=&quot;/static/9a2bd3c37ba2ecd14810ca132dcde741/b9e4f/1_5ji-kekka.png&quot;
-        srcset=&quot;/static/9a2bd3c37ba2ecd14810ca132dcde741/cf440/1_5ji-kekka.png 148w,
-/static/9a2bd3c37ba2ecd14810ca132dcde741/d2d38/1_5ji-kekka.png 295w,
-/static/9a2bd3c37ba2ecd14810ca132dcde741/b9e4f/1_5ji-kekka.png 590w,
+        src=&quot;/static/9a2bd3c37ba2ecd14810ca132dcde741/82704/1_5ji-kekka.png&quot;
+        srcset=&quot;/static/9a2bd3c37ba2ecd14810ca132dcde741/01387/1_5ji-kekka.png 320w,
+/static/9a2bd3c37ba2ecd14810ca132dcde741/e49a9/1_5ji-kekka.png 640w,
 /static/9a2bd3c37ba2ecd14810ca132dcde741/82704/1_5ji-kekka.png 656w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 656px) 100vw, 656px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -1319,8 +1305,7 @@ Ran all &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt;
         alt=&quot;run storyshots&quot;
         title=&quot;run storyshots&quot;
         src=&quot;/static/ab5c3e2846e5f7da99fe5fd41495f0a3/782f4/run-storyshots.png&quot;
-        srcset=&quot;/static/ab5c3e2846e5f7da99fe5fd41495f0a3/cf440/run-storyshots.png 148w,
-/static/ab5c3e2846e5f7da99fe5fd41495f0a3/d2d38/run-storyshots.png 295w,
+        srcset=&quot;/static/ab5c3e2846e5f7da99fe5fd41495f0a3/01387/run-storyshots.png 320w,
 /static/ab5c3e2846e5f7da99fe5fd41495f0a3/782f4/run-storyshots.png 480w&quot;
         sizes=&quot;(max-width: 480px) 100vw, 480px&quot;
         loading=&quot;lazy&quot;
@@ -1558,7 +1543,7 @@ Ran all &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt;
 &lt;p&gt;Storybook が起動し、以下のようなコンポーネントのカタログが表示されれば、セットアップは完了です；&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 800px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1575,12 +1560,11 @@ Ran all &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;storybook&quot;
         title=&quot;storybook&quot;
-        src=&quot;/static/c71943f88175b3da5efb0d306cc0fdf1/b9e4f/storybook.png&quot;
-        srcset=&quot;/static/c71943f88175b3da5efb0d306cc0fdf1/cf440/storybook.png 148w,
-/static/c71943f88175b3da5efb0d306cc0fdf1/d2d38/storybook.png 295w,
-/static/c71943f88175b3da5efb0d306cc0fdf1/b9e4f/storybook.png 590w,
+        src=&quot;/static/c71943f88175b3da5efb0d306cc0fdf1/8ff1e/storybook.png&quot;
+        srcset=&quot;/static/c71943f88175b3da5efb0d306cc0fdf1/01387/storybook.png 320w,
+/static/c71943f88175b3da5efb0d306cc0fdf1/e49a9/storybook.png 640w,
 /static/c71943f88175b3da5efb0d306cc0fdf1/8ff1e/storybook.png 800w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 800px) 100vw, 800px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -1589,7 +1573,7 @@ Ran all &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt;
 &lt;p&gt;Viewport アドオンを有効化しましたので、下記のように iPhone 表示なども試すことができます；&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 600px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1606,12 +1590,10 @@ Ran all &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;storybook viewport&quot;
         title=&quot;storybook viewport&quot;
-        src=&quot;/static/23a54aca330fa68622aaffd83ae37228/b9e4f/storybook-viewport.png&quot;
-        srcset=&quot;/static/23a54aca330fa68622aaffd83ae37228/cf440/storybook-viewport.png 148w,
-/static/23a54aca330fa68622aaffd83ae37228/d2d38/storybook-viewport.png 295w,
-/static/23a54aca330fa68622aaffd83ae37228/b9e4f/storybook-viewport.png 590w,
+        src=&quot;/static/23a54aca330fa68622aaffd83ae37228/34e8a/storybook-viewport.png&quot;
+        srcset=&quot;/static/23a54aca330fa68622aaffd83ae37228/01387/storybook-viewport.png 320w,
 /static/23a54aca330fa68622aaffd83ae37228/34e8a/storybook-viewport.png 600w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 600px) 100vw, 600px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -1671,7 +1653,7 @@ Ran all &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt;
 &lt;p&gt;上記のように Storybook を更新すると、以下のようなコンポーネント情報が表示され、PropTypes 部分に TypeScript で記述した型情報が表示されていれば、今回の目標は達成です！&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1224px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1688,14 +1670,11 @@ Ran all &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;storybook typescript docgen&quot;
         title=&quot;storybook typescript docgen&quot;
-        src=&quot;/static/0a54563558a80a981efb5b37841fc2b6/b9e4f/storybook-typescript-docgen.png&quot;
-        srcset=&quot;/static/0a54563558a80a981efb5b37841fc2b6/cf440/storybook-typescript-docgen.png 148w,
-/static/0a54563558a80a981efb5b37841fc2b6/d2d38/storybook-typescript-docgen.png 295w,
-/static/0a54563558a80a981efb5b37841fc2b6/b9e4f/storybook-typescript-docgen.png 590w,
-/static/0a54563558a80a981efb5b37841fc2b6/f9b6a/storybook-typescript-docgen.png 885w,
-/static/0a54563558a80a981efb5b37841fc2b6/2d849/storybook-typescript-docgen.png 1180w,
+        src=&quot;/static/0a54563558a80a981efb5b37841fc2b6/e3c01/storybook-typescript-docgen.png&quot;
+        srcset=&quot;/static/0a54563558a80a981efb5b37841fc2b6/01387/storybook-typescript-docgen.png 320w,
+/static/0a54563558a80a981efb5b37841fc2b6/e49a9/storybook-typescript-docgen.png 640w,
 /static/0a54563558a80a981efb5b37841fc2b6/e3c01/storybook-typescript-docgen.png 1224w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 1224px) 100vw, 1224px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -1841,7 +1820,7 @@ $ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; workspace clien
 &lt;h2 id=&quot;表示結果&quot;&gt;&lt;a href=&quot;#%E8%A1%A8%E7%A4%BA%E7%B5%90%E6%9E%9C&quot; aria-label=&quot;表示結果 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;表示結果&lt;/h2&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 600px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1858,12 +1837,10 @@ $ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; workspace clien
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;storybook&quot;
         title=&quot;storybook&quot;
-        src=&quot;/static/a55a248d5b017b33eb5eaa891174e01d/b9e4f/storybook.png&quot;
-        srcset=&quot;/static/a55a248d5b017b33eb5eaa891174e01d/cf440/storybook.png 148w,
-/static/a55a248d5b017b33eb5eaa891174e01d/d2d38/storybook.png 295w,
-/static/a55a248d5b017b33eb5eaa891174e01d/b9e4f/storybook.png 590w,
+        src=&quot;/static/a55a248d5b017b33eb5eaa891174e01d/34e8a/storybook.png&quot;
+        srcset=&quot;/static/a55a248d5b017b33eb5eaa891174e01d/01387/storybook.png 320w,
 /static/a55a248d5b017b33eb5eaa891174e01d/34e8a/storybook.png 600w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 600px) 100vw, 600px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -1959,7 +1936,7 @@ yarn-error.log*&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;a href=&quot;http://localhost:3000/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://localhost:3000/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1024px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1976,13 +1953,11 @@ yarn-error.log*&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;react&quot;
         title=&quot;react&quot;
-        src=&quot;/static/7f1971d20adafa058b9f9d1beba42360/b9e4f/react.png&quot;
-        srcset=&quot;/static/7f1971d20adafa058b9f9d1beba42360/cf440/react.png 148w,
-/static/7f1971d20adafa058b9f9d1beba42360/d2d38/react.png 295w,
-/static/7f1971d20adafa058b9f9d1beba42360/b9e4f/react.png 590w,
-/static/7f1971d20adafa058b9f9d1beba42360/f9b6a/react.png 885w,
+        src=&quot;/static/7f1971d20adafa058b9f9d1beba42360/3b243/react.png&quot;
+        srcset=&quot;/static/7f1971d20adafa058b9f9d1beba42360/01387/react.png 320w,
+/static/7f1971d20adafa058b9f9d1beba42360/e49a9/react.png 640w,
 /static/7f1971d20adafa058b9f9d1beba42360/3b243/react.png 1024w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 1024px) 100vw, 1024px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -2056,7 +2031,7 @@ $ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; sr:start&lt;/co
 &lt;p&gt;&lt;a href=&quot;http://localhost:4000/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://localhost:4000/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1024px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -2073,13 +2048,11 @@ $ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; sr:start&lt;/co
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;prisma&quot;
         title=&quot;prisma&quot;
-        src=&quot;/static/4ab8ecf77001a95f0a8879c42a010e17/b9e4f/prisma.png&quot;
-        srcset=&quot;/static/4ab8ecf77001a95f0a8879c42a010e17/cf440/prisma.png 148w,
-/static/4ab8ecf77001a95f0a8879c42a010e17/d2d38/prisma.png 295w,
-/static/4ab8ecf77001a95f0a8879c42a010e17/b9e4f/prisma.png 590w,
-/static/4ab8ecf77001a95f0a8879c42a010e17/f9b6a/prisma.png 885w,
+        src=&quot;/static/4ab8ecf77001a95f0a8879c42a010e17/3b243/prisma.png&quot;
+        srcset=&quot;/static/4ab8ecf77001a95f0a8879c42a010e17/01387/prisma.png 320w,
+/static/4ab8ecf77001a95f0a8879c42a010e17/e49a9/prisma.png 640w,
 /static/4ab8ecf77001a95f0a8879c42a010e17/3b243/prisma.png 1024w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 1024px) 100vw, 1024px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -2342,7 +2315,7 @@ husky &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; pre-commit 
 &lt;p&gt;記事用のモデル、Article を定義します。フィールド名は自動で lowerCamelCase されます。&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 768px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -2359,12 +2332,11 @@ husky &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; pre-commit 
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;model&quot;
         title=&quot;model&quot;
-        src=&quot;/static/a75a9b0ce0b4ceee9cc98bbe15589f39/b9e4f/model.png&quot;
-        srcset=&quot;/static/a75a9b0ce0b4ceee9cc98bbe15589f39/cf440/model.png 148w,
-/static/a75a9b0ce0b4ceee9cc98bbe15589f39/d2d38/model.png 295w,
-/static/a75a9b0ce0b4ceee9cc98bbe15589f39/b9e4f/model.png 590w,
+        src=&quot;/static/a75a9b0ce0b4ceee9cc98bbe15589f39/5cc77/model.png&quot;
+        srcset=&quot;/static/a75a9b0ce0b4ceee9cc98bbe15589f39/01387/model.png 320w,
+/static/a75a9b0ce0b4ceee9cc98bbe15589f39/e49a9/model.png 640w,
 /static/a75a9b0ce0b4ceee9cc98bbe15589f39/5cc77/model.png 768w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 768px) 100vw, 768px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -2373,7 +2345,7 @@ husky &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; pre-commit 
 &lt;p&gt;Content メニューから、Article を1つ準備します。&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 866px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -2390,12 +2362,11 @@ husky &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; pre-commit 
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;content&quot;
         title=&quot;content&quot;
-        src=&quot;/static/c6ccee889c8bd4d0aea07a172d670069/b9e4f/content.png&quot;
-        srcset=&quot;/static/c6ccee889c8bd4d0aea07a172d670069/cf440/content.png 148w,
-/static/c6ccee889c8bd4d0aea07a172d670069/d2d38/content.png 295w,
-/static/c6ccee889c8bd4d0aea07a172d670069/b9e4f/content.png 590w,
+        src=&quot;/static/c6ccee889c8bd4d0aea07a172d670069/843d0/content.png&quot;
+        srcset=&quot;/static/c6ccee889c8bd4d0aea07a172d670069/01387/content.png 320w,
+/static/c6ccee889c8bd4d0aea07a172d670069/e49a9/content.png 640w,
 /static/c6ccee889c8bd4d0aea07a172d670069/843d0/content.png 866w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 866px) 100vw, 866px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -2581,7 +2552,7 @@ husky &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; pre-commit 
 &lt;h1 id=&quot;完成したページ&quot;&gt;&lt;a href=&quot;#%E5%AE%8C%E6%88%90%E3%81%97%E3%81%9F%E3%83%9A%E3%83%BC%E3%82%B8&quot; aria-label=&quot;完成したページ permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;完成したページ&lt;/h1&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 750px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -2598,12 +2569,11 @@ husky &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; pre-commit 
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;ss1&quot;
         title=&quot;ss1&quot;
-        src=&quot;/static/07a1e9fb3d64c7f3975dc7168411bee3/b9e4f/ss1.png&quot;
-        srcset=&quot;/static/07a1e9fb3d64c7f3975dc7168411bee3/cf440/ss1.png 148w,
-/static/07a1e9fb3d64c7f3975dc7168411bee3/d2d38/ss1.png 295w,
-/static/07a1e9fb3d64c7f3975dc7168411bee3/b9e4f/ss1.png 590w,
+        src=&quot;/static/07a1e9fb3d64c7f3975dc7168411bee3/35c67/ss1.png&quot;
+        srcset=&quot;/static/07a1e9fb3d64c7f3975dc7168411bee3/01387/ss1.png 320w,
+/static/07a1e9fb3d64c7f3975dc7168411bee3/e49a9/ss1.png 640w,
 /static/07a1e9fb3d64c7f3975dc7168411bee3/35c67/ss1.png 750w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 750px) 100vw, 750px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -2735,7 +2705,7 @@ $ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; start&lt;/code&
 &lt;p&gt;下記のような画面が表示されれば、成功です！&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 827px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -2752,12 +2722,11 @@ $ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; start&lt;/code&
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;electron window&quot;
         title=&quot;electron window&quot;
-        src=&quot;/static/46d8bf22ad11cc7c67f2e02c77bfcb7b/b9e4f/electron-window.png&quot;
-        srcset=&quot;/static/46d8bf22ad11cc7c67f2e02c77bfcb7b/cf440/electron-window.png 148w,
-/static/46d8bf22ad11cc7c67f2e02c77bfcb7b/d2d38/electron-window.png 295w,
-/static/46d8bf22ad11cc7c67f2e02c77bfcb7b/b9e4f/electron-window.png 590w,
+        src=&quot;/static/46d8bf22ad11cc7c67f2e02c77bfcb7b/e60a7/electron-window.png&quot;
+        srcset=&quot;/static/46d8bf22ad11cc7c67f2e02c77bfcb7b/01387/electron-window.png 320w,
+/static/46d8bf22ad11cc7c67f2e02c77bfcb7b/e49a9/electron-window.png 640w,
 /static/46d8bf22ad11cc7c67f2e02c77bfcb7b/e60a7/electron-window.png 827w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 827px) 100vw, 827px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -2887,7 +2856,7 @@ model UmaRace {
 &lt;/ul&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1280px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -2904,14 +2873,12 @@ model UmaRace {
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;prisma2&quot;
         title=&quot;prisma2&quot;
-        src=&quot;/static/1faea92c0e6c8c47f1412c793e0489f6/b9e4f/prisma2.png&quot;
-        srcset=&quot;/static/1faea92c0e6c8c47f1412c793e0489f6/cf440/prisma2.png 148w,
-/static/1faea92c0e6c8c47f1412c793e0489f6/d2d38/prisma2.png 295w,
-/static/1faea92c0e6c8c47f1412c793e0489f6/b9e4f/prisma2.png 590w,
-/static/1faea92c0e6c8c47f1412c793e0489f6/f9b6a/prisma2.png 885w,
-/static/1faea92c0e6c8c47f1412c793e0489f6/2d849/prisma2.png 1180w,
+        src=&quot;/static/1faea92c0e6c8c47f1412c793e0489f6/0309e/prisma2.png&quot;
+        srcset=&quot;/static/1faea92c0e6c8c47f1412c793e0489f6/01387/prisma2.png 320w,
+/static/1faea92c0e6c8c47f1412c793e0489f6/e49a9/prisma2.png 640w,
+/static/1faea92c0e6c8c47f1412c793e0489f6/0309e/prisma2.png 1280w,
 /static/1faea92c0e6c8c47f1412c793e0489f6/2f950/prisma2.png 1600w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -2974,7 +2941,7 @@ $ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; seed
 &lt;p&gt;SQLiteエクステンションで開いてみると、seederによってPostが増えているのが確認できました；&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 899px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -2991,13 +2958,11 @@ $ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; seed
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;seeded&quot;
         title=&quot;seeded&quot;
-        src=&quot;/static/a39b89057f59a9caa287ea367197e406/b9e4f/seeded.png&quot;
-        srcset=&quot;/static/a39b89057f59a9caa287ea367197e406/cf440/seeded.png 148w,
-/static/a39b89057f59a9caa287ea367197e406/d2d38/seeded.png 295w,
-/static/a39b89057f59a9caa287ea367197e406/b9e4f/seeded.png 590w,
-/static/a39b89057f59a9caa287ea367197e406/f9b6a/seeded.png 885w,
+        src=&quot;/static/a39b89057f59a9caa287ea367197e406/dd96d/seeded.png&quot;
+        srcset=&quot;/static/a39b89057f59a9caa287ea367197e406/01387/seeded.png 320w,
+/static/a39b89057f59a9caa287ea367197e406/e49a9/seeded.png 640w,
 /static/a39b89057f59a9caa287ea367197e406/dd96d/seeded.png 899w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 899px) 100vw, 899px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -3022,7 +2987,7 @@ $ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; seed
 &lt;p&gt;SQLiteエクステンションで開いてみると、サンプルスクリプトによってPostが増えているのが確認できました；&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 903px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -3039,13 +3004,11 @@ $ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; seed
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;started&quot;
         title=&quot;started&quot;
-        src=&quot;/static/5370101394d661bcbc33127252244f30/b9e4f/started.png&quot;
-        srcset=&quot;/static/5370101394d661bcbc33127252244f30/cf440/started.png 148w,
-/static/5370101394d661bcbc33127252244f30/d2d38/started.png 295w,
-/static/5370101394d661bcbc33127252244f30/b9e4f/started.png 590w,
-/static/5370101394d661bcbc33127252244f30/f9b6a/started.png 885w,
+        src=&quot;/static/5370101394d661bcbc33127252244f30/2f110/started.png&quot;
+        srcset=&quot;/static/5370101394d661bcbc33127252244f30/01387/started.png 320w,
+/static/5370101394d661bcbc33127252244f30/e49a9/started.png 640w,
 /static/5370101394d661bcbc33127252244f30/2f110/started.png 903w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 903px) 100vw, 903px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -3056,7 +3019,7 @@ $ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; seed
 &lt;p&gt;管理ツールは &lt;a href=&quot;http://localhost:5555&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://localhost:5555&lt;/a&gt; で起動します。ここからデータの閲覧や、クエリの発行などが可能になります；&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1021px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -3073,13 +3036,11 @@ $ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; seed
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;studio&quot;
         title=&quot;studio&quot;
-        src=&quot;/static/ead260cdd45d0f9c9f44b207f3977b52/b9e4f/studio.png&quot;
-        srcset=&quot;/static/ead260cdd45d0f9c9f44b207f3977b52/cf440/studio.png 148w,
-/static/ead260cdd45d0f9c9f44b207f3977b52/d2d38/studio.png 295w,
-/static/ead260cdd45d0f9c9f44b207f3977b52/b9e4f/studio.png 590w,
-/static/ead260cdd45d0f9c9f44b207f3977b52/f9b6a/studio.png 885w,
+        src=&quot;/static/ead260cdd45d0f9c9f44b207f3977b52/e4fa8/studio.png&quot;
+        srcset=&quot;/static/ead260cdd45d0f9c9f44b207f3977b52/01387/studio.png 320w,
+/static/ead260cdd45d0f9c9f44b207f3977b52/e49a9/studio.png 640w,
 /static/ead260cdd45d0f9c9f44b207f3977b52/e4fa8/studio.png 1021w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 1021px) 100vw, 1021px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -3189,7 +3150,7 @@ $ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; seed
 &lt;/ul&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1280px;&quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
@@ -3199,14 +3160,14 @@ $ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; seed
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;hakodate race course pano&quot;
         title=&quot;hakodate race course pano&quot;
-        src=&quot;/static/8222868997061eb6e76e25ffd88faaa0/c739e/hakodate-race-course-pano.jpg&quot;
-        srcset=&quot;/static/8222868997061eb6e76e25ffd88faaa0/8ee9c/hakodate-race-course-pano.jpg 148w,
-/static/8222868997061eb6e76e25ffd88faaa0/ebbe7/hakodate-race-course-pano.jpg 295w,
-/static/8222868997061eb6e76e25ffd88faaa0/c739e/hakodate-race-course-pano.jpg 590w,
-/static/8222868997061eb6e76e25ffd88faaa0/5413e/hakodate-race-course-pano.jpg 885w,
-/static/8222868997061eb6e76e25ffd88faaa0/4efde/hakodate-race-course-pano.jpg 1180w,
+        src=&quot;/static/8222868997061eb6e76e25ffd88faaa0/6c315/hakodate-race-course-pano.jpg&quot;
+        srcset=&quot;/static/8222868997061eb6e76e25ffd88faaa0/f562b/hakodate-race-course-pano.jpg 320w,
+/static/8222868997061eb6e76e25ffd88faaa0/e2288/hakodate-race-course-pano.jpg 640w,
+/static/8222868997061eb6e76e25ffd88faaa0/6c315/hakodate-race-course-pano.jpg 1280w,
+/static/8222868997061eb6e76e25ffd88faaa0/fb329/hakodate-race-course-pano.jpg 1920w,
+/static/8222868997061eb6e76e25ffd88faaa0/2b872/hakodate-race-course-pano.jpg 2560w,
 /static/8222868997061eb6e76e25ffd88faaa0/8b241/hakodate-race-course-pano.jpg 8303w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -3251,7 +3212,7 @@ $ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; seed
 &lt;/ul&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 843px;&quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
@@ -3261,12 +3222,11 @@ $ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; seed
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;complete ci&quot;
         title=&quot;complete ci&quot;
-        src=&quot;/static/48f00146e96575abae77826967064fd6/b9e4f/complete-ci.png&quot;
-        srcset=&quot;/static/48f00146e96575abae77826967064fd6/cf440/complete-ci.png 148w,
-/static/48f00146e96575abae77826967064fd6/d2d38/complete-ci.png 295w,
-/static/48f00146e96575abae77826967064fd6/b9e4f/complete-ci.png 590w,
+        src=&quot;/static/48f00146e96575abae77826967064fd6/b28c0/complete-ci.png&quot;
+        srcset=&quot;/static/48f00146e96575abae77826967064fd6/01387/complete-ci.png 320w,
+/static/48f00146e96575abae77826967064fd6/e49a9/complete-ci.png 640w,
 /static/48f00146e96575abae77826967064fd6/b28c0/complete-ci.png 843w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 843px) 100vw, 843px&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -3292,7 +3252,7 @@ $ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; seed
 &lt;/ul&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 827px;&quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
@@ -3302,12 +3262,11 @@ $ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; seed
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;webhook templates&quot;
         title=&quot;webhook templates&quot;
-        src=&quot;/static/70fa09eeb81eca8b0920478572f674fe/b9e4f/webhook-templates.png&quot;
-        srcset=&quot;/static/70fa09eeb81eca8b0920478572f674fe/cf440/webhook-templates.png 148w,
-/static/70fa09eeb81eca8b0920478572f674fe/d2d38/webhook-templates.png 295w,
-/static/70fa09eeb81eca8b0920478572f674fe/b9e4f/webhook-templates.png 590w,
+        src=&quot;/static/70fa09eeb81eca8b0920478572f674fe/e60a7/webhook-templates.png&quot;
+        srcset=&quot;/static/70fa09eeb81eca8b0920478572f674fe/01387/webhook-templates.png 320w,
+/static/70fa09eeb81eca8b0920478572f674fe/e49a9/webhook-templates.png 640w,
 /static/70fa09eeb81eca8b0920478572f674fe/e60a7/webhook-templates.png 827w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 827px) 100vw, 827px&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -3315,7 +3274,7 @@ $ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; seed
 &lt;p&gt;適当なコンテンツを変更してみて、Webhookが起動し、CircleCIのテストが走るかを確認；&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1021px;&quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
@@ -3325,13 +3284,11 @@ $ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; seed
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;new jobs&quot;
         title=&quot;new jobs&quot;
-        src=&quot;/static/a4b9952e009f5bd348ab97170be7b952/b9e4f/new-jobs.png&quot;
-        srcset=&quot;/static/a4b9952e009f5bd348ab97170be7b952/cf440/new-jobs.png 148w,
-/static/a4b9952e009f5bd348ab97170be7b952/d2d38/new-jobs.png 295w,
-/static/a4b9952e009f5bd348ab97170be7b952/b9e4f/new-jobs.png 590w,
-/static/a4b9952e009f5bd348ab97170be7b952/f9b6a/new-jobs.png 885w,
+        src=&quot;/static/a4b9952e009f5bd348ab97170be7b952/e4fa8/new-jobs.png&quot;
+        srcset=&quot;/static/a4b9952e009f5bd348ab97170be7b952/01387/new-jobs.png 320w,
+/static/a4b9952e009f5bd348ab97170be7b952/e49a9/new-jobs.png 640w,
 /static/a4b9952e009f5bd348ab97170be7b952/e4fa8/new-jobs.png 1021w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 1021px) 100vw, 1021px&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -3387,7 +3344,7 @@ Key   : [Paste Clipboard]
 &lt;p&gt;これでセットアップは完了です。では早速、Contentful で記事を更新してみます。&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1006px;&quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
@@ -3397,20 +3354,18 @@ Key   : [Paste Clipboard]
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;update content&quot;
         title=&quot;update content&quot;
-        src=&quot;/static/e519b708d1f5f5ea80df435a8ab87157/b9e4f/update-content.png&quot;
-        srcset=&quot;/static/e519b708d1f5f5ea80df435a8ab87157/cf440/update-content.png 148w,
-/static/e519b708d1f5f5ea80df435a8ab87157/d2d38/update-content.png 295w,
-/static/e519b708d1f5f5ea80df435a8ab87157/b9e4f/update-content.png 590w,
-/static/e519b708d1f5f5ea80df435a8ab87157/f9b6a/update-content.png 885w,
+        src=&quot;/static/e519b708d1f5f5ea80df435a8ab87157/f4992/update-content.png&quot;
+        srcset=&quot;/static/e519b708d1f5f5ea80df435a8ab87157/01387/update-content.png 320w,
+/static/e519b708d1f5f5ea80df435a8ab87157/e49a9/update-content.png 640w,
 /static/e519b708d1f5f5ea80df435a8ab87157/f4992/update-content.png 1006w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 1006px) 100vw, 1006px&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;CircleCI 側の job を見ると、即座に実行が開始されており、30秒ほどでデプロイ完了のSUCCESS表示に切り替わります。&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1015px;&quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
@@ -3420,20 +3375,18 @@ Key   : [Paste Clipboard]
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;triggered ci&quot;
         title=&quot;triggered ci&quot;
-        src=&quot;/static/eae60373ccd621d2dd882b6cba325d7e/b9e4f/triggered-ci.png&quot;
-        srcset=&quot;/static/eae60373ccd621d2dd882b6cba325d7e/cf440/triggered-ci.png 148w,
-/static/eae60373ccd621d2dd882b6cba325d7e/d2d38/triggered-ci.png 295w,
-/static/eae60373ccd621d2dd882b6cba325d7e/b9e4f/triggered-ci.png 590w,
-/static/eae60373ccd621d2dd882b6cba325d7e/f9b6a/triggered-ci.png 885w,
+        src=&quot;/static/eae60373ccd621d2dd882b6cba325d7e/25f31/triggered-ci.png&quot;
+        srcset=&quot;/static/eae60373ccd621d2dd882b6cba325d7e/01387/triggered-ci.png 320w,
+/static/eae60373ccd621d2dd882b6cba325d7e/e49a9/triggered-ci.png 640w,
 /static/eae60373ccd621d2dd882b6cba325d7e/25f31/triggered-ci.png 1015w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 1015px) 100vw, 1015px&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;記事側を見にいくと、更新されていることが確認できます。これで完了です！&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 812px;&quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
@@ -3443,12 +3396,11 @@ Key   : [Paste Clipboard]
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;updated content&quot;
         title=&quot;updated content&quot;
-        src=&quot;/static/893694f9f308aba6f4992f23476800e0/b9e4f/updated-content.png&quot;
-        srcset=&quot;/static/893694f9f308aba6f4992f23476800e0/cf440/updated-content.png 148w,
-/static/893694f9f308aba6f4992f23476800e0/d2d38/updated-content.png 295w,
-/static/893694f9f308aba6f4992f23476800e0/b9e4f/updated-content.png 590w,
+        src=&quot;/static/893694f9f308aba6f4992f23476800e0/08784/updated-content.png&quot;
+        srcset=&quot;/static/893694f9f308aba6f4992f23476800e0/01387/updated-content.png 320w,
+/static/893694f9f308aba6f4992f23476800e0/e49a9/updated-content.png 640w,
 /static/893694f9f308aba6f4992f23476800e0/08784/updated-content.png 812w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 812px) 100vw, 812px&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Gatsby + Contentful + GitHub Pages ハンズオン]]></title><description><![CDATA[Contentful は Headless-CMS と呼ばれる仕組みを提供しており、コンテンツの設計と配信（API）のみを受け持つようなサービスになっています。WordPressとの違いは、コンテンツ表示までは担当していないところです。 Gatsby…]]></description><link>https://suzukalight.com/2019-07-13-contentful-starter/</link><guid isPermaLink="false">https://suzukalight.com/2019-07-13-contentful-starter/</guid><pubDate>Fri, 12 Jul 2019 15:08:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;https://www.contentful.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Contentful&lt;/a&gt; は Headless-CMS と呼ばれる仕組みを提供しており、コンテンツの設計と配信（API）のみを受け持つようなサービスになっています。WordPressとの違いは、コンテンツ表示までは担当していないところです。&lt;/p&gt;
@@ -3468,7 +3420,7 @@ Key   : [Paste Clipboard]
 &lt;p&gt;無料枠では2つのSpaceを作成できるので、2つ目の枠でハンズオンしてみます。ドロワーから &lt;code class=&quot;language-text&quot;&gt;+ Create space&lt;/code&gt; を選択；&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 595px;&quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
@@ -3478,12 +3430,10 @@ Key   : [Paste Clipboard]
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;create space&quot;
         title=&quot;create space&quot;
-        src=&quot;/static/e4ef47f90d22fc2d39ed38e4e45a9ab4/b9e4f/create-space.png&quot;
-        srcset=&quot;/static/e4ef47f90d22fc2d39ed38e4e45a9ab4/cf440/create-space.png 148w,
-/static/e4ef47f90d22fc2d39ed38e4e45a9ab4/d2d38/create-space.png 295w,
-/static/e4ef47f90d22fc2d39ed38e4e45a9ab4/b9e4f/create-space.png 590w,
+        src=&quot;/static/e4ef47f90d22fc2d39ed38e4e45a9ab4/acf33/create-space.png&quot;
+        srcset=&quot;/static/e4ef47f90d22fc2d39ed38e4e45a9ab4/01387/create-space.png 320w,
 /static/e4ef47f90d22fc2d39ed38e4e45a9ab4/acf33/create-space.png 595w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 595px) 100vw, 595px&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -3499,7 +3449,7 @@ Key   : [Paste Clipboard]
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Settings-&amp;gt;APIs&lt;/code&gt; から &lt;code class=&quot;language-text&quot;&gt;Content management tokens&lt;/code&gt; を選択して、 &lt;code class=&quot;language-text&quot;&gt;Generate personal token&lt;/code&gt; を作成；&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1000px;&quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
@@ -3509,13 +3459,11 @@ Key   : [Paste Clipboard]
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;tokens&quot;
         title=&quot;tokens&quot;
-        src=&quot;/static/dd4bca545b5df33a5e21ce9f732d01b3/b9e4f/tokens.png&quot;
-        srcset=&quot;/static/dd4bca545b5df33a5e21ce9f732d01b3/cf440/tokens.png 148w,
-/static/dd4bca545b5df33a5e21ce9f732d01b3/d2d38/tokens.png 295w,
-/static/dd4bca545b5df33a5e21ce9f732d01b3/b9e4f/tokens.png 590w,
-/static/dd4bca545b5df33a5e21ce9f732d01b3/f9b6a/tokens.png 885w,
+        src=&quot;/static/dd4bca545b5df33a5e21ce9f732d01b3/e11df/tokens.png&quot;
+        srcset=&quot;/static/dd4bca545b5df33a5e21ce9f732d01b3/01387/tokens.png 320w,
+/static/dd4bca545b5df33a5e21ce9f732d01b3/e49a9/tokens.png 640w,
 /static/dd4bca545b5df33a5e21ce9f732d01b3/e11df/tokens.png 1000w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 1000px) 100vw, 1000px&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -3533,8 +3481,7 @@ Key   : [Paste Clipboard]
         alt=&quot;token name&quot;
         title=&quot;token name&quot;
         src=&quot;/static/2bb99f36bdb2bb3d33b6b15c125d5d32/d973d/token-name.png&quot;
-        srcset=&quot;/static/2bb99f36bdb2bb3d33b6b15c125d5d32/cf440/token-name.png 148w,
-/static/2bb99f36bdb2bb3d33b6b15c125d5d32/d2d38/token-name.png 295w,
+        srcset=&quot;/static/2bb99f36bdb2bb3d33b6b15c125d5d32/01387/token-name.png 320w,
 /static/2bb99f36bdb2bb3d33b6b15c125d5d32/d973d/token-name.png 579w&quot;
         sizes=&quot;(max-width: 579px) 100vw, 579px&quot;
         loading=&quot;lazy&quot;
@@ -3572,7 +3519,7 @@ You can now view gatsby-contentful-starter &lt;span class=&quot;token keyword&qu
 &lt;p&gt;あっという間に完成です。&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 978px;&quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
@@ -3582,13 +3529,11 @@ You can now view gatsby-contentful-starter &lt;span class=&quot;token keyword&qu
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;site&quot;
         title=&quot;site&quot;
-        src=&quot;/static/42178ae9f3b06486557ef237657af816/b9e4f/site.png&quot;
-        srcset=&quot;/static/42178ae9f3b06486557ef237657af816/cf440/site.png 148w,
-/static/42178ae9f3b06486557ef237657af816/d2d38/site.png 295w,
-/static/42178ae9f3b06486557ef237657af816/b9e4f/site.png 590w,
-/static/42178ae9f3b06486557ef237657af816/f9b6a/site.png 885w,
+        src=&quot;/static/42178ae9f3b06486557ef237657af816/f1cfd/site.png&quot;
+        srcset=&quot;/static/42178ae9f3b06486557ef237657af816/01387/site.png 320w,
+/static/42178ae9f3b06486557ef237657af816/e49a9/site.png 640w,
 /static/42178ae9f3b06486557ef237657af816/f1cfd/site.png 978w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 978px) 100vw, 978px&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -3600,7 +3545,7 @@ You can now view gatsby-contentful-starter &lt;span class=&quot;token keyword&qu
 &lt;p&gt;試しにContentfulのContentsを書き換えてみましょう。&lt;code class=&quot;language-text&quot;&gt;Content&lt;/code&gt; から適当に1つ（たとえば一番上の記事）を選択して、Markdownを書き加えてみます；&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 891px;&quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
@@ -3610,20 +3555,18 @@ You can now view gatsby-contentful-starter &lt;span class=&quot;token keyword&qu
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;update content&quot;
         title=&quot;update content&quot;
-        src=&quot;/static/8ed9c78fa6fbd5abbdc40f7169925059/b9e4f/update-content.png&quot;
-        srcset=&quot;/static/8ed9c78fa6fbd5abbdc40f7169925059/cf440/update-content.png 148w,
-/static/8ed9c78fa6fbd5abbdc40f7169925059/d2d38/update-content.png 295w,
-/static/8ed9c78fa6fbd5abbdc40f7169925059/b9e4f/update-content.png 590w,
-/static/8ed9c78fa6fbd5abbdc40f7169925059/f9b6a/update-content.png 885w,
+        src=&quot;/static/8ed9c78fa6fbd5abbdc40f7169925059/6bcd1/update-content.png&quot;
+        srcset=&quot;/static/8ed9c78fa6fbd5abbdc40f7169925059/01387/update-content.png 320w,
+/static/8ed9c78fa6fbd5abbdc40f7169925059/e49a9/update-content.png 640w,
 /static/8ed9c78fa6fbd5abbdc40f7169925059/6bcd1/update-content.png 891w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 891px) 100vw, 891px&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;そして &lt;code class=&quot;language-text&quot;&gt;Publish changes&lt;/code&gt; をして、 &lt;code class=&quot;language-text&quot;&gt;yarn develop&lt;/code&gt; をし直せば…書き換わっています！&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 903px;&quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
@@ -3633,13 +3576,11 @@ You can now view gatsby-contentful-starter &lt;span class=&quot;token keyword&qu
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;updated content&quot;
         title=&quot;updated content&quot;
-        src=&quot;/static/659756d75d8eb23a30dcac79435f1aec/b9e4f/updated-content.png&quot;
-        srcset=&quot;/static/659756d75d8eb23a30dcac79435f1aec/cf440/updated-content.png 148w,
-/static/659756d75d8eb23a30dcac79435f1aec/d2d38/updated-content.png 295w,
-/static/659756d75d8eb23a30dcac79435f1aec/b9e4f/updated-content.png 590w,
-/static/659756d75d8eb23a30dcac79435f1aec/f9b6a/updated-content.png 885w,
+        src=&quot;/static/659756d75d8eb23a30dcac79435f1aec/2f110/updated-content.png&quot;
+        srcset=&quot;/static/659756d75d8eb23a30dcac79435f1aec/01387/updated-content.png 320w,
+/static/659756d75d8eb23a30dcac79435f1aec/e49a9/updated-content.png 640w,
 /static/659756d75d8eb23a30dcac79435f1aec/2f110/updated-content.png 903w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 903px) 100vw, 903px&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -3675,7 +3616,7 @@ Done &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=
 &lt;p&gt;GitHub Pages でホスティングできました、これで完了です！&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 757px;&quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
@@ -3685,12 +3626,11 @@ Done &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;https&quot;
         title=&quot;https&quot;
-        src=&quot;/static/36c4a094ba1497d9dd032617cab5feb7/b9e4f/https.png&quot;
-        srcset=&quot;/static/36c4a094ba1497d9dd032617cab5feb7/cf440/https.png 148w,
-/static/36c4a094ba1497d9dd032617cab5feb7/d2d38/https.png 295w,
-/static/36c4a094ba1497d9dd032617cab5feb7/b9e4f/https.png 590w,
+        src=&quot;/static/36c4a094ba1497d9dd032617cab5feb7/7a513/https.png&quot;
+        srcset=&quot;/static/36c4a094ba1497d9dd032617cab5feb7/01387/https.png 320w,
+/static/36c4a094ba1497d9dd032617cab5feb7/e49a9/https.png 640w,
 /static/36c4a094ba1497d9dd032617cab5feb7/7a513/https.png 757w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 757px) 100vw, 757px&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -3709,8 +3649,7 @@ Done &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=
         alt=&quot;share buttons&quot;
         title=&quot;share buttons&quot;
         src=&quot;/static/d3a9604f5166561e74da5d944792edd6/e7941/share-buttons.png&quot;
-        srcset=&quot;/static/d3a9604f5166561e74da5d944792edd6/cf440/share-buttons.png 148w,
-/static/d3a9604f5166561e74da5d944792edd6/e7941/share-buttons.png 255w&quot;
+        srcset=&quot;/static/d3a9604f5166561e74da5d944792edd6/e7941/share-buttons.png 255w&quot;
         sizes=&quot;(max-width: 255px) 100vw, 255px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -3813,8 +3752,7 @@ Done &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=
         alt=&quot;heading anchor&quot;
         title=&quot;heading anchor&quot;
         src=&quot;/static/5504c1d6d01ed41128fff5bec0168bed/8f6cc/heading-anchor.png&quot;
-        srcset=&quot;/static/5504c1d6d01ed41128fff5bec0168bed/cf440/heading-anchor.png 148w,
-/static/5504c1d6d01ed41128fff5bec0168bed/d2d38/heading-anchor.png 295w,
+        srcset=&quot;/static/5504c1d6d01ed41128fff5bec0168bed/01387/heading-anchor.png 320w,
 /static/5504c1d6d01ed41128fff5bec0168bed/8f6cc/heading-anchor.png 348w&quot;
         sizes=&quot;(max-width: 348px) 100vw, 348px&quot;
         loading=&quot;lazy&quot;
@@ -3895,8 +3833,7 @@ Done &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=
         alt=&quot;タグ表示&quot;
         title=&quot;タグ表示&quot;
         src=&quot;/static/1df2308f4c16037440ec4ef4368bc3dd/f4334/blogpost.png&quot;
-        srcset=&quot;/static/1df2308f4c16037440ec4ef4368bc3dd/cf440/blogpost.png 148w,
-/static/1df2308f4c16037440ec4ef4368bc3dd/d2d38/blogpost.png 295w,
+        srcset=&quot;/static/1df2308f4c16037440ec4ef4368bc3dd/01387/blogpost.png 320w,
 /static/1df2308f4c16037440ec4ef4368bc3dd/f4334/blogpost.png 461w&quot;
         sizes=&quot;(max-width: 461px) 100vw, 461px&quot;
         loading=&quot;lazy&quot;
@@ -3980,7 +3917,7 @@ Done &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=
 &lt;p&gt;このようなページが作成できました；&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 688px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -3997,12 +3934,11 @@ Done &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;タグ表示&quot;
         title=&quot;タグ表示&quot;
-        src=&quot;/static/a9d5a16e8db5305de375ab45d7a4dbc8/b9e4f/tagged-articles.png&quot;
-        srcset=&quot;/static/a9d5a16e8db5305de375ab45d7a4dbc8/cf440/tagged-articles.png 148w,
-/static/a9d5a16e8db5305de375ab45d7a4dbc8/d2d38/tagged-articles.png 295w,
-/static/a9d5a16e8db5305de375ab45d7a4dbc8/b9e4f/tagged-articles.png 590w,
+        src=&quot;/static/a9d5a16e8db5305de375ab45d7a4dbc8/4f3bc/tagged-articles.png&quot;
+        srcset=&quot;/static/a9d5a16e8db5305de375ab45d7a4dbc8/01387/tagged-articles.png 320w,
+/static/a9d5a16e8db5305de375ab45d7a4dbc8/e49a9/tagged-articles.png 640w,
 /static/a9d5a16e8db5305de375ab45d7a4dbc8/4f3bc/tagged-articles.png 688w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 688px) 100vw, 688px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -4057,7 +3993,7 @@ Done &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=
 &lt;p&gt;このようなページが作成できました；&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 609px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -4074,12 +4010,10 @@ Done &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;タグ表示&quot;
         title=&quot;タグ表示&quot;
-        src=&quot;/static/b2c18dfbc5a376959f1f31e37414a121/b9e4f/tags-page.png&quot;
-        srcset=&quot;/static/b2c18dfbc5a376959f1f31e37414a121/cf440/tags-page.png 148w,
-/static/b2c18dfbc5a376959f1f31e37414a121/d2d38/tags-page.png 295w,
-/static/b2c18dfbc5a376959f1f31e37414a121/b9e4f/tags-page.png 590w,
+        src=&quot;/static/b2c18dfbc5a376959f1f31e37414a121/672f7/tags-page.png&quot;
+        srcset=&quot;/static/b2c18dfbc5a376959f1f31e37414a121/01387/tags-page.png 320w,
 /static/b2c18dfbc5a376959f1f31e37414a121/672f7/tags-page.png 609w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 609px) 100vw, 609px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -4088,7 +4022,7 @@ Done &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;pages/index.js&lt;/code&gt;のqueryにtagsを加えれば、記事一覧にもタグを表示できます。手法は同じのため、詳細は割愛します。&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 701px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -4105,12 +4039,11 @@ Done &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;タグ表示&quot;
         title=&quot;タグ表示&quot;
-        src=&quot;/static/f3ad58d277458704d4b1f7ec4b445d25/b9e4f/index.png&quot;
-        srcset=&quot;/static/f3ad58d277458704d4b1f7ec4b445d25/cf440/index.png 148w,
-/static/f3ad58d277458704d4b1f7ec4b445d25/d2d38/index.png 295w,
-/static/f3ad58d277458704d4b1f7ec4b445d25/b9e4f/index.png 590w,
+        src=&quot;/static/f3ad58d277458704d4b1f7ec4b445d25/0336a/index.png&quot;
+        srcset=&quot;/static/f3ad58d277458704d4b1f7ec4b445d25/01387/index.png 320w,
+/static/f3ad58d277458704d4b1f7ec4b445d25/e49a9/index.png 640w,
 /static/f3ad58d277458704d4b1f7ec4b445d25/0336a/index.png 701w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        sizes=&quot;(max-width: 701px) 100vw, 701px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -4145,7 +4078,7 @@ Done &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=
       frontmatter &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
         title
         &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;        hero &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;          childImageSharp &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;            &lt;span class=&quot;token function&quot;&gt;fluid&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;maxWidth&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;980&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;              &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;GatsbyImageSharpFluid&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;          &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;        &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;        hero &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;          childImageSharp &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;            &lt;span class=&quot;token function&quot;&gt;fluid&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;maxWidth&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1280&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;              &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;GatsbyImageSharpFluid&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;          &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;        &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;hero で指定した画像を、 &lt;code class=&quot;language-text&quot;&gt;gatsby-plugin-sharp&lt;/code&gt; で変換します。 &lt;code class=&quot;language-text&quot;&gt;fluid&lt;/code&gt; で抽出すると、srcsetで使用できるように、画像をいくつかのサイズに拡縮します。&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight has-highlighted-lines&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;BlogPostTemplate&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; location&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; data&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; pageContext &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
