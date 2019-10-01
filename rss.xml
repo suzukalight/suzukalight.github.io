@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[suzukalight.com]]></title><description><![CDATA[JavaScript / React / 一口馬主 / ゲーム / 旅行]]></description><link>https://suzukalight.com</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 28 Sep 2019 07:12:55 GMT</lastBuildDate><item><title><![CDATA[react-i18nextで多言語対応（国際化・i18n）を素振り]]></title><description><![CDATA[最近ははじめから世界で勝負しようと頑張っているアプリも増えてきています。その場合に、障壁のひとつとなるが多言語対応（国際化・i18n）の方法だと思います。今回はこの i18n について素振りしてみました。 まえがき 完成品 実装したリポジトリはこちらです； https…]]></description><link>https://suzukalight.com/2019-09-09-react-i18next/</link><guid isPermaLink="false">https://suzukalight.com/2019-09-09-react-i18next/</guid><pubDate>Sun, 08 Sep 2019 15:02:00 GMT</pubDate><content:encoded>&lt;p&gt;最近ははじめから世界で勝負しようと頑張っているアプリも増えてきています。その場合に、障壁のひとつとなるが多言語対応（国際化・i18n）の方法だと思います。今回はこの i18n について素振りしてみました。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[suzukalight.com]]></title><description><![CDATA[JavaScript / React / 一口馬主 / ゲーム / 旅行]]></description><link>https://suzukalight.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 01 Oct 2019 14:48:56 GMT</lastBuildDate><item><title><![CDATA[react-i18nextで多言語対応（国際化・i18n）を素振り]]></title><description><![CDATA[最近ははじめから世界で勝負しようと頑張っているアプリも増えてきています。その場合に、障壁のひとつとなるが多言語対応（国際化・i18n）の方法だと思います。今回はこの i18n について素振りしてみました。 まえがき 完成品 実装したリポジトリはこちらです； https…]]></description><link>https://suzukalight.com/2019-09-09-react-i18next/</link><guid isPermaLink="false">https://suzukalight.com/2019-09-09-react-i18next/</guid><pubDate>Sun, 08 Sep 2019 15:02:00 GMT</pubDate><content:encoded>&lt;p&gt;最近ははじめから世界で勝負しようと頑張っているアプリも増えてきています。その場合に、障壁のひとつとなるが多言語対応（国際化・i18n）の方法だと思います。今回はこの i18n について素振りしてみました。&lt;/p&gt;
 &lt;h1 id=&quot;まえがき&quot;&gt;&lt;a href=&quot;#%E3%81%BE%E3%81%88%E3%81%8C%E3%81%8D&quot; aria-label=&quot;まえがき permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;まえがき&lt;/h1&gt;
 &lt;h2 id=&quot;完成品&quot;&gt;&lt;a href=&quot;#%E5%AE%8C%E6%88%90%E5%93%81&quot; aria-label=&quot;完成品 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;完成品&lt;/h2&gt;
 &lt;p&gt;実装したリポジトリはこちらです；&lt;/p&gt;
@@ -932,6 +932,40 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://db.netkeiba.com/horse/2018105547/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;フォルテピアノの 18&lt;/a&gt;、当選しました！&lt;/strong&gt;　関東の牝馬が欲しかったので満足の行く結果です。&lt;/p&gt;
+&lt;h2 id=&quot;2019930-15-次結果郵送&quot;&gt;&lt;a href=&quot;#2019930-15-%E6%AC%A1%E7%B5%90%E6%9E%9C%E9%83%B5%E9%80%81&quot; aria-label=&quot;2019930 15 次結果郵送 permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2019/9/30: 1.5 次結果郵送&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1280px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b64fa732928a75c4ab87d2af91adc707/590ba/1_5ji-paper.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 74.6141975308642%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB2QVB/8QAFhAAAwAAAAAAAAAAAAAAAAAAABEg/9oACAEBAAEFAhT/AP/EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEABj8CX//EABsQAAIBBQAAAAAAAAAAAAAAAAABECExQVFx/9oACAEBAAE/Ia6OFDuYEf/aAAwDAQACAAMAAAAQkM//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAbEAEAAgMBAQAAAAAAAAAAAAABACERQWExcf/aAAgBAQABPxBFWCfZpq6y+QIkzfYlPYcGLn//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;1 5ji paper&quot;
+        title=&quot;1 5ji paper&quot;
+        src=&quot;/static/b64fa732928a75c4ab87d2af91adc707/6c315/1_5ji-paper.jpg&quot;
+        srcset=&quot;/static/b64fa732928a75c4ab87d2af91adc707/f562b/1_5ji-paper.jpg 320w,
+/static/b64fa732928a75c4ab87d2af91adc707/e2288/1_5ji-paper.jpg 640w,
+/static/b64fa732928a75c4ab87d2af91adc707/6c315/1_5ji-paper.jpg 1280w,
+/static/b64fa732928a75c4ab87d2af91adc707/fb329/1_5ji-paper.jpg 1920w,
+/static/b64fa732928a75c4ab87d2af91adc707/2b872/1_5ji-paper.jpg 2560w,
+/static/b64fa732928a75c4ab87d2af91adc707/590ba/1_5ji-paper.jpg 2592w&quot;
+        sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;9/30(月)、キャロットクラブから普通郵便にて、1.5 次の結果が郵送されていました。新規入会での 1 次募集と違い、メンバーズカードなどが入っていないので、こちらは普通郵便ということでしょうか。そもそも会員なら Web でわかってるし大丈夫ですね。&lt;/p&gt;
+&lt;p&gt;カニョットの 18 に、10、と書いてあって、一瞬「10 口申し込んだっけ！？」などと勘違いしたのは秘密です。これはキャンセル番号。さすがに 10 人目は難しそうです。&lt;/p&gt;
 &lt;h1 id=&quot;入会手続き&quot;&gt;&lt;a href=&quot;#%E5%85%A5%E4%BC%9A%E6%89%8B%E7%B6%9A%E3%81%8D&quot; aria-label=&quot;入会手続き permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;入会手続き&lt;/h1&gt;
 &lt;p&gt;結論としては、すぐになにかしないといけないわけでもなさそうです。出資申込結果通知書を受け取ったと同時に、なにか色々と入会申込手続きがあるのかと思っていましたが…。流れとしては以下のようです；&lt;/p&gt;
 &lt;ul&gt;
@@ -974,34 +1008,42 @@ i18n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 656px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1280px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/9a2bd3c37ba2ecd14810ca132dcde741/82704/1_5ji-kekka.png&quot;
+    href=&quot;/static/906ab581fd009160d6888bbe47b5e98c/590ba/1_5ji-kakunin.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 16.3109756097561%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsSAAALEgHS3X78AAAAmklEQVQI111Oyw6DMAzj/38QwbiMghhQ+lgrSgutFyJxmSXLieQ4rpRSqOsan2mCEAPapsVA2r06NDQLIdD3AuMwon8LWGuZxhgcx4F/VO7roClUyg1yldg2Be89YkzEiPM8EUKAc54DPGkpBTln1uu62POwWpcVWmvM88wtDX0P+87mB6VkWGP5eFkWxJSQiPe+k/du65zj5j8AdeXdLo72mgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 29.706790123456795%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAGABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAAB2IJQn//EABQQAQAAAAAAAAAAAAAAAAAAABD/2gAIAQEAAQUCf//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABQQAQAAAAAAAAAAAAAAAAAAABD/2gAIAQEABj8Cf//EABcQAAMBAAAAAAAAAAAAAAAAAAABETH/2gAIAQEAAT8hbd0wp//aAAwDAQACAAMAAAAQe9//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAZEAEAAwEBAAAAAAAAAAAAAAABACExEUH/2gAIAQEAAT8QHyUNoh6G4N0n/9k=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;1 5ji kekka&quot;
-        title=&quot;1 5ji kekka&quot;
-        src=&quot;/static/9a2bd3c37ba2ecd14810ca132dcde741/82704/1_5ji-kekka.png&quot;
-        srcset=&quot;/static/9a2bd3c37ba2ecd14810ca132dcde741/01387/1_5ji-kekka.png 320w,
-/static/9a2bd3c37ba2ecd14810ca132dcde741/e49a9/1_5ji-kekka.png 640w,
-/static/9a2bd3c37ba2ecd14810ca132dcde741/82704/1_5ji-kekka.png 656w&quot;
-        sizes=&quot;(max-width: 656px) 100vw, 656px&quot;
+        alt=&quot;1 5ji kakunin&quot;
+        title=&quot;1 5ji kakunin&quot;
+        src=&quot;/static/906ab581fd009160d6888bbe47b5e98c/6c315/1_5ji-kakunin.jpg&quot;
+        srcset=&quot;/static/906ab581fd009160d6888bbe47b5e98c/f562b/1_5ji-kakunin.jpg 320w,
+/static/906ab581fd009160d6888bbe47b5e98c/e2288/1_5ji-kakunin.jpg 640w,
+/static/906ab581fd009160d6888bbe47b5e98c/6c315/1_5ji-kakunin.jpg 1280w,
+/static/906ab581fd009160d6888bbe47b5e98c/fb329/1_5ji-kakunin.jpg 1920w,
+/static/906ab581fd009160d6888bbe47b5e98c/2b872/1_5ji-kakunin.jpg 2560w,
+/static/906ab581fd009160d6888bbe47b5e98c/590ba/1_5ji-kakunin.jpg 2592w&quot;
+        sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;ねんがんのサラブレッドをてにいれたぞ！&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;例年の申込傾向などをもとに、狭き門と呼ばれるキャロットクラブへの入会チャレンジを行い、結果としては無事に攻略成功、入会することができました。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://db.netkeiba.com/horse/2018105544/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ピエリーナの 18&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://db.netkeiba.com/horse/2018105547/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;フォルテピアノの 18&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;今回、この 2 頭と縁を持つことができました。ご一緒の皆様、よろしくお願いいたします！　&lt;strong&gt;&lt;a href=&quot;https://twitter.com/suzukalight&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Twitter&lt;/a&gt;&lt;/strong&gt; などで一緒に応援できましたら嬉しいです！&lt;/p&gt;
 &lt;h2 id=&quot;2020-年の募集に向けて&quot;&gt;&lt;a href=&quot;#2020-%E5%B9%B4%E3%81%AE%E5%8B%9F%E9%9B%86%E3%81%AB%E5%90%91%E3%81%91%E3%81%A6&quot; aria-label=&quot;2020 年の募集に向けて permalink&quot; class=&quot;gatsby-autolink-headers&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2020 年の募集に向けて&lt;/h2&gt;
 &lt;p&gt;2019 年の傾向をもとに、2020 年のキャロットクラブ新規入会の作戦を練るとしたら、以下のような感じでしょうか；&lt;/p&gt;
 &lt;ul&gt;
