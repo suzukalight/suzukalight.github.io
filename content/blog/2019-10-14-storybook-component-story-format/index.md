@@ -135,7 +135,7 @@ export default Counter;
 
 **Component Story Format**
 
-```javascript:title=/src/components/atoms/Counter/index.tsx
+```javascript:title=/src/components/atoms/Counter/__stories__/index.stories.tsx
 import React from 'react';
 import Counter from '..';
 
@@ -160,7 +160,7 @@ CSF ファイルには、initial/disabled の 2 種類の状態を定義しま�
 
 テストファイルで CSF を import して、enabled/disabled の 2 種類の状態パターンとして利用します。click をボタンに対してトリガして、カウンタ値が期待通りに変化するかについて、テストを書きます；
 
-```javascript:title=/src/components/atoms/Counter/index.tsx
+```javascript:title=/src/components/atoms/Counter/__tests__/index.tsx
 import { render, fireEvent } from '@testing-library/react';
 
 import { initial, disabled } from '../__stories__/index.stories';
