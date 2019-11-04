@@ -74,7 +74,7 @@ const BlogPostTemplate = ({ location, siteMetadata, head, body, richTextJson, pa
       )}
 
       <section className={styles.footer}>
-        <SocialLinks className={styles.socialLinks} url={head.slug} title={head.title} />
+        <SocialLinks className={styles.socialLinks} url={pageContext.slug} title={head.title} />
         <Bio className={styles.bio} />
         <Pager previous={pageContext.previous} next={pageContext.next} />
       </section>
