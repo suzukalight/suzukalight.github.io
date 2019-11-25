@@ -7,23 +7,48 @@ hero: ./ja2.png
 status: 'published'
 ---
 
-Role-based Access Control は、ユーザと権限とを直接紐付けるのではなく、
+アクセス制御の手法のひとつである **Role-based Access Control (RBAC)** は、ユーザと権限とを直接紐付けるのではなく、間にロールを挟みこむことで権限管理をシンプルにする手法です。これを React ベースのアプリに組み込むための、簡単な実装例を作成しました。
 
-# まえがき
-
-## 完成品
-
-実装したリポジトリはこちらです；
-
+実装したリポジトリはこちらです；  
 https://github.com/suzukalight/study-rbac-client
 
 # Role-based Access Control
 
+通常、ユーザに認可を割り付ける場合、直接的に紐付けることが多いかと思います。「〇〇さんは ×× ができる」という関係性です；
+
+```
+User - Permission
+```
+
+Role-based Access Control は、ユーザと許可とを直接紐付けるのではなく、**間に役割(Role)を挟みこんだ 3 段階の権限管理を行っています**；
+
+```
+User - Role - Permission
+```
+
+誰が何をできるか？という設定は緻密で具体的ではありますが、その繊細さゆえに設定ミスを誘発しがちになります。Role を挟むことにより、「**その役割の人なら、これらの振る舞いが認可される**」という関係性を定義することができるようになります。
+
+たとえば異動したユーザに対して、許可をひとつひとつ剥がしてひとつひとつ付け直すよりも、役割を 1 つだけ付け直すほうが、明らかにミスが減りますよね。
+
+# セットアップ
+
+## 何を作るか？
+
+投稿管理システムを素振りしてみます。役割として「ビジター」「執筆者」「管理者」の 3 種類を想定し、それぞれの役割に応じて閲覧や操作の許可をコントロールできる機能を実装していきます；
+
+![](post-list.png)
+
+このスクリーンショットの場合は、執筆者 1 でログインしており、執筆者 1 が書いた記事 2 件について、編集が許可されている感じです。他の記事への編集許可や、自身の記事も含めた削除許可は得ていません。
+
+## 参考にした実装
+
+実装する側としては、段階が 1 つ増えるため実装コストが上がってしまうのではないか、という懸念が発生しますが…、実際に作成してみると、それほどでもありませんでした。
+
 https://auth0.com/blog/role-based-access-control-rbac-and-react-apps/
 
-##
+こちらの実装を基本としつつ、Consumer を useContext に置き換えたり、typescript で書き換えたりなど、より現代的な実装に移したものが、今回の実装になります。
 
-## セットアップ
+## 環境構築
 
 素振り用に create-react-app --typescript します；
 
@@ -90,10 +115,10 @@ const rules: Rule = {
 ```
 
 **static: string[]**  
-「その Role を持っている場合は**無条件で Permission を得られる**」という関係性です。たとえば「Admin であれば、すべての記事の削除権限を得る」などです。
+「その Role を持っている場合、**無条件で Permission を得られる**」という関係性です。たとえば「Admin であれば、すべての記事の削除権限を得る」などです。
 
 **dynamic: { [key: string]: Function }**  
-「その Role を持っている場合、**指定した関数を実行し、結果が true であれば Permission を得られる**」という関係性です。たとえば「その記事のオーナーであれば、編集権限を得る」などです。
+「その Role を持っている場合、**指定した関数を実行し、結果が true であれば Permission を得られる**」という関係性です。たとえば「その記事のオーナーであれば、編集権限を得る」などです。この場合、記事の OwnerId と、actor の userId とが検査対象となり、それらを dynamic 関数に引き渡してチェックします。
 
 ## 権限チェック関数
 
@@ -126,6 +151,8 @@ export const check = (rules: Rule, role: string, action: string, data?: Object) 
 - role: 当該 actor の持つ権限
 - action: どの振る舞いに対する Permission をチェックするか
 - data?: dynamic permission に渡すデータ
+
+static ルールであれば配列内検索の結果を、dynamic ルールであれば関数の実行結果を、それぞれ評価して戻り値にしている、というシンプルな実装です。
 
 # 権限の利用
 
@@ -225,10 +252,14 @@ const Post: React.FC<PostParams> = ({ user, post, index }) => (
 **編集処理（posts:edit）**  
 ルールテーブルによると、writer の場合は dynamic、admin の場合は static に permission チェックが行われます。dynamic permission を使用するため、data オブジェクトも付与しています。
 
+この例では、writer ロールの場合、そのユーザの ID と、記事のオーナー ID とを比較し、合致している場合のみ、子ノードが表示されるという振る舞いを想定しています。
+
 **削除処理（posts:delete）**  
-admin の場合にのみ、static に permission チェックを行います。つまり管理者権限を持つ場合にのみ、削除が許可されます。
+admin ロールを持つ場合にのみ、削除が許可されます。
 
 # 認証認可 Context
+
+認証状態を管理できる、AuthContext と useAuth hook を作成しました；
 
 ```typescript
 import React, { useState, useContext, createContext, useCallback, useMemo } from 'react';
@@ -299,8 +330,58 @@ export const useAuth = () => {
 };
 ```
 
+サインイン・サインアウトの操作を行う場合は、この AuthContext から useAuth hook を経由して操作関数を受け取り、実行させることを想定しています；
+
+```typescript
+import React from 'react';
+
+import { useAuth } from '../../contexts/Auth';
+
+const Login = () => {
+  const { authenticated, login, logout } = useAuth();
+
+  if (authenticated)
+    return (
+      <button className="btn btn-sm btn-primary" onClick={() => logout()}>
+        Logout
+      </button>
+    );
+
+  return (
+    <div>
+      <button
+        className="btn btn-sm btn-primary"
+        onClick={() => login('one@test.com', 'password', { id: '1', role: 'writer' })}
+      >
+        Writer 1 Login
+      </button>
+    </div>
+  );
+};
+
+export default Login;
+```
+
+ご覧の通り、サインイン処理はダミー実装ですので、実際に運用する場合は、間に API コールなどを挟む必要があります。Auth0 を利用しても良いと思いますし、passport などで自前実装しても良いと思います。
+
+# 実行結果
+
+**visitor**  
+記事の一覧が表示されるだけになっています；
+
+![](post-list-visitor.png)
+
+**writer**  
+自分が書いた記事に対して、編集操作が行えるようになります；
+
+![](post-list.png)
+
+**admin**  
+すべての記事に対して、編集と削除操作が行えるようになります；
+
+![](post-list-admin.png)
+
 # 完成品
 
-実装したリポジトリはこちらです；
-
+実装したリポジトリはこちらです；  
 https://github.com/suzukalight/study-rbac-client
