@@ -65,8 +65,8 @@
   "scripts": {
     "format": "prettier --config .prettierrc -l --write \"./src/**/*.js*\"",
     "lint": "eslint --fix --ext .jsx,.js ./src",
-    "develop": "gatsby develop",
-    "dev": "gatsby develop",
+    "develop": "gatsby develop -p 54321",
+    "dev": "yarn develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
