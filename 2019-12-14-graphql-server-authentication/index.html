@@ -58,7 +58,7 @@
 </ul>
 </li>
 <li>
-<p><a href="/2019-12-14-graphql-server-authentication/#%E8%AA%8D%E5%8F%AF">認可</a></p>
+<p><a href="/2019-12-14-graphql-server-authentication/#%E3%83%A6%E3%83%BC%E3%82%B6%E3%81%94%E3%81%A8%E3%81%AE%E8%AA%8D%E5%8F%AF%E3%81%A8%E3%80%81%E3%83%AD%E3%83%BC%E3%83%AB%E5%8D%98%E4%BD%8D%E3%81%A7%E3%81%AE%E8%AA%8D%E5%8F%AF">ユーザごとの認可と、ロール単位での認可</a></p>
 <ul>
 <li><a href="/2019-12-14-graphql-server-authentication/#%E3%83%A6%E3%83%BC%E3%82%B6%E8%AA%8D%E8%A8%BC%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3%E3%81%8B%E3%82%89-me-%E6%83%85%E5%A0%B1%E3%82%92%E5%8F%96%E5%BE%97">ユーザ認証トークンから me 情報を取得</a></li>
 <li><a href="/2019-12-14-graphql-server-authentication/#message-%E3%83%AA%E3%82%BE%E3%83%AB%E3%83%90%E3%81%AB%E8%AA%8D%E5%8F%AF%E5%87%A6%E7%90%86%E3%82%92%E8%BF%BD%E5%8A%A0-graphql-resolvers">Message リゾルバに認可処理を追加 (graphql-resolvers)</a></li>
@@ -144,7 +144,7 @@ User<span class="token punctuation">.</span><span class="token function">init</s
     <span class="token punctuation">]</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre></div>
-<p>query の戻り値として、email と password が返ってきました。成功です。</p>
+<p>email が返ってきました。成功です。</p>
 <h2 id="サインアップ処理の追加"><a href="#%E3%82%B5%E3%82%A4%E3%83%B3%E3%82%A2%E3%83%83%E3%83%97%E5%87%A6%E7%90%86%E3%81%AE%E8%BF%BD%E5%8A%A0" aria-label="サインアップ処理の追加 permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>サインアップ処理の追加</h2>
 <p>実際にサインアップを行うために、<code class="language-text">signUp</code> のスキーマとリゾルバを追加しましょう；</p>
 <div class="gatsby-code-title">src/05-authentication/src/schema/user.ts</div>
@@ -228,16 +228,17 @@ User<span class="token punctuation">.</span><span class="token function">init</s
 $ <span class="token function">yarn</span> workspace 05-authentication <span class="token function">add</span> -D @types/jsonwebtoken</code></pre></div>
 <p>JWT の発行には、<strong>シークレットキーと有効期限が必要です。</strong>特にシークレットキーはコード管理できない（漏洩リスク）のため、<strong>環境変数で取り扱います。</strong>その環境変数を Node 上で扱うために、<strong>dotenv</strong> パッケージを使用します；</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">yarn</span> workspace 05-authentication <span class="token function">add</span> dotenv</code></pre></div>
-<p>.env ファイルに、シークレットキーと有効期限を記述します。この.env ファイルは gitignore してありますので、リポジトリやコードには公開されません；</p>
+<p>.env ファイルに、シークレットキーと有効期限を記述します。このファイルは gitignore して、リポジトリやコードには公開されないようにしておきましょう；</p>
 <div class="gatsby-code-title">src/05-authentication/.env</div>
 <div class="gatsby-highlight" data-language="env"><pre class="language-env"><code class="language-env">JWT_SECRET=&quot;your_jwt_secret_phrase&quot;
 JWT_EXPIRES_IN=&quot;30m&quot;</code></pre></div>
-<p>index.ts で、環境変数として取り込み、context に流し込みましょう；</p>
+<p>index.ts で、環境変数として取り込み、context に流し込みます；</p>
 <div class="gatsby-code-title">src/05-authentication/src/resolvers/typings.ts</div>
 <div class="gatsby-highlight has-highlighted-lines" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">ResolverContext</span> <span class="token punctuation">{</span>
   me<span class="token punctuation">:</span> User<span class="token punctuation">;</span>
   models<span class="token punctuation">:</span> Models<span class="token punctuation">;</span>
 <span class="gatsby-highlight-code-line">  jwt<span class="token punctuation">:</span> <span class="token punctuation">{</span></span><span class="gatsby-highlight-code-line">    secret<span class="token punctuation">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span></span><span class="gatsby-highlight-code-line">    expiresIn<span class="token punctuation">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span></span><span class="gatsby-highlight-code-line">  <span class="token punctuation">}</span><span class="token punctuation">;</span></span><span class="token punctuation">}</span></code></pre></div>
+<p>dotenv パッケージの <code class="language-text">config</code> 関数を利用すると、<code class="language-text">process.env</code> に .env の内容が展開されて利用できるようになります；</p>
 <div class="gatsby-code-title">src/05-authentication/src/index.ts</div>
 <div class="gatsby-highlight has-highlighted-lines" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="gatsby-highlight-code-line"><span class="token keyword">import</span> dotenv <span class="token keyword">from</span> <span class="token string">'dotenv'</span><span class="token punctuation">;</span></span>
 <span class="gatsby-highlight-code-line">dotenv<span class="token punctuation">.</span><span class="token function">config</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
@@ -257,7 +258,7 @@ JWT_EXPIRES_IN=&quot;30m&quot;</code></pre></div>
 <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
 <p><code class="language-text">jwt.sign</code> を使用して、id と email の情報を含んだ JWT トークンを生成しています。この情報を signUp リゾルバの戻り値とし、認証情報としてクライアント側の localstorage などで管理してもらうこととします。</p>
 <h2 id="サインイン処理"><a href="#%E3%82%B5%E3%82%A4%E3%83%B3%E3%82%A4%E3%83%B3%E5%87%A6%E7%90%86" aria-label="サインイン処理 permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>サインイン処理</h2>
-<p>サインアップ処理で、ユーザ認証トークンの発行ができるようになりましたので、これを用いて、サインイン処理でのトークン発行も実装します。</p>
+<p>サインアップ処理でユーザ認証トークンの発行ができるようになりましたので、これを用いてサインイン処理でのトークン発行も実装します。</p>
 <p><strong>User スキーマ</strong><br>
 mutation として signIn 関数を追加します；</p>
 <div class="gatsby-code-title">src/05-authentication/src/schema/user.ts</div>
@@ -311,7 +312,7 @@ User モデルの関数と、JWT 発行関数とを利用して、サインイ�
 <span class="token punctuation">}</span></code></pre></div>
 <p>成功です！</p>
 <p>ここで email, password をそれぞれ変えてみると、サーバからそれぞれ適切なエラーメッセージが返ってくると思いますので、お試しください。</p>
-<h1 id="認可"><a href="#%E8%AA%8D%E5%8F%AF" aria-label="認可 permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>認可</h1>
+<h1 id="ユーザごとの認可と、ロール単位での認可"><a href="#%E3%83%A6%E3%83%BC%E3%82%B6%E3%81%94%E3%81%A8%E3%81%AE%E8%AA%8D%E5%8F%AF%E3%81%A8%E3%80%81%E3%83%AD%E3%83%BC%E3%83%AB%E5%8D%98%E4%BD%8D%E3%81%A7%E3%81%AE%E8%AA%8D%E5%8F%AF" aria-label="ユーザごとの認可と、ロール単位での認可 permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ユーザごとの認可と、ロール単位での認可</h1>
 <h2 id="ユーザ認証トークンから-me-情報を取得"><a href="#%E3%83%A6%E3%83%BC%E3%82%B6%E8%AA%8D%E8%A8%BC%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3%E3%81%8B%E3%82%89-me-%E6%83%85%E5%A0%B1%E3%82%92%E5%8F%96%E5%BE%97" aria-label="ユーザ認証トークンから me 情報を取得 permalink" class="gatsby-autolink-headers"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ユーザ認証トークンから me 情報を取得</h2>
 <p>サインイン処理によって発行された JWT トークンには、id と email が載っています。<strong>この情報をクライアントで保管し、サーバアクセス時に送信してもらう</strong>ことで、クライアントがどのユーザでサインインしているかを判定します。</p>
 <div class="gatsby-code-title">src/06-authorization/src/index.ts</div>
