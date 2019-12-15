@@ -3,7 +3,7 @@ title: GraphQL Apollo-Server 入門 (1)
 date: '2019-12-08T00:02:00'
 category: Technology
 tags: ['graphql', 'apollo-server', 'express', 'nodejs', 'typescript', 'ts-node-dev']
-hero: ./playground.png
+hero: ./apollo-graphql.png
 status: 'published'
 ---
 
@@ -11,7 +11,7 @@ status: 'published'
 
 弊社の開発環境としては、Node, GraphQL, koa, apollo-server, RxJS などを採用しているのですが、順次キャッチアップするとして、まずは基本中の基本からしっかり押さえておきたいと思い、GraphQL の素振りを始めています。
 
-Apollo-Server を使った GraphQL サーバの具体的なチュートリアルとして、[こちらの素晴らしい記事](https://www.robinwieruch.de/graphql-apollo-server-tutorial)がありましたので、これをなぞりつつ、typescript で記述したり、適当に改造や改善をしながら、素振りをしていこう、というのが本記事の主旨になります。なお数回のシリーズとして書いていく予定です。
+Apollo-Server を使った GraphQL サーバの具体的なチュートリアルとして、[こちらの素晴らしい記事](https://www.robinwieruch.de/graphql-apollo-server-tutorial)がありましたので、これをなぞりつつ、TypeScript で記述したり、適当に改造や改善をしながら、素振りをしていこう、というのが本記事の主旨になります。なお数回のシリーズとして書いていく予定です。
 
 今回実装したリポジトリはこちらです；  
 https://github.com/suzukalight/study-graphql-apollo-server
@@ -30,7 +30,7 @@ $ cd study-graphql-apollo-server/
 $ yarn init -y
 $ git init
 $ gibo dump macos node > .gitignore
-$ yarn add apollo-server apollo-server-express express graphql
+$ yarn add apollo-server apollo-server-express express graphql cors
 $ yarn add -D typescript @types/node
 $ npx tsc --init
 $ yarn add -D ts-node ts-node-dev
@@ -133,7 +133,7 @@ http://localhost:23456/graphql へアクセスすると、**apollo-server に付
 
 最初のサンプルで返していた User エンティティを拡張していきます。今回は `{ id, username }` を持つ User エンティティの型定義を行います。
 
-## typescript での型定義
+## TypeScript での型定義
 
 interface と、サンプルデータを定義します。me は user の id=1 ということにしてみましょう；
 
@@ -153,7 +153,7 @@ const users: Users = {
 const me = users[1];
 ```
 
-## graphql schema での型定義
+## GraphQL schema での型定義
 
 Query として user 全体と単体をそれぞれリクエストできるものを追加し、User には先ほど定義した id フィールドを追加します；
 
@@ -196,7 +196,7 @@ const resolvers: IResolvers = {
 
 ## クエリを実行
 
-作成した users, user(id) をそれぞれ実行してみます。graphql なら複数のクエリを同時に発行しても OK なので、まとめてテストしてみます；
+作成した users, user(id) をそれぞれ実行してみます。GraphQL なら複数のクエリを同時に発行しても OK なので、まとめてテストしてみます；
 
 ```graphql:title=query
 {
@@ -236,6 +236,8 @@ const resolvers: IResolvers = {
 ```
 
 期待通り、users 全体と、特定の user とが、追加でリクエストできるようになりました。
+
+## 柔軟なデータリクエストを実現
 
 GraphQL がいわゆる REST API と異なるのは、欲しい情報だけを特定してリクエストすることができることと、複数の情報を一つのクエリで同時にまとめてリクエストできる点です。フロントエンドエンジニアとしては、欲しい情報を好きな形でリクエストできるようになった点に、とても柔軟性を感じたところでした。
 
