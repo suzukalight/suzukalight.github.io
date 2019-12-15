@@ -1,5 +1,5 @@
 ---
-title: GraphQL Apollo-Server 入門 (1)
+title: GraphQL Apollo-Server ハンズオン
 date: '2019-12-08T00:02:00'
 category: Technology
 tags: ['graphql', 'apollo-server', 'express', 'nodejs', 'typescript', 'ts-node-dev']
@@ -11,7 +11,7 @@ status: 'published'
 
 弊社の開発環境としては、Node, GraphQL, koa, apollo-server, RxJS などを採用しているのですが、順次キャッチアップするとして、まずは基本中の基本からしっかり押さえておきたいと思い、GraphQL の素振りを始めています。
 
-Apollo-Server を使った GraphQL サーバの具体的なチュートリアルとして、[こちらの素晴らしい記事](https://www.robinwieruch.de/graphql-apollo-server-tutorial)がありましたので、これをなぞりつつ、TypeScript で記述したり、適当に改造や改善をしながら、素振りをしていこう、というのが本記事の主旨になります。なお数回のシリーズとして書いていく予定です。
+Apollo-Server を使った GraphQL サーバの具体的なチュートリアルとして、[こちらの素晴らしい記事](https://www.robinwieruch.de/graphql-apollo-server-tutorial)がありましたので、これをなぞりつつ、TypeScript で記述したり、適宜改造したりしながら素振りをしていこう、というのが本記事の主旨になります。なお数回のシリーズとして書いていく予定です。
 
 今回実装したリポジトリはこちらです；  
 https://github.com/suzukalight/study-graphql-apollo-server
