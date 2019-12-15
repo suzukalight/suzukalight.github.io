@@ -127,7 +127,7 @@ export const createUsersWithMessages = async (models: Models) => {
 }
 ```
 
-query の戻り値として、email と password が返ってきました。成功です。
+email が返ってきました。成功です。
 
 ## サインアップ処理の追加
 
@@ -242,14 +242,14 @@ JWT の発行には、**シークレットキーと有効期限が必要です�
 $ yarn workspace 05-authentication add dotenv
 ```
 
-.env ファイルに、シークレットキーと有効期限を記述します。この.env ファイルは gitignore してありますので、リポジトリやコードには公開されません；
+.env ファイルに、シークレットキーと有効期限を記述します。このファイルは gitignore して、リポジトリやコードには公開されないようにしておきましょう；
 
 ```env:title=src/05-authentication/.env
 JWT_SECRET="your_jwt_secret_phrase"
 JWT_EXPIRES_IN="30m"
 ```
 
-index.ts で、環境変数として取り込み、context に流し込みましょう；
+index.ts で、環境変数として取り込み、context に流し込みます；
 
 ```typescript{4-7}:title=src/05-authentication/src/resolvers/typings.ts
 export interface ResolverContext {
@@ -261,6 +261,8 @@ export interface ResolverContext {
   };
 }
 ```
+
+dotenv パッケージの `config` 関数を利用すると、`process.env` に .env の内容が展開されて利用できるようになります；
 
 ```typescript{1,3,9}:title=src/05-authentication/src/index.ts
 import dotenv from 'dotenv';
@@ -300,7 +302,7 @@ const resolvers: IResolvers<User, ResolverContext> = {
 
 ## サインイン処理
 
-サインアップ処理で、ユーザ認証トークンの発行ができるようになりましたので、これを用いて、サインイン処理でのトークン発行も実装します。
+サインアップ処理でユーザ認証トークンの発行ができるようになりましたので、これを用いてサインイン処理でのトークン発行も実装します。
 
 **User スキーマ**  
 mutation として signIn 関数を追加します；
@@ -389,7 +391,7 @@ mutation {
 
 ここで email, password をそれぞれ変えてみると、サーバからそれぞれ適切なエラーメッセージが返ってくると思いますので、お試しください。
 
-# 認可
+# ユーザごとの認可と、ロール単位での認可
 
 ## ユーザ認証トークンから me 情報を取得
 
